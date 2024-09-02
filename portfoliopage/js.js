@@ -196,12 +196,20 @@ $(document).ready(function() {
         // nav 의 profile 요소에 on 클래스 붙여서 텍스트 파랗게 변하기
         $('.section1 nav li').removeClass('on');
         $('.section1 nav li').eq(1).addClass('on');
-        // 1초 후에 .btn.profile 없애기
+        // 1초 후에 .btn.profile 과 .btn.toIntro 없애기
         setTimeout(function () {
             $('.section1 .btn.profile').css('display', 'none');
+            $('.section1 .btn.toIntro').css('display', 'none');
         }, 1000);
-        // .btn.profile 과 .eachBox 요소의 .haribo와 .kaps와 .newjeans 차례대로 사라지도록 애니메이션
+        // .btn.profile 와 .btn.toIntro 그리고 .eachBox 요소의 .haribo와 .kaps와 .newjeans 차례대로 사라지도록 애니메이션
         gsap.to('.section1 .btn.profile',  {
+            opacity: 0,
+            y: -40,
+            duration: 1,
+            ease: 'power2.out'
+        });
+        gsap.to('.section1 .btn.toIntro',  {
+            delay: 0.4,
             opacity: 0,
             y: -40,
             duration: 1,
@@ -342,12 +350,20 @@ $(document).ready(function() {
             ease: 'power2.inOut'
         });
         // .btn.profile 없애기
-        // 1초 후에 .btn.profile 없애기
+        // 1초 후에 .btn.profile 과 .btn.toIntro 없애기
         setTimeout(function () {
             $('.section1 .btn.profile').css('display', 'none');
+            $('.section1 .btn.toIntro').css('display', 'none');
         }, 1000);
         // .btn.profile 과 .eachBox 요소의 .haribo와 .kaps와 .newjeans 차례대로 사라지도록 애니메이션
         gsap.to('.section1 .btn.profile',  {
+            opacity: 0,
+            y: -40,
+            duration: 1,
+            ease: 'power2.out'
+        });
+        gsap.to('.section1 .btn.toIntro',  {
+            delay: 0.4,
             opacity: 0,
             y: -40,
             duration: 1,
@@ -596,10 +612,13 @@ $(document).ready(function() {
             duration: 0.5,
             ease: 'power2.out'
         });
-        // .btn 요소 차례대로 등장하도록 애니메이션
+        // .btn.profile 와 .btn.toIntro 그리고 .eachBox 요소의 .haribo와 .kaps와 .newjeans 차례대로 나타나기
         setTimeout(function () {
             $('.section1 .btn.profile').css('display', 'block');
         }, 1000);
+        setTimeout(function () {
+            $('.section1 .btn.toIntro').css('display', 'block');
+        }, 3300);
         tl2.fromTo('.section1 .btn', {
             opacity: 0,
             y: 20
@@ -636,6 +655,17 @@ $(document).ready(function() {
             y: -20
         }, {
             delay: 3.1,
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            ease: 'power2.out'
+        });
+        // .btn.toIntro 나타나기
+        gsap.fromTo('.section1 .btn.toIntro', {
+            opacity: 0,
+            y: -20
+        }, {
+            delay: 3.3,
             opacity: 1,
             y: 0,
             duration: 0.5,
@@ -1113,7 +1143,6 @@ $(document).ready(function() {
             duration: 0.2,
             ease: 'power2.out'
         });
-        
 
         // black_bg 뒤로 보내서 움직이는 dvd-logo 보이게 하기
         setTimeout(function () {
@@ -1123,5 +1152,52 @@ $(document).ready(function() {
         , 1900);
     });
 
-    
+    // concept view 클릭하면 딤드 처리되면서 컨셉뷰 이미지 등장
+    $('.section1 .portfolioBtn .conceptView').click(function () {
+        // .dimmedWrap 등장
+        $('.dimmedWrap').addClass('on');
+        // .conceptView 이미지 등장 
+        // 하리보, kaps, newjeans 중 하나의 이미지가 등장
+        if ($(this).parents('.portfolioBtn').parents('article').hasClass('index0')) {
+            $('.conceptViewHaribo').addClass('on');
+            // 딤드 이미지 높이 조절
+            $('.dimmedWrap .dimmed').css('height', '17003.100px');
+        } else if ($(this).parents('.portfolioBtn').parents('article').hasClass('index1')) {
+            $('.conceptViewKAPS').addClass('on');
+            // 딤드 이미지 높이 조절
+            $('.dimmedWrap .dimmed').css('height', '15630.500px');
+        } else if ($(this).parents('.portfolioBtn').parents('article').hasClass('index2')) {
+            $('.conceptViewNewjeans').addClass('on');
+            // 딤드 이미지 높이 조절
+            $('.dimmedWrap .dimmed').css('height', '14345.300px');
+        }
+
+        // 스크롤 가능
+        $('body').addClass('on');
+        // .section1 은 fixed 로 따라다님
+        $('.section1').addClass('fixed');
+    });
+
+
+    // concept view 닫는 두 가지 방법
+    $('.dimmedWrap .dimmed').click(function () {
+        // .dimmedWrap 사라짐
+        $('.dimmedWrap').removeClass('on');
+        // 이미지 on 클래스 해제
+        $('.dimmedWrap img').removeClass('on');
+        // 스크롤 불가능
+        $('body').removeClass('on');
+        // .section1 은 fixed 해제
+        $('.section1').removeClass('fixed');
+    });
+    $('.dimmedWrap .closeBtn').click(function () {
+        // .dimmedWrap 사라짐
+        $('.dimmedWrap').removeClass('on');
+        // 이미지 on 클래스 해제
+        $('.dimmedWrap img').removeClass('on');
+        // 스크롤 불가능
+        $('body').removeClass('on');
+        // .section1 은 fixed 해제
+        $('.section1').removeClass('fixed');
+    });
 });

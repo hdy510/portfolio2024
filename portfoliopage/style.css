@@ -40,13 +40,15 @@ a {
 img {
     vertical-align: bottom;
 }
-body, html {
-    margin: 0;
-    padding: 0;
+body {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
     font-family: 'Pretendard-Regular';
+}
+body.on {
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* section1 설정 */
@@ -54,6 +56,11 @@ body, html {
     width: 100%;
     height: 100%;
     position: relative;
+}
+.section1.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 /* intro 설정 */
 .intro {
@@ -212,7 +219,7 @@ body, html {
     left: 50px;
     z-index: 1;
 }
-.section1 .btn.profile span {
+/* .section1 .btn.profile span {
     font-family: "Press Start 2P", system-ui;
     color: var(--color-white);
     background-color: var(--color-subBlue);
@@ -227,6 +234,35 @@ body, html {
 .section1 .btn.profile:hover span {
     background-color: var(--color-white);
     color: var(--color-subBlue);
+} */
+.section1 .btn.profile span {
+    font-family: "Press Start 2P", system-ui;
+    color: var(--color-white);
+    background-color: var(--color-subBlue);
+    font-size: 20px;
+    text-align: center;
+    padding: 21px 34px;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    transition: all 0.3s;
+}
+.section1 .btn.profile span:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--color-white);
+    transition: all 0.3s;
+    z-index: -1;
+}
+.section1 .btn.profile:hover span {
+    color: var(--color-subBlue);
+}
+.section1 .btn.profile:hover span:before {
+    width: 100%;
 }
 .section1 .contentBox {
     position: absolute;
@@ -250,7 +286,6 @@ body, html {
     height: 26px;
     display: flex;
     justify-content: end;
-    align-items: center;
     transition: all 0.3s;
 }
 .section1 .contentBox .eachBox .bar span {
@@ -261,6 +296,7 @@ body, html {
     justify-content: center;
     align-items: center;
     margin-right: 6px;
+    margin-top: 7px;
 }
 .section1 .contentBox .eachBox .bar span i {}
 .section1 .contentBox .eachBox .box {
@@ -459,13 +495,28 @@ body, html {
     margin: 0 14px;
     width: 240px;
     height: 60px;
+    z-index: 1;
     cursor: pointer;
     transition: all 0.3s;
 }
-.section1 article .portfolioBtn span:hover {
+.section1 article .portfolioBtn span:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
     background-color: var(--color-subBlue);
+    transition: all 0.3s;
+    z-index: -1;
+}
+.section1 article .portfolioBtn span:hover {
     color: var(--color-white);
 }
+.section1 article .portfolioBtn span:hover:before {
+    height: 100%;
+}
+
 .section1 article .portfolioBtn span a {
     display: flex;
     justify-content: center;
@@ -474,9 +525,78 @@ body, html {
     height: 100%;
     color: var(--color-subBlue);
     background-color: var(--color-white);
+    z-index: 1;
     transition: all 0.3s;
+    position: relative;
+}
+.section1 article .portfolioBtn span a:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: var(--color-subBlue);
+    transition: all 0.3s;
+    z-index: -1;
 }
 .section1 article .portfolioBtn span:hover a {
-    background-color: var(--color-subBlue);
+    width: 100%;
     color: var(--color-white);
 }
+.section1 article .portfolioBtn span:hover a:before {
+    height: 100%;
+}
+
+/* 컨셉뷰 클릭해서 나오는 section2 설정 */
+.dimmedWrap {
+    width: 100%;
+    z-index: 3;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.dimmedWrap.on {
+    display: block;
+}
+.dimmedWrap .dimmed {
+    width: 100%;
+    height: 17003.100px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.dimmedWrap img {
+    width: 1500px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    display: none;
+}
+.dimmedWrap img.on {
+    display: block;
+}
+.dimmedWrap .closeBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+.dimmedWrap .closeBtn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.dimmedWrap .closeBtn i {
+    font-size: 42px;
+    color: var(--color-white);
+}
+
