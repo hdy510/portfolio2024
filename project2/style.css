@@ -1528,8 +1528,7 @@ header .header_wrap .fa-bars {
 .sub_section1_wrap .category {
     display: flex;
     align-items: center;
-    width: 1080px;
-    margin: 0 auto;
+    margin-left: 40px;
     margin-top: 120px;
 }
 .sub_section1_wrap .category h2 {
@@ -3001,6 +3000,13 @@ footer .snsBox a img {
     .sub_section5_wrap {
         max-width: 1440px;
         margin: 0 auto;
+    }
+}
+/* 1520px 이하 설정 */
+@media (max-width: 1520px) {
+    /* 헤더 로고 조정 */
+    header .header_wrap {
+        padding: 0 40px;
     }
 }
 /* 1350px 이하 설정 */
