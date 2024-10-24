@@ -12,11 +12,12 @@
     font-style: normal;
 }
 
-// 폰트 정보
-// font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-// font-family: 'S-CoreDream-5Medium';
+/* 폰트 정보
+font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+font-family: 'S-CoreDream-5Medium'; 
+*/
 
-// 변수설정
+/* 변수설정 */
 $font-family-pretendard:  "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 $font-family-scoredream-5Medium: 'S-CoreDream-5Medium', sans-serif;
 $font-family-scoredream-4Regular: 'S-CoreDream-4Regular', sans-serif;
@@ -24,6 +25,8 @@ $font-size-40px: 2.5rem;
 $font-size-38px: 2.375rem;
 $font-size-30px: 1.875rem;
 $font-size-28px: 1.75rem;
+$font-size-26px: 1.625rem;
+$font-size-22px: 1.375rem;
 $font-size-20px: 1.25rem;
 $font-size-18px: 1.125rem;
 $font-size-17px: 1.063rem;
@@ -32,7 +35,7 @@ $font-size-14px: 0.875rem;
 $color-black: #0d0d0d;
 $color-blue-main: #004EA2;
 
-// 전체설정
+/* 전체설정 */
 * {
     margin: 0;
     padding: 0;
@@ -52,14 +55,14 @@ img {
     vertical-align: bottom;
 }
 
-// header 설정
+/* header 설정 */
 header {
     font-size: $font-size-16px;
     width: 100vw;
     position: fixed;
     top: 0;
     left: 0;
-    // util 설정
+    /* util 설정 */
     .util {
         width: 100%;
         height: 2.5rem;
@@ -124,7 +127,7 @@ header {
             }
         }
     }
-    // gnb 설정
+    /* gnb 설정 */
     .gnb {
         height: 5rem;
         font-family: $font-family-scoredream-5Medium;
@@ -150,7 +153,6 @@ header {
             }
             ul {
                 display: flex;
-
                 li {
                     padding: 0.313rem 1.375rem;
                     a {
@@ -158,29 +160,73 @@ header {
                     }
                 }
             }
+            .menu-btn {
+                width: 3rem;
+                height: 3rem;
+                // display: flex;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                i {
+                    font-size: 1.5rem;
+                }
+            }
         }
     }
 }
-// main 설정
+/* header 미디어쿼리 */
+@media (min-width:48.063rem) and (max-width:75rem) {
+    header {
+        .gnb {
+            .gnb-inner {
+                ul {
+                    display: none;
+                }
+                .menu-btn {
+                    display: flex;
+                }
+            }
+        }
+    }
+}
+@media (max-width:48rem) {
+    header {
+        .util {
+            .util-inner {
+                .user {
+                    display: none;
+                }
+            }
+        }
+        .gnb {
+            .gnb-inner {
+                ul {
+                    display: none;
+                }
+                .menu-btn {
+                    display: flex;
+                }
+            }
+        }
+    }
+}
+/* main 설정 */
 .main {
     width: 100%;
-    // hero 설정
+    /* hero 설정 */
     .hero {
         width: 100%;
         height: 40.813rem;
         margin-top: 7.563rem;
         position: relative;
-        background-color: red;
-        .hero-img {
-            background-image: url('imgs/hero-img-1.png');
-            background-repeat: no-repeat;
-            background-position: center center;
-            height: 40.813rem;
-        }
+        background-image: url('imgs/hero-img-1.png');
+        background-repeat: no-repeat;
+        background-position: center center;
         .txtBox {
-            background-color: red;
             color: #fff;
             font-family: $font-family-scoredream-4Regular;
+            width: 60%;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -188,6 +234,7 @@ header {
             h2 {
                 font-size: $font-size-30px;
                 margin-bottom: 1.875rem;
+                text-align: center;
                 span {
                     font-size: $font-size-38px;
                 }
@@ -212,7 +259,7 @@ header {
                     border: 2px solid $color-blue-main;
                     border-radius: 3.125rem;
                     position: relative;
-                    width: 37.25rem;
+                    width: 60%;
                     height: 3.125rem;
                     box-sizing: content-box;
                     display: flex;
@@ -220,7 +267,7 @@ header {
                     input {
                         all: unset;
                         color: $color-black;
-                        width: 30.375rem;
+                        width: 80%;
                         margin-left: 1.875rem;
                     }
                     button {
@@ -287,15 +334,185 @@ header {
                 }
             }
         }
+        .arrowBox {
+            width: 100%;
+            height: 5rem;
+            position: absolute;
+            top: 17.875rem;
+            .arrow {
+                transition: all 0.3s;
+                &.left {
+                    background-image: url(imgs/hero-arrow.png);
+                    display: block;
+                    width: 5rem;
+                    height: 5rem;
+                    position: absolute;
+                    top: 0;
+                    left: 5%;
+                    cursor: pointer;
+                    &:hover {
+                        transform: translateX(-1rem);
+                    }
+                }
+                &.right {
+                    background-image: url(imgs/hero-arrow.png);
+                    background-position: -5rem center;
+                    display: block;
+                    width: 5rem;
+                    height: 5rem;
+                    position: absolute;
+                    top: 0;
+                    right: 5%;
+                    cursor: pointer;
+                    &:hover {
+                        transform: translateX(1rem);
+                    }
+                }
+            }
+        }
+        .pageBox {
+            font-family: $font-family-scoredream-4Regular;
+            color: #fff;
+            display: flex;
+            justify-content: flex-end;
+            position: absolute;
+            bottom: 3rem;
+            right:10%;
+            span {
+                font-size: $font-size-16px;
+                b {
+                    font-size: $font-size-22px;
+                    margin-right: 0.313rem;
+                }
+            }
+            p {
+                font-size: $font-size-22px;
+                margin-left: 1rem;
+            }
+        }
     }
+    
 } 
+/* main 미디어쿼리 */
+@media (min-width:48.063rem) and (max-width:75rem) {
+    .main {
+        /* hero 미디어쿼리 */
+        .hero {
+            .txtBox {
+                .search {
+                    .search-bar {
+                        width: 80%;
+                    }
+                }
+                .recommend {
+                    flex-direction: column;
+                    span {
+                        text-align: center;
+                    }
+                    ul {
+                        flex-direction: column;
+                        li {
+                            text-align: center;
+                            margin: 0.15rem 0.313rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:48rem) {
+    .main {
+        /* hero 미디어쿼리 */
+        .hero {
+            .txtBox {
+                h2 {
+                    font-size: $font-size-26px;
+                    span {
+                        font-size: $font-size-30px;
+                    }
+                }
+                p {
+                    font-size: $font-size-17px;
+                }
+                .search {
+                    h3 {
+                        font-size: $font-size-20px;
+                    }
+                    .search-bar {
+                        width: 100%;
+                        input {
+                            font-size: $font-size-14px;
+                            margin-left: 1.5rem;
+                        }
+                    }
+                }
+                .recommend {
+                    flex-direction: column;
+                    ul {
+                        li {
+                            margin: 0.1rem 0.313rem;
+                            text-align: center;
+                            a {
+                                font-size: $font-size-16px;
+                            }
+                        }
+                    }
+                    span {
+                        text-align: center;
+                    }
+                    ul {
+                        flex-direction: column;
+                    }
+                }
+            }
+            .arrowBox {
+                .arrow {
+                    &.left {
+                        transform: scale(0.5);
+                        left: -2%;
+                        &:hover {
+                            transform: scale(0.5);
+                        }
+                    }
+                    &.right {
+                        transform: scale(0.5);
+                        right: -2%;
+                        &:hover {
+                            transform: scale(0.5);
+                        }
+                    }
+                }
+            }
+            .pageBox {
+                flex-direction: column;
+                bottom: 1rem;
+                right: 4%;
+                span {
+                    font-size: $font-size-14px;
+                    b {
+                        font-size: $font-size-18px;
+                    }
+                }
+                p {
+                    font-size: $font-size-18px;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
 
 
 
 
 
-// 미디어쿼리 설정
-// 와이드 데스크탑 설정
+
+
+
+
+
+/* 와이드 데스크탑 미디어쿼리 설정 */
 @media (min-width:87.5rem) {
     .util-inner,
     .gnb-inner {

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "S-CoreDream-5Medium";
   src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff") format("woff");
@@ -10,6 +11,12 @@
   font-weight: 400;
   font-style: normal;
 }
+/* 폰트 정보
+font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+font-family: 'S-CoreDream-5Medium'; 
+*/
+/* 변수설정 */
+/* 전체설정 */
 * {
   margin: 0;
   padding: 0;
@@ -33,12 +40,15 @@ img {
   vertical-align: bottom;
 }
 
+/* header 설정 */
 header {
   font-size: 1rem;
   width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
+  /* util 설정 */
+  /* gnb 설정 */
 }
 header .util {
   width: 100%;
@@ -132,26 +142,56 @@ header .gnb .gnb-inner ul {
 header .gnb .gnb-inner ul li {
   padding: 0.313rem 1.375rem;
 }
+header .gnb .gnb-inner .menu-btn {
+  width: 3rem;
+  height: 3rem;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+header .gnb .gnb-inner .menu-btn i {
+  font-size: 1.5rem;
+}
+
+/* header 미디어쿼리 */
+@media (min-width: 48.063rem) and (max-width: 75rem) {
+  header .gnb .gnb-inner ul {
+    display: none;
+  }
+  header .gnb .gnb-inner .menu-btn {
+    display: flex;
+  }
+}
+@media (max-width: 48rem) {
+  header .util .util-inner .user {
+    display: none;
+  }
+  header .gnb .gnb-inner ul {
+    display: none;
+  }
+  header .gnb .gnb-inner .menu-btn {
+    display: flex;
+  }
+}
+/* main 설정 */
 .main {
   width: 100%;
+  /* hero 설정 */
 }
 .main .hero {
   width: 100%;
   height: 40.813rem;
   margin-top: 7.563rem;
   position: relative;
-  background-color: red;
-}
-.main .hero .hero-img {
   background-image: url("imgs/hero-img-1.png");
   background-repeat: no-repeat;
   background-position: center center;
-  height: 40.813rem;
 }
 .main .hero .txtBox {
-  background-color: red;
   color: #fff;
   font-family: "S-CoreDream-4Regular", sans-serif;
+  width: 60%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -160,6 +200,7 @@ header .gnb .gnb-inner ul li {
 .main .hero .txtBox h2 {
   font-size: 1.875rem;
   margin-bottom: 1.875rem;
+  text-align: center;
 }
 .main .hero .txtBox h2 span {
   font-size: 2.375rem;
@@ -185,7 +226,7 @@ header .gnb .gnb-inner ul li {
   border: 2px solid #004EA2;
   border-radius: 3.125rem;
   position: relative;
-  width: 37.25rem;
+  width: 60%;
   height: 3.125rem;
   box-sizing: content-box;
   display: flex;
@@ -194,7 +235,7 @@ header .gnb .gnb-inner ul li {
 .main .hero .txtBox .search .search-bar input {
   all: unset;
   color: #0d0d0d;
-  width: 30.375rem;
+  width: 80%;
   margin-left: 1.875rem;
 }
 .main .hero .txtBox .search .search-bar button {
@@ -258,7 +299,155 @@ header .gnb .gnb-inner ul li {
   color: #fff;
   transition: all 0.3s;
 }
+.main .hero .arrowBox {
+  width: 100%;
+  height: 5rem;
+  position: absolute;
+  top: 17.875rem;
+}
+.main .hero .arrowBox .arrow {
+  transition: all 0.3s;
+}
+.main .hero .arrowBox .arrow.left {
+  background-image: url(imgs/hero-arrow.png);
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  top: 0;
+  left: 5%;
+  cursor: pointer;
+}
+.main .hero .arrowBox .arrow.left:hover {
+  transform: translateX(-1rem);
+}
+.main .hero .arrowBox .arrow.right {
+  background-image: url(imgs/hero-arrow.png);
+  background-position: -5rem center;
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  top: 0;
+  right: 5%;
+  cursor: pointer;
+}
+.main .hero .arrowBox .arrow.right:hover {
+  transform: translateX(1rem);
+}
+.main .hero .pageBox {
+  font-family: "S-CoreDream-4Regular", sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 3rem;
+  right: 10%;
+}
+.main .hero .pageBox span {
+  font-size: 1rem;
+}
+.main .hero .pageBox span b {
+  font-size: 1.375rem;
+  margin-right: 0.313rem;
+}
+.main .hero .pageBox p {
+  font-size: 1.375rem;
+  margin-left: 1rem;
+}
 
+/* main 미디어쿼리 */
+@media (min-width: 48.063rem) and (max-width: 75rem) {
+  .main {
+    /* hero 미디어쿼리 */
+  }
+  .main .hero .txtBox .search .search-bar {
+    width: 80%;
+  }
+  .main .hero .txtBox .recommend {
+    flex-direction: column;
+  }
+  .main .hero .txtBox .recommend span {
+    text-align: center;
+  }
+  .main .hero .txtBox .recommend ul {
+    flex-direction: column;
+  }
+  .main .hero .txtBox .recommend ul li {
+    text-align: center;
+    margin: 0.15rem 0.313rem;
+  }
+}
+@media (max-width: 48rem) {
+  .main {
+    /* hero 미디어쿼리 */
+  }
+  .main .hero .txtBox h2 {
+    font-size: 1.625rem;
+  }
+  .main .hero .txtBox h2 span {
+    font-size: 1.875rem;
+  }
+  .main .hero .txtBox p {
+    font-size: 1.063rem;
+  }
+  .main .hero .txtBox .search h3 {
+    font-size: 1.25rem;
+  }
+  .main .hero .txtBox .search .search-bar {
+    width: 100%;
+  }
+  .main .hero .txtBox .search .search-bar input {
+    font-size: 0.875rem;
+    margin-left: 1.5rem;
+  }
+  .main .hero .txtBox .recommend {
+    flex-direction: column;
+  }
+  .main .hero .txtBox .recommend ul li {
+    margin: 0.1rem 0.313rem;
+    text-align: center;
+  }
+  .main .hero .txtBox .recommend ul li a {
+    font-size: 1rem;
+  }
+  .main .hero .txtBox .recommend span {
+    text-align: center;
+  }
+  .main .hero .txtBox .recommend ul {
+    flex-direction: column;
+  }
+  .main .hero .arrowBox .arrow.left {
+    transform: scale(0.5);
+    left: -2%;
+  }
+  .main .hero .arrowBox .arrow.left:hover {
+    transform: scale(0.5);
+  }
+  .main .hero .arrowBox .arrow.right {
+    transform: scale(0.5);
+    right: -2%;
+  }
+  .main .hero .arrowBox .arrow.right:hover {
+    transform: scale(0.5);
+  }
+  .main .hero .pageBox {
+    flex-direction: column;
+    bottom: 1rem;
+    right: 4%;
+  }
+  .main .hero .pageBox span {
+    font-size: 0.875rem;
+  }
+  .main .hero .pageBox span b {
+    font-size: 1.125rem;
+  }
+  .main .hero .pageBox p {
+    font-size: 1.125rem;
+    margin-left: 0;
+  }
+}
+/* 와이드 데스크탑 미디어쿼리 설정 */
 @media (min-width: 87.5rem) {
   .util-inner,
   .gnb-inner {
