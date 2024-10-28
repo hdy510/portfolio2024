@@ -8,11 +8,15 @@
     <script src="https://kit.fontawesome.com/fb97202f89.js" crossorigin="anonymous"></script>
     <!-- pretendard font -->
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <!-- swiper css cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- 외부 stylesheet -->
     <link rel="stylesheet" href="style.css">
     <!-- 제이쿼리 cdn -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="jquery-3.7.1.min.js"></script>
+    <!-- swiper js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- 외부 js -->
     <script src="js.js"></script>
 </head>
@@ -37,9 +41,9 @@
                 </div>
             </div>
         </div>
-        <div class="gnb">
+        <nav class="gnb">
             <div class="gnb-inner">
-                <h1><a href="">국립공원공단</a></h1>
+                <h1><a href="#none">국립공원공단</a></h1>
                 <ul>
                     <li><a href="#none">국립공원탐방</a></li>
                     <li><a href="#none">국립공원예약</a></li>
@@ -53,10 +57,21 @@
                     <i class="fa-solid fa-bars"></i>
                 </div>
             </div>
-        </div>
+        </nav>
     </header>
     <section class="main">
         <div class="hero">
+            <div class="swiper heroSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="imgs/hero-img-1.png" alt="히어로이미지봄"></div>
+                    <div class="swiper-slide"><img src="imgs/hero-img-2.png" alt="히어로이미지여름"></div>
+                    <div class="swiper-slide"><img src="imgs/hero-img-3.png" alt="히어로이미지가을"></div>
+                    <div class="swiper-slide"><img src="imgs/hero-img-4.png" alt="히어로이미지겨울"></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
             <div class="txtBox">
                 <h2>다음 세대에 물려줄 아름다운 유산, <span>국립공원</span></h2>
                 <p>자연을 보전하여 건강하고 행복한 미래를 열어갑시다</p>
@@ -76,15 +91,12 @@
                     </ul>
                 </div>
             </div>
-            <div class="arrowBox">
-                <i class="arrow left"></i>
-                <i class="arrow right"></i>
-            </div>
             <div class="pageBox">
                 <span><b>1</b>/4</span>
                 <p>설악산</p>
             </div>
         </div>
+        <div class="more-bg-sky"></div>
         <div class="layout">
             <div class="group-left">
                 <div class="serviceBox">
@@ -178,47 +190,37 @@
                 <div class="wrapBox1">
                     <div class="wrapBox1-left">
                         <div class="volunteerBox">
-                            <div class="volunteerBox-inner">
-                                <span>국립공원 자원봉사</span>
-                                <img src="imgs/volunteer-img.png" alt="국립공원 자원봉사">
-                            </div>
+                            <span>국립공원 자원봉사</span>
+                            <img src="imgs/volunteer-img.png" alt="국립공원 자원봉사">
                         </div>
                         <div class="liveBox">
-                            <div class="liveBox-inner">
-                                <span>국립공원 실시간 영상보기</span>
-                                <img src="imgs/live-img.png" alt="국립공원 실시간 영상보기">
-                            </div>
+                            <span>국립공원 실시간 영상보기</span>
+                            <img src="imgs/live-img.png" alt="국립공원 실시간 영상보기">
                         </div>
                     </div>
                     <div class="snsBox">
                         <div class="snsBox-inner">
-                            <p>국립공원 SNS와 함께하세요</p>
+                            <h4>국립공원 SNS와 함께하세요</h4>
                             <ul>
-                                <li><a href="#none"><i></i></a></li>
-                                <li><a href="#none"><i></i></a></li>
-                                <li><a href="#none"><i></i></a></li>
-                                <li><a href="#none"><i></i></a></li>
-                                <li><a href="#none"><i></i></a></li>
+                                <li><a href="#none"><span>유튜브</span><i></i></a></li>
+                                <li><a href="#none"><span>유튜브</span><i></i></a></li>
+                                <li><a href="#none"><span>유튜브</span><i></i></a></li>
+                                <li><a href="#none"><span>유튜브</span><i></i></a></li>
+                                <li><a href="#none"><span>유튜브</span><i></i></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="wrapBox2">
-                    <div class="promoBox">
-                        <div class="promoBox-inner">
-                            <div class="thumbnail"></div>
-                        </div>
+                    <div class="promoBox swiper">
+                        
                     </div>
                     <div class="webtoonBox">
-                        <div class="webtoonBox-inner">
-                            <img src="imgs/webtoon-img.png" alt="웹툰이미지">
-                            <div class="title">
-                                <div class="dimmed"></div>
-                                <div class="txtBox">
-                                    <h4>웹툰</h4>
-                                    <p>다도해해상국립공원 도서탐구 8편</p>
-                                </div>
-                            </div>
+                        <img src="imgs/webtoon-img.png" alt="웹툰">
+                        <div class="txtBox">
+                            <div class="dimmed"></div>
+                            <h4>웹툰</h4>
+                            <p>다도해해상국립공원 도서탐구 8편</p>
                         </div>
                     </div>
                 </div>
@@ -336,9 +338,74 @@
                 </div>
             </div>
             <div class="group-bottom">
-                <div class="moreBox">13</div>
+                <div class="moreBox">
+                    <div class="object"></div>
+                    <h3>국립공원 알아보기</h3>
+                    <ul class="card">
+                        <li>
+                            <h4><i class="fa-solid fa-seedling"></i>안전한 국립공원</h4>
+                            <ul class="list">
+                                <li><a href="#none">입산시간지정제</a></li>
+                                <li><a href="#none">국민신고방(불법산행)</a></li>
+                                <li><a href="#none">탐방로 혼잡도 안내</a></li>
+                                <li><a href="#none">반달가슴곰 등 목격·피해 제보</a></li>
+                                <li><a href="#none">암(빙)벽 등반 이용 신청</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4><i class="fa-solid fa-seedling"></i>아름다운 국립공원</h4>
+                            <ul class="list">
+                                <li><a href="#none">국립공원 100경</a></li>
+                                <li><a href="#none">국립공원 사람들</a></li>
+                                <li><a href="#none">블로그마을</a></li>
+                                <li><a href="#none">국립공원웹툰</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4><i class="fa-solid fa-seedling"></i>즐거운 국립공원</h4>
+                            <ul class="list">
+                                <li><a href="#none">무장애 탐방로</a></li>
+                                <li><a href="#none">북한산 둘레길</a></li>
+                                <li><a href="#none">태안해변길</a></li>
+                                <li><a href="#none">바다백리길</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4><i class="fa-solid fa-seedling"></i>체험하는 국립공원</h4>
+                            <ul class="list">
+                                <li><a href="#none">탐방안내소</a></li>
+                                <li><a href="#none">체험학습관</a></li>
+                                <li><a href="#none">국립공원 스탬프 투어</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
+    <footer>
+        <div class="footer-inner">
+            <h2>국립공원공단</h2>
+            <div class="txtBox">
+                <div class="nav">
+                    <ul>
+                        <li><a href="#none">공단소개</a></li>
+                        <li><a href="#none">이용안내</a></li>
+                        <li><a href="#none">개인정보처리방침</a></li>
+                        <li><a href="#none">저작권정책</a></li>
+                        <li><a href="#none">이메일주소 무단수집거부</a></li>
+                        <li><a href="#none">누리집 개선 제안</a></li>
+                        <li><a href="#none">찾아오시는길</a></li>
+                    </ul>
+                </div>
+                <div class="info">
+                    <p>26466 강원특별자치도 원주시 혁신로 22(반곡동) 국립공원공단 사업자등록번호: 211-82-06541</p>
+                    <p><span>대표전화 (일반문의): 033-769-9300</span><span>고객센터 (예약문의): 1670-9201</span><span>팩스번호 : 033-769-9419</span></p>
+                    <p>Copyright ⓒ Hwang Do Young. All Rights Reserved.</p>
+                    <p>이 사이트는 포트폴리오 제작용 사이트입니다.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

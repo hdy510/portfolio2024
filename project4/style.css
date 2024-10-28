@@ -181,7 +181,9 @@ header .gnb .gnb-inner .menu-btn i {
 /* main 설정 */
 .main {
   width: 100%;
+  position: relative;
   /* hero 설정 */
+  /* 국립공원 알아보기 배경 하늘 설정*/
   /* layout 설정 */
 }
 .main .hero {
@@ -189,12 +191,55 @@ header .gnb .gnb-inner .menu-btn i {
   height: 40.813rem;
   margin-top: 7.563rem;
   position: relative;
-  background-image: url("imgs/hero-img-1.png");
-  background-repeat: no-repeat;
-  background-position: center center;
   /* txtBox 설정 */
-  /* 좌우화살표 설정 */
   /* 배경이미지 페이지 설정 */
+}
+.main .hero .swiper {
+  width: 100%;
+  height: 100%;
+}
+.main .hero .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .hero .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main .hero .heroSwiper {
+  position: absolute;
+  z-index: 1;
+}
+.main .hero .swiper-button-next, .main .hero .swiper-button-prev {
+  background-image: url(imgs/hero-arrows.png);
+  background-repeat: no-repeat;
+  width: 5rem;
+  height: 5rem;
+  transition: all 0.3s;
+}
+.main .hero .swiper-button-next:after, .main .hero .swiper-button-prev:after {
+  font-family: "";
+  content: "";
+}
+.main .hero .swiper-button-next {
+  margin-right: 3rem;
+  background-position: -5rem 0;
+}
+.main .hero .swiper-button-next:hover {
+  transform: translateX(0.725rem);
+}
+.main .hero .swiper-button-prev {
+  margin-left: 3rem;
+}
+.main .hero .swiper-button-prev:hover {
+  transform: translateX(-0.725rem);
 }
 .main .hero .txtBox {
   color: #fff;
@@ -203,6 +248,7 @@ header .gnb .gnb-inner .menu-btn i {
   position: absolute;
   top: 50%;
   left: 50%;
+  z-index: 2;
   transform: translate(-50%, -50%);
   /* 검색 설정 */
   /* 추천검색어 설정 */
@@ -309,42 +355,6 @@ header .gnb .gnb-inner .menu-btn i {
   color: #128edc;
   font-weight: 700;
 }
-.main .hero .arrowBox {
-  width: 100%;
-  height: 5rem;
-  position: absolute;
-  top: 17.875rem;
-}
-.main .hero .arrowBox .arrow {
-  transition: all 0.3s;
-}
-.main .hero .arrowBox .arrow.left {
-  background-image: url(imgs/hero-arrows.png);
-  display: block;
-  width: 5rem;
-  height: 5rem;
-  position: absolute;
-  top: 0;
-  left: 5%;
-  cursor: pointer;
-}
-.main .hero .arrowBox .arrow.left:hover {
-  transform: translateX(-1rem);
-}
-.main .hero .arrowBox .arrow.right {
-  background-image: url(imgs/hero-arrows.png);
-  background-position: -5rem center;
-  display: block;
-  width: 5rem;
-  height: 5rem;
-  position: absolute;
-  top: 0;
-  right: 5%;
-  cursor: pointer;
-}
-.main .hero .arrowBox .arrow.right:hover {
-  transform: translateX(1rem);
-}
 .main .hero .pageBox {
   font-family: "S-CoreDream-4Regular", sans-serif;
   color: #fff;
@@ -365,10 +375,19 @@ header .gnb .gnb-inner .menu-btn i {
   font-size: 1.375rem;
   margin-left: 1rem;
 }
+.main .more-bg-sky {
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(137, 202, 255, 0.2) 100%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
 .main .layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 25rem;
+  grid-template-rows: 1fr 40.188rem;
   gap: 2.813rem;
   margin-top: 4.375rem;
   /* 박스별 제목 (h3) 공통 설정 */
@@ -450,7 +469,6 @@ header .gnb .gnb-inner .menu-btn i {
   background-position: -12rem 3.875rem;
 }
 .main .layout .group-left .newsBox {
-  background-color: #daffcd;
   height: 25rem;
   display: flex;
   flex-direction: column;
@@ -519,214 +537,180 @@ header .gnb .gnb-inner .menu-btn i {
   color: #777;
 }
 .main .layout .group-left .wrapBox1 {
-  background-color: #cdf6ff;
-  height: 18.75rem;
+  height: 21.6rem;
   display: flex;
   /* snsBox 설정*/
 }
 .main .layout .group-left .wrapBox1 .wrapBox1-left {
-  background-color: blue;
   width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
+  padding: 1.5rem 0.75rem 1.5rem 1.5rem;
   /* 자원봉사 설정*/
   /* 실시간영상 설정*/
 }
 .main .layout .group-left .wrapBox1 .wrapBox1-left .volunteerBox {
-  background-color: #ba54b3;
+  border: 1px solid #D7D7D7;
+  border-radius: 1rem;
+  width: 100%;
   height: 50%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-.main .layout .group-left .wrapBox1 .wrapBox1-left .volunteerBox .volunteerBox-inner {
-  background-color: red;
-  width: 93%;
-  height: 79%;
+  margin-bottom: 1.5rem;
   background-color: #fff;
-  border: 0.063rem solid #d7d7d7;
-  border-radius: 0.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0.7rem;
   cursor: pointer;
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-left .volunteerBox .volunteerBox-inner span {
+.main .layout .group-left .wrapBox1 .wrapBox1-left .volunteerBox span {
   font-size: 0;
   color: transparent;
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-left .volunteerBox .volunteerBox-inner img {
-  width: 60%;
+.main .layout .group-left .wrapBox1 .wrapBox1-left .volunteerBox img {
+  width: 70%;
   transition: all 0.3s;
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-left .volunteerBox .volunteerBox-inner:hover img {
+.main .layout .group-left .wrapBox1 .wrapBox1-left .volunteerBox:hover img {
   transform: scale(1.05);
 }
 .main .layout .group-left .wrapBox1 .wrapBox1-left .liveBox {
+  border: 1px solid #D7D7D7;
+  border-radius: 1rem;
+  width: 100%;
   height: 50%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-}
-.main .layout .group-left .wrapBox1 .wrapBox1-left .liveBox .liveBox-inner {
-  width: 93%;
-  height: 79%;
   background-color: #fff;
-  border: 0.063rem solid #d7d7d7;
-  border-radius: 0.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 0.7rem;
   cursor: pointer;
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-left .liveBox .liveBox-inner span {
+.main .layout .group-left .wrapBox1 .wrapBox1-left .liveBox span {
   font-size: 0;
   color: transparent;
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-left .liveBox .liveBox-inner img {
-  width: 74%;
+.main .layout .group-left .wrapBox1 .wrapBox1-left .liveBox img {
+  width: 80%;
   transition: all 0.3s;
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-left .liveBox .liveBox-inner:hover img {
+.main .layout .group-left .wrapBox1 .wrapBox1-left .liveBox:hover img {
   transform: scale(1.05);
 }
 .main .layout .group-left .wrapBox1 .snsBox {
   width: 50%;
   height: 100%;
+  padding: 1.5rem 1.5rem 1.5rem 0.75rem;
+}
+.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #D7D7D7;
+  border-radius: 1rem;
+  background-color: #fff;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner {
-  width: 86%;
-  height: 87%;
-  background-color: #fff;
-  border: 0.063rem solid #d7d7d7;
-  border-radius: 0.75rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner p {
+.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner h4 {
   font-size: 1.25rem;
-  font-weight: 600;
-  margin-top: 1rem;
+  text-align: center;
+  margin-top: 2rem;
 }
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul {
-  width: 58%;
+  width: 59%;
+  height: 80%;
   margin-top: 1rem;
 }
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li {
+  height: 3.125rem;
   float: left;
-  margin: 0.5rem 0.9rem;
+  margin: 0.5rem 1rem;
 }
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(1) a i {
+.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li a {
+  position: relative;
+}
+.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li a span {
+  font-size: 0;
+  position: absolute;
+}
+.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li a i {
   display: block;
   background-image: url(imgs/sns-icon.png);
-  background-position: 0 0;
   width: 3.125rem;
   height: 3.125rem;
+  transition: all 0.3s;
 }
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(2) a i {
-  display: block;
-  background-image: url(imgs/sns-icon.png);
+.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(2) i {
   background-position: -3.75rem 0;
-  width: 3.125rem;
-  height: 3.125rem;
 }
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(3) a i {
-  display: block;
-  background-image: url(imgs/sns-icon.png);
+.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(3) i {
   background-position: -7.5rem 0;
-  width: 3.125rem;
-  height: 3.125rem;
 }
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(4) a i {
-  display: block;
-  background-image: url(imgs/sns-icon.png);
+.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(4) i {
   background-position: -11.25rem 0;
-  width: 3.125rem;
-  height: 3.125rem;
 }
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(5) a i {
-  display: block;
-  background-image: url(imgs/sns-icon.png);
+.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(5) i {
   background-position: -15rem 0;
-  width: 3.125rem;
-  height: 3.125rem;
 }
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:hover a i {
+.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:hover i {
   transform: scale(1.1);
 }
 .main .layout .group-left .wrapBox2 {
   display: flex;
+  padding: 1.5rem;
   /* 홍보이미지 설정*/
   /* 웹툰 설정*/
 }
 .main .layout .group-left .wrapBox2 .promoBox {
+  border: 1px solid #D7D7D7;
+  border-radius: 1rem;
   width: 50%;
   height: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.main .layout .group-left .wrapBox2 .promoBox .promoBox-inner {
-  width: 93%;
-  height: 87%;
-  background-color: #97BEFF;
-  border-radius: 1.25rem;
+  margin-right: 0.75rem;
 }
 .main .layout .group-left .wrapBox2 .webtoonBox {
+  border: 1px solid #D7D7D7;
+  border-radius: 1rem;
   width: 50%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.main .layout .group-left .wrapBox2 .webtoonBox .webtoonBox-inner {
-  width: 86%;
-  height: 87%;
-  background-color: #97BEFF;
-  border-radius: 1.25rem;
+  margin-left: 0.75rem;
   overflow: hidden;
   position: relative;
+  cursor: pointer;
 }
-.main .layout .group-left .wrapBox2 .webtoonBox .webtoonBox-inner img {
+.main .layout .group-left .wrapBox2 .webtoonBox img {
   width: 100%;
+  transition: all 0.3s;
 }
-.main .layout .group-left .wrapBox2 .webtoonBox .webtoonBox-inner .title {
+.main .layout .group-left .wrapBox2 .webtoonBox .txtBox {
+  width: 100%;
+  height: 30%;
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 6.938rem;
-  color: #fff;
+  transition: all 0.3s;
 }
-.main .layout .group-left .wrapBox2 .webtoonBox .webtoonBox-inner .title .dimmed {
+.main .layout .group-left .wrapBox2 .webtoonBox .txtBox .dimmed {
   width: 100%;
   height: 100%;
   background-color: #202020;
   opacity: 0.8;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
 }
-.main .layout .group-left .wrapBox2 .webtoonBox .webtoonBox-inner .title .txtBox {
-  position: absolute;
-  z-index: 2;
-  padding-left: 1.2rem;
-  padding-top: 1rem;
-}
-.main .layout .group-left .wrapBox2 .webtoonBox .webtoonBox-inner .title .txtBox h4 {
+.main .layout .group-left .wrapBox2 .webtoonBox .txtBox h4 {
+  color: #fff;
   font-size: 1.875rem;
-  margin-bottom: 0.75rem;
+  position: absolute;
+  top: 1rem;
+  left: 1.4rem;
 }
-.main .layout .group-left .wrapBox2 .webtoonBox .webtoonBox-inner .title .txtBox p {
+.main .layout .group-left .wrapBox2 .webtoonBox .txtBox p {
+  color: #fff;
   font-size: 1.125rem;
+  position: absolute;
+  top: 4rem;
+  left: 1.4rem;
+}
+.main .layout .group-left .wrapBox2 .webtoonBox:hover img {
+  filter: brightness(0.85);
 }
 .main .layout .group-right {
   /* 실시간 탐방통제정보 설정*/
@@ -1006,39 +990,44 @@ header .gnb .gnb-inner .menu-btn i {
 }
 .main .layout .group-right .galleryBox {
   background-color: #cdffd0;
-  height: 17.5rem;
+  height: 10.5rem;
   border: 1px solid #D1D1D1;
   border-radius: 1.25rem;
   background-color: #fff;
   display: flex;
   margin-bottom: 3.125rem;
+  cursor: pointer;
 }
 .main .layout .group-right .galleryBox img {
   border-radius: 1.25rem;
+  transition: all 0.3s;
 }
 .main .layout .group-right .galleryBox .txtBox {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
   height: 100%;
+  padding-left: 2rem;
+  position: relative;
 }
 .main .layout .group-right .galleryBox .txtBox h3 {
-  text-align: center;
-  margin-top: 3.375rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
 .main .layout .group-right .galleryBox .txtBox p {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: #9D9D9D;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .main .layout .group-right .galleryBox .txtBox span {
   color: #fff;
   background-color: #3F3F3F;
   border: 1px solid #3f3f3f;
   border-radius: 0.75rem;
-  padding: 1.125rem 2.125rem;
+  padding: 1.125rem 1.625rem;
+  position: absolute;
+  right: 0;
+  bottom: 1.2rem;
+  margin-right: 1.2rem;
   cursor: pointer;
   transition: all 0.3s;
 }
@@ -1093,7 +1082,85 @@ header .gnb .gnb-inner .menu-btn i {
 }
 .main .layout .group-bottom {
   grid-column: 1/span 2;
+  height: 40.188rem;
 }
+.main .layout .group-bottom .moreBox {
+  height: 40.188rem;
+  position: relative;
+}
+.main .layout .group-bottom .moreBox .object {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url(imgs/more-bg.png);
+  background-position: 0 bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.main .layout .group-bottom .moreBox .card {
+  display: flex;
+  justify-content: flex-end;
+  height: 2.5rem;
+  margin-top: 4rem;
+}
+.main .layout .group-bottom .moreBox .card > li {
+  width: 19.25rem;
+  height: auto;
+  padding: 2.5rem;
+  border: 1px solid #d1d1d1;
+  border-radius: 0.625rem;
+  background-color: #fff;
+  margin-left: 3.15rem;
+  box-shadow: 0 7px 12px rgba(150, 161, 174, 0.4);
+  transition: all 0.3s;
+}
+.main .layout .group-bottom .moreBox .card > li:nth-child(1) {
+  height: 18.875rem;
+}
+.main .layout .group-bottom .moreBox .card > li:nth-child(2) {
+  margin-top: 4rem;
+  height: 16.875rem;
+}
+.main .layout .group-bottom .moreBox .card > li:nth-child(3) {
+  margin-top: 8rem;
+  height: 16.875rem;
+}
+.main .layout .group-bottom .moreBox .card > li:nth-child(4) {
+  margin-top: 12rem;
+  height: 14rem;
+}
+.main .layout .group-bottom .moreBox .card > li:hover {
+  transform: translateY(-0.6rem);
+}
+.main .layout .group-bottom .moreBox .card > li h4 {
+  color: #07a33e;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+.main .layout .group-bottom .moreBox .card > li h4 i {
+  margin-right: 1.25rem;
+}
+.main .layout .group-bottom .moreBox .card > li .list {
+  padding-left: 0.2rem;
+}
+.main .layout .group-bottom .moreBox .card > li .list li {
+  padding: 0.375rem 0;
+  margin: 0.375rem 0;
+  cursor: pointer;
+}
+.main .layout .group-bottom .moreBox .card > li .list li a {
+  display: block;
+  color: #808080;
+}
+.main .layout .group-bottom .moreBox .card > li .list li a:hover {
+  font-weight: bold;
+}
+
 /* main 미디어쿼리 */
 @media (min-width: 48.063rem) and (max-width: 75rem) {
   .main {
@@ -1193,6 +1260,63 @@ header .gnb .gnb-inner .menu-btn i {
     grid-column: 1;
   }
 }
+/* footer 설정*/
+footer {
+  background-color: #004EA2;
+  height: 20.875rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .footer-inner {
+  display: flex;
+}
+footer .footer-inner h2 {
+  margin-right: 3rem;
+  background-color: #fff;
+  display: inline;
+  width: 12.75rem;
+  height: 3.5rem;
+  font-size: 0;
+  background-image: url(imgs/logo.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 4.625rem;
+  cursor: pointer;
+}
+footer .footer-inner .txtBox {
+  margin-top: 1rem;
+}
+footer .footer-inner .txtBox .nav {
+  margin-bottom: 2.375rem;
+}
+footer .footer-inner .txtBox .nav ul {
+  display: flex;
+}
+footer .footer-inner .txtBox .nav ul li a {
+  display: block;
+  width: 100%;
+  padding-left: 1.125rem;
+  color: #fff;
+}
+footer .footer-inner .txtBox .nav ul li a::after {
+  content: "|";
+  margin-left: 1.125rem;
+}
+footer .footer-inner .txtBox .nav ul li:nth-child(1) a {
+  padding-left: 0;
+}
+footer .footer-inner .txtBox .nav ul li:last-child a::after {
+  content: "";
+}
+footer .footer-inner .txtBox .info p {
+  margin-bottom: 0.563rem;
+}
+footer .footer-inner .txtBox .info p span {
+  margin-right: 1.5rem;
+}
+
 /* 와이드 데스크탑 미디어쿼리 설정 */
 @media (min-width: 87.5rem) {
   .util-inner,

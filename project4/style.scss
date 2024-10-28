@@ -215,15 +215,59 @@ header {
 /* main 설정 */
 .main {
     width: 100%;
+    position: relative;
     /* hero 설정 */
     .hero {
         width: 100%;
         height: 40.813rem;
         margin-top: 7.563rem;
         position: relative;
-        background-image: url('imgs/hero-img-1.png');
-        background-repeat: no-repeat;
-        background-position: center center;
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .heroSwiper {
+            position: absolute;
+            z-index: 1;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            background-image: url(imgs/hero-arrows.png);
+            background-repeat: no-repeat;
+            width: 5rem;
+            height: 5rem;
+            transition: all 0.3s;
+        }
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-family: "";
+            content: "";
+        }
+        .swiper-button-next {
+            margin-right: 3rem;
+            background-position: -5rem 0;
+            &:hover {
+                transform: translateX(0.725rem);
+            }
+        }
+        .swiper-button-prev {
+            margin-left: 3rem;
+            &:hover {
+                transform: translateX(-0.725rem);
+            }
+        }
         /* txtBox 설정 */
         .txtBox {
             color: #fff;
@@ -232,6 +276,7 @@ header {
             position: absolute;
             top: 50%;
             left: 50%;
+            z-index: 2;
             transform: translate(-50%, -50%);
             h2 {
                 font-size: $font-size-30px;
@@ -338,43 +383,6 @@ header {
                 }
             }
         }
-        /* 좌우화살표 설정 */
-        .arrowBox {
-            width: 100%;
-            height: 5rem;
-            position: absolute;
-            top: 17.875rem;
-            .arrow {
-                transition: all 0.3s;
-                &.left {
-                    background-image: url(imgs/hero-arrows.png);
-                    display: block;
-                    width: 5rem;
-                    height: 5rem;
-                    position: absolute;
-                    top: 0;
-                    left: 5%;
-                    cursor: pointer;
-                    &:hover {
-                        transform: translateX(-1rem);
-                    }
-                }
-                &.right {
-                    background-image: url(imgs/hero-arrows.png);
-                    background-position: -5rem center;
-                    display: block;
-                    width: 5rem;
-                    height: 5rem;
-                    position: absolute;
-                    top: 0;
-                    right: 5%;
-                    cursor: pointer;
-                    &:hover {
-                        transform: translateX(1rem);
-                    }
-                }
-            }
-        }
         /* 배경이미지 페이지 설정 */
         .pageBox {
             font-family: $font-family-scoredream-4Regular;
@@ -397,11 +405,21 @@ header {
             }
         }
     }
+    /* 국립공원 알아보기 배경 하늘 설정*/
+    .more-bg-sky {
+        width: 100%;
+        height: 500px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.2) 00%, rgba(137,202,255,0.2) 100%);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
     /* layout 설정 */
     .layout {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 25rem;
+        grid-template-rows: 1fr 40.188rem;
         gap: 2.813rem;
         margin-top: 4.375rem;
         > div {
@@ -495,7 +513,7 @@ header {
             }
             /* 새로운 소식 설정*/
             .newsBox {
-                background-color: #daffcd;
+                // background-color: #daffcd;
                 height: 25rem;
                 display: flex;
                 flex-direction: column;
@@ -565,174 +583,133 @@ header {
             }
             /* wrapBox1 설정*/
             .wrapBox1 {
-                background-color: #cdf6ff;
-                height: 18.75rem;
+                // background-color: #cdf6ff;
+                height: 21.6rem;
                 display: flex;
                 .wrapBox1-left {
-                    background-color: blue;
+                    // background-color: blue;
                     width: 50%;
                     height: 100%;
                     display: flex;
                     flex-direction: column;
+                    padding: 1.5rem 0.75rem 1.5rem 1.5rem;
                     /* 자원봉사 설정*/
                     .volunteerBox {
-                        background-color: #ba54b3;
+                        border: 1px solid #D7D7D7;
+                        border-radius: 1rem;
+                        width: 100%;
                         height: 50%;
+                        margin-bottom: 1.5rem;
+                        background-color: #fff;
                         display: flex;
-                        justify-content: flex-end;
-                        align-items: flex-end;
-                        .volunteerBox-inner {
-                            background-color: red;
-                            width: 93%;
-                            height: 79%;
-                            background-color: #fff;
-                            border: 0.063rem solid #d7d7d7;
-                            border-radius: 0.75rem;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            margin-bottom: 0.7rem;
-                            cursor: pointer;
-                            span {
-                                font-size: 0;
-                                color: transparent;
-                            }
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        span {
+                            font-size: 0;
+                            color: transparent;
+                        }
+                        img {
+                            width: 70%;
+                            transition: all 0.3s;
+                        }
+                        &:hover {
                             img {
-                                width: 60%;
-                                transition: all 0.3s;
-                            }
-                            &:hover {
-                                img {
-                                    transform: scale(1.05);
-                                }
+                                transform: scale(1.05);
                             }
                         }
                     }
                     /* 실시간영상 설정*/
                     .liveBox {
-                        // background-color: #cdffda;
+                        border: 1px solid #D7D7D7;
+                        border-radius: 1rem;
+                        width: 100%;
                         height: 50%;
+                        background-color: #fff;
                         display: flex;
-                        justify-content: flex-end;
-                        align-items: flex-start;
-                        .liveBox-inner {
-                            width: 93%;
-                            height: 79%;
-                            background-color: #fff;
-                            border: 0.063rem solid #d7d7d7;
-                            border-radius: 0.75rem;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            margin-top: 0.7rem;
-                            cursor: pointer;
-                            span {
-                                font-size: 0;
-                                color: transparent;
-                            }
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        span {
+                            font-size: 0;
+                            color: transparent;
+                        }
+                        img {
+                            width: 80%;
+                            transition: all 0.3s;
+                        }
+                        &:hover {
                             img {
-                                width: 74%;
-                                transition: all 0.3s;
-                            }
-                            &:hover {
-                                img {
-                                    transform: scale(1.05);
-                                }
+                                transform: scale(1.05);
                             }
                         }
                     }
                 }
                 /* snsBox 설정*/
                 .snsBox {
-                    // background-color: #285661;
                     width: 50%;
                     height: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    padding: 1.5rem 1.5rem 1.5rem 0.75rem;
                     .snsBox-inner {
-                        width: 86%;
-                        height: 87%;
+                        width: 100%;
+                        height: 100%;
+                        border: 1px solid #D7D7D7;
+                        border-radius: 1rem;
                         background-color: #fff;
-                        border: 0.063rem solid #d7d7d7;
-                        border-radius: 0.75rem;
                         display: flex;
                         flex-direction: column;
+                        justify-content: center;
                         align-items: center;
-                        p {
+                        h4 {
                             font-size: $font-size-20px;
-                            font-weight: 600;
-                            margin-top: 1rem;
+                            text-align: center;
+                            margin-top: 2rem;
                         }
                         ul {
-                            width: 58%;
+                            width: 59%;
+                            height: 80%;
                             margin-top: 1rem;
                             li {
+                                height: 3.125rem;
                                 float: left;
-                                margin: 0.5rem 0.9rem;
+                                margin: 0.5rem 1rem;
                                 a {
-                                    i {}
-                                }
-                                &:nth-child(1) {
-                                    a {
-                                        i {
-                                            display: block;
-                                            background-image: url(imgs/sns-icon.png);
-                                            background-position: 0 0;
-                                            width: 3.125rem;
-                                            height: 3.125rem;
-                                        }
+                                    position: relative;
+                                    span {
+                                        font-size: 0;
+                                        position: absolute;
+                                    }
+                                    i {
+                                        display: block;
+                                        background-image: url(imgs/sns-icon.png);
+                                        width: 3.125rem;
+                                        height: 3.125rem;
+                                        transition: all 0.3s;
                                     }
                                 }
                                 &:nth-child(2) {
-                                    a {
-                                        i {
-                                            display: block;
-                                            background-image: url(imgs/sns-icon.png);
-                                            background-position: -3.75rem 0;
-                                            width: 3.125rem;
-                                            height: 3.125rem;
-                                        }
+                                    i {
+                                        background-position: -3.75rem 0;
                                     }
                                 }
                                 &:nth-child(3) {
-                                    a {
-                                        i {
-                                            display: block;
-                                            background-image: url(imgs/sns-icon.png);
-                                            background-position: -7.5rem 0;
-                                            width: 3.125rem;
-                                            height: 3.125rem;
-                                        }
+                                    i {
+                                        background-position: -7.5rem 0;
                                     }
                                 }
                                 &:nth-child(4) {
-                                    a {
-                                        i {
-                                            display: block;
-                                            background-image: url(imgs/sns-icon.png);
-                                            background-position: -11.25rem 0;
-                                            width: 3.125rem;
-                                            height: 3.125rem;
-                                        }
+                                    i {
+                                        background-position: -11.25rem 0;
                                     }
                                 }
                                 &:nth-child(5) {
-                                    a {
-                                        i {
-                                            display: block;
-                                            background-image: url(imgs/sns-icon.png);
-                                            background-position: -15rem 0;
-                                            width: 3.125rem;
-                                            height: 3.125rem;
-                                        }
+                                    i {
+                                        background-position: -15rem 0;
                                     }
                                 }
                                 &:hover {
-                                    a {
-                                        i {
-                                            transform: scale(1.1);
-                                        }
+                                    i {
+                                        transform: scale(1.1);
                                     }
                                 }
                             }
@@ -743,71 +720,60 @@ header {
             /* wrapBox2 설정*/
             .wrapBox2 {
                 // background-color: #ffcdfc;
-                // height: 25rem;
                 display: flex;
+                padding: 1.5rem;
                 /* 홍보이미지 설정*/
                 .promoBox {
+                    border: 1px solid #D7D7D7;
+                    border-radius: 1rem;
                     width: 50%;
                     height: 100%;
-                    display: flex;
-                    justify-content: flex-end;
-                    align-items: center;
-                    .promoBox-inner {
-                        width: 93%;
-                        height: 87%;
-                        background-color: #97BEFF;
-                        border-radius: 1.25rem;
-                        .thumbnail {}
-                    }
+                    margin-right: 0.75rem;
                 }
                 /* 웹툰 설정*/
                 .webtoonBox {
-                    // background-color: #7dff7b;
+                    border: 1px solid #D7D7D7;
+                    border-radius: 1rem;
                     width: 50%;
                     height: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    .webtoonBox-inner {
-                        width: 86%;
-                        height: 87%;
-                        background-color: #97BEFF;
-                        border-radius: 1.25rem;
-                        overflow: hidden;
-                        position: relative;
-                        img {
+                    margin-left: 0.75rem;
+                    overflow: hidden;
+                    position: relative;
+                    cursor: pointer;
+                    img {
+                        width: 100%;
+                        transition: all 0.3s;
+                    }
+                    .txtBox {
+                        width: 100%;
+                        height: 30%;
+                        position: absolute;
+                        bottom: 0;
+                        transition: all 0.3s;
+                        .dimmed {
                             width: 100%;
+                            height: 100%;
+                            background-color: #202020;
+                            opacity: 0.8;
                         }
-                        .title {
-                            position: absolute;
-                            bottom: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 6.938rem;
+                        h4 {
                             color: #fff;
-                            .dimmed {
-                                width: 100%;
-                                height: 100%;
-                                background-color: #202020;
-                                opacity: 0.8;
-                                position: absolute;
-                                bottom: 0;
-                                left: 0;
-                                z-index: 1;
-                            }
-                            .txtBox {
-                                position: absolute;
-                                z-index: 2;
-                                padding-left: 1.2rem;
-                                padding-top: 1rem;
-                                h4 {
-                                    font-size: $font-size-30px;
-                                    margin-bottom: 0.75rem;
-                                }
-                                p {
-                                    font-size: $font-size-18px;
-                                }
-                            }
+                            font-size: $font-size-30px;
+                            position: absolute;
+                            top: 1rem;
+                            left: 1.4rem;
+                        }
+                        p {
+                            color: #fff;
+                            font-size: $font-size-18px;
+                            position: absolute;
+                            top: 4rem;
+                            left: 1.4rem;
+                        }
+                    }
+                    &:hover {
+                        img {
+                            filter: brightness(0.85);
                         }
                     }
                 }
@@ -1027,37 +993,42 @@ header {
             /* 국립공원 사진전 설정*/
             .galleryBox {
                 background-color: #cdffd0;
-                height: 17.5rem;
+                height: 10.5rem;
                 border: 1px solid #D1D1D1;
                 border-radius: 1.25rem;
                 background-color: #fff;
                 display: flex;
                 margin-bottom: 3.125rem;
+                cursor: pointer;
                 img {
                     border-radius: 1.25rem;
+                    transition: all 0.3s;
                 }
                 .txtBox {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
                     width: 100%;
                     height: 100%;
+                    padding-left: 2rem;
+                    position: relative;
                     h3 {
-                        text-align: center;
-                        margin-top: 3.375rem;
+                        margin-top: 2.5rem;
+                        margin-bottom: 1rem;
                     }
                     p {
-                        font-size: $font-size-20px;
+                        font-size: $font-size-18px;
                         color: #9D9D9D;
                         font-weight: 600;
-                        margin-bottom: 2rem;
+                        margin-bottom: 1rem;
                     }
                     span {
                         color: #fff;
                         background-color: #3F3F3F;
                         border: 1px solid #3f3f3f;
                         border-radius: 0.75rem;
-                        padding: 1.125rem 2.125rem;
+                        padding: 1.125rem 1.625rem;
+                        position: absolute;
+                        right: 0;
+                        bottom: 1.2rem;
+                        margin-right: 1.2rem;
                         cursor: pointer;
                         transition: all 0.3s;
                         &:hover {
@@ -1121,7 +1092,84 @@ header {
         /* group-bottom 설정*/
         .group-bottom {
             grid-column: 1 / span 2;
-            .moreBox {}
+            height: 40.188rem;
+            .moreBox {
+                height: 40.188rem;
+                position: relative;
+                .object {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    background-image: url(imgs/more-bg.png);
+                    background-position: 0 bottom;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                h3 {}
+                .card {
+                    display: flex;
+                    justify-content: flex-end;
+                    height: 2.5rem;
+                    margin-top: 4rem;
+                    > li {
+                        width: 19.25rem;
+                        height: auto;
+                        padding: 2.5rem;
+                        border: 1px solid #d1d1d1;
+                        border-radius: 0.625rem;
+                        background-color: #fff;
+                        margin-left: 3.15rem;
+                        box-shadow: 0 7px 12px rgba(150, 161, 174, 0.4);
+                        transition: all 0.3s;
+                        &:nth-child(1) {
+                            height: 18.875rem;
+                        }
+                        &:nth-child(2) {
+                            margin-top: 4rem;
+                            height: 16.875rem;
+                        }
+                        &:nth-child(3) {
+                            margin-top: 8rem;
+                            height: 16.875rem;
+                        }
+                        &:nth-child(4) {
+                            margin-top: 12rem;
+                            height: 14rem;
+                        }
+                        &:hover {
+                            transform: translateY(-0.6rem);
+                        }
+                        h4 {
+                            color: #07a33e;
+                            font-size: $font-size-20px;
+                            font-weight: bold;
+                            margin-bottom: 1.5rem;
+                            cursor: pointer;
+                            i {
+                                margin-right: 1.25rem;
+                            }
+                        }
+                        .list {
+                            padding-left: 0.2rem;
+                            li {
+                                padding: 0.375rem 0;
+                                margin: 0.375rem 0;
+                                cursor: pointer;
+                                a {
+                                    display: block;
+                                    color: #808080;
+                                    &:hover {
+                                        font-weight: bold;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 } 
@@ -1238,6 +1286,68 @@ header {
             grid-template-rows: 1fr 1fr 1fr;
             .group-bottom {
                 grid-column: 1;
+            }
+        }
+    }
+}
+/* footer 설정*/
+footer {
+    background-color: $color-blue-main;
+    height: 20.875rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .footer-inner {
+        display: flex;
+        h2 {
+            margin-right: 3rem;
+            background-color: #fff;
+            display: inline;
+            width: 12.75rem;
+            height: 3.5rem;
+            font-size: 0;
+            background-image: url(imgs/logo.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-radius: 4.625rem;
+            cursor: pointer;
+        }
+        .txtBox {
+            margin-top: 1rem;
+            .nav {
+                margin-bottom: 2.375rem;
+                ul {
+                    display: flex;
+                    li {
+                        a {
+                            display: block;
+                            width: 100%;
+                            padding-left: 1.125rem;
+                            color: #fff;
+                            &::after {
+                                content: '|';
+                                margin-left: 1.125rem;
+                            }
+                        }
+                        &:nth-child(1) {
+                            a {
+                                padding-left: 0;
+                            }
+                        }
+                        &:last-child a::after {
+                            content: '';
+                        }
+                    }
+                }
+            }
+            .info {
+                p {
+                    margin-bottom: 0.563rem;
+                    span {
+                        margin-right: 1.5rem;
+                    }
+                }
             }
         }
     }
