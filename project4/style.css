@@ -450,6 +450,7 @@ header .gnb .gnb-inner .menu-btn i {
   background-position: -12rem 3.875rem;
 }
 .main .layout .group-left .newsBox {
+  background-color: #daffcd;
   height: 25rem;
   display: flex;
   flex-direction: column;
@@ -518,11 +519,13 @@ header .gnb .gnb-inner .menu-btn i {
   color: #777;
 }
 .main .layout .group-left .wrapBox1 {
+  background-color: #cdf6ff;
   height: 18.75rem;
   display: flex;
   /* snsBox 설정*/
 }
 .main .layout .group-left .wrapBox1 .wrapBox1-left {
+  background-color: blue;
   width: 50%;
   height: 100%;
   display: flex;
@@ -531,12 +534,14 @@ header .gnb .gnb-inner .menu-btn i {
   /* 실시간영상 설정*/
 }
 .main .layout .group-left .wrapBox1 .wrapBox1-left .volunteerBox {
+  background-color: #ba54b3;
   height: 50%;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 }
 .main .layout .group-left .wrapBox1 .wrapBox1-left .volunteerBox .volunteerBox-inner {
+  background-color: red;
   width: 93%;
   height: 79%;
   background-color: #fff;
@@ -549,16 +554,15 @@ header .gnb .gnb-inner .menu-btn i {
   cursor: pointer;
 }
 .main .layout .group-left .wrapBox1 .wrapBox1-left .volunteerBox .volunteerBox-inner span {
-  font-size: 1.625rem;
-  font-weight: 600;
-  margin: 0 1rem;
+  font-size: 0;
+  color: transparent;
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-left .volunteerBox .volunteerBox-inner i {
-  display: block;
-  background-image: url(imgs/service-icons.png);
-  background-position: -4rem 3.875rem;
-  width: 4rem;
-  height: 3.875rem;
+.main .layout .group-left .wrapBox1 .wrapBox1-left .volunteerBox .volunteerBox-inner img {
+  width: 60%;
+  transition: all 0.3s;
+}
+.main .layout .group-left .wrapBox1 .wrapBox1-left .volunteerBox .volunteerBox-inner:hover img {
+  transform: scale(1.05);
 }
 .main .layout .group-left .wrapBox1 .wrapBox1-left .liveBox {
   height: 50%;
@@ -584,6 +588,10 @@ header .gnb .gnb-inner .menu-btn i {
 }
 .main .layout .group-left .wrapBox1 .wrapBox1-left .liveBox .liveBox-inner img {
   width: 74%;
+  transition: all 0.3s;
+}
+.main .layout .group-left .wrapBox1 .wrapBox1-left .liveBox .liveBox-inner:hover img {
+  transform: scale(1.05);
 }
 .main .layout .group-left .wrapBox1 .snsBox {
   width: 50%;
@@ -650,9 +658,10 @@ header .gnb .gnb-inner .menu-btn i {
   width: 3.125rem;
   height: 3.125rem;
 }
+.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:hover a i {
+  transform: scale(1.1);
+}
 .main .layout .group-left .wrapBox2 {
-  background-color: #ffcdfc;
-  height: 400px;
   display: flex;
   /* 홍보이미지 설정*/
   /* 웹툰 설정*/
@@ -660,12 +669,64 @@ header .gnb .gnb-inner .menu-btn i {
 .main .layout .group-left .wrapBox2 .promoBox {
   width: 50%;
   height: 100%;
-  background-color: #ffa2a2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.main .layout .group-left .wrapBox2 .promoBox .promoBox-inner {
+  width: 93%;
+  height: 87%;
+  background-color: #97BEFF;
+  border-radius: 1.25rem;
 }
 .main .layout .group-left .wrapBox2 .webtoonBox {
   width: 50%;
   height: 100%;
-  background-color: #7dff7b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .layout .group-left .wrapBox2 .webtoonBox .webtoonBox-inner {
+  width: 86%;
+  height: 87%;
+  background-color: #97BEFF;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  position: relative;
+}
+.main .layout .group-left .wrapBox2 .webtoonBox .webtoonBox-inner img {
+  width: 100%;
+}
+.main .layout .group-left .wrapBox2 .webtoonBox .webtoonBox-inner .title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6.938rem;
+  color: #fff;
+}
+.main .layout .group-left .wrapBox2 .webtoonBox .webtoonBox-inner .title .dimmed {
+  width: 100%;
+  height: 100%;
+  background-color: #202020;
+  opacity: 0.8;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.main .layout .group-left .wrapBox2 .webtoonBox .webtoonBox-inner .title .txtBox {
+  position: absolute;
+  z-index: 2;
+  padding-left: 1.2rem;
+  padding-top: 1rem;
+}
+.main .layout .group-left .wrapBox2 .webtoonBox .webtoonBox-inner .title .txtBox h4 {
+  font-size: 1.875rem;
+  margin-bottom: 0.75rem;
+}
+.main .layout .group-left .wrapBox2 .webtoonBox .webtoonBox-inner .title .txtBox p {
+  font-size: 1.125rem;
 }
 .main .layout .group-right {
   /* 실시간 탐방통제정보 설정*/
@@ -674,33 +735,361 @@ header .gnb .gnb-inner .menu-btn i {
   /* 자주하는 질문 설정*/
 }
 .main .layout .group-right .controlBox {
-  background-color: #cdf6ff;
-  height: 400px;
+  height: 600px;
+  margin-bottom: 3.75rem;
+  border: 1px solid #D1D1D1;
+  border-radius: 1.25rem;
+  background-color: #fff;
+  padding: 2.5rem;
+}
+.main .layout .group-right .controlBox p {
+  font-size: 1.25rem;
+  color: #777;
+  font-weight: 500;
+  margin-bottom: 2.125rem;
+}
+.main .layout .group-right .controlBox .legend {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.75rem;
+}
+.main .layout .group-right .controlBox .legend li {
+  width: 16%;
+  height: 2.4rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3.75rem;
+  font-size: 0.875rem;
+  margin: 0 0.34rem;
+}
+.main .layout .group-right .controlBox .legend li:nth-child(1) {
+  background-color: #ff0000;
+}
+.main .layout .group-right .controlBox .legend li:nth-child(2) {
+  background-color: #F29B76;
+}
+.main .layout .group-right .controlBox .legend li:nth-child(3) {
+  background-color: #F2F2F2;
+  color: #777;
+}
+.main .layout .group-right .controlBox hr {
+  margin-bottom: 1.75rem;
+  height: 0.125rem;
+  border: 0;
+  background-color: #EFEFEF;
+}
+.main .layout .group-right .controlBox .location {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main .layout .group-right .controlBox .location li {
+  width: 18%;
+  height: 2.8rem;
+  border-radius: 3.75rem;
+  font-size: 1.125rem;
+  margin: 0.4rem 0.36rem;
+}
+.main .layout .group-right .controlBox .location li.high {
+  background-color: #ff0000;
+}
+.main .layout .group-right .controlBox .location li.high:hover {
+  background-color: #e10000;
+}
+.main .layout .group-right .controlBox .location li.high a {
+  color: #fff;
+}
+.main .layout .group-right .controlBox .location li.mid {
+  background-color: #F29B76;
+}
+.main .layout .group-right .controlBox .location li.mid:hover {
+  background-color: #e48d67;
+}
+.main .layout .group-right .controlBox .location li.mid a {
+  color: #fff;
+}
+.main .layout .group-right .controlBox .location li.low {
+  background-color: #F2F2F2;
+}
+.main .layout .group-right .controlBox .location li.low:hover {
+  background-color: #e9e9e9;
+}
+.main .layout .group-right .controlBox .location li.low a {
+  color: #777;
+}
+.main .layout .group-right .controlBox .location li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .main .layout .group-right .wrapBox3 {
-  background-color: #cdffe8;
-  height: 400px;
+  height: 28rem;
   display: flex;
+  margin-bottom: 3.75rem;
   /* 국립공원바로가기 설정*/
   /* 스마트 국립공원 설정*/
 }
 .main .layout .group-right .wrapBox3 .linkBox {
   width: 50%;
   height: 100%;
-  background-color: #9abaff;
+  padding-right: 1rem;
+}
+.main .layout .group-right .wrapBox3 .linkBox h3 {
+  padding-left: 0.5rem;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner {
+  border: 1px solid #D1D1D1;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  height: 23.688rem;
+  background-image: url(imgs/link-map.png);
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position: -1.6rem 0.2rem;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li {
+  position: absolute;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(1) {
+  top: 70px;
+  left: 84px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(2) {
+  top: 124px;
+  left: 30px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(3) {
+  top: 150px;
+  left: 100px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(4) {
+  top: 190px;
+  left: 35px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(5) {
+  top: 220px;
+  left: 100px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(6) {
+  top: 250px;
+  left: 50px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(7) {
+  top: 260px;
+  left: 110px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(8) {
+  top: 330px;
+  left: 46px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(9) {
+  top: 290px;
+  left: 10px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(10) {
+  top: 220px;
+  left: 160px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(11) {
+  top: 185px;
+  left: 130px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(12) {
+  top: 140px;
+  left: 160px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(13) {
+  top: 105px;
+  left: 130px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(14) {
+  top: 70px;
+  left: 150px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(15) {
+  top: 18px;
+  left: 200px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(16) {
+  top: 52px;
+  left: 220px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(17) {
+  top: 86px;
+  left: 230px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(18) {
+  top: 118px;
+  left: 210px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(19) {
+  top: 150px;
+  left: 230px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(20) {
+  top: 182px;
+  left: 190px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(21) {
+  top: 215px;
+  left: 210px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(22) {
+  top: 182px;
+  left: 260px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(23) {
+  top: 280px;
+  left: 180px;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li a {
+  display: inline-block;
+  border: 1px solid #427EAF;
+  border-radius: 0.125rem;
+  background-color: #fff;
+  color: #427eaf;
+  padding: 0.375rem;
+  font-size: 0.813rem;
+}
+.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li a:hover {
+  background-color: #f1f6ff;
+  color: #3871a0;
 }
 .main .layout .group-right .wrapBox3 .smartBox {
   width: 50%;
   height: 100%;
-  background-color: #bb77ff;
+  padding-left: 1rem;
+}
+.main .layout .group-right .wrapBox3 .smartBox h3 {
+  padding-left: 0.5rem;
+}
+.main .layout .group-right .wrapBox3 .smartBox .smartBox-inner {
+  border: 1px solid #D1D1D1;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  height: 23.688rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .layout .group-right .wrapBox3 .smartBox .smartBox-inner ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 94%;
+}
+.main .layout .group-right .wrapBox3 .smartBox .smartBox-inner ul li {
+  margin: 0.4rem;
+}
+.main .layout .group-right .wrapBox3 .smartBox .smartBox-inner ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #A8CDDB;
+  border-radius: 0.5rem;
+  background-color: #F5FCFF;
+  color: #3D3D3D;
+  width: 8.563rem;
+  height: 2.938rem;
+  font-size: 1.125rem;
+}
+.main .layout .group-right .wrapBox3 .smartBox .smartBox-inner ul li a:hover {
+  background-color: #eaf8fe;
+  font-weight: 600;
 }
 .main .layout .group-right .galleryBox {
   background-color: #cdffd0;
-  height: 400px;
+  height: 17.5rem;
+  border: 1px solid #D1D1D1;
+  border-radius: 1.25rem;
+  background-color: #fff;
+  display: flex;
+  margin-bottom: 3.125rem;
+}
+.main .layout .group-right .galleryBox img {
+  border-radius: 1.25rem;
+}
+.main .layout .group-right .galleryBox .txtBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.main .layout .group-right .galleryBox .txtBox h3 {
+  text-align: center;
+  margin-top: 3.375rem;
+}
+.main .layout .group-right .galleryBox .txtBox p {
+  font-size: 1.25rem;
+  color: #9D9D9D;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.main .layout .group-right .galleryBox .txtBox span {
+  color: #fff;
+  background-color: #3F3F3F;
+  border: 1px solid #3f3f3f;
+  border-radius: 0.75rem;
+  padding: 1.125rem 2.125rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.main .layout .group-right .galleryBox .txtBox span:hover {
+  background-color: #fefefe;
+  border: 1px solid #a1a1a1;
+  color: #3f3f3f;
+  font-weight: 600;
 }
 .main .layout .group-right .questionBox {
-  background-color: #ffeccd;
-  height: 400px;
+  position: relative;
+}
+.main .layout .group-right .questionBox span {
+  font-size: 1.25rem;
+  font-weight: 500;
+  position: absolute;
+  top: 0.9rem;
+  right: 0;
+  cursor: pointer;
+}
+.main .layout .group-right .questionBox span i {
+  margin-left: 0.4rem;
+}
+.main .layout .group-right .questionBox .questionBox-inner {
+  border: 1px solid #D1D1D1;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  height: 6.938rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px 40px;
+}
+.main .layout .group-right .questionBox .questionBox-inner .questionTitle {
+  display: grid;
+  grid-template-columns: 8% 12% 12% 1fr;
+  margin-top: 1.625rem;
+  padding: 0 1.25rem;
+}
+.main .layout .group-right .questionBox .questionBox-inner .questionTitle li {
+  text-align: center;
+  font-weight: 600;
+}
+.main .layout .group-right .questionBox .questionBox-inner .questionContents {
+  display: grid;
+  grid-template-columns: 8% 12% 12% 1fr;
+  margin-top: 1.625rem;
+  padding: 0 1.25rem;
+}
+.main .layout .group-right .questionBox .questionBox-inner .questionContents li {
+  text-align: center;
+  cursor: pointer;
 }
 .main .layout .group-bottom {
   grid-column: 1/span 2;

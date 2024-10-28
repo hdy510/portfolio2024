@@ -495,7 +495,7 @@ header {
             }
             /* 새로운 소식 설정*/
             .newsBox {
-                // background-color: #daffcd;
+                background-color: #daffcd;
                 height: 25rem;
                 display: flex;
                 flex-direction: column;
@@ -565,23 +565,24 @@ header {
             }
             /* wrapBox1 설정*/
             .wrapBox1 {
-                // background-color: #cdf6ff;
+                background-color: #cdf6ff;
                 height: 18.75rem;
                 display: flex;
                 .wrapBox1-left {
-                    // background-color: blue;
+                    background-color: blue;
                     width: 50%;
                     height: 100%;
                     display: flex;
                     flex-direction: column;
                     /* 자원봉사 설정*/
                     .volunteerBox {
-                        // background-color: #ba54b3;
+                        background-color: #ba54b3;
                         height: 50%;
                         display: flex;
                         justify-content: flex-end;
                         align-items: flex-end;
                         .volunteerBox-inner {
+                            background-color: red;
                             width: 93%;
                             height: 79%;
                             background-color: #fff;
@@ -593,16 +594,17 @@ header {
                             margin-bottom: 0.7rem;
                             cursor: pointer;
                             span {
-                                font-size: $font-size-26px;
-                                font-weight: 600;
-                                margin: 0 1rem;
+                                font-size: 0;
+                                color: transparent;
                             }
-                            i {
-                                display: block;
-                                background-image: url(imgs/service-icons.png);
-                                background-position: -4rem 3.875rem;
-                                width: 4rem;
-                                height: 3.875rem;
+                            img {
+                                width: 60%;
+                                transition: all 0.3s;
+                            }
+                            &:hover {
+                                img {
+                                    transform: scale(1.05);
+                                }
                             }
                         }
                     }
@@ -630,6 +632,12 @@ header {
                             }
                             img {
                                 width: 74%;
+                                transition: all 0.3s;
+                            }
+                            &:hover {
+                                img {
+                                    transform: scale(1.05);
+                                }
                             }
                         }
                     }
@@ -720,6 +728,13 @@ header {
                                         }
                                     }
                                 }
+                                &:hover {
+                                    a {
+                                        i {
+                                            transform: scale(1.1);
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -727,20 +742,74 @@ header {
             }
             /* wrapBox2 설정*/
             .wrapBox2 {
-                background-color: #ffcdfc;
-                height: 400px;
+                // background-color: #ffcdfc;
+                // height: 25rem;
                 display: flex;
                 /* 홍보이미지 설정*/
                 .promoBox {
                     width: 50%;
                     height: 100%;
-                    background-color: #ffa2a2;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    .promoBox-inner {
+                        width: 93%;
+                        height: 87%;
+                        background-color: #97BEFF;
+                        border-radius: 1.25rem;
+                        .thumbnail {}
+                    }
                 }
                 /* 웹툰 설정*/
                 .webtoonBox {
+                    // background-color: #7dff7b;
                     width: 50%;
                     height: 100%;
-                    background-color: #7dff7b;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .webtoonBox-inner {
+                        width: 86%;
+                        height: 87%;
+                        background-color: #97BEFF;
+                        border-radius: 1.25rem;
+                        overflow: hidden;
+                        position: relative;
+                        img {
+                            width: 100%;
+                        }
+                        .title {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 6.938rem;
+                            color: #fff;
+                            .dimmed {
+                                width: 100%;
+                                height: 100%;
+                                background-color: #202020;
+                                opacity: 0.8;
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                z-index: 1;
+                            }
+                            .txtBox {
+                                position: absolute;
+                                z-index: 2;
+                                padding-left: 1.2rem;
+                                padding-top: 1rem;
+                                h4 {
+                                    font-size: $font-size-30px;
+                                    margin-bottom: 0.75rem;
+                                }
+                                p {
+                                    font-size: $font-size-18px;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -748,36 +817,305 @@ header {
         .group-right {
             /* 실시간 탐방통제정보 설정*/
             .controlBox {
-                background-color: #cdf6ff;
-                height: 400px;
+                // background-color: #cdf6ff;
+                height: 600px;
+                margin-bottom: 3.75rem;
+                border: 1px solid #D1D1D1;
+                border-radius: 1.25rem;
+                background-color: #fff;
+                padding: 2.5rem;
+                h3 {}
+                p {
+                    font-size: $font-size-20px;
+                    color: #777;
+                    font-weight: 500;
+                    margin-bottom: 2.125rem;
+                }
+                .legend {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-bottom: 1.75rem;
+                    li {
+                        width: 16%;
+                        height: 2.4rem;
+                        color: #fff;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 3.75rem;
+                        font-size: $font-size-14px;
+                        margin: 0 0.34rem;
+                        &:nth-child(1) {
+                            background-color: #ff0000;
+                        }
+                        &:nth-child(2) {
+                            background-color: #F29B76;
+                        }
+                        &:nth-child(3) {
+                            background-color: #F2F2F2;
+                            color: #777;
+                        }
+                    }
+                }
+                hr {
+                    margin-bottom: 1.75rem;
+                    height: 0.125rem;
+                    border: 0;
+                    background-color: #EFEFEF;
+                }
+                .location {
+                    // background-color: red;
+                    display: flex;
+                    flex-wrap: wrap;
+                    li {
+                        width: 18%;
+                        height: 2.8rem;
+                        border-radius: 3.75rem;
+                        font-size: $font-size-18px;
+                        margin: 0.4rem 0.36rem;
+                        &.high {
+                            background-color: #ff0000;
+                            &:hover {
+                                background-color: #e10000;
+                            }
+                            a {
+                                color: #fff;
+                            }
+                        }
+                        &.mid {
+                            background-color: #F29B76;
+                            &:hover {
+                                background-color: #e48d67;
+                            }
+                            a {
+                                color: #fff;
+                            }
+                        }
+                        &.low {
+                            background-color: #F2F2F2;
+                            &:hover {
+                                background-color: #e9e9e9;
+                            }
+                            a {
+                                color: #777;
+                            }
+                        }
+                        a {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+                }
             }
             /* wrapBox3 설정*/
             .wrapBox3 {
-                background-color: #cdffe8;
-                height: 400px;
+                // background-color: #cdffe8;
+                height: 28rem;
                 display: flex;
+                margin-bottom: 3.75rem;
                 /* 국립공원바로가기 설정*/
                 .linkBox {
                     width: 50%;
                     height: 100%;
-                    background-color: #9abaff;
+                    // background-color: #9abaff;
+                    padding-right: 1rem;
+                    h3 {
+                        padding-left: 0.5rem;
+                    }
+                    .linkBox-inner {
+                        border: 1px solid #D1D1D1;
+                        border-radius: 0.75rem;
+                        background-color: #fff;
+                        height: 23.688rem;
+                        background-image: url(imgs/link-map.png);
+                        background-size: 120%;
+                        background-repeat: no-repeat;
+                        background-position: -1.6rem 0.2rem;
+                        ul {
+                            width: 100%;
+                            height: 100%;
+                            position: relative;
+                            li {
+                                position: absolute;
+                                &:nth-child(1) {top: 70px; left: 84px;}
+                                &:nth-child(2) {top: 124px; left: 30px;}
+                                &:nth-child(3) {top: 150px; left: 100px;}
+                                &:nth-child(4) {top: 190px; left: 35px;}
+                                &:nth-child(5) {top: 220px; left: 100px;}
+                                &:nth-child(6) {top: 250px; left: 50px;}
+                                &:nth-child(7) {top: 260px; left: 110px;}
+                                &:nth-child(8) {top: 330px; left: 46px;}
+                                &:nth-child(9) {top: 290px; left: 10px;}
+                                &:nth-child(10) {top: 220px; left: 160px;}
+                                &:nth-child(11) {top: 185px; left: 130px;}
+                                &:nth-child(12) {top: 140px; left: 160px;}
+                                &:nth-child(13) {top: 105px; left: 130px;}
+                                &:nth-child(14) {top: 70px; left: 150px;}
+                                &:nth-child(15) {top: 18px; left: 200px;}
+                                &:nth-child(16) {top: 52px; left: 220px;}
+                                &:nth-child(17) {top: 86px; left: 230px;}
+                                &:nth-child(18) {top: 118px; left: 210px;}
+                                &:nth-child(19) {top: 150px; left: 230px;}
+                                &:nth-child(20) {top: 182px; left: 190px;}
+                                &:nth-child(21) {top: 215px; left: 210px;}
+                                &:nth-child(22) {top: 182px; left: 260px;}
+                                &:nth-child(23) {top: 280px; left: 180px;}
+                                a {
+                                    display: inline-block;
+                                    border: 1px solid #427EAF;
+                                    border-radius: 0.125rem;
+                                    background-color: #fff;
+                                    color: #427eaf;
+                                    padding: 0.375rem;
+                                    font-size: 0.813rem;
+                                    &:hover {
+                                        background-color: #f1f6ff;
+                                        color: #3871a0;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
                 /* 스마트 국립공원 설정*/
                 .smartBox {
                     width: 50%;
                     height: 100%;
-                    background-color: #bb77ff;
+                    // background-color: #bb77ff;
+                    padding-left: 1rem;
+                    h3 {
+                        padding-left: 0.5rem;
+                    }
+                    .smartBox-inner {
+                        border: 1px solid #D1D1D1;
+                        border-radius: 0.75rem;
+                        background-color: #fff;
+                        height: 23.688rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        ul {
+                            display: flex;
+                            flex-wrap: wrap;
+                            width: 94%;
+                            li {
+                                margin: 0.4rem;
+                                a {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border: 1px solid #A8CDDB;
+                                    border-radius: 0.5rem;
+                                    background-color: #F5FCFF;
+                                    color: #3D3D3D;
+                                    width: 8.563rem;
+                                    height: 2.938rem;
+                                    font-size: $font-size-18px;
+                                    &:hover {
+                                        background-color: #eaf8fe;
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
             /* 국립공원 사진전 설정*/
             .galleryBox {
                 background-color: #cdffd0;
-                height: 400px;
+                height: 17.5rem;
+                border: 1px solid #D1D1D1;
+                border-radius: 1.25rem;
+                background-color: #fff;
+                display: flex;
+                margin-bottom: 3.125rem;
+                img {
+                    border-radius: 1.25rem;
+                }
+                .txtBox {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    h3 {
+                        text-align: center;
+                        margin-top: 3.375rem;
+                    }
+                    p {
+                        font-size: $font-size-20px;
+                        color: #9D9D9D;
+                        font-weight: 600;
+                        margin-bottom: 2rem;
+                    }
+                    span {
+                        color: #fff;
+                        background-color: #3F3F3F;
+                        border: 1px solid #3f3f3f;
+                        border-radius: 0.75rem;
+                        padding: 1.125rem 2.125rem;
+                        cursor: pointer;
+                        transition: all 0.3s;
+                        &:hover {
+                            background-color: #fefefe;
+                            border: 1px solid #a1a1a1;
+                            color: #3f3f3f;
+                            font-weight: 600;
+                        }
+                    }
+                }
             }
             /* 자주하는 질문 설정*/
             .questionBox {
-                background-color: #ffeccd;
-                height: 400px;
+                // background-color: #ffeccd;
+                position: relative;
+                h3 {}
+                span {
+                    font-size: $font-size-20px;
+                    font-weight: 500;
+                    position: absolute;
+                    top: 0.9rem;
+                    right: 0;
+                    cursor: pointer;
+                    i {
+                        margin-left: 0.4rem;
+                    }
+                }
+                .questionBox-inner {
+                    border: 1px solid #D1D1D1;
+                    border-radius: 0.75rem;
+                    background-color: #fff;
+                    height: 6.938rem;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 40px 40px;
+                    .questionTitle {
+                        display: grid;
+                        grid-template-columns: 8% 12% 12% 1fr;
+                        margin-top: 1.625rem;
+                        padding: 0 1.25rem;
+                        li {
+                            text-align: center;
+                            font-weight: 600;
+                            // border: 1px solid #000;
+                        }
+                    }
+                    .questionContents {
+                        display: grid;
+                        grid-template-columns: 8% 12% 12% 1fr;
+                        margin-top: 1.625rem;
+                        padding: 0 1.25rem;
+                        li {
+                            text-align: center;
+                            cursor: pointer;
+                            // border: 1px solid #000;
+                        }
+                    }
+                }
             }
         }
         /* group-bottom 설정*/
