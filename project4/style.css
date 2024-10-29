@@ -527,6 +527,7 @@ header .gnb .gnb-inner .menu-btn i {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 .main .layout .group-left .newsBox .newsBox-inner .tabMenu {
   width: 90%;
@@ -536,7 +537,7 @@ header .gnb .gnb-inner .menu-btn i {
   margin-bottom: 2%;
 }
 .main .layout .group-left .newsBox .newsBox-inner .tabMenu li {
-  padding: 0.313rem 0.313rem;
+  padding: 0.313rem 0.813rem;
   margin: 0 0.25rem;
   border-radius: 0.5rem;
 }
@@ -561,6 +562,13 @@ header .gnb .gnb-inner .menu-btn i {
 }
 .main .layout .group-left .newsBox .newsBox-inner .txtBox {
   width: 90%;
+  position: absolute;
+  top: 5rem;
+  left: 2.2rem;
+  display: none;
+}
+.main .layout .group-left .newsBox .newsBox-inner .txtBox.active {
+  display: block;
 }
 .main .layout .group-left .newsBox .newsBox-inner .txtBox li {
   padding: 0.375rem 0;
@@ -647,7 +655,7 @@ header .gnb .gnb-inner .menu-btn i {
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner {
   width: 100%;
   height: 100%;
-  border: 1px solid #D7D7D7;
+  border: 0.063rem solid #D7D7D7;
   border-radius: 1rem;
   background-color: #fff;
   display: flex;
@@ -680,21 +688,21 @@ header .gnb .gnb-inner .menu-btn i {
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li a i {
   display: block;
   background-image: url(imgs/sns-icon.png);
-  width: 3.125rem;
-  height: 3.125rem;
+  width: 50px;
+  height: 50px;
   transition: all 0.3s;
 }
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(2) i {
-  background-position: -3.75rem 0;
+  background-position: -60px 0;
 }
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(3) i {
-  background-position: -7.5rem 0;
+  background-position: -120px 0;
 }
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(4) i {
-  background-position: -11.25rem 0;
+  background-position: -180px 0;
 }
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(5) i {
-  background-position: -15rem 0;
+  background-position: -240px 0;
 }
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:hover i {
   transform: scale(1.1);

@@ -12,7 +12,7 @@ $(document).ready(function () {
         },
     });
 
-    // util 의 날씨 정보 자동 슬라이드
+    // [util 의 날씨 정보 자동 슬라이드]
     function weatherSlide() {
       const $items = $('.util .weather .listBox > li');
       // 1. 첫 번째 요소의 'on'을 'off'로, 두 번째 요소를 'on'으로, 세 번째 요소를 'ready'로 변경
@@ -39,6 +39,22 @@ $(document).ready(function () {
     // 12초마다 반복
     setInterval(weatherSlide, 12000);
     
+    // [새로운 소식 탭 버튼 변경]
+    $('.newsBox .tabMenu > li').click(function () {
+      // 클릭한 요소의 인덱스 번호를 찾기
+      const index = $(this).index();
+      // 인덱스 클래스 명명
+      const indexClass = 'index' + index;
+      // 1. 탭메뉴
+      // 6번 li (+ 버튼) 클릭 시, active 클래스 추가하지 않음
+      if (index !== 4) {
+        // 나머지 클릭한 li 요소에 'active' 클래스 추가
+        $(this).addClass('active').siblings().removeClass('active');
+      }
+      // 2. 컨텐츠
+      //  해당 번호의 컨텐츠를 'active'으로, 나머지 컨텐츠를 'active' 해제
+      $('.newsBox .txtBox.'+indexClass).addClass('active').siblings().removeClass('active');
+    })
 
 
 
@@ -46,7 +62,7 @@ $(document).ready(function () {
 
 
 
-    // 자주하는 질문 자동 슬라이드
+    // [자주하는 질문 자동 슬라이드]
     function questionSlide() {
       const $items = $('.questionBox .questionContents > li');
       // 1. 첫 번째 요소의 'on'을 'off'로, 두 번째 요소를 'on'으로, 세 번째 요소를 'ready'로 변경
