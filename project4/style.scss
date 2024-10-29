@@ -1430,6 +1430,14 @@ footer {
             .info {
                 p {
                     margin-bottom: 0.563rem;
+                    i {
+                        font-style: normal;
+                        white-space: nowrap;
+                    }
+                    b {
+                        font-weight: normal;
+                        white-space: nowrap;
+                    }
                     span {
                         margin-right: 1.5rem;
                     }
@@ -1484,14 +1492,7 @@ footer {
                         margin-bottom: 1rem;
                         font-size: $font-size-14px;
                         text-align: center;
-                        i {
-                            font-style: normal;
-                            white-space: nowrap;
-                        }
-                        b {
-                            font-weight: normal;
-                            white-space: nowrap;
-                        }
+                        
                         span {
                             margin-right: 0;
                         }

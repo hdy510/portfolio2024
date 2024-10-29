@@ -1395,6 +1395,14 @@ footer .footer-inner .txtBox .nav ul li:last-child a::after {
 footer .footer-inner .txtBox .info p {
   margin-bottom: 0.563rem;
 }
+footer .footer-inner .txtBox .info p i {
+  font-style: normal;
+  white-space: nowrap;
+}
+footer .footer-inner .txtBox .info p b {
+  font-weight: normal;
+  white-space: nowrap;
+}
 footer .footer-inner .txtBox .info p span {
   margin-right: 1.5rem;
 }
@@ -1446,14 +1454,6 @@ footer .footer-inner .txtBox .info p span {
     margin-bottom: 1rem;
     font-size: 0.875rem;
     text-align: center;
-  }
-  footer .footer-inner .txtBox .info p i {
-    font-style: normal;
-    white-space: nowrap;
-  }
-  footer .footer-inner .txtBox .info p b {
-    font-weight: normal;
-    white-space: nowrap;
   }
   footer .footer-inner .txtBox .info p span {
     margin-right: 0;
