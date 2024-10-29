@@ -87,18 +87,47 @@ header .util .util-inner .weather span a {
   color: #fff;
   font-weight: 500;
 }
-header .util .util-inner .weather ul {
+header .util .util-inner .weather .listBox {
+  width: 13rem;
+  height: 78%;
+  margin-top: 4px;
+  overflow: hidden;
+  position: relative;
+}
+header .util .util-inner .weather .listBox > li {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  transition: all 1s;
+}
+header .util .util-inner .weather .listBox > li.on {
+  top: 0;
+  opacity: 1;
+}
+header .util .util-inner .weather .listBox > li.off {
+  top: -100%;
+  opacity: 0;
+}
+header .util .util-inner .weather .listBox > li.ready {
+  top: 120%;
+  opacity: 0;
+}
+header .util .util-inner .weather .listBox > li .list {
   display: flex;
 }
-header .util .util-inner .weather ul li {
+header .util .util-inner .weather .listBox > li .list li {
   display: flex;
   align-items: center;
   margin-right: 1.375rem;
-}
-header .util .util-inner .weather ul li:nth-child(3) {
   font-weight: 600;
 }
-header .util .util-inner .weather ul li img {
+header .util .util-inner .weather .listBox > li .list li:nth-child(2) {
+  width: 2.1rem;
+}
+header .util .util-inner .weather .listBox > li .list li:nth-child(3) {
+  width: 1.6rem;
+}
+header .util .util-inner .weather .listBox > li .list li img {
   width: 1.5rem;
 }
 header .util .util-inner .user {
@@ -241,6 +270,20 @@ header .gnb .gnb-inner .menu-btn i {
 .main .hero .swiper-button-prev:hover {
   transform: translateX(-0.725rem);
 }
+.main .hero .swiper-pagination {
+  text-align: right;
+}
+.main .hero .swiper-pagination-fraction {
+  color: #fff;
+  bottom: 7.5%;
+  padding-right: 15.5%;
+}
+.main .hero .swiper-pagination-current {
+  font-size: 1.375rem;
+}
+.main .hero .swiper-pagination-total {
+  font-size: 1rem;
+}
 .main .hero .txtBox {
   color: #fff;
   font-family: "S-CoreDream-4Regular", sans-serif;
@@ -363,6 +406,7 @@ header .gnb .gnb-inner .menu-btn i {
   position: absolute;
   bottom: 3rem;
   right: 10%;
+  z-index: 2;
 }
 .main .hero .pageBox span {
   font-size: 1rem;
@@ -1056,27 +1100,56 @@ header .gnb .gnb-inner .menu-btn i {
   border-radius: 0.75rem;
   background-color: #fff;
   height: 6.938rem;
+  display: flex;
+  align-items: center;
+}
+.main .layout .group-right .questionBox .questionBox-inner .grid {
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 40px 40px;
 }
-.main .layout .group-right .questionBox .questionBox-inner .questionTitle {
+.main .layout .group-right .questionBox .questionBox-inner .grid .questionTitle {
   display: grid;
   grid-template-columns: 8% 12% 12% 1fr;
-  margin-top: 1.625rem;
+  align-items: center;
   padding: 0 1.25rem;
 }
-.main .layout .group-right .questionBox .questionBox-inner .questionTitle li {
+.main .layout .group-right .questionBox .questionBox-inner .grid .questionTitle li {
   text-align: center;
   font-weight: 600;
 }
-.main .layout .group-right .questionBox .questionBox-inner .questionContents {
+.main .layout .group-right .questionBox .questionBox-inner .grid .questionContents {
+  position: relative;
+  overflow: hidden;
+}
+.main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li {
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 1s;
+}
+.main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li.on {
+  top: 0;
+  opacity: 1;
+}
+.main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li.off {
+  top: -100%;
+  opacity: 0;
+}
+.main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li.ready {
+  top: 100%;
+  opacity: 0;
+}
+.main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li .list {
   display: grid;
   grid-template-columns: 8% 12% 12% 1fr;
-  margin-top: 1.625rem;
   padding: 0 1.25rem;
+  margin-top: 0.7rem;
 }
-.main .layout .group-right .questionBox .questionBox-inner .questionContents li {
+.main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li .list li {
   text-align: center;
   cursor: pointer;
 }

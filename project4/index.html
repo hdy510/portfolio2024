@@ -26,12 +26,33 @@
             <div class="util-inner">
                 <div class="weather">
                     <span><a href="#none">국립공원 날씨</a></span>
-                    <ul>
-                        <li>설악산</li>
-                        <li>21℃</li>
-                        <li>맑음</li>
-                        <li><img src="imgs/weather-icon-sunny.png" alt="맑음"></li>
+                    <ul class="listBox">
+                        <li class="on">
+                            <ul class="list">
+                                <li>설악산</li>
+                                <li>21℃</li>
+                                <li>맑음</li>
+                                <li><img src="imgs/weather-icon-sunny.png" alt="맑음"></li>
+                            </ul>
+                        </li>
+                        <li class="ready">
+                            <ul class="list">
+                                <li>속리산</li>
+                                <li>19℃</li>
+                                <li>비</li>
+                                <li><img src="imgs/weather-icon-rainy.png" alt="비"></li>
+                            </ul>
+                        </li>
+                        <li class="off">
+                            <ul class="list">
+                                <li>덕유산</li>
+                                <li>20℃</li>
+                                <li>흐림</li>
+                                <li><img src="imgs/weather-icon-cloudy.png" alt="흐림"></li>
+                            </ul>
+                        </li>
                     </ul>
+                    
                 </div>
                 <div class="user">
                     <ul>
@@ -92,7 +113,7 @@
                 </div>
             </div>
             <div class="pageBox">
-                <span><b>1</b>/4</span>
+                <!-- <span><b>1</b>/4</span> -->
                 <p>설악산</p>
             </div>
         </div>
@@ -237,29 +258,29 @@
                     </ul>
                     <hr>
                     <ul class="location">
-                        <li class="low"><a href="">지리산</a></li>
-                        <li class="mid"><a href="">경주</a></li>
-                        <li class="high"><a href="">계룡산</a></li>
-                        <li class="low"><a href="">한려해상</a></li>
-                        <li class="mid"><a href="">설악산</a></li>
-                        <li class="mid"><a href="">속리산</a></li>
-                        <li class="low"><a href="">내장산</a></li>
-                        <li class="low"><a href="">가야산</a></li>
-                        <li class="mid"><a href="">덕유산</a></li>
-                        <li class="low"><a href="">오대산</a></li>
-                        <li class="low"><a href="">주왕산</a></li>
-                        <li class="low"><a href="">태안해안</a></li>
-                        <li class="low"><a href="">다도해해상</a></li>
-                        <li class="mid"><a href="">치악산</a></li>
-                        <li class="low"><a href="">월악산</a></li>
-                        <li class="high"><a href="">북한산</a></li>
-                        <li class="mid"><a href="">소백산</a></li>
-                        <li class="low"><a href="">월출산</a></li>
-                        <li class="low"><a href="">변산반도</a></li>
-                        <li class="mid"><a href="">무등산</a></li>
-                        <li class="mid"><a href="">태백산</a></li>
-                        <li class="low"><a href="">팔공산</a></li>
-                        <li class="low"><a href="">한라산</a></li>
+                        <li class="low"><a href="#none">지리산</a></li>
+                        <li class="mid"><a href="#none">경주</a></li>
+                        <li class="high"><a href="#none">계룡산</a></li>
+                        <li class="low"><a href="#none">한려해상</a></li>
+                        <li class="mid"><a href="#none">설악산</a></li>
+                        <li class="mid"><a href="#none">속리산</a></li>
+                        <li class="low"><a href="#none">내장산</a></li>
+                        <li class="low"><a href="#none">가야산</a></li>
+                        <li class="mid"><a href="#none">덕유산</a></li>
+                        <li class="low"><a href="#none">오대산</a></li>
+                        <li class="low"><a href="#none">주왕산</a></li>
+                        <li class="low"><a href="#none">태안해안</a></li>
+                        <li class="low"><a href="#none">다도해해상</a></li>
+                        <li class="mid"><a href="#none">치악산</a></li>
+                        <li class="low"><a href="#none">월악산</a></li>
+                        <li class="high"><a href="#none">북한산</a></li>
+                        <li class="mid"><a href="#none">소백산</a></li>
+                        <li class="low"><a href="#none">월출산</a></li>
+                        <li class="low"><a href="#none">변산반도</a></li>
+                        <li class="mid"><a href="#none">무등산</a></li>
+                        <li class="mid"><a href="#none">태백산</a></li>
+                        <li class="low"><a href="#none">팔공산</a></li>
+                        <li class="low"><a href="#none">한라산</a></li>
                     </ul>
                 </div>
                 <div class="wrapBox3">
@@ -322,18 +343,40 @@
                     <h3>자주하는 질문</h3>
                     <span>더보기<i class="fa-solid fa-angle-right"></i></span>
                     <div class="questionBox-inner">
-                        <ul class="questionTitle">
-                            <li>번호</li>
-                            <li>공원명</li>
-                            <li>문의유형</li>
-                            <li>제목</li>
-                        </ul>
-                        <ul class="questionContents">
-                            <li>69</li>
-                            <li>계룡산</li>
-                            <li>탐방</li>
-                            <li>계룡산 탐방로 거리별 소요시간 및 코스안내지도</li>
-                        </ul>
+                        <div class="grid">
+                            <ul class="questionTitle">
+                                <li>번호</li>
+                                <li>공원명</li>
+                                <li>문의유형</li>
+                                <li>제목</li>
+                            </ul>
+                            <ul class="questionContents">
+                                <li class="on">
+                                    <ul class="list">
+                                        <li>69</li>
+                                        <li>계룡산</li>
+                                        <li>탐방</li>
+                                        <li>계룡산 탐방로 거리별 소요시간 및 코스안내지도</li>
+                                    </ul>
+                                </li>
+                                <li class="ready">
+                                    <ul class="list">
+                                        <li>68</li>
+                                        <li>월출산</li>
+                                        <li>요금</li>
+                                        <li>월출산국립공원 입장료는 얼마인가요?</li>
+                                    </ul>
+                                </li>
+                                <li class="off">
+                                    <ul class="list">
+                                        <li>67</li>
+                                        <li>덕유산</li>
+                                        <li>예약</li>
+                                        <li>카라반 예약 - 이동형 캠핑트레일러, caravan</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

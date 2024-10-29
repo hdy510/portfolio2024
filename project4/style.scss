@@ -96,17 +96,46 @@ header {
                         font-weight: 500;
                     }
                 }
-                ul {
-                    display: flex;
-                    li {
-                        display: flex;
-                        align-items: center;
-                        margin-right: 1.375rem;
-                        &:nth-child(3) {
-                            font-weight: 600;
+                .listBox {
+                    width: 13rem;
+                    height: 78%;
+                    margin-top: 4px;
+                    overflow: hidden;
+                    position: relative;
+                    > li {
+                        position: absolute;
+                        top: 120%;
+                        left: 0;
+                        transition: all 1s;
+                        &.on {
+                            top: 0;
+                            opacity: 1;
                         }
-                        img {
-                            width: 1.5rem;
+                        &.off {
+                            top: -100%;
+                            opacity: 0;
+                        }
+                        &.ready {
+                            top: 120%;
+                            opacity: 0;
+                        }
+                        .list {
+                            display: flex;
+                            li {
+                                display: flex;
+                                align-items: center;
+                                margin-right: 1.375rem;
+                                font-weight: 600;
+                                &:nth-child(2) {
+                                    width: 2.1rem;
+                                }
+                                &:nth-child(3) {
+                                    width: 1.6rem;
+                                }
+                                img {
+                                    width: 1.5rem;
+                                }
+                            }
                         }
                     }
                 }
@@ -268,6 +297,20 @@ header {
                 transform: translateX(-0.725rem);
             }
         }
+        .swiper-pagination {
+            text-align: right;
+        }
+        .swiper-pagination-fraction {
+            color: #fff;
+            bottom: 7.5%;
+            padding-right: 15.5%;
+        }
+        .swiper-pagination-current {
+            font-size: $font-size-22px;
+        }
+        .swiper-pagination-total {
+            font-size: $font-size-16px;
+        }
         /* txtBox 설정 */
         .txtBox {
             color: #fff;
@@ -392,6 +435,7 @@ header {
             position: absolute;
             bottom: 3rem;
             right:10%;
+            z-index: 2;
             span {
                 font-size: $font-size-16px;
                 b {
@@ -1061,29 +1105,60 @@ header {
                     border-radius: 0.75rem;
                     background-color: #fff;
                     height: 6.938rem;
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    grid-template-rows: 40px 40px;
-                    .questionTitle {
+                    display: flex;
+                    align-items: center;
+                    .grid {
+                        width: 100%;
+                        // background-color: blue;
                         display: grid;
-                        grid-template-columns: 8% 12% 12% 1fr;
-                        margin-top: 1.625rem;
-                        padding: 0 1.25rem;
-                        li {
-                            text-align: center;
-                            font-weight: 600;
-                            // border: 1px solid #000;
+                        grid-template-columns: 1fr;
+                        grid-template-rows: 40px 40px;
+                        .questionTitle {
+                            display: grid;
+                            grid-template-columns: 8% 12% 12% 1fr;
+                            align-items: center;
+                            padding: 0 1.25rem;
+                            li {
+                                text-align: center;
+                                font-weight: 600;
+                                // border: 1px solid #000;
+                            }
                         }
-                    }
-                    .questionContents {
-                        display: grid;
-                        grid-template-columns: 8% 12% 12% 1fr;
-                        margin-top: 1.625rem;
-                        padding: 0 1.25rem;
-                        li {
-                            text-align: center;
-                            cursor: pointer;
-                            // border: 1px solid #000;
+                        .questionContents {
+                            position: relative;
+                            // background-color: yellow;
+                            overflow: hidden;
+                            > li {
+                                width: 100%;
+                                height: 50%;
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                transition: all 1s;
+                                &.on {
+                                    top: 0;
+                                    opacity: 1;
+                                }
+                                &.off {
+                                    top: -100%;
+                                    opacity: 0;
+                                }
+                                &.ready {
+                                    top: 100%;
+                                    opacity: 0;
+                                }
+                                .list {
+                                    display: grid;
+                                    grid-template-columns: 8% 12% 12% 1fr;
+                                    padding: 0 1.25rem;
+                                    margin-top: 0.7rem;
+                                    li {
+                                        text-align: center;
+                                        cursor: pointer;
+                                        // border: 1px solid #000;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
