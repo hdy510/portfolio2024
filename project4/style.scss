@@ -327,6 +327,7 @@ header {
                 text-align: center;
                 span {
                     font-size: $font-size-38px;
+                    white-space: nowrap;
                 }
             }
             p {
@@ -1367,7 +1368,7 @@ header {
         }
         /* layout 미디어쿼리 */
         .layout {
-            grid-template-columns: 1fr;
+            grid-template-columns: 100%;
             grid-template-rows: 1fr 1fr 1fr;
             .group-bottom {
                 grid-column: 1;
@@ -1437,6 +1438,74 @@ footer {
         }
     }
 }
+/* footer 미디어쿼리 */
+@media (min-width:48.063rem) and (max-width:75rem) {
+
+}
+@media (max-width:48rem) {
+    footer {
+        height: 53.875rem;
+        .footer-inner {
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            h2 {
+                order: 2;
+                margin-right: 0;
+                margin-top: 3rem;
+            }
+            .txtBox {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                order: 1;
+                .nav {
+                    margin-bottom: 3rem;
+                    ul {
+                        flex-direction: column;
+                        align-items: center;
+                        li {
+                            padding: 0.5rem 0;
+                            margin: 0.5rem 0;
+                            a {
+                                padding-left: 0;
+                                &::after {
+                                    content: '';
+                                    margin-left: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+                .info {
+                    width: 95%;
+                    p {
+                        line-height: 1.5;
+                        margin-bottom: 1rem;
+                        font-size: $font-size-14px;
+                        text-align: center;
+                        i {
+                            font-style: normal;
+                            white-space: nowrap;
+                        }
+                        b {
+                            font-weight: normal;
+                            white-space: nowrap;
+                        }
+                        span {
+                            margin-right: 0;
+                        }
+                        &:nth-child(2) {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 
 

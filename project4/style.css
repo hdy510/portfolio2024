@@ -303,6 +303,7 @@ header .gnb .gnb-inner .menu-btn i {
 }
 .main .hero .txtBox h2 span {
   font-size: 2.375rem;
+  white-space: nowrap;
 }
 .main .hero .txtBox p {
   font-size: 1.25rem;
@@ -1334,7 +1335,7 @@ header .gnb .gnb-inner .menu-btn i {
     margin-left: 0;
   }
   .main .layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     grid-template-rows: 1fr 1fr 1fr;
   }
   .main .layout .group-bottom {
@@ -1398,6 +1399,70 @@ footer .footer-inner .txtBox .info p span {
   margin-right: 1.5rem;
 }
 
+/* footer 미디어쿼리 */
+@media (max-width: 48rem) {
+  footer {
+    height: 53.875rem;
+  }
+  footer .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+  footer .footer-inner h2 {
+    order: 2;
+    margin-right: 0;
+    margin-top: 3rem;
+  }
+  footer .footer-inner .txtBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 1;
+  }
+  footer .footer-inner .txtBox .nav {
+    margin-bottom: 3rem;
+  }
+  footer .footer-inner .txtBox .nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .footer-inner .txtBox .nav ul li {
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+  }
+  footer .footer-inner .txtBox .nav ul li a {
+    padding-left: 0;
+  }
+  footer .footer-inner .txtBox .nav ul li a::after {
+    content: "";
+    margin-left: 0;
+  }
+  footer .footer-inner .txtBox .info {
+    width: 95%;
+  }
+  footer .footer-inner .txtBox .info p {
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    text-align: center;
+  }
+  footer .footer-inner .txtBox .info p i {
+    font-style: normal;
+    white-space: nowrap;
+  }
+  footer .footer-inner .txtBox .info p b {
+    font-weight: normal;
+    white-space: nowrap;
+  }
+  footer .footer-inner .txtBox .info p span {
+    margin-right: 0;
+  }
+  footer .footer-inner .txtBox .info p:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+  }
+}
 /* 와이드 데스크탑 미디어쿼리 설정 */
 @media (min-width: 87.5rem) {
   .util-inner,

@@ -2,6 +2,12 @@ $(document).ready(function () {
     // initialize swiper
     var swiper = new Swiper(".heroSwiper", {
         loop: true,
+        effect: "fade",
+        speed: 1000,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
         pagination: {
           el: ".swiper-pagination",
           type: "fraction",
