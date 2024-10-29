@@ -205,42 +205,7 @@ header {
         }
     }
 }
-/* header 미디어쿼리 */
-@media (min-width:48.063rem) and (max-width:75rem) {
-    header {
-        .gnb {
-            .gnb-inner {
-                ul {
-                    display: none;
-                }
-                .menu-btn {
-                    display: flex;
-                }
-            }
-        }
-    }
-}
-@media (max-width:48rem) {
-    header {
-        .util {
-            .util-inner {
-                .user {
-                    display: none;
-                }
-            }
-        }
-        .gnb {
-            .gnb-inner {
-                ul {
-                    display: none;
-                }
-                .menu-btn {
-                    display: flex;
-                }
-            }
-        }
-    }
-}
+
 /* main 설정 */
 .main {
     width: 100%;
@@ -1259,8 +1224,100 @@ header {
         }
     }
 } 
-/* main 미디어쿼리 */
+
+/* footer 설정*/
+footer {
+    background-color: $color-blue-main;
+    height: 20.875rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .footer-inner {
+        display: flex;
+        h2 {
+            margin-right: 3rem;
+            background-color: #fff;
+            display: inline;
+            width: 12.75rem;
+            height: 3.5rem;
+            font-size: 0;
+            background-image: url(imgs/logo.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-radius: 4.625rem;
+            cursor: pointer;
+        }
+        .txtBox {
+            margin-top: 1rem;
+            .nav {
+                margin-bottom: 2.375rem;
+                ul {
+                    display: flex;
+                    li {
+                        a {
+                            display: block;
+                            width: 100%;
+                            padding-left: 1.125rem;
+                            color: #fff;
+                            &::after {
+                                content: '|';
+                                margin-left: 1.125rem;
+                            }
+                        }
+                        &:nth-child(1) {
+                            a {
+                                padding-left: 0;
+                            }
+                        }
+                        &:last-child a::after {
+                            content: '';
+                        }
+                    }
+                }
+            }
+            .info {
+                p {
+                    margin-bottom: 0.563rem;
+                    i {
+                        font-style: normal;
+                        white-space: nowrap;
+                    }
+                    b {
+                        font-weight: normal;
+                        white-space: nowrap;
+                    }
+                    span {
+                        margin-right: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+/* 769px ~ 1200px 태블릿 구간 미디어쿼리 */
 @media (min-width:48.063rem) and (max-width:75rem) {
+    /* header 미디어쿼리 */
+    header {
+        .gnb {
+            .gnb-inner {
+                ul {
+                    display: none;
+                }
+                .menu-btn {
+                    display: flex;
+                }
+            }
+        }
+    }
+    /* main 미디어쿼리 */
     .main {
         /* hero 미디어쿼리 */
         .hero {
@@ -1285,12 +1342,75 @@ header {
                 }
             }
         }
+        /* layout 미디어쿼리 */
+        .layout {
+            /* group-left 설정*/
+            .group-left {
+                /* 자주 찾는 서비스 설정*/
+                .serviceBox {
+                    height: 40rem;
+                    ul {
+                        li {
+                            width: 44%;
+                            a {
+                                i {}
+                                span {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
+
+/* ~768px 모바일 구간 미디어쿼리 */
 @media (max-width:48rem) {
+    /* header 미디어쿼리 */
+    header {
+        .util {
+            .util-inner {
+                .user {
+                    display: none;
+                }
+            }
+        }
+        .gnb {
+            .gnb-inner {
+                ul {
+                    display: none;
+                }
+                .menu-btn {
+                    display: flex;
+                }
+            }
+        }
+    }
+    /* main 미디어쿼리 */
     .main {
         /* hero 미디어쿼리 */
         .hero {
+            .swiper-button-next, .swiper-button-prev {
+                transform: scale(0.5);
+            }
+            .swiper-button-next {
+                margin-right: -1rem;
+                &:hover {
+                    transform: scale(0.5) translateX(0);
+            }
+                &:active {
+                    transform: scale(0.5) translateX(1.2rem);
+                }
+            }
+            .swiper-button-prev {
+                margin-left: -1rem;
+                &:hover {
+                    transform: scale(0.5) translateX(0);
+            }
+                &:active {
+                    transform: scale(0.5) translateX(-1.2rem);
+                }
+            }
             .txtBox {
                 h2 {
                     font-size: $font-size-26px;
@@ -1370,87 +1490,30 @@ header {
         .layout {
             grid-template-columns: 100%;
             grid-template-rows: 1fr 1fr 1fr;
+            /* group-left 설정*/
+            .group-left {
+                /* 자주 찾는 서비스 설정*/
+                .serviceBox {
+                    height: 40rem;
+                    ul {
+                        li {
+                            width: 44%;
+                            a {
+                                i {}
+                                span {}
+                            }
+                        }
+                    }
+                }
+            }
+            /* group-bottom 설정*/
             .group-bottom {
                 grid-column: 1;
             }
         }
     }
-}
-/* footer 설정*/
-footer {
-    background-color: $color-blue-main;
-    height: 20.875rem;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .footer-inner {
-        display: flex;
-        h2 {
-            margin-right: 3rem;
-            background-color: #fff;
-            display: inline;
-            width: 12.75rem;
-            height: 3.5rem;
-            font-size: 0;
-            background-image: url(imgs/logo.png);
-            background-repeat: no-repeat;
-            background-position: center center;
-            border-radius: 4.625rem;
-            cursor: pointer;
-        }
-        .txtBox {
-            margin-top: 1rem;
-            .nav {
-                margin-bottom: 2.375rem;
-                ul {
-                    display: flex;
-                    li {
-                        a {
-                            display: block;
-                            width: 100%;
-                            padding-left: 1.125rem;
-                            color: #fff;
-                            &::after {
-                                content: '|';
-                                margin-left: 1.125rem;
-                            }
-                        }
-                        &:nth-child(1) {
-                            a {
-                                padding-left: 0;
-                            }
-                        }
-                        &:last-child a::after {
-                            content: '';
-                        }
-                    }
-                }
-            }
-            .info {
-                p {
-                    margin-bottom: 0.563rem;
-                    i {
-                        font-style: normal;
-                        white-space: nowrap;
-                    }
-                    b {
-                        font-weight: normal;
-                        white-space: nowrap;
-                    }
-                    span {
-                        margin-right: 1.5rem;
-                    }
-                }
-            }
-        }
-    }
-}
-/* footer 미디어쿼리 */
-@media (min-width:48.063rem) and (max-width:75rem) {
-
-}
-@media (max-width:48rem) {
+    
+    /* footer 미디어쿼리 */
     footer {
         height: 53.875rem;
         .footer-inner {
@@ -1506,16 +1569,6 @@ footer {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 /* 와이드 데스크탑 미디어쿼리 설정 */
 @media (min-width:87.5rem) {

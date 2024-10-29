@@ -187,26 +187,6 @@ header .gnb .gnb-inner .menu-btn i {
   font-size: 1.5rem;
 }
 
-/* header 미디어쿼리 */
-@media (min-width: 48.063rem) and (max-width: 75rem) {
-  header .gnb .gnb-inner ul {
-    display: none;
-  }
-  header .gnb .gnb-inner .menu-btn {
-    display: flex;
-  }
-}
-@media (max-width: 48rem) {
-  header .util .util-inner .user {
-    display: none;
-  }
-  header .gnb .gnb-inner ul {
-    display: none;
-  }
-  header .gnb .gnb-inner .menu-btn {
-    display: flex;
-  }
-}
 /* main 설정 */
 .main {
   width: 100%;
@@ -1243,10 +1223,84 @@ header .gnb .gnb-inner .menu-btn i {
   font-weight: bold;
 }
 
-/* main 미디어쿼리 */
+/* footer 설정*/
+footer {
+  background-color: #004EA2;
+  height: 20.875rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .footer-inner {
+  display: flex;
+}
+footer .footer-inner h2 {
+  margin-right: 3rem;
+  background-color: #fff;
+  display: inline;
+  width: 12.75rem;
+  height: 3.5rem;
+  font-size: 0;
+  background-image: url(imgs/logo.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 4.625rem;
+  cursor: pointer;
+}
+footer .footer-inner .txtBox {
+  margin-top: 1rem;
+}
+footer .footer-inner .txtBox .nav {
+  margin-bottom: 2.375rem;
+}
+footer .footer-inner .txtBox .nav ul {
+  display: flex;
+}
+footer .footer-inner .txtBox .nav ul li a {
+  display: block;
+  width: 100%;
+  padding-left: 1.125rem;
+  color: #fff;
+}
+footer .footer-inner .txtBox .nav ul li a::after {
+  content: "|";
+  margin-left: 1.125rem;
+}
+footer .footer-inner .txtBox .nav ul li:nth-child(1) a {
+  padding-left: 0;
+}
+footer .footer-inner .txtBox .nav ul li:last-child a::after {
+  content: "";
+}
+footer .footer-inner .txtBox .info p {
+  margin-bottom: 0.563rem;
+}
+footer .footer-inner .txtBox .info p i {
+  font-style: normal;
+  white-space: nowrap;
+}
+footer .footer-inner .txtBox .info p b {
+  font-weight: normal;
+  white-space: nowrap;
+}
+footer .footer-inner .txtBox .info p span {
+  margin-right: 1.5rem;
+}
+
+/* 769px ~ 1200px 태블릿 구간 미디어쿼리 */
 @media (min-width: 48.063rem) and (max-width: 75rem) {
+  /* header 미디어쿼리 */
+  header .gnb .gnb-inner ul {
+    display: none;
+  }
+  header .gnb .gnb-inner .menu-btn {
+    display: flex;
+  }
+  /* main 미디어쿼리 */
   .main {
     /* hero 미디어쿼리 */
+    /* layout 미디어쿼리 */
   }
   .main .hero .txtBox .search .search-bar {
     width: 80%;
@@ -1264,11 +1318,56 @@ header .gnb .gnb-inner .menu-btn i {
     text-align: center;
     margin: 0.15rem 0.313rem;
   }
+  .main .layout {
+    /* group-left 설정*/
+  }
+  .main .layout .group-left {
+    /* 자주 찾는 서비스 설정*/
+  }
+  .main .layout .group-left .serviceBox {
+    height: 40rem;
+  }
+  .main .layout .group-left .serviceBox ul li {
+    width: 44%;
+  }
 }
+/* ~768px 모바일 구간 미디어쿼리 */
 @media (max-width: 48rem) {
+  /* header 미디어쿼리 */
+  header .util .util-inner .user {
+    display: none;
+  }
+  header .gnb .gnb-inner ul {
+    display: none;
+  }
+  header .gnb .gnb-inner .menu-btn {
+    display: flex;
+  }
+  /* main 미디어쿼리 */
   .main {
     /* hero 미디어쿼리 */
     /* layout 미디어쿼리 */
+  }
+  .main .hero .swiper-button-next, .main .hero .swiper-button-prev {
+    transform: scale(0.5);
+  }
+  .main .hero .swiper-button-next {
+    margin-right: -1rem;
+  }
+  .main .hero .swiper-button-next:hover {
+    transform: scale(0.5) translateX(0);
+  }
+  .main .hero .swiper-button-next:active {
+    transform: scale(0.5) translateX(1.2rem);
+  }
+  .main .hero .swiper-button-prev {
+    margin-left: -1rem;
+  }
+  .main .hero .swiper-button-prev:hover {
+    transform: scale(0.5) translateX(0);
+  }
+  .main .hero .swiper-button-prev:active {
+    transform: scale(0.5) translateX(-1.2rem);
   }
   .main .hero .txtBox h2 {
     font-size: 1.625rem;
@@ -1337,78 +1436,22 @@ header .gnb .gnb-inner .menu-btn i {
   .main .layout {
     grid-template-columns: 100%;
     grid-template-rows: 1fr 1fr 1fr;
+    /* group-left 설정*/
+    /* group-bottom 설정*/
+  }
+  .main .layout .group-left {
+    /* 자주 찾는 서비스 설정*/
+  }
+  .main .layout .group-left .serviceBox {
+    height: 40rem;
+  }
+  .main .layout .group-left .serviceBox ul li {
+    width: 44%;
   }
   .main .layout .group-bottom {
     grid-column: 1;
   }
-}
-/* footer 설정*/
-footer {
-  background-color: #004EA2;
-  height: 20.875rem;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-footer .footer-inner {
-  display: flex;
-}
-footer .footer-inner h2 {
-  margin-right: 3rem;
-  background-color: #fff;
-  display: inline;
-  width: 12.75rem;
-  height: 3.5rem;
-  font-size: 0;
-  background-image: url(imgs/logo.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  border-radius: 4.625rem;
-  cursor: pointer;
-}
-footer .footer-inner .txtBox {
-  margin-top: 1rem;
-}
-footer .footer-inner .txtBox .nav {
-  margin-bottom: 2.375rem;
-}
-footer .footer-inner .txtBox .nav ul {
-  display: flex;
-}
-footer .footer-inner .txtBox .nav ul li a {
-  display: block;
-  width: 100%;
-  padding-left: 1.125rem;
-  color: #fff;
-}
-footer .footer-inner .txtBox .nav ul li a::after {
-  content: "|";
-  margin-left: 1.125rem;
-}
-footer .footer-inner .txtBox .nav ul li:nth-child(1) a {
-  padding-left: 0;
-}
-footer .footer-inner .txtBox .nav ul li:last-child a::after {
-  content: "";
-}
-footer .footer-inner .txtBox .info p {
-  margin-bottom: 0.563rem;
-}
-footer .footer-inner .txtBox .info p i {
-  font-style: normal;
-  white-space: nowrap;
-}
-footer .footer-inner .txtBox .info p b {
-  font-weight: normal;
-  white-space: nowrap;
-}
-footer .footer-inner .txtBox .info p span {
-  margin-right: 1.5rem;
-}
-
-/* footer 미디어쿼리 */
-@media (max-width: 48rem) {
+  /* footer 미디어쿼리 */
   footer {
     height: 53.875rem;
   }
