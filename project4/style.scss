@@ -694,17 +694,20 @@ header {
                         justify-content: center;
                         align-items: center;
                         h4 {
-                            font-size: $font-size-20px;
+                            font-size: $font-size-18px;
+                            font-weight: 600;
+                            color: #2c2c2c;
                             text-align: center;
-                            margin-top: 1rem;
+                            margin-top: 1.5rem;
                         }
                         ul {
                             height: 80%;
                             margin-top: 1rem;
                             padding: 0 1rem;
+                            display: flex;
+                            justify-content: center;
                             li {
                                 height: 3.125rem;
-                                float: left;
                                 margin: 0.5rem 1rem;
                                 a {
                                     position: relative;
@@ -719,6 +722,7 @@ header {
                                         // height: 3.125rem;
                                         width: 50px;
                                         height: 50px;
+                                        transform: scale(0.8);
                                         transition: all 0.3s;
                                     }
                                 }
@@ -744,7 +748,7 @@ header {
                                 }
                                 &:hover {
                                     i {
-                                        transform: scale(1.1);
+                                        transform: scale(1);
                                     }
                                 }
                             }
@@ -1367,6 +1371,7 @@ footer {
                     ul {
                         li {
                             width: 44%;
+                            margin: 1.5%;
                             a {
                                 i {}
                                 span {}
@@ -1420,6 +1425,7 @@ footer {
                             h4 {}
                             ul {
                                 li {
+                                    margin: 0.5rem 0.5rem;
                                     a {
                                         span {}
                                         i {}
@@ -1568,9 +1574,72 @@ footer {
                     ul {
                         li {
                             width: 44%;
+                            margin: 1.5%;
                             a {
                                 i {}
                                 span {}
+                            }
+                        }
+                    }
+                }
+                /* wrapBox1 설정*/
+                .wrapBox1 {
+                    height: 30rem;
+                    .wrapBox1-top {
+                        height: 40%;
+                        /* 자원봉사 설정*/
+                        .volunteerBox {
+                            padding-left: 0;
+                            flex-direction: column;
+                            img {
+                                &.txt {
+                                    order: 2;
+                                    margin-top: 0.6rem;
+                                    width: 4rem;
+                                }
+                                &.icon {
+                                    order: 1;
+                                    margin-top: -0.4rem;
+                                    width: 4rem;
+                                }
+                            }
+                        }
+                        /* 실시간영상 설정*/
+                        .liveBox {
+                            flex-direction: column;
+                            img {
+                                &.txt {
+                                    order: 2;
+                                    margin-top: 1.2rem;
+                                    width: 6.4rem;
+                                }
+                                &.icon {
+                                    order: 1;
+                                    width: 26%;
+                                    width: 3.2rem;
+                                }
+                            }
+                        }
+                    }
+                    /* snsBox 설정*/
+                    .snsBox {
+                        height: 56%;
+                        .snsBox-inner {
+                            h4 {
+                                font-size: $font-size-18px;
+                            }
+                            ul {
+                                height: 60%;
+                                margin-top: 1.2rem;
+                                flex-wrap: wrap;
+                                width: 16rem;
+                                li {
+                                    margin: 0.5rem 0.5rem;
+                                    a {
+                                        span {}
+                                        i {}
+                                    }
+                                }
                             }
                         }
                     }

@@ -660,18 +660,21 @@ header .gnb .gnb-inner .menu-btn i {
   align-items: center;
 }
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner h4 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2c2c2c;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul {
   height: 80%;
   margin-top: 1rem;
   padding: 0 1rem;
+  display: flex;
+  justify-content: center;
 }
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li {
   height: 3.125rem;
-  float: left;
   margin: 0.5rem 1rem;
 }
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li a {
@@ -686,6 +689,7 @@ header .gnb .gnb-inner .menu-btn i {
   background-image: url(imgs/sns-icon.png);
   width: 50px;
   height: 50px;
+  transform: scale(0.8);
   transition: all 0.3s;
 }
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(2) i {
@@ -701,7 +705,7 @@ header .gnb .gnb-inner .menu-btn i {
   background-position: -240px 0;
 }
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:hover i {
-  transform: scale(1.1);
+  transform: scale(1);
 }
 .main .layout .group-left .wrapBox2 {
   display: flex;
@@ -1345,6 +1349,7 @@ footer .footer-inner .txtBox .info p span {
   }
   .main .layout .group-left .serviceBox ul li {
     width: 44%;
+    margin: 1.5%;
   }
   .main .layout .group-left .wrapBox1 {
     height: 24.6rem;
@@ -1384,6 +1389,9 @@ footer .footer-inner .txtBox .info p span {
   }
   .main .layout .group-left .wrapBox1 .snsBox {
     height: 50%;
+  }
+  .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li {
+    margin: 0.5rem 0.5rem;
   }
 }
 /* ~768px 모바일 구간 미디어쿼리 */
@@ -1496,12 +1504,65 @@ footer .footer-inner .txtBox .info p span {
   }
   .main .layout .group-left {
     /* 자주 찾는 서비스 설정*/
+    /* wrapBox1 설정*/
   }
   .main .layout .group-left .serviceBox {
     height: 40rem;
   }
   .main .layout .group-left .serviceBox ul li {
     width: 44%;
+    margin: 1.5%;
+  }
+  .main .layout .group-left .wrapBox1 {
+    height: 30rem;
+    /* snsBox 설정*/
+  }
+  .main .layout .group-left .wrapBox1 .wrapBox1-top {
+    height: 40%;
+    /* 자원봉사 설정*/
+    /* 실시간영상 설정*/
+  }
+  .main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox {
+    padding-left: 0;
+    flex-direction: column;
+  }
+  .main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox img.txt {
+    order: 2;
+    margin-top: 0.6rem;
+    width: 4rem;
+  }
+  .main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox img.icon {
+    order: 1;
+    margin-top: -0.4rem;
+    width: 4rem;
+  }
+  .main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox {
+    flex-direction: column;
+  }
+  .main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox img.txt {
+    order: 2;
+    margin-top: 1.2rem;
+    width: 6.4rem;
+  }
+  .main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox img.icon {
+    order: 1;
+    width: 26%;
+    width: 3.2rem;
+  }
+  .main .layout .group-left .wrapBox1 .snsBox {
+    height: 56%;
+  }
+  .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner h4 {
+    font-size: 1.125rem;
+  }
+  .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul {
+    height: 60%;
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+    width: 16rem;
+  }
+  .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li {
+    margin: 0.5rem 0.5rem;
   }
   .main .layout .group-bottom {
     grid-column: 1;
