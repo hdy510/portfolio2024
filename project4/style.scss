@@ -604,20 +604,22 @@ header {
                 // background-color: #cdf6ff;
                 height: 21.6rem;
                 display: flex;
-                .wrapBox1-left {
+                flex-direction: column;
+                .wrapBox1-top {
                     // background-color: blue;
-                    width: 50%;
-                    height: 100%;
+                    width: 100%;
+                    height: 44%;
                     display: flex;
-                    flex-direction: column;
-                    padding: 1.5rem 0.75rem 1.5rem 1.5rem;
+                    justify-content: space-between;
+                    padding: 1.5rem;
                     /* 자원봉사 설정*/
                     .volunteerBox {
                         border: 1px solid #D7D7D7;
                         border-radius: 1rem;
-                        width: 100%;
-                        height: 50%;
+                        width: 48%;
+                        height: 100%;
                         margin-bottom: 1.5rem;
+                        padding-left: 1rem;
                         background-color: #fff;
                         display: flex;
                         justify-content: center;
@@ -628,7 +630,13 @@ header {
                             color: transparent;
                         }
                         img {
-                            width: 70%;
+                            margin: 0 0.4rem;
+                            &.txt {
+                                width: 4.6rem;
+                            }
+                            &.icon {
+                                width: 4.6rem;
+                            }
                             transition: all 0.3s;
                         }
                         &:hover {
@@ -641,8 +649,8 @@ header {
                     .liveBox {
                         border: 1px solid #D7D7D7;
                         border-radius: 1rem;
-                        width: 100%;
-                        height: 50%;
+                        width: 48%;
+                        height: 100%;
                         background-color: #fff;
                         display: flex;
                         justify-content: center;
@@ -653,7 +661,13 @@ header {
                             color: transparent;
                         }
                         img {
-                            width: 80%;
+                            margin: 0 0.4rem;
+                            &.txt {
+                                width: 7.8rem;
+                            }
+                            &.icon {
+                                width: 3.6rem;
+                            }
                             transition: all 0.3s;
                         }
                         &:hover {
@@ -665,9 +679,10 @@ header {
                 }
                 /* snsBox 설정*/
                 .snsBox {
-                    width: 50%;
-                    height: 100%;
-                    padding: 1.5rem 1.5rem 1.5rem 0.75rem;
+                    width: 100%;
+                    height: 56%;
+                    padding: 1.5rem;
+                    margin-top: -1.5rem;
                     .snsBox-inner {
                         width: 100%;
                         height: 100%;
@@ -681,12 +696,12 @@ header {
                         h4 {
                             font-size: $font-size-20px;
                             text-align: center;
-                            margin-top: 2rem;
+                            margin-top: 1rem;
                         }
                         ul {
-                            width: 59%;
                             height: 80%;
                             margin-top: 1rem;
+                            padding: 0 1rem;
                             li {
                                 height: 3.125rem;
                                 float: left;
@@ -1355,6 +1370,61 @@ footer {
                             a {
                                 i {}
                                 span {}
+                            }
+                        }
+                    }
+                }
+                /* wrapBox1 설정*/
+                .wrapBox1 {
+                    height: 24.6rem;
+                    .wrapBox1-top {
+                        height: 50%;
+                        /* 자원봉사 설정*/
+                        .volunteerBox {
+                            padding-left: 0;
+                            flex-direction: column;
+                            img {
+                                &.txt {
+                                    order: 2;
+                                    margin-top: 0.6rem;
+                                    width: 4rem;
+                                }
+                                &.icon {
+                                    order: 1;
+                                    margin-top: -0.4rem;
+                                    width: 4rem;
+                                }
+                            }
+                        }
+                        /* 실시간영상 설정*/
+                        .liveBox {
+                            flex-direction: column;
+                            img {
+                                &.txt {
+                                    order: 2;
+                                    margin-top: 1.2rem;
+                                    width: 6.4rem;
+                                }
+                                &.icon {
+                                    order: 1;
+                                    width: 26%;
+                                    width: 3.2rem;
+                                }
+                            }
+                        }
+                    }
+                    /* snsBox 설정*/
+                    .snsBox {
+                        height: 50%;
+                        .snsBox-inner {
+                            h4 {}
+                            ul {
+                                li {
+                                    a {
+                                        span {}
+                                        i {}
+                                    }
+                                }
                             }
                         }
                     }
