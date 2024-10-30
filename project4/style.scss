@@ -90,6 +90,7 @@ header {
                         background-color: #002752;
                         border-radius: 0.313rem;
                         display: flex;
+                        justify-content: center;
                         align-items: center;
                         padding: 0.313rem 0.75rem;
                         color: #fff;
@@ -290,6 +291,10 @@ header {
                 font-size: $font-size-30px;
                 margin-bottom: 1.875rem;
                 text-align: center;
+                b {
+                    font-weight: 600;
+                    white-space: nowrap;
+                }
                 span {
                     font-size: $font-size-38px;
                     white-space: nowrap;
@@ -474,8 +479,8 @@ header {
                             i {
                                 display: block;
                                 background-image: url('imgs/service-icons.png');
-                                width: 4rem;
-                                height: 3.875rem;
+                                width: 64px;
+                                height: 62px;
                             }
                             span {
                                 font-size: $font-size-18px;
@@ -485,37 +490,37 @@ header {
                         }
                         &:nth-child(2) {
                             i {
-                                background-position: -4rem 0;
+                                background-position: -64px 0;
                             }
                         }
                         &:nth-child(3) {
                             i {
-                                background-position: -8rem 0;
+                                background-position: -128px 0;
                             }
                         }
                         &:nth-child(4) {
                             i {
-                                background-position: -12rem 0;
+                                background-position: -192px 0;
                             }
                         }
                         &:nth-child(5) {
                             i {
-                                background-position: 0rem 3.875rem;
+                                background-position: 0rem 62px;
                             }
                         }
                         &:nth-child(6) {
                             i {
-                                background-position: -4rem 3.875rem;
+                                background-position: -64px 62px;
                             }
                         }
                         &:nth-child(7) {
                             i {
-                                background-position: -8rem 3.875rem;
+                                background-position: -128px 62px;
                             }
                         }
                         &:nth-child(8) {
                             i {
-                                background-position: -12rem 3.875rem;
+                                background-position: -192px 62px;
                             }
                         }
                     }
@@ -759,6 +764,7 @@ header {
                 // background-color: #ffcdfc;
                 display: flex;
                 padding: 1.5rem;
+                height: 26.25rem;
                 /* 홍보이미지 설정*/
                 .promoBox {
                     border: 1px solid #D7D7D7;
@@ -766,6 +772,77 @@ header {
                     width: 50%;
                     height: 100%;
                     margin-right: 0.75rem;
+                    background-image: url(imgs/promo-bg.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .swiper {
+                        width: 16.875rem;
+                        border-radius: 1.25rem;
+                        margin-top: 2rem;
+                    }
+                    .swiper-wrapper {
+                        width: 16.875rem;
+                        border-radius: 1.25rem;
+                    }
+                    .swiper-slide {
+                        text-align: center;
+                        font-size: 18px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .swiper-slide img {
+                        display: block;
+                        width: 88%;
+                        object-fit: cover;
+                        border-radius: 1.25rem;
+                    }
+                    .promoBoxSwiper {
+                        position: absolute;
+                        z-index: 1;
+                    }
+                    .swiper-button-next, .swiper-button-prev {
+                        background-image: url(imgs/hero-arrows.png);
+                        background-repeat: no-repeat;
+                        width: 5rem;
+                        height: 5rem;
+                        transition: all 0.3s;
+                    }
+                    .swiper-button-next:after, .swiper-button-prev:after {
+                        font-family: "";
+                        content: "";
+                    }
+                    .swiper-button-next {
+                        margin-right: 3rem;
+                        background-position: -5rem 0;
+                        &:hover {
+                            transform: translateX(0.725rem);
+                        }
+                    }
+                    .swiper-button-prev {
+                        margin-left: 3rem;
+                        &:hover {
+                            transform: translateX(-0.725rem);
+                        }
+                    }
+                    .swiper-pagination {
+                        text-align: right;
+                    }
+                    .swiper-pagination-fraction {
+                        color: #fff;
+                        bottom: 7.5%;
+                        padding-right: 15.5%;
+                    }
+                    .swiper-pagination-current {
+                        font-size: $font-size-22px;
+                    }
+                    .swiper-pagination-total {
+                        font-size: $font-size-16px;
+                    }
+
                 }
                 /* 웹툰 설정*/
                 .webtoonBox {
@@ -1500,11 +1577,29 @@ footer {
                         }
                     }
                 }
+                /* wrapBox2 설정*/
+                .wrapBox2 {
+                    flex-direction: column;
+                    height: 50rem;
+                    /* 홍보이미지 설정*/
+                    .promoBox {
+                        width: 100%;
+                        height: 50%;
+                        margin-bottom: 2rem;
+                    }
+                    /* 웹툰 설정*/
+                    .webtoonBox {
+                        width: 100%;
+                        height: 50%;
+                        margin-left: 0;
+                    }
+                }
             }
             /* group-right 설정 */
             .group-right {
                 /* 실시간 탐방통제정보 설정 */
                 .controlBox {
+                    padding: 1.625rem;
                     p {
                         font-size: $font-size-17px;
                     }
@@ -1515,7 +1610,7 @@ footer {
                     }
                     .location {
                         li {
-                            width: calc((100% - 1.5rem) / 2);
+                            width: calc((100% - 2.4rem) / 3);
                         }
                     }
                 }
@@ -1547,9 +1642,12 @@ footer {
                         align-items: center;
                         padding-left: 0;
                         .smartBox-inner {
-                            width: 18.125rem;
+                            width: 100%;
                             ul {
-                                width: 87%;
+                                width: 15.21rem;
+                                li {
+                                    margin: 0.3rem;
+                                }
                             }
                         }
                     }
@@ -1663,8 +1761,29 @@ footer {
 @media (max-width:48rem) {
     /* header 미디어쿼리 */
     header {
+        /* util 설정 */
         .util {
             .util-inner {
+                /* 국립공원 날씨 정보 설정 */
+                .weather {
+                    span {
+                        width: 6.5rem;
+                        a {
+                            width: 100%;
+                            padding: 0.313rem 0;
+                        }
+                    }
+                    .listBox {
+                        > li {
+                            .list {
+                                li {
+                                    margin-right: 1rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                /* 로그인 회원가입 설정 */
                 .user {
                     display: none;
                 }
@@ -1708,7 +1827,7 @@ footer {
             }
             .txtBox {
                 h2 {
-                    font-size: $font-size-26px;
+                    font-size: $font-size-22px;
                     span {
                         font-size: $font-size-30px;
                     }
@@ -1783,8 +1902,8 @@ footer {
         }
         /* layout 미디어쿼리 */
         .layout {
-            grid-template-columns: 100%;
-            grid-template-rows: 1fr 1fr 1fr;
+            display: flex;
+            flex-direction: column;
             /* 박스별 제목 (h3) 공통 설정 */
             h3 {
                 font-size: $font-size-22px;
@@ -1946,6 +2065,23 @@ footer {
                         }
                     }
                 }
+                /* wrapBox2 설정*/
+                .wrapBox2 {
+                    flex-direction: column;
+                    height: 50rem;
+                    /* 홍보이미지 설정*/
+                    .promoBox {
+                        width: 100%;
+                        height: 50%;
+                        margin-bottom: 2rem;
+                    }
+                    /* 웹툰 설정*/
+                    .webtoonBox {
+                        width: 100%;
+                        height: 50%;
+                        margin-left: 0;
+                    }
+                }
             }
             /* group-right 설정 */
             .group-right {
@@ -1963,7 +2099,21 @@ footer {
                     }
                     .location {
                         li {
-                            width: calc((100% - 1.5rem) / 2);
+                            width: calc((100% - 2.2rem) / 3);
+                        }
+                    }
+                }
+                /* wrapBox3 설정*/
+                .wrapBox3 {
+                    /* 스마트 국립공원 설정*/
+                    .smartBox {
+                        .smartBox-inner {
+                            ul {
+                                
+                                li {
+                                    
+                                }
+                            }
                         }
                     }
                 }

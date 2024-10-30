@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // initialize swiper
+    // 히어로 initialize swiper
     var swiper = new Swiper(".heroSwiper", {
         loop: true,
         effect: "fade",
@@ -17,6 +17,25 @@ $(document).ready(function () {
           prevEl: ".swiper-button-prev",
         },
     });
+
+    // 홍보이미지 initialize swiper
+    var swiper = new Swiper(".promoBoxSwiper", {
+      loop: true,
+      effect: "fade",
+      speed: 1000,
+      spaceBetween: 30,
+      // autoplay: {
+      //   delay: 4000,
+      //   disableOnInteraction: false,
+      // },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+  });
 
     // [util 의 날씨 정보 자동 슬라이드]
     function weatherSlide() {

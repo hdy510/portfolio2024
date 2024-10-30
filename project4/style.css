@@ -82,6 +82,7 @@ header .util .util-inner .weather span a {
   background-color: #002752;
   border-radius: 0.313rem;
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 0.313rem 0.75rem;
   color: #fff;
@@ -281,6 +282,10 @@ header .gnb .gnb-inner .menu-btn i {
   margin-bottom: 1.875rem;
   text-align: center;
 }
+.main .hero .txtBox h2 b {
+  font-weight: 600;
+  white-space: nowrap;
+}
 .main .hero .txtBox h2 span {
   font-size: 2.375rem;
   white-space: nowrap;
@@ -463,8 +468,8 @@ header .gnb .gnb-inner .menu-btn i {
 .main .layout .group-left .serviceBox ul li a i {
   display: block;
   background-image: url("imgs/service-icons.png");
-  width: 4rem;
-  height: 3.875rem;
+  width: 64px;
+  height: 62px;
 }
 .main .layout .group-left .serviceBox ul li a span {
   font-size: 1.125rem;
@@ -472,25 +477,25 @@ header .gnb .gnb-inner .menu-btn i {
   text-align: center;
 }
 .main .layout .group-left .serviceBox ul li:nth-child(2) i {
-  background-position: -4rem 0;
+  background-position: -64px 0;
 }
 .main .layout .group-left .serviceBox ul li:nth-child(3) i {
-  background-position: -8rem 0;
+  background-position: -128px 0;
 }
 .main .layout .group-left .serviceBox ul li:nth-child(4) i {
-  background-position: -12rem 0;
+  background-position: -192px 0;
 }
 .main .layout .group-left .serviceBox ul li:nth-child(5) i {
-  background-position: 0rem 3.875rem;
+  background-position: 0rem 62px;
 }
 .main .layout .group-left .serviceBox ul li:nth-child(6) i {
-  background-position: -4rem 3.875rem;
+  background-position: -64px 62px;
 }
 .main .layout .group-left .serviceBox ul li:nth-child(7) i {
-  background-position: -8rem 3.875rem;
+  background-position: -128px 62px;
 }
 .main .layout .group-left .serviceBox ul li:nth-child(8) i {
-  background-position: -12rem 3.875rem;
+  background-position: -192px 62px;
 }
 .main .layout .group-left .newsBox {
   height: 25rem;
@@ -707,6 +712,7 @@ header .gnb .gnb-inner .menu-btn i {
 .main .layout .group-left .wrapBox2 {
   display: flex;
   padding: 1.5rem;
+  height: 26.25rem;
   /* 홍보이미지 설정*/
   /* 웹툰 설정*/
 }
@@ -716,6 +722,77 @@ header .gnb .gnb-inner .menu-btn i {
   width: 50%;
   height: 100%;
   margin-right: 0.75rem;
+  background-image: url(imgs/promo-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .layout .group-left .wrapBox2 .promoBox .swiper {
+  width: 16.875rem;
+  border-radius: 1.25rem;
+  margin-top: 2rem;
+}
+.main .layout .group-left .wrapBox2 .promoBox .swiper-wrapper {
+  width: 16.875rem;
+  border-radius: 1.25rem;
+}
+.main .layout .group-left .wrapBox2 .promoBox .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .layout .group-left .wrapBox2 .promoBox .swiper-slide img {
+  display: block;
+  width: 88%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1.25rem;
+}
+.main .layout .group-left .wrapBox2 .promoBox .promoBoxSwiper {
+  position: absolute;
+  z-index: 1;
+}
+.main .layout .group-left .wrapBox2 .promoBox .swiper-button-next, .main .layout .group-left .wrapBox2 .promoBox .swiper-button-prev {
+  background-image: url(imgs/hero-arrows.png);
+  background-repeat: no-repeat;
+  width: 5rem;
+  height: 5rem;
+  transition: all 0.3s;
+}
+.main .layout .group-left .wrapBox2 .promoBox .swiper-button-next:after, .main .layout .group-left .wrapBox2 .promoBox .swiper-button-prev:after {
+  font-family: "";
+  content: "";
+}
+.main .layout .group-left .wrapBox2 .promoBox .swiper-button-next {
+  margin-right: 3rem;
+  background-position: -5rem 0;
+}
+.main .layout .group-left .wrapBox2 .promoBox .swiper-button-next:hover {
+  transform: translateX(0.725rem);
+}
+.main .layout .group-left .wrapBox2 .promoBox .swiper-button-prev {
+  margin-left: 3rem;
+}
+.main .layout .group-left .wrapBox2 .promoBox .swiper-button-prev:hover {
+  transform: translateX(-0.725rem);
+}
+.main .layout .group-left .wrapBox2 .promoBox .swiper-pagination {
+  text-align: right;
+}
+.main .layout .group-left .wrapBox2 .promoBox .swiper-pagination-fraction {
+  color: #fff;
+  bottom: 7.5%;
+  padding-right: 15.5%;
+}
+.main .layout .group-left .wrapBox2 .promoBox .swiper-pagination-current {
+  font-size: 1.375rem;
+}
+.main .layout .group-left .wrapBox2 .promoBox .swiper-pagination-total {
+  font-size: 1rem;
 }
 .main .layout .group-left .wrapBox2 .webtoonBox {
   border: 1px solid #D7D7D7;
@@ -1355,6 +1432,7 @@ footer .footer-inner .txtBox .info p span {
     /* 자주 찾는 서비스 설정*/
     /* 새로운 소식 설정*/
     /* wrapBox1 설정*/
+    /* wrapBox2 설정*/
   }
   .main .layout .group-left .serviceBox {
     height: 40rem;
@@ -1457,10 +1535,29 @@ footer .footer-inner .txtBox .info p span {
   .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li {
     margin: 0.5rem 0.5rem;
   }
+  .main .layout .group-left .wrapBox2 {
+    flex-direction: column;
+    height: 50rem;
+    /* 홍보이미지 설정*/
+    /* 웹툰 설정*/
+  }
+  .main .layout .group-left .wrapBox2 .promoBox {
+    width: 100%;
+    height: 50%;
+    margin-bottom: 2rem;
+  }
+  .main .layout .group-left .wrapBox2 .webtoonBox {
+    width: 100%;
+    height: 50%;
+    margin-left: 0;
+  }
   .main .layout .group-right {
     /* 실시간 탐방통제정보 설정 */
     /* wrapBox3 설정*/
     /* 국립공원 사진전 설정*/
+  }
+  .main .layout .group-right .controlBox {
+    padding: 1.625rem;
   }
   .main .layout .group-right .controlBox p {
     font-size: 1.063rem;
@@ -1469,7 +1566,7 @@ footer .footer-inner .txtBox .info p span {
     width: 31%;
   }
   .main .layout .group-right .controlBox .location li {
-    width: calc((100% - 1.5rem) / 2);
+    width: calc((100% - 2.4rem) / 3);
   }
   .main .layout .group-right .wrapBox3 {
     height: 52rem;
@@ -1497,10 +1594,13 @@ footer .footer-inner .txtBox .info p span {
     padding-left: 0;
   }
   .main .layout .group-right .wrapBox3 .smartBox .smartBox-inner {
-    width: 18.125rem;
+    width: 100%;
   }
   .main .layout .group-right .wrapBox3 .smartBox .smartBox-inner ul {
-    width: 87%;
+    width: 15.21rem;
+  }
+  .main .layout .group-right .wrapBox3 .smartBox .smartBox-inner ul li {
+    margin: 0.3rem;
   }
   .main .layout .group-right .galleryBox {
     height: 15.5rem;
@@ -1604,6 +1704,23 @@ footer .footer-inner .txtBox .info p span {
 /* ~768px 모바일 구간 미디어쿼리 */
 @media (max-width: 48rem) {
   /* header 미디어쿼리 */
+  header {
+    /* util 설정 */
+  }
+  header .util .util-inner {
+    /* 국립공원 날씨 정보 설정 */
+    /* 로그인 회원가입 설정 */
+  }
+  header .util .util-inner .weather span {
+    width: 6.5rem;
+  }
+  header .util .util-inner .weather span a {
+    width: 100%;
+    padding: 0.313rem 0;
+  }
+  header .util .util-inner .weather .listBox > li .list li {
+    margin-right: 1rem;
+  }
   header .util .util-inner .user {
     display: none;
   }
@@ -1640,7 +1757,7 @@ footer .footer-inner .txtBox .info p span {
     transform: scale(0.5) translateX(-1.2rem);
   }
   .main .hero .txtBox h2 {
-    font-size: 1.625rem;
+    font-size: 1.375rem;
   }
   .main .hero .txtBox h2 span {
     font-size: 1.875rem;
@@ -1704,8 +1821,8 @@ footer .footer-inner .txtBox .info p span {
     margin-left: 0;
   }
   .main .layout {
-    grid-template-columns: 100%;
-    grid-template-rows: 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     /* 박스별 제목 (h3) 공통 설정 */
     /* group-left 설정*/
     /* group-right 설정 */
@@ -1718,6 +1835,7 @@ footer .footer-inner .txtBox .info p span {
     /* 자주 찾는 서비스 설정*/
     /* 새로운 소식 설정*/
     /* wrapBox1 설정*/
+    /* wrapBox2 설정*/
   }
   .main .layout .group-left .serviceBox {
     height: 40rem;
@@ -1854,9 +1972,26 @@ footer .footer-inner .txtBox .info p span {
   .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li {
     margin: 0.5rem 0.5rem;
   }
+  .main .layout .group-left .wrapBox2 {
+    flex-direction: column;
+    height: 50rem;
+    /* 홍보이미지 설정*/
+    /* 웹툰 설정*/
+  }
+  .main .layout .group-left .wrapBox2 .promoBox {
+    width: 100%;
+    height: 50%;
+    margin-bottom: 2rem;
+  }
+  .main .layout .group-left .wrapBox2 .webtoonBox {
+    width: 100%;
+    height: 50%;
+    margin-left: 0;
+  }
   .main .layout .group-right {
     padding: 1.25rem;
     /* 실시간 탐방통제정보 설정 */
+    /* wrapBox3 설정*/
     /* 국립공원 사진전 설정*/
   }
   .main .layout .group-right .controlBox {
@@ -1869,7 +2004,10 @@ footer .footer-inner .txtBox .info p span {
     width: 31%;
   }
   .main .layout .group-right .controlBox .location li {
-    width: calc((100% - 1.5rem) / 2);
+    width: calc((100% - 2.2rem) / 3);
+  }
+  .main .layout .group-right .wrapBox3 {
+    /* 스마트 국립공원 설정*/
   }
   .main .layout .group-right .galleryBox {
     height: 15.5rem;
