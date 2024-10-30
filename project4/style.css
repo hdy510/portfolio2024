@@ -413,7 +413,6 @@ header .gnb .gnb-inner .menu-btn i {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 40.188rem;
-  gap: 2.813rem;
   margin-top: 4.375rem;
   /* 박스별 제목 (h3) 공통 설정 */
   /* group-left 설정*/
@@ -518,7 +517,7 @@ header .gnb .gnb-inner .menu-btn i {
   margin-bottom: 2%;
 }
 .main .layout .group-left .newsBox .newsBox-inner .tabMenu li {
-  padding: 0.313rem 0.813rem;
+  padding: 0.313rem 0.513rem;
   margin: 0 0.25rem;
   border-radius: 0.5rem;
 }
@@ -527,7 +526,6 @@ header .gnb .gnb-inner .menu-btn i {
   padding: 0.313rem 0.313rem;
   font-size: 1.125rem;
   font-weight: 600;
-  width: 100%;
 }
 .main .layout .group-left .newsBox .newsBox-inner .tabMenu li a i {
   display: block;
@@ -559,14 +557,14 @@ header .gnb .gnb-inner .menu-btn i {
   justify-content: space-between;
 }
 .main .layout .group-left .newsBox .newsBox-inner .txtBox li a {
-  width: 80%;
+  width: calc(90% - 6.24rem);
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   overflow: hidden;
 }
 .main .layout .group-left .newsBox .newsBox-inner .txtBox li span {
-  width: 18%;
+  width: 6.24rem;
   color: #777;
 }
 .main .layout .group-left .wrapBox1 {
@@ -670,10 +668,9 @@ header .gnb .gnb-inner .menu-btn i {
   height: 80%;
   margin-top: 1rem;
   padding: 0 1rem;
-  display: flex;
-  justify-content: center;
 }
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li {
+  float: left;
   height: 3.125rem;
   margin: 0.5rem 1rem;
 }
@@ -765,29 +762,48 @@ header .gnb .gnb-inner .menu-btn i {
   filter: brightness(0.85);
 }
 .main .layout .group-right {
+  padding: 2.5rem;
   /* 실시간 탐방통제정보 설정*/
   /* wrapBox3 설정*/
   /* 국립공원 사진전 설정*/
   /* 자주하는 질문 설정*/
 }
 .main .layout .group-right .controlBox {
-  height: 600px;
   margin-bottom: 3.75rem;
   border: 1px solid #D1D1D1;
   border-radius: 1.25rem;
   background-color: #fff;
   padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main .layout .group-right .controlBox h3 {
+  white-space: nowrap;
 }
 .main .layout .group-right .controlBox p {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
+  line-height: 1.5;
   color: #777;
   font-weight: 500;
   margin-bottom: 2.125rem;
+  width: 100%;
 }
 .main .layout .group-right .controlBox .legend {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 1.75rem;
+  margin-bottom: 2.75rem;
+  width: 100%;
+  position: relative;
+}
+.main .layout .group-right .controlBox .legend::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.063rem;
+  background-color: #EFEFEF;
+  position: absolute;
+  bottom: -1.5rem;
 }
 .main .layout .group-right .controlBox .legend li {
   width: 16%;
@@ -810,21 +826,15 @@ header .gnb .gnb-inner .menu-btn i {
   background-color: #F2F2F2;
   color: #777;
 }
-.main .layout .group-right .controlBox hr {
-  margin-bottom: 1.75rem;
-  height: 0.125rem;
-  border: 0;
-  background-color: #EFEFEF;
-}
 .main .layout .group-right .controlBox .location {
   display: flex;
   flex-wrap: wrap;
 }
 .main .layout .group-right .controlBox .location li {
-  width: 18%;
-  height: 2.8rem;
+  width: calc((100% - 3.6rem) / 5);
+  height: 2.6rem;
   border-radius: 3.75rem;
-  font-size: 1.125rem;
+  font-size: 0.875rem;
   margin: 0.4rem 0.36rem;
 }
 .main .layout .group-right .controlBox .location li.high {
@@ -1339,9 +1349,11 @@ footer .footer-inner .txtBox .info p span {
   }
   .main .layout {
     /* group-left 설정*/
+    /* group-right 설정 */
   }
   .main .layout .group-left {
     /* 자주 찾는 서비스 설정*/
+    /* 새로운 소식 설정*/
     /* wrapBox1 설정*/
   }
   .main .layout .group-left .serviceBox {
@@ -1351,12 +1363,56 @@ footer .footer-inner .txtBox .info p span {
     width: 44%;
     margin: 1.5%;
   }
+  .main .layout .group-left .newsBox {
+    height: 22rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner {
+    position: relative;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .tabMenu {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 7rem 7rem;
+    justify-content: start;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    margin-top: 0;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li {
+    width: 6.5rem;
+    margin: 0 0.3rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li:nth-child(5) {
+    position: absolute;
+    right: -2rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li a {
+    font-size: 1rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .txtBox {
+    top: 7rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .txtBox li {
+    display: none;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .txtBox li a {
+    width: 90%;
+    font-size: 0.875rem;
+    margin-bottom: 0.4rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .txtBox li:nth-child(1) {
+    display: block;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .txtBox li:nth-child(2) {
+    display: block;
+  }
   .main .layout .group-left .wrapBox1 {
-    height: 24.6rem;
+    height: 30rem;
     /* snsBox 설정*/
   }
   .main .layout .group-left .wrapBox1 .wrapBox1-top {
-    height: 50%;
+    height: 42%;
     /* 자원봉사 설정*/
     /* 실시간영상 설정*/
   }
@@ -1388,10 +1444,84 @@ footer .footer-inner .txtBox .info p span {
     width: 3.2rem;
   }
   .main .layout .group-left .wrapBox1 .snsBox {
-    height: 50%;
+    height: 58%;
+  }
+  .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul {
+    width: 16rem;
+    height: 60%;
+    margin-top: 0.7rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li {
     margin: 0.5rem 0.5rem;
+  }
+  .main .layout .group-right {
+    /* 실시간 탐방통제정보 설정 */
+  }
+  .main .layout .group-right .controlBox p {
+    font-size: 1.063rem;
+  }
+  .main .layout .group-right .controlBox .legend li {
+    width: 31%;
+  }
+  .main .layout .group-right .controlBox .location li {
+    width: calc((100% - 1.5rem) / 2);
+  }
+  /* footer 미디어쿼리 */
+  footer {
+    height: 53.875rem;
+  }
+  footer .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+  footer .footer-inner h2 {
+    order: 2;
+    margin-right: 0;
+    margin-top: 3rem;
+  }
+  footer .footer-inner .txtBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 1;
+  }
+  footer .footer-inner .txtBox .nav {
+    margin-bottom: 3rem;
+  }
+  footer .footer-inner .txtBox .nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .footer-inner .txtBox .nav ul li {
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+  }
+  footer .footer-inner .txtBox .nav ul li a {
+    padding-left: 0;
+  }
+  footer .footer-inner .txtBox .nav ul li a::after {
+    content: "";
+    margin-left: 0;
+  }
+  footer .footer-inner .txtBox .info {
+    width: 95%;
+  }
+  footer .footer-inner .txtBox .info p {
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    text-align: center;
+  }
+  footer .footer-inner .txtBox .info p span {
+    margin-right: 0;
+  }
+  footer .footer-inner .txtBox .info p:nth-child(2) {
+    display: flex;
+    flex-direction: column;
   }
 }
 /* ~768px 모바일 구간 미디어쿼리 */
@@ -1504,6 +1634,7 @@ footer .footer-inner .txtBox .info p span {
   }
   .main .layout .group-left {
     /* 자주 찾는 서비스 설정*/
+    /* 새로운 소식 설정*/
     /* wrapBox1 설정*/
   }
   .main .layout .group-left .serviceBox {
@@ -1513,12 +1644,86 @@ footer .footer-inner .txtBox .info p span {
     width: 44%;
     margin: 1.5%;
   }
+  .main .layout .group-left .newsBox {
+    height: 23rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner {
+    position: relative;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .tabMenu {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 7rem 7rem;
+    justify-content: start;
+    position: absolute;
+    top: 1.5rem;
+    left: 0.5rem;
+    margin-top: 0;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li {
+    width: 6.3rem;
+    margin: 0 0.3rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li:nth-child(5) {
+    position: absolute;
+    width: 5.2rem;
+    height: 1.8rem;
+    right: 0.5rem;
+    top: 13rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li:nth-child(5) a {
+    width: 100%;
+    height: 100%;
+    font-size: 1.125rem;
+    position: relative;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li:nth-child(5) a i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: scale(0.8);
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li:nth-child(5) a i::after {
+    content: "더보기";
+    width: 3.6rem;
+    font-weight: 600;
+    font-style: normal;
+    color: #9a9a9a;
+    position: absolute;
+    top: 0.02rem;
+    left: -3.6rem;
+    cursor: pointer;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li a {
+    font-size: 1rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .txtBox {
+    top: 7rem;
+    left: 1.5rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .txtBox li {
+    display: none;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .txtBox li a {
+    width: 90%;
+    font-size: 0.875rem;
+    margin-bottom: 0.4rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .txtBox li span {
+    font-size: 0.875rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .txtBox li:nth-child(1) {
+    display: block;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .txtBox li:nth-child(2) {
+    display: block;
+  }
   .main .layout .group-left .wrapBox1 {
     height: 30rem;
     /* snsBox 설정*/
   }
   .main .layout .group-left .wrapBox1 .wrapBox1-top {
-    height: 40%;
+    height: 44%;
     /* 자원봉사 설정*/
     /* 실시간영상 설정*/
   }
@@ -1554,12 +1759,15 @@ footer .footer-inner .txtBox .info p span {
   }
   .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner h4 {
     font-size: 1.125rem;
+    margin-top: 0.9rem;
   }
   .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul {
-    height: 60%;
-    margin-top: 1.2rem;
-    flex-wrap: wrap;
     width: 16rem;
+    height: 60%;
+    margin-top: 0.7rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li {
     margin: 0.5rem 0.5rem;
