@@ -423,7 +423,7 @@ header {
     /* 국립공원 알아보기 배경 하늘 설정*/
     .more-bg-sky {
         width: 100%;
-        height: 500px;
+        height: 33.75rem;
         background: linear-gradient(180deg, rgba(255,255,255,0.2) 00%, rgba(137,202,255,0.2) 100%);
         position: absolute;
         bottom: 0;
@@ -1250,14 +1250,17 @@ header {
         .group-bottom {
             grid-column: 1 / span 2;
             height: 40.188rem;
+            // background-color: rgb(172, 241, 172);
+            padding: 1.25rem 2.5rem 1.25rem 1.25rem;
             .moreBox {
-                height: 40.188rem;
+                height: 38.9rem;
                 position: relative;
+                // background-color: red;
                 .object {
                     width: 100%;
-                    height: 100%;
+                    height: 33.75rem;
                     position: absolute;
-                    top: 0;
+                    bottom: -0.3rem;
                     left: 0;
                     z-index: -1;
                     background-image: url(imgs/more-bg.png);
@@ -1268,17 +1271,18 @@ header {
                 h3 {}
                 .card {
                     display: flex;
-                    justify-content: flex-end;
+                    justify-content: space-between;
                     height: 2.5rem;
                     margin-top: 4rem;
+                    padding-left: 1.25rem;
                     > li {
-                        width: 19.25rem;
+                        width: 16.25rem;
                         height: auto;
-                        padding: 2.5rem;
+                        padding: 2rem;
                         border: 1px solid #d1d1d1;
                         border-radius: 0.625rem;
                         background-color: #fff;
-                        margin-left: 3.15rem;
+                        // margin-left: 3.15rem;
                         box-shadow: 0 7px 12px rgba(150, 161, 174, 0.4);
                         transition: all 0.3s;
                         &:nth-child(1) {
@@ -1407,6 +1411,40 @@ footer {
 
 
 
+/* 와이드 데스크탑 미디어쿼리 설정 */
+@media (min-width:87.5rem) {
+    header {
+        .util {
+            .util-inner {
+                max-width: 87.5rem;
+                margin: 0 auto;
+            }
+        }
+        .gnb {
+            .gnb-inner {
+                max-width: 87.5rem;
+                margin: 0 auto;
+            }
+        }
+    }
+    .main {
+        .layout {
+            max-width: 87.5rem;
+            margin: 0 auto;
+            /* group-bottom 미디어쿼리 */
+            .group-bottom {
+                .moreBox {
+                    .card {
+                        > li {
+                            width: 18.25rem;
+                            padding: 2.5rem;
+                        }
+                    }
+                } 
+            }
+        }
+    }
+}
 
 /* 769px ~ 1200px 태블릿 구간 미디어쿼리 */
 @media (min-width:48.063rem) and (max-width:75rem) {
@@ -1448,11 +1486,15 @@ footer {
                 }
             }
         }
+        /* 국립공원 알아보기 배경 하늘 미디어쿼리*/
+        .more-bg-sky {
+            
+        }
         /* layout 미디어쿼리 */
         .layout {
-            /* group-left 설정*/
+            /* group-left 미디어쿼리*/
             .group-left {
-                /* 자주 찾는 서비스 설정*/
+                /* 자주 찾는 서비스 미디어쿼리*/
                 .serviceBox {
                     height: 40rem;
                     ul {
@@ -1466,7 +1508,7 @@ footer {
                         }
                     }
                 }
-                /* 새로운 소식 설정*/
+                /* 새로운 소식 미디어쿼리*/
                 .newsBox {
                     height: 22rem;
                     .newsBox-inner {
@@ -1515,12 +1557,12 @@ footer {
                         }
                     }
                 }
-                /* wrapBox1 설정*/
+                /* wrapBox1 미디어쿼리*/
                 .wrapBox1 {
                     height: 30rem;
                     .wrapBox1-top {
                         height: 42%;
-                        /* 자원봉사 설정*/
+                        /* 자원봉사 미디어쿼리*/
                         .volunteerBox {
                             padding-left: 0;
                             flex-direction: column;
@@ -1537,7 +1579,7 @@ footer {
                                 }
                             }
                         }
-                        /* 실시간영상 설정*/
+                        /* 실시간영상 미디어쿼리*/
                         .liveBox {
                             flex-direction: column;
                             img {
@@ -1554,7 +1596,7 @@ footer {
                             }
                         }
                     }
-                    /* snsBox 설정*/
+                    /* snsBox 미디어쿼리*/
                     .snsBox {
                         height: 58%;
                         .snsBox-inner {
@@ -1577,17 +1619,17 @@ footer {
                         }
                     }
                 }
-                /* wrapBox2 설정*/
+                /* wrapBox2 미디어쿼리 */
                 .wrapBox2 {
                     flex-direction: column;
                     height: 50rem;
-                    /* 홍보이미지 설정*/
+                    /* 홍보이미지 미디어쿼리 */
                     .promoBox {
                         width: 100%;
                         height: 50%;
                         margin-bottom: 2rem;
                     }
-                    /* 웹툰 설정*/
+                    /* 웹툰 미디어쿼리 */
                     .webtoonBox {
                         width: 100%;
                         height: 50%;
@@ -1595,9 +1637,9 @@ footer {
                     }
                 }
             }
-            /* group-right 설정 */
+            /* group-right 미디어쿼리 */
             .group-right {
-                /* 실시간 탐방통제정보 설정 */
+                /* 실시간 탐방통제정보 미디어쿼리 */
                 .controlBox {
                     padding: 1.625rem;
                     p {
@@ -1614,11 +1656,11 @@ footer {
                         }
                     }
                 }
-                /* wrapBox3 설정*/
+                /* wrapBox3 미디어쿼리 */
                 .wrapBox3 {
                     height: 52rem;
                     flex-direction: column;
-                    /* 국립공원바로가기 설정*/
+                    /* 국립공원바로가기 미디어쿼리 */
                     .linkBox {
                         width: 100%;
                         height: 54%;
@@ -1633,7 +1675,7 @@ footer {
                             }
                         }
                     }
-                    /* 스마트 국립공원 설정*/
+                    /* 스마트 국립공원 미디어쿼리 */
                     .smartBox {
                         width: 100%;
                         height: 46%;
@@ -1652,7 +1694,7 @@ footer {
                         }
                     }
                 }
-                /* 국립공원 사진전 설정*/
+                /* 국립공원 사진전 미디어쿼리 */
                 .galleryBox {
                     height: 15.5rem;
                     position: relative;
@@ -1698,11 +1740,38 @@ footer {
                     }
                 }
             }
+            /* group-bottom 미디어쿼리 */
+            .group-bottom {
+                height: 50.188rem;
+                padding: 1.25rem;
+                .moreBox{
+                    height: 50.188rem;
+                    .object {
+
+                    }
+                    .card {
+                        width: 34.375rem;
+                        margin: 0 auto;
+                        flex-wrap: wrap;
+                        padding-left: 0;
+                        > li {
+                            &:nth-child(2) {
+                                margin-top: 0;
+                                height: 18.875rem;
+                            }
+                            &:nth-child(3), &:nth-child(4) {
+                                margin-top: 2rem;
+                                height: 15.875rem;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     /* footer 미디어쿼리 */
     footer {
-        height: 53.875rem;
+        height: 48.875rem;
         .footer-inner {
             flex-direction: column;
             align-items: center;
@@ -1761,10 +1830,10 @@ footer {
 @media (max-width:48rem) {
     /* header 미디어쿼리 */
     header {
-        /* util 설정 */
+        /* util 미디어쿼리 */
         .util {
             .util-inner {
-                /* 국립공원 날씨 정보 설정 */
+                /* 국립공원 날씨 정보 미디어쿼리 */
                 .weather {
                     span {
                         width: 6.5rem;
@@ -1783,7 +1852,7 @@ footer {
                         }
                     }
                 }
-                /* 로그인 회원가입 설정 */
+                /* 로그인 회원가입 미디어쿼리 */
                 .user {
                     display: none;
                 }
@@ -1900,17 +1969,22 @@ footer {
                 }
             }
         }
+        /* 국립공원 알아보기 배경 하늘 미디어쿼리*/
+        .more-bg-sky {
+            height: 23.75rem;
+            bottom: 10rem;
+        }
         /* layout 미디어쿼리 */
         .layout {
             display: flex;
             flex-direction: column;
-            /* 박스별 제목 (h3) 공통 설정 */
+            /* 박스별 제목 (h3) 공통 미디어쿼리 */
             h3 {
                 font-size: $font-size-22px;
             }
-            /* group-left 설정*/
+            /* group-left 미디어쿼리*/
             .group-left {
-                /* 자주 찾는 서비스 설정*/
+                /* 자주 찾는 서비스 미디어쿼리*/
                 .serviceBox {
                     height: 40rem;
                     ul {
@@ -1926,7 +2000,7 @@ footer {
                         }
                     }
                 }
-                /* 새로운 소식 설정*/
+                /* 새로운 소식 미디어쿼리 */
                 .newsBox {
                     height: 23rem;
                     .newsBox-inner {
@@ -2000,12 +2074,12 @@ footer {
                         }
                     }
                 }
-                /* wrapBox1 설정*/
+                /* wrapBox1 미디어쿼리 */
                 .wrapBox1 {
                     height: 30rem;
                     .wrapBox1-top {
                         height: 44%;
-                        /* 자원봉사 설정*/
+                        /* 자원봉사 미디어쿼리 */
                         .volunteerBox {
                             padding-left: 0;
                             flex-direction: column;
@@ -2022,7 +2096,7 @@ footer {
                                 }
                             }
                         }
-                        /* 실시간영상 설정*/
+                        /* 실시간영상 미디어쿼리 */
                         .liveBox {
                             flex-direction: column;
                             img {
@@ -2039,7 +2113,7 @@ footer {
                             }
                         }
                     }
-                    /* snsBox 설정*/
+                    /* snsBox 미디어쿼리 */
                     .snsBox {
                         height: 56%;
                         .snsBox-inner {
@@ -2065,11 +2139,11 @@ footer {
                         }
                     }
                 }
-                /* wrapBox2 설정*/
+                /* wrapBox2 미디어쿼리 */
                 .wrapBox2 {
                     flex-direction: column;
                     height: 50rem;
-                    /* 홍보이미지 설정*/
+                    /* 홍보이미지 미디어쿼리 */
                     .promoBox {
                         width: 100%;
                         height: 50%;
@@ -2083,10 +2157,10 @@ footer {
                     }
                 }
             }
-            /* group-right 설정 */
+            /* group-right 미디어쿼리 */
             .group-right {
                 padding: 1.25rem;
-                /* 실시간 탐방통제정보 설정 */
+                /* 실시간 탐방통제정보 미디어쿼리 */
                 .controlBox {
                     padding: 1.5rem;
                     p {
@@ -2103,9 +2177,9 @@ footer {
                         }
                     }
                 }
-                /* wrapBox3 설정*/
+                /* wrapBox3 미디어쿼리 */
                 .wrapBox3 {
-                    /* 스마트 국립공원 설정*/
+                    /* 스마트 국립공원 미디어쿼리 */
                     .smartBox {
                         .smartBox-inner {
                             ul {
@@ -2117,7 +2191,7 @@ footer {
                         }
                     }
                 }
-                /* 국립공원 사진전 설정*/
+                /* 국립공원 사진전 미디어쿼리 */
                 .galleryBox {
                     height: 15.5rem;
                     position: relative;
@@ -2163,16 +2237,41 @@ footer {
                     }
                 }
             }
-            /* group-bottom 설정*/
+            /* group-bottom 미디어쿼리 */
             .group-bottom {
                 grid-column: 1;
+                padding: 1.25rem;
+                .moreBox {
+                    height: 28.9rem;
+                    .object {
+                        height: 23.75rem;
+                        bottom: 9.7rem;
+                    }
+                    .card {
+                        // background-color: red;
+                        width: 90%;
+                        margin: 0 auto;
+                        flex-wrap: wrap;
+                        padding-left: 0;
+                        > li {
+                            width: 48%;
+                            &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+                                margin-top: 1.6rem;
+                                height: 5.6rem;
+                            }
+                        }
+                        .list {
+                            display: none;
+                        }
+                    }
+                }
             }
         }
     }
     
     /* footer 미디어쿼리 */
     footer {
-        height: 53.875rem;
+        height: 48.875rem;
         .footer-inner {
             flex-direction: column;
             align-items: center;
@@ -2225,31 +2324,4 @@ footer {
             }
         }
     }
-}
-
-/* 와이드 데스크탑 미디어쿼리 설정 */
-@media (min-width:87.5rem) {
-    header {
-        .util {
-            .util-inner {
-                max-width: 87.5rem;
-                margin: 0 auto;
-            }
-        }
-        .gnb {
-            .gnb-inner {
-                max-width: 87.5rem;
-                margin: 0 auto;
-            }
-        }
-    }
-    .main {
-        .layout {
-            max-width: 87.5rem;
-            margin: 0 auto;
-        }
-    }
-    
-    
-    
 }
