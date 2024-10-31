@@ -30,12 +30,32 @@ $(document).ready(function () {
       // },
       pagination: {
         el: ".swiper-pagination",
+        clickable: true
       },
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-  });
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      }
+    });
+    // swiper-button-stop 클릭 시 autoplay 멈춤
+    $('.swiper-button-stop').click(function () {
+      // autoplay 가 true 였다면 autoplay 멈춤
+      if (swiper.autoplay.running) {
+        swiper.autoplay.stop();
+        // 아이콘 변경
+        $(this).find('i').css({'background-position': '-32px 0'})
+      }
+      // autoplay 가 false 였다면 autoplay 시작
+      else {
+        swiper.autoplay.start();
+        // 아이콘 변경
+        $(this).find('i').css({'background-position': '0px 0'})
+      } 
+    });
 
     // [util 의 날씨 정보 자동 슬라이드]
     function weatherSlide() {

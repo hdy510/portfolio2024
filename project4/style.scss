@@ -764,11 +764,11 @@ header {
                 // background-color: #ffcdfc;
                 display: flex;
                 padding: 1.5rem;
-                height: 26.25rem;
+                // height: 26.25rem;
                 /* 홍보이미지 설정*/
                 .promoBox {
                     border: 1px solid #D7D7D7;
-                    border-radius: 1rem;
+                    border-radius: 1.25rem;
                     width: 50%;
                     height: 100%;
                     margin-right: 0.75rem;
@@ -780,6 +780,8 @@ header {
                     align-items: center;
                     .swiper {
                         width: 16.875rem;
+                        // background-color: red;
+                        height: 20.5rem;
                         border-radius: 1.25rem;
                         margin-top: 2rem;
                     }
@@ -805,49 +807,54 @@ header {
                         z-index: 1;
                     }
                     .swiper-button-next, .swiper-button-prev {
-                        background-image: url(imgs/hero-arrows.png);
-                        background-repeat: no-repeat;
-                        width: 5rem;
-                        height: 5rem;
-                        transition: all 0.3s;
+                        width: 2rem;
+                        height: 2rem;
+                        top: 1.2rem;
+                        color: #fff;
                     }
                     .swiper-button-next:after, .swiper-button-prev:after {
-                        font-family: "";
-                        content: "";
+                        font-size: $font-size-14px;
+                        font-weight: 700;
                     }
                     .swiper-button-next {
-                        margin-right: 3rem;
-                        background-position: -5rem 0;
-                        &:hover {
-                            transform: translateX(0.725rem);
+                        margin-right: 0rem;
+                    }
+                    .swiper-button-stop {
+                        color: #000;
+                        width: 2rem;
+                        height: 2rem;
+                        position: absolute;
+                        top: -0.2rem;
+                        left: 12.4rem;
+                        z-index: 3;
+                        cursor: pointer;
+                        i {
+                            display: block;
+                            width: 2rem;
+                            height: 2rem;
+                            background-image: url(imgs/promo-icons.png);
+                            background-position: 0 0;
+                            background-size: cover;
                         }
                     }
                     .swiper-button-prev {
-                        margin-left: 3rem;
-                        &:hover {
-                            transform: translateX(-0.725rem);
-                        }
+                        margin-left: 10rem;
                     }
                     .swiper-pagination {
-                        text-align: right;
+                        .swiper-pagination-bullet {
+
+                        }
+                        .swiper-pagination-bullet-active {
+                            background-color: #fff;
+                        }
                     }
-                    .swiper-pagination-fraction {
-                        color: #fff;
-                        bottom: 7.5%;
-                        padding-right: 15.5%;
-                    }
-                    .swiper-pagination-current {
-                        font-size: $font-size-22px;
-                    }
-                    .swiper-pagination-total {
-                        font-size: $font-size-16px;
-                    }
+                    
 
                 }
                 /* 웹툰 설정*/
                 .webtoonBox {
-                    border: 1px solid #D7D7D7;
-                    border-radius: 1rem;
+                    border: 0.063rem solid #D7D7D7;
+                    border-radius: 1.5rem;
                     width: 50%;
                     height: 100%;
                     margin-left: 0.75rem;
@@ -859,10 +866,11 @@ header {
                         transition: all 0.3s;
                     }
                     .txtBox {
-                        width: 100%;
+                        width: calc(100% - 0.125rem);
                         height: 30%;
                         position: absolute;
                         bottom: 0;
+                        left: 0.063rem;
                         transition: all 0.3s;
                         .dimmed {
                             width: 100%;
@@ -1007,6 +1015,7 @@ header {
                 // background-color: #cdffe8;
                 height: 28rem;
                 display: flex;
+                justify-content: space-between;
                 margin-bottom: 3.75rem;
                 /* 국립공원바로가기 설정*/
                 .linkBox {
@@ -1018,6 +1027,7 @@ header {
                         padding-left: 0.5rem;
                     }
                     .linkBox-inner {
+                        width: 18.25rem;
                         border: 1px solid #D1D1D1;
                         border-radius: 0.75rem;
                         background-color: #fff;
@@ -1072,9 +1082,10 @@ header {
                         }
                     }
                 }
-                /* 스마트 국립공원 설정*/
+                /* 스마트 국립공원 설정 */
                 .smartBox {
-                    width: 50%;
+                    width: 47%;
+                    min-width: 16.964rem;
                     height: 100%;
                     // background-color: #bb77ff;
                     padding-left: 1rem;
@@ -1092,9 +1103,10 @@ header {
                         ul {
                             display: flex;
                             flex-wrap: wrap;
-                            width: 86%;
+                            width: 100%;
                             li {
-                                margin: 0.4rem;
+                                width: 80%;
+                                margin: 0.2rem auto;
                                 a {
                                     display: flex;
                                     justify-content: center;
@@ -1103,9 +1115,9 @@ header {
                                     border-radius: 0.5rem;
                                     background-color: #F5FCFF;
                                     color: #3D3D3D;
-                                    width: 7rem;
-                                    height: 2.938rem;
-                                    font-size: $font-size-16px;
+                                    width: 100%;
+                                    height: 2.1rem;
+                                    font-size: $font-size-14px;
                                     &:hover {
                                         background-color: #eaf8fe;
                                         font-weight: 600;
@@ -1166,13 +1178,13 @@ header {
                     }
                 }
             }
-            /* 자주하는 질문 설정*/
+            /* 자주하는 질문 설정 */
             .questionBox {
                 // background-color: #ffeccd;
                 position: relative;
                 h3 {}
                 span {
-                    font-size: $font-size-20px;
+                    font-size: $font-size-18px;
                     font-weight: 500;
                     position: absolute;
                     top: 0.9rem;
@@ -1194,7 +1206,7 @@ header {
                         // background-color: blue;
                         display: grid;
                         grid-template-columns: 1fr;
-                        grid-template-rows: 40px 40px;
+                        grid-template-rows: 2.5rem 2.5rem;
                         .questionTitle {
                             display: grid;
                             grid-template-columns: 8% 12% 12% 1fr;
@@ -1238,6 +1250,12 @@ header {
                                         text-align: center;
                                         cursor: pointer;
                                         // border: 1px solid #000;
+                                        &:nth-child(4) {
+                                            display: -webkit-box;
+                                            -webkit-box-orient: vertical;
+                                            -webkit-line-clamp: 1;
+                                            overflow: hidden;
+                                        }
                                     }
                                 }
                             }
@@ -1427,10 +1445,18 @@ footer {
             }
         }
     }
+    /* main 미디어쿼리 */
     .main {
+        /* layout 미디어쿼리 */
         .layout {
             max-width: 87.5rem;
             margin: 0 auto;
+            margin-top: 4.375rem;
+            .group-right {
+                .wrapBox3 {
+                    
+                }
+            }
             /* group-bottom 미디어쿼리 */
             .group-bottom {
                 .moreBox {
@@ -1463,6 +1489,7 @@ footer {
     }
     /* main 미디어쿼리 */
     .main {
+        height: 243.075rem;
         /* hero 미디어쿼리 */
         .hero {
             .txtBox {
@@ -1492,6 +1519,9 @@ footer {
         }
         /* layout 미디어쿼리 */
         .layout {
+            max-width: 52rem;
+            margin: 0 auto;
+            margin-top: 4.375rem;
             /* group-left 미디어쿼리*/
             .group-left {
                 /* 자주 찾는 서비스 미디어쿼리*/
@@ -1658,12 +1688,12 @@ footer {
                 }
                 /* wrapBox3 미디어쿼리 */
                 .wrapBox3 {
-                    height: 52rem;
+                    height: 62rem;
                     flex-direction: column;
                     /* 국립공원바로가기 미디어쿼리 */
                     .linkBox {
                         width: 100%;
-                        height: 54%;
+                        height: 48%;
                         padding-right: 0;
                         display: flex;
                         flex-direction: column;
@@ -1678,17 +1708,17 @@ footer {
                     /* 스마트 국립공원 미디어쿼리 */
                     .smartBox {
                         width: 100%;
-                        height: 46%;
+                        height: 48%;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
                         padding-left: 0;
                         .smartBox-inner {
                             width: 100%;
+                            height: 25.688rem;
                             ul {
-                                width: 15.21rem;
                                 li {
-                                    margin: 0.3rem;
+                                    margin: 0.3rem auto;
                                 }
                             }
                         }
@@ -1735,6 +1765,35 @@ footer {
                                 border: 1px solid #a1a1a1;
                                 color: #3f3f3f;
                                 font-weight: 600;
+                            }
+                        }
+                    }
+                }
+                /* 자주하는 질문 미디어쿼리 */
+                .questionBox {
+                    .questionBox-inner {
+                        .grid {
+                            .questionTitle {
+                                grid-template-columns: 20% 24% 1fr;
+                                padding: 0 0.4rem;
+                                li {
+                                    &:nth-child(1) {
+                                        display: none;
+                                    }
+                                }
+                            }
+                            .questionContents {
+                                > li {
+                                    .list {
+                                        grid-template-columns: 20% 24% 1fr;
+                                        padding: 0 0.4rem;
+                                        li {
+                                            &:nth-child(1) {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -1988,6 +2047,8 @@ footer {
                 .serviceBox {
                     height: 40rem;
                     ul {
+                        max-width: 25rem;
+                        margin: 2rem auto;
                         li {
                             width: 44%;
                             margin: 1.5%;
@@ -2145,15 +2206,16 @@ footer {
                     height: 50rem;
                     /* 홍보이미지 미디어쿼리 */
                     .promoBox {
-                        width: 100%;
+                        width: 18.25rem;
                         height: 50%;
+                        margin: 0 auto;
                         margin-bottom: 2rem;
                     }
                     /* 웹툰 설정*/
                     .webtoonBox {
-                        width: 100%;
+                        width: 18.25rem;
                         height: 50%;
-                        margin-left: 0;
+                        margin: 0 auto;
                     }
                 }
             }
@@ -2163,6 +2225,8 @@ footer {
                 /* 실시간 탐방통제정보 미디어쿼리 */
                 .controlBox {
                     padding: 1.5rem;
+                    max-width: 25rem;
+                    margin: 2rem auto;
                     p {
                         font-size: $font-size-17px;
                     }
@@ -2179,13 +2243,39 @@ footer {
                 }
                 /* wrapBox3 미디어쿼리 */
                 .wrapBox3 {
-                    /* 스마트 국립공원 미디어쿼리 */
-                    .smartBox {
-                        .smartBox-inner {
+                    height: 62rem;
+                    flex-direction: column;
+                    /* 국립공원바로가기 미디어쿼리 */
+                    .linkBox {
+                        width: 100%;
+                        height: 48%;
+                        padding-right: 0;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        .linkBox-inner {
+                            width: 18.25rem;
                             ul {
                                 
+                            }
+                        }
+                    }
+                    /* 스마트 국립공원 미디어쿼리 */
+                    .smartBox {
+                        width: 100%;
+                        height: 48%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding-left: 0;
+                        .smartBox-inner {
+                            width: 100%;
+                            max-width: 18.25rem;
+                            height: 25.688rem;
+                            ul {
+                                width: 15.21rem;
                                 li {
-                                    
+                                    margin: 0.3rem auto;
                                 }
                             }
                         }
@@ -2195,8 +2285,11 @@ footer {
                 .galleryBox {
                     height: 15.5rem;
                     position: relative;
+                    max-width: 25rem;
+                    margin: 2rem auto;
                     img {
                         width: 100%;
+                        object-fit: cover;
                         filter: brightness(0.7);
                     }
                     .txtBox {
@@ -2249,19 +2342,33 @@ footer {
                     }
                     .card {
                         // background-color: red;
-                        width: 90%;
+                        max-width: 25rem;
+                        width: 84%;
                         margin: 0 auto;
                         flex-wrap: wrap;
                         padding-left: 0;
                         > li {
-                            width: 48%;
+                            width: 100%;
+                            max-width: 25rem;
+                            padding: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
                             &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
                                 margin-top: 1.6rem;
-                                height: 5.6rem;
+                                height: 4rem;
                             }
-                        }
-                        .list {
-                            display: none;
+                            h4 {
+                                font-size: $font-size-18px;
+                                margin-bottom: 0;
+                                margin-left: -0.5rem;
+                                i {
+                                    margin-right: 0.8rem;
+                                }
+                            }
+                            .list {
+                                display: none;
+                            }
                         }
                     }
                 }
