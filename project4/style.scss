@@ -304,6 +304,10 @@ header {
                 font-size: $font-size-20px;
                 text-align: center;
                 margin-bottom: 3.75rem;
+                b {
+                    font-weight: 500;
+                    white-space: nowrap;
+                }
             }
             /* 검색 설정 */
             .search {
@@ -764,7 +768,7 @@ header {
                 // background-color: #ffcdfc;
                 display: flex;
                 padding: 1.5rem;
-                // height: 26.25rem;
+                // height: 22.25rem;
                 /* 홍보이미지 설정*/
                 .promoBox {
                     border: 1px solid #D7D7D7;
@@ -772,12 +776,18 @@ header {
                     width: 50%;
                     height: 100%;
                     margin-right: 0.75rem;
-                    background-image: url(imgs/promo-bg.png);
-                    background-repeat: no-repeat;
-                    background-size: cover;
+                    background-color: #fff;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    position: relative;
+                    h3 {
+                        color: $color-black;
+                        position: absolute;
+                        width: 80%;
+                        top: 1.7rem;
+                        left: 1.7rem;
+                    }
                     .swiper {
                         width: 16.875rem;
                         // background-color: red;
@@ -810,7 +820,7 @@ header {
                         width: 2rem;
                         height: 2rem;
                         top: 1.2rem;
-                        color: #fff;
+                        color: $color-blue-main;
                     }
                     .swiper-button-next:after, .swiper-button-prev:after {
                         font-size: $font-size-14px;
@@ -820,7 +830,6 @@ header {
                         margin-right: 0rem;
                     }
                     .swiper-button-stop {
-                        color: #000;
                         width: 2rem;
                         height: 2rem;
                         position: absolute;
@@ -841,15 +850,23 @@ header {
                         margin-left: 10rem;
                     }
                     .swiper-pagination {
+                        bottom: 2rem;
                         .swiper-pagination-bullet {
 
                         }
                         .swiper-pagination-bullet-active {
-                            background-color: #fff;
+                            background-color: $color-blue-main;
                         }
                     }
-                    
-
+                    .imgBox {
+                        display: none;
+                        margin-top: 4rem;
+                        img {
+                            width: 28%;
+                            margin: 0 0.5rem;
+                            cursor: pointer;
+                        }
+                    }
                 }
                 /* 웹툰 설정*/
                 .webtoonBox {
@@ -862,7 +879,7 @@ header {
                     position: relative;
                     cursor: pointer;
                     img {
-                        width: 100%;
+                        width: 105%;
                         transition: all 0.3s;
                     }
                     .txtBox {
@@ -880,17 +897,18 @@ header {
                         }
                         h4 {
                             color: #fff;
-                            font-size: $font-size-30px;
+                            font-family: $font-family-scoredream-4Regular;
+                            font-size: $font-size-26px;
                             position: absolute;
-                            top: 1rem;
-                            left: 1.4rem;
+                            top: 1.4rem;
+                            left: 1.6rem;
                         }
                         p {
                             color: #fff;
-                            font-size: $font-size-18px;
+                            font-size: $font-size-16px;
                             position: absolute;
-                            top: 4rem;
-                            left: 1.4rem;
+                            top: 4.2rem;
+                            left: 1.6rem;
                         }
                     }
                     &:hover {
@@ -1128,16 +1146,20 @@ header {
                     }
                 }
             }
-            /* 국립공원 사진전 설정*/
+            /* 국립공원 사진전 설정 */
             .galleryBox {
                 background-color: #cdffd0;
-                height: 10.5rem;
+                height: 14.5rem;
                 border: 1px solid #D1D1D1;
                 border-radius: 1.25rem;
                 background-color: #fff;
                 display: flex;
                 margin-bottom: 3.125rem;
                 cursor: pointer;
+                position: relative;
+                > h3 {
+                    display: none;
+                }
                 img {
                     border-radius: 1.25rem;
                     transition: all 0.3s;
@@ -1147,7 +1169,8 @@ header {
                     height: 100%;
                     padding-left: 2rem;
                     position: relative;
-                    h3 {
+                    h4 {
+                        font-size: 1.5rem;
                         margin-top: 2.5rem;
                         margin-bottom: 1rem;
                     }
@@ -1452,9 +1475,39 @@ footer {
             max-width: 87.5rem;
             margin: 0 auto;
             margin-top: 4.375rem;
+            .group-left {
+                .wrapBox2 {
+                    /* 홍보이미지 미디어쿼리 */
+                    .promoBox {
+                        .swiper-slide img {
+                            width: 88%;
+                        }
+                        .swiper-pagination {
+                            bottom: 0;
+                        }
+                    }
+                    /* 웹툰 미디어쿼리 */
+                    .webtoonBox {
+                        .txtBox {
+                            h4 {
+                                left: 1.4rem;
+                            }
+                            p {
+                                font-size: $font-size-18px;
+                                left: 1.4rem;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
             .group-right {
                 .wrapBox3 {
                     
+                }
+                /* 국립공원 사진전 미디어쿼리 */
+                .galleryBox {
+                    height: 14.5rem;
                 }
             }
             /* group-bottom 미디어쿼리 */
@@ -1467,6 +1520,61 @@ footer {
                         }
                     }
                 } 
+            }
+        }
+    }
+}
+
+/* 1201px ~ 1399px 구간 미디어쿼리*/
+@media (min-width:75.063rem) and (max-width:87.438rem) {
+    /* main 미디어쿼리 */
+    .main {
+        /* layout 미디어쿼리 */
+        .layout {
+            .group-left {
+                .wrapBox2 {
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 32.25rem;
+                    /* 홍보이미지 미디어쿼리 */
+                    .promoBox {
+                        width: 100%;
+                        height: 62%;
+                        margin-right: 0;
+                        h3 {}
+                        .swiper {
+                            display: none;
+                        }
+                        .imgBox {
+                            display: flex;
+                            justify-content: center;
+                        }
+                    }
+                    /* 웹툰 미디어쿼리 */
+                    .webtoonBox {
+                        width: 100%;
+                        height: 34%;
+                        margin-left: 0;
+                        img {
+                            position: absolute;
+                            width: 105%;
+                            top: -20rem;
+                            left: -1rem;
+                            filter: blur(5px);
+                        }
+                        .txtBox {
+                            height: 40%;
+                            h4 {
+                                top: 1rem;
+                            }
+                            p {
+                                display: block;
+                                top: 2rem;
+                                left: 6rem;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -1489,7 +1597,7 @@ footer {
     }
     /* main 미디어쿼리 */
     .main {
-        height: 243.075rem;
+        height: 248rem;
         /* hero 미디어쿼리 */
         .hero {
             .txtBox {
@@ -1515,7 +1623,8 @@ footer {
         }
         /* 국립공원 알아보기 배경 하늘 미디어쿼리*/
         .more-bg-sky {
-            
+            height: 23.75rem;
+            bottom: -5rem;
         }
         /* layout 미디어쿼리 */
         .layout {
@@ -1652,18 +1761,37 @@ footer {
                 /* wrapBox2 미디어쿼리 */
                 .wrapBox2 {
                     flex-direction: column;
-                    height: 50rem;
+                    height: 57rem;
                     /* 홍보이미지 미디어쿼리 */
                     .promoBox {
                         width: 100%;
                         height: 50%;
                         margin-bottom: 2rem;
+                        .swiper {
+                            height: 22.5rem;
+                        }
+                        .swiper-slide img {
+                            width: 95%;
+                        }
+                        .swiper-pagination {
+                            bottom: 0.4rem;
+                        }
                     }
                     /* 웹툰 미디어쿼리 */
                     .webtoonBox {
                         width: 100%;
                         height: 50%;
                         margin-left: 0;
+                        .txtBox {
+                            h4 {
+                                left: 1.4rem;
+                            }
+                            p {
+                                font-size: $font-size-18px;
+                                display: block;
+                                left: 1.4rem;
+                            }
+                        }
                     }
                 }
             }
@@ -1743,7 +1871,7 @@ footer {
                         justify-content: center;
                         flex-direction: column;
                         align-items: center;
-                        h3 {
+                        h4 {
                             color: #fff;
                             text-align: center;
                         }
@@ -1806,14 +1934,16 @@ footer {
                 .moreBox{
                     height: 50.188rem;
                     .object {
-
+                        height: 23.75rem;
+                        bottom: 0;
                     }
                     .card {
-                        width: 34.375rem;
+                        width: 100%;
                         margin: 0 auto;
                         flex-wrap: wrap;
                         padding-left: 0;
                         > li {
+                            width: 48%;
                             &:nth-child(2) {
                                 margin-top: 0;
                                 height: 18.875rem;
@@ -2031,7 +2161,7 @@ footer {
         /* 국립공원 알아보기 배경 하늘 미디어쿼리*/
         .more-bg-sky {
             height: 23.75rem;
-            bottom: 10rem;
+            bottom: 0;
         }
         /* layout 미디어쿼리 */
         .layout {
@@ -2203,19 +2333,43 @@ footer {
                 /* wrapBox2 미디어쿼리 */
                 .wrapBox2 {
                     flex-direction: column;
-                    height: 50rem;
+                    height: 45rem;
+                    padding: 0;
                     /* 홍보이미지 미디어쿼리 */
                     .promoBox {
-                        width: 18.25rem;
-                        height: 50%;
+                        width: 92%;
+                        max-width: 25rem;
+                        height: 54%;
                         margin: 0 auto;
                         margin-bottom: 2rem;
+                        .swiper {
+                            
+                        }
+                        .swiper-pagination {
+                            bottom: 0.35rem;
+                        }
                     }
                     /* 웹툰 설정*/
                     .webtoonBox {
-                        width: 18.25rem;
-                        height: 50%;
+                        width: 92%;
+                        max-width: 25rem;
+                        height: 46%;
                         margin: 0 auto;
+                        img {
+                            position: static;
+                            top: -10rem;
+                            left: -1rem;
+                        }
+                        .txtBox {
+                            h4 {
+                                top: 1rem;
+                                left: 1.3rem;
+                            }
+                            p {
+                                top: 3.8rem;
+                                left: 1.3rem;
+                            }
+                        }
                     }
                 }
             }
@@ -2283,27 +2437,36 @@ footer {
                 }
                 /* 국립공원 사진전 미디어쿼리 */
                 .galleryBox {
-                    height: 15.5rem;
+                    width: 100%;
+                    height: 20.5rem;
                     position: relative;
-                    max-width: 25rem;
-                    margin: 2rem auto;
+                    border: none;
+                    > h3 {
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
                     img {
-                        width: 100%;
+                        width: 70%;
+                        min-width: 18.5rem;
                         object-fit: cover;
                         filter: brightness(0.7);
+                        margin: 2rem auto;
+                        margin-top: 4rem;
                     }
                     .txtBox {
                         padding-left: 0;
                         width: 100%;
                         height: 100%;
                         position: absolute;
-                        top: 0;
+                        top: 1rem;
                         left: 0;
                         display: flex;
                         justify-content: center;
                         flex-direction: column;
                         align-items: center;
-                        h3 {
+                        h4 {
                             color: #fff;
                             text-align: center;
                         }
@@ -2329,16 +2492,46 @@ footer {
                         }
                     }
                 }
+                /* 자주하는 질문 미디어쿼리 */
+                .questionBox {
+                    .questionBox-inner {
+                        .grid {
+                            .questionTitle {
+                                grid-template-columns: 20% 24% 1fr;
+                                padding: 0 0.4rem;
+                                li {
+                                    &:nth-child(1) {
+                                        display: none;
+                                    }
+                                }
+                            }
+                            .questionContents {
+                                > li {
+                                    .list {
+                                        grid-template-columns: 20% 24% 1fr;
+                                        padding: 0 0.4rem;
+                                        li {
+                                            &:nth-child(1) {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
             /* group-bottom 미디어쿼리 */
             .group-bottom {
                 grid-column: 1;
                 padding: 1.25rem;
+                height: 35.188rem;
                 .moreBox {
                     height: 28.9rem;
                     .object {
                         height: 23.75rem;
-                        bottom: 9.7rem;
+                        bottom: -5.2rem;
                     }
                     .card {
                         // background-color: red;
