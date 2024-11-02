@@ -149,12 +149,13 @@ header .gnb {
   font-family: "S-CoreDream-5Medium", sans-serif;
   font-size: 1.125rem;
   background-color: #fff;
+  height: 47.5rem;
 }
 header .gnb .gnb-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
+  height: 5rem;
   /* 햄버거버튼 설정 */
 }
 header .gnb .gnb-inner h1 {
@@ -170,11 +171,99 @@ header .gnb .gnb-inner h1 a {
   font-size: 0;
   color: transparent;
 }
-header .gnb .gnb-inner ul {
+header .gnb .gnb-inner ul.depth1 {
   display: flex;
 }
-header .gnb .gnb-inner ul li {
+header .gnb .gnb-inner ul.depth1 li.list1 {
   padding: 0.313rem 1.375rem;
+  /* 2뎁스 설정 */
+}
+header .gnb .gnb-inner ul.depth1 li.list1 .items {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  margin-top: 7.5rem;
+}
+header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner {
+  max-width: 87.5rem;
+  margin: 0 auto;
+  /* 높이 설정 */
+  height: 44.813rem;
+  background-color: #215AB2;
+  display: flex;
+}
+header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner .gnb-title {
+  width: 20%;
+  height: 32%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.25rem;
+}
+header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner .gnb-title .img {
+  background-image: url(imgs/gnb-icons.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 13.875rem;
+  height: 10.625rem;
+  margin-bottom: 0.625rem;
+}
+header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner .gnb-title strong {
+  font-size: 1.875rem;
+  color: #fff;
+  font-weight: 500;
+}
+header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 {
+  background-color: #fff;
+  width: 80%;
+}
+header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 li.list2 {
+  width: 100%;
+  display: flex;
+}
+header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 li.list2 > .depth2-title {
+  background-color: #F5F7FB;
+  width: 20%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2.188rem;
+  border-top: 0.063rem solid #d7d7d7;
+  border-right: 0.063rem solid #d7d7d7;
+  border-left: 0.063rem solid #d7d7d7;
+}
+header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 li.list2 > .depth2-title > a {
+  display: inline-block;
+  font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #004EA2;
+}
+header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 li.list2 ul.depth3 {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 0.063rem solid #d7d7d7;
+  border-right: 0.063rem solid #d7d7d7;
+  padding-top: 1rem;
+  padding-bottom: 0.469rem;
+  padding-left: 0.469rem;
+}
+header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 li.list2 ul.depth3 li.list3 > a {
+  display: block;
+  width: 10.656rem;
+  height: 2.438rem;
+  padding-top: 0.563rem;
+  padding-left: 1.094rem;
+  margin-bottom: 0.469rem;
+  margin-right: 1.094rem;
+  color: #777777;
+  font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: 1.125rem;
+}
+header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 li.list2 ul.depth3 li.list3 > a:hover {
+  font-weight: 600;
 }
 header .gnb .gnb-inner .menu-btn {
   width: 3rem;
@@ -1533,7 +1622,7 @@ footer .footer-inner .txtBox .info p span {
 /* 769px ~ 1200px 태블릿 구간 미디어쿼리 */
 @media (min-width: 48.063rem) and (max-width: 75rem) {
   /* header 미디어쿼리 */
-  header .gnb .gnb-inner ul {
+  header .gnb .gnb-inner ul.depth1 {
     display: none;
   }
   header .gnb .gnb-inner .menu-btn {
@@ -1928,7 +2017,7 @@ footer .footer-inner .txtBox .info p span {
   header .util .util-inner .user {
     display: none;
   }
-  header .gnb .gnb-inner ul {
+  header .gnb .gnb-inner ul.depth1 {
     display: none;
   }
   header .gnb .gnb-inner .menu-btn {
