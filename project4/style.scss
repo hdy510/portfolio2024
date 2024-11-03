@@ -165,10 +165,10 @@ header {
         font-family: $font-family-scoredream-5Medium;
         font-size: $font-size-18px;
         background-color: #fff;
-        height: 47.5rem;
+        // 1뎁스 open 시 높이
+        // height: 47.5rem;
         .gnb-inner {
             display: flex;
-            align-items: center;
             justify-content: space-between;
             height: 5rem;
             h1 {
@@ -188,6 +188,22 @@ header {
                 display: flex;
                 li.list1 {
                     padding: 0.313rem 1.375rem;
+                    margin-top: 20px;
+                    &::after {
+                        content: '';
+                        display: block;
+                        width: 0;
+                        height: 0.125rem;
+                        background-color: transparent;
+                        margin-top: 6px;
+                        transition: all 0.3s;
+                    }
+                    &:hover {
+                        &::after {
+                            width: 100%;
+                            background-color: $color-blue-main;
+                        }
+                    }
                     > a {}
                     /* 2뎁스 설정 */
                     .items {
@@ -197,11 +213,39 @@ header {
                         background-color: #fff;
                         width: 100%;
                         margin-top: 7.5rem;
+                        // 메뉴 호버시 변화하는 2뎁스 높이 설정
+                        overflow: hidden;
+                        height: 0;
+                        transition: height 0.5s;
+                        &.open {
+                            &.n1 {
+                                height: 44.813rem;
+                            }
+                            &.n2 {
+                                height: 18.5rem;
+                            }
+                            &.n3 {
+                                height: 42.438rem;
+                            }
+                            &.n4 {
+                                height: 29.563rem;
+                            }
+                            &.n5 {
+                                height: 35.906rem;
+                            }
+                            &.n6 {
+                                height: 19.313rem;
+                            }
+                            &.n7 {
+                                height: 23.938rem;
+                            }
+                            
+                        }
                         .items-inner {
                             max-width: 87.5rem;
                             margin: 0 auto;
-                            /* 높이 설정 */
-                            height: 44.813rem;
+                            // 높이 설정
+                            // height: 44.813rem;
                             background-color: #215AB2;
                             display: flex;
                             .gnb-title {
@@ -233,13 +277,14 @@ header {
                                     display: flex;
                                     > .depth2-title {
                                         background-color: #F5F7FB;
-                                        width: 20%;
+                                        width: 25%;
                                         padding-top: 1.5rem;
                                         padding-bottom: 1.5rem;
                                         padding-left: 2.188rem;
                                         border-top: 0.063rem solid #d7d7d7;
                                         border-right: 0.063rem solid #d7d7d7;
                                         border-left: 0.063rem solid #d7d7d7;
+                                        transition: all 0.3s;
                                         > a {
                                             display: inline-block;
                                             font-family: $font-family-pretendard;
@@ -247,9 +292,15 @@ header {
                                             font-weight: 700;
                                             color: $color-blue-main;
                                         }
+                                        &:hover {
+                                            background-color: $color-blue-main;
+                                            a {
+                                                color: #fff;
+                                            }
+                                        }
                                     }
                                     ul.depth3 {
-                                        width: 80%;
+                                        width: 75%;
                                         display: flex;
                                         flex-wrap: wrap;
                                         border-top: 0.063rem solid #d7d7d7;
@@ -260,7 +311,8 @@ header {
                                         li.list3 {
                                             > a {
                                                 display: block;
-                                                width: 10.656rem;
+                                                // width: 10.656rem;
+                                                width: 11.656rem;
                                                 height: 2.438rem;
                                                 padding-top: 0.563rem;
                                                 padding-left: 1.094rem;
@@ -269,13 +321,77 @@ header {
                                                 // background-color: red;
                                                 color: #777777;
                                                 font-family: $font-family-pretendard;
-                                                font-size: $font-size-18px;
+                                                font-size: $font-size-16px;
                                                 &:hover {
                                                     font-weight: 600;
                                                 }
                                             }
                                         }
                                     }
+                                }
+                            }
+                        }
+                    }
+                    /* .gnb-title .img 변경 */
+                    &:nth-child(1) {
+                        .items {
+                            .items-inner {
+                                .gnb-title .img {
+                                    background-position: 0 0;
+                                }
+                            }
+                        }
+                    }
+                    &:nth-child(2) {
+                        .items {
+                            .items-inner {
+                                .gnb-title .img {
+                                    background-position: -13.875rem 0;
+                                }
+                            }
+                        }
+                    }
+                    &:nth-child(3) {
+                        .items {
+                            .items-inner {
+                                .gnb-title .img {
+                                    background-position: -27.75rem 0;
+                                }
+                            }
+                        }
+                    }
+                    &:nth-child(4) {
+                        .items {
+                            .items-inner {
+                                .gnb-title .img {
+                                    background-position: -41.625rem 0;
+                                }
+                            }
+                        }
+                    }
+                    &:nth-child(5) {
+                        .items {
+                            .items-inner {
+                                .gnb-title .img {
+                                    background-position: -55.5rem 0;
+                                }
+                            }
+                        }
+                    }
+                    &:nth-child(6) {
+                        .items {
+                            .items-inner {
+                                .gnb-title .img {
+                                    background-position: -69.375rem 0;
+                                }
+                            }
+                        }
+                    }
+                    &:nth-child(7) {
+                        .items {
+                            .items-inner {
+                                .gnb-title .img {
+                                    background-position: -83.25rem 0;
                                 }
                             }
                         }
@@ -1540,6 +1656,22 @@ footer {
     }
 }
 
+/* dimmed 처리 설정 */
+.dimmed-bg {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    visibility: hidden;
+    transition: all 0.3s;
+    &.open {
+        background-color: rgba(0, 0, 0, 0.5);
+        visibility: visible;
+    }
+}
 
 
 

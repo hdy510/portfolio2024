@@ -1,5 +1,28 @@
 $(document).ready(function () {
-    // 히어로 initialize swiper
+    // [gnb 메뉴 hover 시, 하위 메뉴 보이기]
+    $('nav.gnb ul.depth1 .list1').mouseenter(function () {
+      $(this).find('.items').addClass('open');
+      // 메뉴 중복 열림 방지
+      // gnb 메뉴에서 해당 list1 의 items 를 제외한 형제 list1 들의 items 의 open 클래스 제거
+      $(this).siblings().find('.items').removeClass('open');
+      // dimmed-bg 처리 설정
+      $('.dimmed-bg').addClass('open');
+    });
+    // items 에서 마우스 떠나면 하위 메뉴 숨기기
+    $('nav.gnb ul.depth1 .list1 .items').mouseleave(function () {
+      $(this).removeClass('open');
+      // dimmed-bg 해제 설정
+      $('.dimmed-bg').removeClass('open');
+    });
+    // gnb 메뉴에서 마우스 떠나면 하위 메뉴 숨기기
+    $('nav.gnb ul.depth1').mouseleave(function () {
+      $(this).find('.items').removeClass('open');
+      // dimmed-bg 해제 설정
+      $('.dimmed-bg').removeClass('open');
+    });
+    
+    
+    // [히어로 initialize swiper]
     var swiper = new Swiper(".heroSwiper", {
         loop: true,
         effect: "fade",
@@ -18,7 +41,7 @@ $(document).ready(function () {
         },
     });
 
-    // 홍보이미지 initialize swiper
+    // [홍보이미지 initialize swiper]
     var swiper = new Swiper(".promoBoxSwiper", {
       loop: true,
       effect: "fade",
