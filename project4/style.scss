@@ -172,6 +172,7 @@ header {
             justify-content: space-between;
             height: 5rem;
             h1 {
+                margin-left: 0.8rem;
                 display: flex;
                 align-items: center;
                 a {
@@ -249,7 +250,8 @@ header {
                             margin: 0 auto;
                             // 높이 설정
                             // height: 44.813rem;
-                            background-color: #215AB2;
+                            background: linear-gradient(180deg, rgba(19,60,104,1) 00%, rgba(0,78,162,1) 100%);
+                            // background-color: #215AB2;
                             display: flex;
                             .gnb-title {
                                 width: 20%;
@@ -258,18 +260,19 @@ header {
                                 flex-direction: column;
                                 align-items: center;
                                 margin-top: 1.25rem;
-                                .img {
-                                    background-image: url(imgs/gnb-icons.png);
-                                    background-repeat: no-repeat;
-                                    background-position: 0 0;
-                                    width: 13.875rem;
-                                    height: 10.625rem;
-                                    margin-bottom: 0.625rem;
-                                }
+                                // .img {
+                                //     // background-image: url(imgs/gnb-icons.png);
+                                //     background-repeat: no-repeat;
+                                //     background-position: 0 0;
+                                //     width: 13.875rem;
+                                //     height: 10.625rem;
+                                //     margin-bottom: 0.625rem;
+                                // }
                                 strong {
                                     font-size: $font-size-30px;
                                     color: #fff;
                                     font-weight: 500;
+                                    margin-top: 3rem;
                                 }
                             }
                             ul.depth2 {
@@ -403,17 +406,210 @@ header {
             }
             /* 햄버거버튼 설정 */
             .menu-btn {
-                width: 3rem;
-                height: 3rem;
-                margin-top: 1rem;
-                margin-right: 0.625rem;
+                width: 2.375rem;
+                height: 2.375rem;
+                margin-top: 1.3rem;
+                margin-right: 1rem;
                 // display: flex;
                 display: none;
                 justify-content: center;
                 align-items: center;
                 cursor: pointer;
+                border: 0.063rem solid #82A4CA;
+                border-radius: 3.125rem;
                 i {
-                    font-size: 1.5rem;
+                    background-image: url(imgs/menu-btn-icons.png);
+                    background-position: 0 0;
+                    background-size: cover;
+                    width: 1.125rem;
+                    height: 1.125rem;
+                    // font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    .side-menu {
+        position: fixed;
+        top: 2.5rem;
+        right: -20rem;
+        z-index: 60;
+        // width: 100%;
+        width: 20rem;
+        height: 100vh;
+        background-color: #fff;
+        // overflow-y: scroll;
+        // overscroll-behavior: none;
+        transition: right 0.5s;
+        &.on {
+            right: 0;
+        }
+        .topBox {
+            width: 100%;
+            height: 5.07rem;
+            display: flex;
+            align-items: center;
+            position: relative;
+            ul {
+                display: flex;
+                height: 2.375rem;
+                margin-left: 1.5rem;
+                li {
+                    height: 2.375rem;
+                    margin-right: 0.75rem;
+                    a {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 6rem;
+                        width: 6.563rem;
+                        height: 2.375rem;
+                        color: #fff;
+                    }
+                    &:nth-child(1) a {
+                        background-color: $color-blue-main;
+                    }
+                    &:nth-child(2) a {
+                        background-color: #468CD9;
+                    }
+                }
+            }
+            .menu-btn-close {
+                width: 2.375rem;
+                height: 2.375rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                border: 0.063rem solid #82A4CA;
+                border-radius: 3.125rem;
+                position: absolute;
+                top: 0;
+                right: 1rem;
+                margin-top: 1.29rem;
+                i {
+                    background-image: url(imgs/menu-btn-icons.png);
+                    background-position: -1.125rem 0;
+                    background-size: cover;
+                    width: 1.125rem;
+                    height: 1.125rem;
+                }
+            }
+        }
+        .bottomBox {
+            display: flex;
+            height: 100%;
+            .depth-1-Box {
+                background: linear-gradient(180deg, rgba(19,60,104,1) 00%, rgba(0,78,162,1) 100%);
+                width: 10.125rem;
+                height: 100%;
+                ul {
+                    li {
+                        a {
+                            display: block;
+                            font-family: $font-family-scoredream-5Medium;
+                            font-size: $font-size-14px;
+                            color: #fff;
+                            padding: 1.5rem 0.825rem;
+                            transition: all 0.3s;
+                            &:hover {
+                                background-color: #468CD9;
+                            }
+                            &.active {
+                                background-color: #468CD9;
+                            }
+                        }
+                    }
+                }
+            }
+            .depth-2-Box {
+                // width: 60%;
+                width: 15.063rem;
+                height: 100%;
+                padding: 0.813rem 1.188rem;
+                overflow-y: scroll;
+                overscroll-behavior: none;
+                .depth-2-Box-inner {
+                    ul.depth-2-title {
+                        > li {
+                            color: $color-blue-main;
+                            font-size: $font-size-16px;
+                            font-weight: 600;
+                            strong {
+                                display: flex;
+                                justify-content: space-between;
+                                flex-wrap: wrap;
+                                padding: 0.813rem 0;
+                                cursor: pointer;
+                                position: relative;
+                                &::after {
+                                    content: '';
+                                    display: block;
+                                    width: 0;
+                                    height: 1px;
+                                    background-color: #B6C8DC;
+                                    border-radius: 50%;
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: -0.4rem;
+                                    transition: all 0.3s ease;
+                                }
+                                &.on {
+                                    &::after {
+                                        width: 105%;
+                                    }
+                                }
+                                i {
+                                    display: block;
+                                    background-image: url(imgs/side-menu-icons.png);
+                                    background-size: cover;
+                                    width: 1.625rem;
+                                    height: 1.625rem;
+                                    margin-top: -0.3rem;
+                                    &.on {
+                                        background-position: -1.625rem 0;
+                                    }
+                                }
+                            }
+                            ul.depth-3-Box {
+                                height: 0;
+                                overflow: hidden;
+                                transition: all 1s;
+                                li {
+                                    margin: 8px 0;
+                                    display: flex;
+                                    align-items: center;
+                                    &::before {
+                                        content: '';
+                                        display: block;
+                                        width: 0.125rem;
+                                        height: 0.125rem;
+                                        background-color: #777;
+                                        border-radius: 50%;
+                                    }
+                                    a {
+                                        color: #777;
+                                        font-size: $font-size-14px;
+                                        font-weight: 400;
+                                        display: block;
+                                        padding: 0.5rem 0.625rem;
+                                        cursor: pointer;
+                                        &:hover {
+                                            font-weight: 500;
+                                        }
+                                        
+                                    }
+                                }
+                                &.open {
+                                    height: auto;
+                                }
+                            }
+                        }
+                    }
+                    /* (js 파일 참고) 하단에 보이지 않는 블럭을 추가해 하단 정보가 가려지는 것을 방지*/
+                    .block {
+                        width: 100%;
+                        height: 16rem;
+                    }
                 }
             }
         }

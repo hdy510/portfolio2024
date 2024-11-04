@@ -21,6 +21,57 @@ $(document).ready(function () {
       $('.dimmed-bg').removeClass('open');
     });
     
+    // [side-menu 등장 토글]
+    // 1. menu-btn 클릭 시, side-menu 보이기
+    $('.gnb .menu-btn').click(function () {
+      $('.side-menu').addClass('on');
+    });
+    // 2. menu-btn-close 클릭 시, side-menu 숨기기
+    $('.side-menu .menu-btn-close').click(function () {
+      $('.side-menu').removeClass('on');
+    });
+
+    // [side-menu 의 depth-1-Box 의 li a 들 토글 설정]
+    $('.depth-1-Box li a').click(function () {
+      $('.depth-1-Box li').find('a').removeClass('active');
+      $(this).addClass('active');
+    })
+
+    // [side-menu 의 side-menu-icons 클릭으로 3 depth 메뉴 접히고 펼치기 설정]
+    $('.depth-2-title li strong').click(function () {
+      // 클릭한 요소의 형제 요소를 변수에 저장
+      const depth3Box = $(this).siblings('.depth-3-Box');
+      // 열려있을 때, 닫기
+      if (depth3Box.hasClass('open')) {
+        depth3Box.removeClass('open');
+        // 아이콘 변경
+        $(this).find('i').removeClass('on')
+        // 밑줄 효과 제거
+        $('.depth-2-title li strong').removeClass('on')
+
+        // .depth-2-Box-inner 의 하단에 보이지 않는 블럭 추가했던거 제거
+        $('.depth-2-Box-inner .block').remove()
+      } else {
+        // 닫혀있을 때, 열기
+        // 모든 열려있는 3depth 메뉴 닫기
+        $('.depth-3-Box').removeClass('open'); 
+        // 해당 메뉴만 열기
+        depth3Box.addClass('open');
+        // 아이콘 변경
+        $('.depth-2-title > li strong').find('i').removeClass('on')
+        $(this).find('i').addClass('on')
+        // 밑줄 효과 제거
+        $('.depth-2-title li strong').removeClass('on')
+        // 밑줄 효과 생성
+        $(this).addClass('on')
+
+        // 아래 코드의 .depth-2-Box-inner 의 하단에 보이지 않는 블럭 추가했던거 먼저 제거
+        $('.depth-2-Box-inner .block').remove()
+        // .depth-2-Box-inner 의 하단에 보이지 않는 블럭을 추가해 하단 정보가 가려지는 것을 방지
+        $('.depth-2-Box-inner').append('<div class="block"></div>')
+      }
+      
+    })
     
     // [히어로 initialize swiper]
     var swiper = new Swiper(".heroSwiper", {
