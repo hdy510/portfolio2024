@@ -164,8 +164,8 @@ header .gnb .gnb-inner h1 a {
   display: inline-block;
   background-image: url("imgs/logo.png");
   background-repeat: no-repeat;
-  width: 11.25rem;
-  height: 2.5rem;
+  width: 180px;
+  height: 40px;
   font-size: 0;
   color: transparent;
 }
@@ -174,7 +174,7 @@ header .gnb .gnb-inner ul.depth1 {
 }
 header .gnb .gnb-inner ul.depth1 li.list1 {
   padding: 0.313rem 1.375rem;
-  margin-top: 20px;
+  margin-top: 1.25rem;
   /* 2뎁스 설정 */
   /* .gnb-title .img 변경 */
 }
@@ -184,7 +184,7 @@ header .gnb .gnb-inner ul.depth1 li.list1::after {
   width: 0;
   height: 0.125rem;
   background-color: transparent;
-  margin-top: 6px;
+  margin-top: 0.375rem;
   transition: all 0.3s;
 }
 header .gnb .gnb-inner ul.depth1 li.list1:hover::after {
@@ -331,6 +331,8 @@ header .gnb .gnb-inner ul.depth1 li.list1:nth-child(7) .items .items-inner .gnb-
 header .gnb .gnb-inner .menu-btn {
   width: 3rem;
   height: 3rem;
+  margin-top: 1rem;
+  margin-right: 0.625rem;
   display: none;
   justify-content: center;
   align-items: center;
@@ -382,6 +384,7 @@ header .gnb .gnb-inner .menu-btn i {
 .main .hero .swiper-button-next, .main .hero .swiper-button-prev {
   background-image: url(imgs/hero-arrows.png);
   background-repeat: no-repeat;
+  background-size: cover;
   width: 5rem;
   height: 5rem;
   transition: all 0.3s;
@@ -692,6 +695,8 @@ header .gnb .gnb-inner .menu-btn i {
 .main .layout .group-left .newsBox .newsBox-inner .tabMenu li a i {
   display: block;
   background-image: url("imgs/news-more-icon.png");
+  background-size: cover;
+  background-position: 0 0;
   width: 1.25rem;
   height: 1.25rem;
 }
@@ -922,7 +927,7 @@ header .gnb .gnb-inner .menu-btn i {
 .main .layout .group-left .wrapBox2 .promoBox .swiper-button-next, .main .layout .group-left .wrapBox2 .promoBox .swiper-button-prev {
   width: 2rem;
   height: 2rem;
-  top: 1.2rem;
+  top: 19.2px;
   color: #004EA2;
 }
 .main .layout .group-left .wrapBox2 .promoBox .swiper-button-next:after, .main .layout .group-left .wrapBox2 .promoBox .swiper-button-prev:after {
@@ -1159,96 +1164,96 @@ header .gnb .gnb-inner .menu-btn i {
   position: absolute;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(1) {
-  top: 70px;
-  left: 84px;
+  top: 4.375rem;
+  left: 5.25rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(2) {
-  top: 124px;
-  left: 30px;
+  top: 7.75rem;
+  left: 1.875rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(3) {
-  top: 150px;
-  left: 100px;
+  top: 9.375rem;
+  left: 6.25rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(4) {
-  top: 190px;
-  left: 35px;
+  top: 11.875rem;
+  left: 2.188rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(5) {
-  top: 220px;
-  left: 100px;
+  top: 13.75rem;
+  left: 6.25rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(6) {
-  top: 250px;
-  left: 50px;
+  top: 15.625rem;
+  left: 3.125rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(7) {
-  top: 260px;
-  left: 110px;
+  top: 16.25rem;
+  left: 6.875rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(8) {
-  top: 330px;
-  left: 46px;
+  top: 20.625rem;
+  left: 2.875rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(9) {
-  top: 290px;
-  left: 10px;
+  top: 18.125rem;
+  left: 0.625rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(10) {
-  top: 220px;
-  left: 160px;
+  top: 13.75rem;
+  left: 10rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(11) {
-  top: 185px;
-  left: 130px;
+  top: 11.563rem;
+  left: 8.125rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(12) {
-  top: 140px;
-  left: 160px;
+  top: 8.75rem;
+  left: 10rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(13) {
-  top: 105px;
-  left: 130px;
+  top: 6.563rem;
+  left: 8.125rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(14) {
-  top: 70px;
-  left: 150px;
+  top: 4.375rem;
+  left: 9.375rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(15) {
-  top: 18px;
-  left: 200px;
+  top: 1.125rem;
+  left: 10.5rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(16) {
-  top: 52px;
-  left: 220px;
+  top: 3.25rem;
+  left: 12.75rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(17) {
-  top: 86px;
-  left: 230px;
+  top: 5.375rem;
+  left: 14.375rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(18) {
-  top: 118px;
-  left: 210px;
+  top: 7.375rem;
+  left: 13.125rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(19) {
-  top: 150px;
-  left: 230px;
+  top: 9.375rem;
+  left: 14.375rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(20) {
-  top: 182px;
-  left: 190px;
+  top: 11.375rem;
+  left: 11.875rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(21) {
-  top: 215px;
-  left: 210px;
+  top: 13.438rem;
+  left: 13.125rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(22) {
-  top: 182px;
-  left: 240px;
+  top: 11.375rem;
+  left: 15rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(23) {
-  top: 280px;
-  left: 180px;
+  top: 16.5rem;
+  left: 11.25rem;
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li a {
   display: inline-block;
@@ -1536,8 +1541,8 @@ footer .footer-inner h2 {
   margin-right: 3rem;
   background-color: #fff;
   display: inline;
-  width: 12.75rem;
-  height: 3.5rem;
+  width: 204px;
+  height: 56px;
   font-size: 0;
   background-image: url(imgs/logo.png);
   background-repeat: no-repeat;
