@@ -435,9 +435,15 @@ header .side-menu .bottomBox .depth-2-Box {
   padding: 0.813rem 1.188rem;
   overflow-y: scroll;
   overscroll-behavior: none;
+  position: relative;
 }
 header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner {
+  position: absolute;
+  display: none;
   /* (js 파일 참고) 하단에 보이지 않는 블럭을 추가해 하단 정보가 가려지는 것을 방지*/
+}
+header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner.active {
+  display: block;
 }
 header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > li {
   color: #004EA2;
@@ -451,6 +457,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > 
   padding: 0.813rem 0;
   cursor: pointer;
   position: relative;
+  width: 9.978rem;
 }
 header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > li strong::after {
   content: "";

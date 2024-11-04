@@ -528,7 +528,13 @@ header {
                 padding: 0.813rem 1.188rem;
                 overflow-y: scroll;
                 overscroll-behavior: none;
+                position: relative;
                 .depth-2-Box-inner {
+                    position: absolute;
+                    display: none;
+                    &.active {
+                        display: block;
+                    }
                     ul.depth-2-title {
                         > li {
                             color: $color-blue-main;
@@ -541,6 +547,7 @@ header {
                                 padding: 0.813rem 0;
                                 cursor: pointer;
                                 position: relative;
+                                width: 9.978rem;
                                 &::after {
                                     content: '';
                                     display: block;

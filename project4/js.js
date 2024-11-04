@@ -33,8 +33,18 @@ $(document).ready(function () {
 
     // [side-menu 의 depth-1-Box 의 li a 들 토글 설정]
     $('.depth-1-Box li a').click(function () {
+      // 배경색 변화
       $('.depth-1-Box li').find('a').removeClass('active');
       $(this).addClass('active');
+      // 클릭한 1depth 메뉴에 해당하는 2depth 메뉴 보이기
+      const index = $(this).parent().index();
+      $('.depth-2-Box > div').eq(index).addClass('active').siblings().removeClass('active');
+      // 열어놨던 2depth 메뉴 매번 닫혀진 상태로 되돌리기
+      $('.depth-3-Box').removeClass('open');
+      // 열어놨던 2depth 아이콘도 다시 + 로 변경
+      $('.depth-2-title li strong').find('i').removeClass('on')
+      // 열어놨던 2depth 밑줄효과도 제거
+      $('.depth-2-title li strong').removeClass('on')
     })
 
     // [side-menu 의 side-menu-icons 클릭으로 3 depth 메뉴 접히고 펼치기 설정]
