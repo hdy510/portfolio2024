@@ -50,6 +50,7 @@ header {
   z-index: 100;
   /* util 설정 */
   /* gnb 설정 */
+  /* side-menu 설정 */
 }
 header .util {
   width: 100%;
@@ -1771,7 +1772,7 @@ footer .footer-inner .txtBox .info p span {
 }
 
 /* dimmed 처리 설정 */
-.dimmed-bg {
+.dimmed-bg1 {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0);
@@ -1782,13 +1783,34 @@ footer .footer-inner .txtBox .info p span {
   visibility: hidden;
   transition: all 0.3s;
 }
-.dimmed-bg.open {
+.dimmed-bg1.open {
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: visible;
+}
+
+.dimmed-bg2 {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.dimmed-bg2.open {
   background-color: rgba(0, 0, 0, 0.5);
   visibility: visible;
 }
 
 /* 와이드 데스크탑 미디어쿼리 설정 */
 @media (min-width: 87.5rem) {
+  header {
+    /* util 설정 */
+    /* gnb 설정 */
+    /* side-menu 설정 */
+  }
   header .util .util-inner {
     max-width: 87.5rem;
     margin: 0 auto;
@@ -1796,6 +1818,9 @@ footer .footer-inner .txtBox .info p span {
   header .gnb .gnb-inner {
     max-width: 87.5rem;
     margin: 0 auto;
+  }
+  header .side-menu {
+    display: none;
   }
   /* main 미디어쿼리 */
   .main {
@@ -1835,9 +1860,20 @@ footer .footer-inner .txtBox .info p span {
     width: 18.25rem;
     padding: 2.5rem;
   }
+  /* dimmed 처리 설정 */
+  .dimmed-bg2 {
+    display: none;
+  }
 }
 /* 1201px ~ 1399px 구간 미디어쿼리*/
 @media (min-width: 75.063rem) and (max-width: 87.438rem) {
+  /* header 설정 */
+  header {
+    /* side-menu 설정 */
+  }
+  header .side-menu {
+    display: none;
+  }
   /* main 미디어쿼리 */
   .main {
     /* layout 미디어쿼리 */
@@ -1882,6 +1918,10 @@ footer .footer-inner .txtBox .info p span {
     display: block;
     top: 2rem;
     left: 6rem;
+  }
+  /* dimmed 처리 설정 */
+  .dimmed-bg2 {
+    display: none;
   }
 }
 /* 769px ~ 1200px 태블릿 구간 미디어쿼리 */

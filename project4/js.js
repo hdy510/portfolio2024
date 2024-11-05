@@ -5,34 +5,34 @@ $(document).ready(function () {
       // 메뉴 중복 열림 방지
       // gnb 메뉴에서 해당 list1 의 items 를 제외한 형제 list1 들의 items 의 open 클래스 제거
       $(this).siblings().find('.items').removeClass('open');
-      // dimmed-bg 처리 설정
-      $('.dimmed-bg').addClass('open');
+      // dimmed-bg1 처리 설정
+      $('.dimmed-bg1').addClass('open');
     });
     // items 에서 마우스 떠나면 하위 메뉴 숨기기
     $('nav.gnb ul.depth1 .list1 .items').mouseleave(function () {
       $(this).removeClass('open');
-      // dimmed-bg 해제 설정
-      $('.dimmed-bg').removeClass('open');
+      // dimmed-bg1 해제 설정
+      $('.dimmed-bg1').removeClass('open');
     });
     // gnb 메뉴에서 마우스 떠나면 하위 메뉴 숨기기
     $('nav.gnb ul.depth1').mouseleave(function () {
       $(this).find('.items').removeClass('open');
-      // dimmed-bg 해제 설정
-      $('.dimmed-bg').removeClass('open');
+      // dimmed-bg1 해제 설정
+      $('.dimmed-bg1').removeClass('open');
     });
     
     // [side-menu 등장 토글]
     // 1. menu-btn 클릭 시, side-menu 보이기
     $('.gnb .menu-btn').click(function () {
       $('.side-menu').addClass('on');
-      // dimmed-bg 처리 설정
-      $('.dimmed-bg').addClass('open');
+      // dimmed-bg2 처리 설정
+      $('.dimmed-bg2').addClass('open');
     });
     // 2. menu-btn-close 클릭 시, side-menu 숨기기
     $('.side-menu .menu-btn-close').click(function () {
       $('.side-menu').removeClass('on');
-      // dimmed-bg 해제 설정
-      $('.dimmed-bg').removeClass('open');
+      // dimmed-bg2 해제 설정
+      $('.dimmed-bg2').removeClass('open');
     });
 
     // [side-menu 의 depth-1-Box 의 li a 들 토글 설정]
