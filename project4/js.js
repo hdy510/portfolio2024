@@ -25,10 +25,14 @@ $(document).ready(function () {
     // 1. menu-btn 클릭 시, side-menu 보이기
     $('.gnb .menu-btn').click(function () {
       $('.side-menu').addClass('on');
+      // dimmed-bg 처리 설정
+      $('.dimmed-bg').addClass('open');
     });
     // 2. menu-btn-close 클릭 시, side-menu 숨기기
     $('.side-menu .menu-btn-close').click(function () {
       $('.side-menu').removeClass('on');
+      // dimmed-bg 해제 설정
+      $('.dimmed-bg').removeClass('open');
     });
 
     // [side-menu 의 depth-1-Box 의 li a 들 토글 설정]

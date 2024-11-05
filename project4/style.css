@@ -227,7 +227,7 @@ header .gnb .gnb-inner ul.depth1 li.list1 .items.open.n7 {
 header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner {
   max-width: 87.5rem;
   margin: 0 auto;
-  background: linear-gradient(180deg, rgb(19, 60, 104) 0%, rgb(0, 78, 162) 100%);
+  background-color: #004EA2;
   display: flex;
 }
 header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner .gnb-title {
@@ -356,7 +356,7 @@ header .side-menu.on {
 }
 header .side-menu .topBox {
   width: 100%;
-  height: 5.07rem;
+  height: 5.02rem;
   display: flex;
   align-items: center;
   position: relative;
@@ -411,7 +411,7 @@ header .side-menu .bottomBox {
   height: 100%;
 }
 header .side-menu .bottomBox .depth-1-Box {
-  background: linear-gradient(180deg, rgb(19, 60, 104) 0%, rgb(0, 78, 162) 100%);
+  background-color: #004EA2;
   width: 10.125rem;
   height: 100%;
 }

@@ -250,8 +250,9 @@ header {
                             margin: 0 auto;
                             // 높이 설정
                             // height: 44.813rem;
-                            background: linear-gradient(180deg, rgba(19,60,104,1) 00%, rgba(0,78,162,1) 100%);
+                            // background: linear-gradient(180deg, rgba(19,60,104,1) 00%, rgba(0,78,162,1) 100%);
                             // background-color: #215AB2;
+                            background-color: $color-blue-main;
                             display: flex;
                             .gnb-title {
                                 width: 20%;
@@ -445,7 +446,7 @@ header {
         }
         .topBox {
             width: 100%;
-            height: 5.07rem;
+            height: 5.02rem;
             display: flex;
             align-items: center;
             position: relative;
@@ -499,7 +500,8 @@ header {
             display: flex;
             height: 100%;
             .depth-1-Box {
-                background: linear-gradient(180deg, rgba(19,60,104,1) 00%, rgba(0,78,162,1) 100%);
+                // background: linear-gradient(180deg, rgba(19,60,104,1) 00%, rgba(0,78,162,1) 100%);
+                background-color: $color-blue-main;
                 width: 10.125rem;
                 height: 100%;
                 ul {
