@@ -587,6 +587,20 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
+            .heroPlaceBox {
+                position: absolute;
+                display: block;
+                width: 14.7%;
+                right: 0;
+                bottom: 7.5%;
+                text-align: left;
+                .heroPlaceTxt {
+                    color: #fff;
+                    font-family: $font-family-scoredream-4Regular;
+                    font-size: $font-size-20px;
+                    padding-right: 11%;
+                }
+            }
         }
         .swiper-slide img {
             display: block;
@@ -909,14 +923,14 @@ header {
                     align-items: center;
                     position: relative;
                     .tabMenu {
-                        width: 90%;
+                        width: 92%;
                         display: flex;
                         justify-content: space-between;
                         margin-top: 4%;
                         margin-bottom: 2%;
                         li {
                             padding: 0.313rem 0.513rem;
-                            margin: 0 0.25rem;
+                            // margin: 0 0.25rem;
                             border-radius: 0.5rem;
                             a {
                                 display: block;
@@ -941,7 +955,7 @@ header {
                         }
                     }
                     .txtBox {
-                        width: 90%;
+                        width: 92%;
                         position: absolute;
                         top: 5rem;
                         left: 2.2rem;
@@ -1168,6 +1182,7 @@ header {
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        position: relative;
                     }
                     .swiper-slide img {
                         display: block;
@@ -1878,6 +1893,16 @@ footer {
             margin: 0 auto;
             margin-top: 4.375rem;
             .group-left {
+                /* 새로운 소식 설정*/
+                .newsBox {
+                    .newsBox-inner {
+                        .tabMenu {
+                            li {
+                                padding: 0.313rem 1.013rem;
+                            }
+                        }
+                    }
+                }
                 .wrapBox2 {
                     /* 홍보이미지 미디어쿼리 */
                     .promoBox {
@@ -2429,6 +2454,10 @@ footer {
             }
         }
     }
+    /* dimmed 처리 설정 */
+    .dimmed-bg1 {
+        display: none;
+    }
 }
 
 /* ~768px 모바일 구간 미디어쿼리 */
@@ -2478,6 +2507,18 @@ footer {
     .main {
         /* hero 미디어쿼리 */
         .hero {
+            .swiper-slide {
+                .heroPlaceBox {
+                    width: 25%;
+                    bottom: 2%;
+                    right: 3%;
+                    text-align: right;
+                    .heroPlaceTxt {
+                        font-size: $font-size-16px;
+                        padding-right: 0;
+                    }
+                }
+            }
             .swiper-button-next, .swiper-button-prev {
                 transform: scale(0.5);
             }
@@ -2498,6 +2539,18 @@ footer {
                 &:active {
                     transform: scale(0.5) translateX(-1.2rem);
                 }
+            }
+            .swiper-pagination-fraction {
+                bottom: 2%;
+                padding-right: 0;
+                padding-left: 3%;
+                text-align-last: left;
+            }
+            .swiper-pagination-current {
+                font-size: $font-size-20px;
+            }
+            .swiper-pagination-total {
+                font-size: $font-size-14px;
             }
             .txtBox {
                 h2 {
@@ -3039,5 +3092,9 @@ footer {
                 }
             }
         }
+    }
+    /* dimmed 처리 설정 */
+    .dimmed-bg1 {
+        display: none;
     }
 }

@@ -541,6 +541,20 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   justify-content: center;
   align-items: center;
 }
+.main .hero .swiper-slide .heroPlaceBox {
+  position: absolute;
+  display: block;
+  width: 14.7%;
+  right: 0;
+  bottom: 7.5%;
+  text-align: left;
+}
+.main .hero .swiper-slide .heroPlaceBox .heroPlaceTxt {
+  color: #fff;
+  font-family: "S-CoreDream-4Regular", sans-serif;
+  font-size: 1.25rem;
+  padding-right: 11%;
+}
 .main .hero .swiper-slide img {
   display: block;
   width: 100%;
@@ -846,7 +860,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   position: relative;
 }
 .main .layout .group-left .newsBox .newsBox-inner .tabMenu {
-  width: 90%;
+  width: 92%;
   display: flex;
   justify-content: space-between;
   margin-top: 4%;
@@ -854,7 +868,6 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 }
 .main .layout .group-left .newsBox .newsBox-inner .tabMenu li {
   padding: 0.313rem 0.513rem;
-  margin: 0 0.25rem;
   border-radius: 0.5rem;
 }
 .main .layout .group-left .newsBox .newsBox-inner .tabMenu li a {
@@ -878,7 +891,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   color: #fff;
 }
 .main .layout .group-left .newsBox .newsBox-inner .txtBox {
-  width: 90%;
+  width: 92%;
   position: absolute;
   top: 5rem;
   left: 2.2rem;
@@ -1083,6 +1096,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .main .layout .group-left .wrapBox2 .promoBox .swiper-slide img {
   display: block;
@@ -1822,6 +1836,12 @@ footer .footer-inner .txtBox .info p span {
     margin-top: 4.375rem;
     /* group-bottom 미디어쿼리 */
   }
+  .main .layout .group-left {
+    /* 새로운 소식 설정*/
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li {
+    padding: 0.313rem 1.013rem;
+  }
   .main .layout .group-left .wrapBox2 {
     /* 홍보이미지 미디어쿼리 */
     /* 웹툰 미디어쿼리 */
@@ -2288,6 +2308,10 @@ footer .footer-inner .txtBox .info p span {
     display: flex;
     flex-direction: column;
   }
+  /* dimmed 처리 설정 */
+  .dimmed-bg1 {
+    display: none;
+  }
 }
 /* ~768px 모바일 구간 미디어쿼리 */
 @media (max-width: 48rem) {
@@ -2324,6 +2348,16 @@ footer .footer-inner .txtBox .info p span {
     /* 국립공원 알아보기 배경 하늘 미디어쿼리*/
     /* layout 미디어쿼리 */
   }
+  .main .hero .swiper-slide .heroPlaceBox {
+    width: 25%;
+    bottom: 2%;
+    right: 3%;
+    text-align: right;
+  }
+  .main .hero .swiper-slide .heroPlaceBox .heroPlaceTxt {
+    font-size: 1rem;
+    padding-right: 0;
+  }
   .main .hero .swiper-button-next, .main .hero .swiper-button-prev {
     transform: scale(0.5);
   }
@@ -2344,6 +2378,19 @@ footer .footer-inner .txtBox .info p span {
   }
   .main .hero .swiper-button-prev:active {
     transform: scale(0.5) translateX(-1.2rem);
+  }
+  .main .hero .swiper-pagination-fraction {
+    bottom: 2%;
+    padding-right: 0;
+    padding-left: 3%;
+    -moz-text-align-last: left;
+         text-align-last: left;
+  }
+  .main .hero .swiper-pagination-current {
+    font-size: 1.25rem;
+  }
+  .main .hero .swiper-pagination-total {
+    font-size: 0.875rem;
   }
   .main .hero .txtBox h2 {
     font-size: 1.375rem;
@@ -2828,5 +2875,9 @@ footer .footer-inner .txtBox .info p span {
   footer .footer-inner .txtBox .info p:nth-child(2) {
     display: flex;
     flex-direction: column;
+  }
+  /* dimmed 처리 설정 */
+  .dimmed-bg1 {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */

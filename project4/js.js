@@ -86,24 +86,25 @@ $(document).ready(function () {
       }
       
     })
-    
+ 
+
     // [히어로 initialize swiper]
     var swiper = new Swiper(".heroSwiper", {
-        loop: true,
-        effect: "fade",
-        speed: 1000,
-        autoplay: {
-          delay: 4000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          type: "fraction",
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
+      loop: true,
+      effect: "fade",
+      speed: 1000,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
     });
 
     // [홍보이미지 initialize swiper]
