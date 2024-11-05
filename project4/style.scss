@@ -261,19 +261,23 @@ header {
                                 flex-direction: column;
                                 align-items: center;
                                 margin-top: 1.25rem;
-                                // .img {
-                                //     // background-image: url(imgs/gnb-icons.png);
-                                //     background-repeat: no-repeat;
-                                //     background-position: 0 0;
-                                //     width: 13.875rem;
-                                //     height: 10.625rem;
-                                //     margin-bottom: 0.625rem;
-                                // }
                                 strong {
                                     font-size: $font-size-30px;
                                     color: #fff;
                                     font-weight: 500;
                                     margin-top: 3rem;
+                                }
+                                p {
+                                    font-family: $font-family-pretendard;
+                                    color: #fff;
+                                    font-size: $font-size-16px;
+                                    text-align: center;
+                                    line-height: 1.5;
+                                    width: 80%;
+                                    margin-top: 24px;
+                                    span {
+                                        white-space: nowrap;
+                                    }
                                 }
                             }
                             ul.depth2 {
@@ -335,70 +339,6 @@ header {
                                             }
                                         }
                                     }
-                                }
-                            }
-                        }
-                    }
-                    /* .gnb-title .img 변경 */
-                    &:nth-child(1) {
-                        .items {
-                            .items-inner {
-                                .gnb-title .img {
-                                    background-position: 0 0;
-                                }
-                            }
-                        }
-                    }
-                    &:nth-child(2) {
-                        .items {
-                            .items-inner {
-                                .gnb-title .img {
-                                    background-position: -13.875rem 0;
-                                }
-                            }
-                        }
-                    }
-                    &:nth-child(3) {
-                        .items {
-                            .items-inner {
-                                .gnb-title .img {
-                                    background-position: -27.75rem 0;
-                                }
-                            }
-                        }
-                    }
-                    &:nth-child(4) {
-                        .items {
-                            .items-inner {
-                                .gnb-title .img {
-                                    background-position: -41.625rem 0;
-                                }
-                            }
-                        }
-                    }
-                    &:nth-child(5) {
-                        .items {
-                            .items-inner {
-                                .gnb-title .img {
-                                    background-position: -55.5rem 0;
-                                }
-                            }
-                        }
-                    }
-                    &:nth-child(6) {
-                        .items {
-                            .items-inner {
-                                .gnb-title .img {
-                                    background-position: -69.375rem 0;
-                                }
-                            }
-                        }
-                    }
-                    &:nth-child(7) {
-                        .items {
-                            .items-inner {
-                                .gnb-title .img {
-                                    background-position: -83.25rem 0;
                                 }
                             }
                         }

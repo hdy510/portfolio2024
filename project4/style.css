@@ -178,7 +178,6 @@ header .gnb .gnb-inner ul.depth1 li.list1 {
   padding: 0.313rem 1.375rem;
   margin-top: 1.25rem;
   /* 2뎁스 설정 */
-  /* .gnb-title .img 변경 */
 }
 header .gnb .gnb-inner ul.depth1 li.list1::after {
   content: "";
@@ -245,6 +244,18 @@ header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner .gnb-title strong 
   font-weight: 500;
   margin-top: 3rem;
 }
+header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner .gnb-title p {
+  font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.5;
+  width: 80%;
+  margin-top: 24px;
+}
+header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner .gnb-title p span {
+  white-space: nowrap;
+}
 header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 {
   background-color: #fff;
   width: 80%;
@@ -301,27 +312,6 @@ header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 li.list2
 }
 header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 li.list2 ul.depth3 li.list3 > a:hover {
   font-weight: 600;
-}
-header .gnb .gnb-inner ul.depth1 li.list1:nth-child(1) .items .items-inner .gnb-title .img {
-  background-position: 0 0;
-}
-header .gnb .gnb-inner ul.depth1 li.list1:nth-child(2) .items .items-inner .gnb-title .img {
-  background-position: -13.875rem 0;
-}
-header .gnb .gnb-inner ul.depth1 li.list1:nth-child(3) .items .items-inner .gnb-title .img {
-  background-position: -27.75rem 0;
-}
-header .gnb .gnb-inner ul.depth1 li.list1:nth-child(4) .items .items-inner .gnb-title .img {
-  background-position: -41.625rem 0;
-}
-header .gnb .gnb-inner ul.depth1 li.list1:nth-child(5) .items .items-inner .gnb-title .img {
-  background-position: -55.5rem 0;
-}
-header .gnb .gnb-inner ul.depth1 li.list1:nth-child(6) .items .items-inner .gnb-title .img {
-  background-position: -69.375rem 0;
-}
-header .gnb .gnb-inner ul.depth1 li.list1:nth-child(7) .items .items-inner .gnb-title .img {
-  background-position: -83.25rem 0;
 }
 header .gnb .gnb-inner .menu-btn {
   width: 2.375rem;
