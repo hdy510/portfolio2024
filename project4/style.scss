@@ -1869,13 +1869,131 @@ header {
         margin-top: 80px;
         /* side-nav-bar 설정 */
         .side-nav-bar {
-            min-width: 260px;
-            // background-color: rgb(128, 128, 128);
+            min-width: 280px;
+            // background-color: rgb(225, 225, 225);
             height: 100%;
             margin-left: 40px;
+            position: relative;
+            /* depth1TitleBox 설정 */
+            .depth1TitleBox  {
+                width: 280px;
+                height: 182px;
+                background-color: $color-blue-main;
+                border-radius: 56px 56px 10px 10px ;
+                h2 {
+                    color: #fff;
+                    font-size: $font-size-28px;
+                    font-family: $font-family-scoredream-5Medium;
+                    text-align: center;
+                    padding-top: 53px;
+                }
+            }
+            /* depth2TitleBox 설정 */
+            .depth2TitleBox {
+                width: 248px;
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+                padding: 13px 20px 13px 22px;
+                position: absolute;
+                left: 16px;
+                top: 114px;
+                .depth-2-Box-inner {
+                    display: none;
+                    &.active {
+                        display: block;
+                    }
+                    ul.depth-2-title {
+                        > li {
+                            color: $color-blue-main;
+                            font-size: $font-size-17px;
+                            font-weight: 600;
+                            strong {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                flex-wrap: wrap;
+                                padding: 0.813rem 0;
+                                cursor: pointer;
+                                position: relative;
+                                &::after {
+                                    content: '';
+                                    display: block;
+                                    width: 0;
+                                    height: 1px;
+                                    background-color: #B6C8DC;
+                                    border-radius: 50%;
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: -0.4rem;
+                                    transition: all 0.3s ease;
+                                }
+                                &.on {
+                                    &::after {
+                                        width: 105%;
+                                    }
+                                }
+                                i {
+                                    display: block;
+                                    background-image: url(imgs/side-menu-icons.png);
+                                    background-size: cover;
+                                    width: 1.625rem;
+                                    height: 1.625rem;
+                                    margin-top: 0rem;
+                                    &.on {
+                                        background-position: -1.625rem 0;
+                                    }
+                                }
+                            }
+                            ul.depth-3-Box {
+                                height: 0;
+                                overflow: hidden;
+                                transition: all 1s;
+                                li {
+                                    margin: 8px 0;
+                                    display: flex;
+                                    align-items: center;
+                                    &::before {
+                                        content: '';
+                                        display: block;
+                                        width: 0.125rem;
+                                        height: 0.125rem;
+                                        background-color: #777;
+                                        border-radius: 50%;
+                                    }
+                                    a {
+                                        color: #777;
+                                        font-size: $font-size-16px;
+                                        font-weight: 400;
+                                        display: block;
+                                        padding: 0.5rem 0.625rem;
+                                        cursor: pointer;
+                                        &:hover {
+                                            font-weight: 500;
+                                        }
+                                    }
+                                    &.checked {
+                                        a {
+                                            color: #4478b0;
+                                            font-weight: 600;
+                                        }
+                                    }
+                                }
+                                &.open {
+                                    height: auto;
+                                }
+                            }
+                        }
+                    }
+                    /* (js 파일 참고) 하단에 보이지 않는 블럭을 추가해 하단 정보가 가려지는 것을 방지*/
+                    .block {
+                        width: 100%;
+                        height: 16rem;
+                    }
+                }
+            }
         }
         .sub-contentsBox {
-            width: 80%;
             // background-color: rgb(219, 219, 219);
             height: 100%;
             margin-left: 50px;
@@ -1888,7 +2006,7 @@ header {
                     margin-bottom: 40px;
                     display: flex;
                     justify-content: space-between;
-                    h2 {
+                    h3 {
                         font-family: $font-family-scoredream-5Medium;
                         color: $color-blue-main;
                         font-size: $font-size-40px;
@@ -2036,6 +2154,7 @@ header {
                                 justify-content: center;
                                 align-items: center;
                                 margin-right: 10px;
+                                cursor: pointer;
                                 i {
                                     margin-right: 10px;
                                 }
@@ -2104,6 +2223,7 @@ header {
                                 width: calc(95% / 3);
                                 padding: 28px;
                                 margin-bottom: 40px;
+                                transition: all 0.3s;
                                 a {
                                     img {
                                         width: 100%;
@@ -2136,6 +2256,10 @@ header {
                                         }
                                     }
                                 }
+                                &:hover {
+                                    transform: translateY(-10px);
+                                    box-shadow: 0 2px 7px rgba($color: #004EA2, $alpha: 0.3);
+                                }
                             }
                         }
                         .paginationBox {
@@ -2159,8 +2283,15 @@ header {
                                 @include pageBtnColor;
                                 margin: 0 5px;
                                 cursor: pointer;
+                                transition: all 0.3s;
                                 i {
                                     
+                                }
+                                &:hover {
+                                    background-color: $color-blue-main;
+                                    i {
+                                        color: #fff;
+                                    }
                                 }
                             }
                             .toFirst {}
@@ -2267,7 +2398,7 @@ header {
                                 }
                             }
                             button {
-                                border: none;
+                                border: 1px solid $color-blue-main;
                                 width: 134px;
                                 background-color: $color-blue-main;
                                 color: #fff;
@@ -2275,6 +2406,11 @@ header {
                                 font-size: $font-size-17px;
                                 font-family: $font-family-pretendard;
                                 cursor: pointer;
+                                transition: all 0.3s;
+                                &:hover {
+                                    background-color: #fff;
+                                    color: $color-blue-main;
+                                }
                             }
                         }
                     }

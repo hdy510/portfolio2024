@@ -1826,12 +1826,124 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   /* side-nav-bar 설정 */
 }
 .subpage .subpage-inner .side-nav-bar {
-  min-width: 260px;
+  min-width: 280px;
   height: 100%;
   margin-left: 40px;
+  position: relative;
+  /* depth1TitleBox 설정 */
+  /* depth2TitleBox 설정 */
+}
+.subpage .subpage-inner .side-nav-bar .depth1TitleBox {
+  width: 280px;
+  height: 182px;
+  background-color: #004EA2;
+  border-radius: 56px 56px 10px 10px;
+}
+.subpage .subpage-inner .side-nav-bar .depth1TitleBox h2 {
+  color: #fff;
+  font-size: 1.75rem;
+  font-family: "S-CoreDream-5Medium", sans-serif;
+  text-align: center;
+  padding-top: 53px;
+}
+.subpage .subpage-inner .side-nav-bar .depth2TitleBox {
+  width: 248px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+  padding: 13px 20px 13px 22px;
+  position: absolute;
+  left: 16px;
+  top: 114px;
+}
+.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner {
+  display: none;
+  /* (js 파일 참고) 하단에 보이지 않는 블럭을 추가해 하단 정보가 가려지는 것을 방지*/
+}
+.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner.active {
+  display: block;
+}
+.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li {
+  color: #004EA2;
+  font-size: 1.063rem;
+  font-weight: 600;
+}
+.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li strong {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0.813rem 0;
+  cursor: pointer;
+  position: relative;
+}
+.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li strong::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #B6C8DC;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: -0.4rem;
+  transition: all 0.3s ease;
+}
+.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li strong.on::after {
+  width: 105%;
+}
+.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li strong i {
+  display: block;
+  background-image: url(imgs/side-menu-icons.png);
+  background-size: cover;
+  width: 1.625rem;
+  height: 1.625rem;
+  margin-top: 0rem;
+}
+.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li strong i.on {
+  background-position: -1.625rem 0;
+}
+.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box {
+  height: 0;
+  overflow: hidden;
+  transition: all 1s;
+}
+.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box li {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+}
+.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box li::before {
+  content: "";
+  display: block;
+  width: 0.125rem;
+  height: 0.125rem;
+  background-color: #777;
+  border-radius: 50%;
+}
+.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box li a {
+  color: #777;
+  font-size: 1rem;
+  font-weight: 400;
+  display: block;
+  padding: 0.5rem 0.625rem;
+  cursor: pointer;
+}
+.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box li a:hover {
+  font-weight: 500;
+}
+.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box li.checked a {
+  color: #4478b0;
+  font-weight: 600;
+}
+.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box.open {
+  height: auto;
+}
+.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner .block {
+  width: 100%;
+  height: 16rem;
 }
 .subpage .subpage-inner .sub-contentsBox {
-  width: 80%;
   height: 100%;
   margin-left: 50px;
   margin-right: 40px;
@@ -1848,7 +1960,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   display: flex;
   justify-content: space-between;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .titleBox h2 {
+.subpage .subpage-inner .sub-contentsBox .subpage-gallery .titleBox h3 {
   font-family: "S-CoreDream-5Medium", sans-serif;
   color: #004EA2;
   font-size: 2.5rem;
@@ -1994,6 +2106,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   justify-content: center;
   align-items: center;
   margin-right: 10px;
+  cursor: pointer;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .optionBox li i {
   margin-right: 10px;
@@ -2059,6 +2172,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   width: 31.6666666667%;
   padding: 28px;
   margin-bottom: 40px;
+  transition: all 0.3s;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a img {
   width: 100%;
@@ -2088,6 +2202,10 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   color: #004EA2;
   margin-right: 8px;
 }
+.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 2px 7px rgba(0, 78, 162, 0.3);
+}
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox {
   display: flex;
   justify-content: center;
@@ -2104,6 +2222,13 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   border: 1px solid #004EA2;
   margin: 0 5px;
   cursor: pointer;
+  transition: all 0.3s;
+}
+.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox > span:hover {
+  background-color: #004EA2;
+}
+.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox > span:hover i {
+  color: #fff;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .prev {
   margin-right: 20px;
@@ -2217,7 +2342,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   font-size: 1rem;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox form .bottomBox button {
-  border: none;
+  border: 1px solid #004EA2;
   width: 134px;
   background-color: #004EA2;
   color: #fff;
@@ -2225,6 +2350,11 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   font-size: 1.063rem;
   font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   cursor: pointer;
+  transition: all 0.3s;
+}
+.subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox form .bottomBox button:hover {
+  background-color: #fff;
+  color: #004EA2;
 }
 /* footer 설정*/
 footer {
