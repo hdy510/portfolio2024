@@ -2088,7 +2088,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   color: #5a5a5a;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox .btn {
-  background-color: #fff;
+  background-color: #f1f6ff;
   padding: 8px 24px;
   text-align: center;
   color: #004EA2;
@@ -2098,9 +2098,6 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   cursor: pointer;
   margin-top: 20px;
   display: none;
-}
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox .btn:hover {
-  background-color: #f1f6ff;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox.park {
   margin-bottom: 35px;

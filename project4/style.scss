@@ -2136,7 +2136,7 @@ header {
                             }
                         }
                         .btn {
-                            background-color: #fff;
+                            background-color: #f1f6ff;
                             padding: 8px 24px;
                             text-align: center;
                             color: $color-blue-main;
@@ -2146,9 +2146,6 @@ header {
                             cursor: pointer;
                             margin-top: 20px;
                             display: none;
-                            &:hover {
-                                background-color: #f1f6ff;
-                            }
                         }
                         &.park {
                             margin-bottom: 35px;
