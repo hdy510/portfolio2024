@@ -1758,6 +1758,7 @@ header {
 /* subpage 설정 */
 .subpage {
     margin-top: 7.5rem;
+    display: none;
     /* subHeroBox 설정 */
     .subHeroBox {
         background-image: url(imgs/subHeroBox-bg.png);
@@ -2229,41 +2230,44 @@ header {
                                 margin-bottom: 40px;
                                 transition: all 0.3s;
                                 a {
+                                    display: block;
                                     img {
                                         width: 100%;
                                         margin-bottom: 22px;
                                     }
-                                    .txtBox {
-                                        p {
-                                            color: #777;
-                                            font-size: $font-size-14px;
-                                            font-weight: 500;
-                                            margin-bottom: 12px;
-                                        }
-                                        h4 {
-                                            color: $color-blue-main;
-                                            font-size: $font-size-16px;
-                                            font-weight: 600;
-                                            margin-bottom: 12px;
-                                            display: -webkit-box;
-                                            -webkit-box-orient: vertical;
-                                            -webkit-line-clamp: 1;
-                                            overflow: hidden;
-                                        }
-                                    }
-                                    .infoBox {
-                                        display: flex;
-                                        flex-direction: column;
-                                        span {
-                                            font-size: $font-size-14px;
-                                            color: #777;
-                                            margin-right: 10px;
-                                            margin-bottom: 5px;
-                                            i {
-                                                width: 16px;
-                                                text-align: center;
+                                    .txtBoxWrap {
+                                        .txtBox {
+                                            p {
+                                                color: #777;
+                                                font-size: $font-size-14px;
+                                                font-weight: 500;
+                                                margin-bottom: 12px;
+                                            }
+                                            h4 {
                                                 color: $color-blue-main;
-                                                margin-right: 8px;
+                                                font-size: $font-size-16px;
+                                                font-weight: 600;
+                                                margin-bottom: 12px;
+                                                display: -webkit-box;
+                                                -webkit-box-orient: vertical;
+                                                -webkit-line-clamp: 1;
+                                                overflow: hidden;
+                                            }
+                                        }
+                                        .infoBox {
+                                            display: flex;
+                                            flex-direction: column;
+                                            span {
+                                                font-size: $font-size-14px;
+                                                color: #777;
+                                                margin-right: 10px;
+                                                margin-bottom: 5px;
+                                                i {
+                                                    width: 16px;
+                                                    text-align: center;
+                                                    color: $color-blue-main;
+                                                    margin-right: 8px;
+                                                }
                                             }
                                         }
                                     }
@@ -2348,6 +2352,10 @@ header {
                                 font-weight: 600;
                                 font-size: $font-size-17px;
                                 margin-bottom: 36px;
+                                line-height: 1.5;
+                                span {
+                                    white-space: nowrap;
+                                }
                             }
                             .radioBox {
                                 display: flex;
@@ -2391,7 +2399,7 @@ header {
                                 border-radius: 6px;
                                 padding: 14px;
                                 margin-right: 16px;
-                                input[type="text"] {
+                                input {
                                     width: 100%;
                                     border: none;
                                     background: none;
@@ -2548,7 +2556,7 @@ footer {
 
 
 /* 와이드 데스크탑 미디어쿼리 설정 */
-@media (min-width:87.5rem) {
+@media (min-width:1400px) {
     header {
         /* util 설정 */
         .util {
@@ -2657,7 +2665,7 @@ footer {
 }
 
 /* 1201px ~ 1399px 구간 미디어쿼리*/
-@media (min-width:75.063rem) and (max-width:87.438rem) {
+@media (min-width:1201px) and (max-width:1399px) {
     /* header 미디어쿼리 */
     header {
         /* side-menu 미디어쿼리 */
@@ -2733,7 +2741,7 @@ footer {
 }
 
 /* 769px ~ 1200px 태블릿 구간 미디어쿼리 */
-@media (min-width:48.063rem) and (max-width:75rem) {
+@media (min-width:769px) and (max-width:1200px) {
     /* header 미디어쿼리 */
     header {
         .gnb {
@@ -3190,8 +3198,8 @@ footer {
     }
 }
 
-/* ~ 768px 모바일 구간 미디어쿼리 */
-@media (max-width:48rem) {
+/* 426px ~ 768px 대형 모바일 구간 미디어쿼리 */
+@media (min-width:426px) and (max-width:768px) {
     /* header 미디어쿼리 */
     header {
         /* util 미디어쿼리 */
@@ -3800,6 +3808,9 @@ footer {
                 margin-right: 20px;
                 .subpage-gallery {
                     .titleBox {
+                        h3 {
+                            font-size: 2.25rem;
+                        }
                         .rightBox {
                             flex-direction: column;
                             /* breadcrumb 미디어쿼리 */
@@ -3878,6 +3889,833 @@ footer {
                                 .inputBox {
                                     margin-right: 0;
                                     margin-bottom: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    /* footer 미디어쿼리 */
+    footer {
+        height: 48.875rem;
+        .footer-inner {
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            h2 {
+                order: 2;
+                margin-right: 0;
+                margin-top: 1rem;
+            }
+            .txtBox {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                order: 1;
+                .nav {
+                    margin-bottom: 3rem;
+                    ul {
+                        flex-direction: column;
+                        align-items: center;
+                        li {
+                            padding: 0.5rem 0;
+                            margin: 0.5rem 0;
+                            a {
+                                padding-left: 0;
+                                &::after {
+                                    content: '';
+                                    margin-left: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+                .info {
+                    width: 95%;
+                    p {
+                        line-height: 1.5;
+                        margin-bottom: 1rem;
+                        font-size: $font-size-14px;
+                        text-align: center;
+                        
+                        span {
+                            margin-right: 0;
+                        }
+                        &:nth-child(2) {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* dimmed 처리 설정 */
+    .dimmed-bg1 {
+        display: none;
+    }
+}
+
+/* ~ 425px 모바일 구간 미디어쿼리 */
+@media (max-width:425px) {
+    /* header 미디어쿼리 */
+    header {
+        /* util 미디어쿼리 */
+        .util {
+            .util-inner {
+                /* 국립공원 날씨 정보 미디어쿼리 */
+                .weather {
+                    span {
+                        width: 6.5rem;
+                        a {
+                            width: 100%;
+                            padding: 0.313rem 0;
+                        }
+                    }
+                    .listBox {
+                        > li {
+                            .list {
+                                li {
+                                    margin-right: 1rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                /* 로그인 회원가입 미디어쿼리 */
+                .user {
+                    display: none;
+                }
+            }
+        }
+        .gnb {
+            .gnb-inner {
+                ul.depth1 {
+                    display: none;
+                }
+                .menu-btn {
+                    display: flex;
+                }
+            }
+        }
+    }
+    /* main 미디어쿼리 */
+    .main {
+        /* hero 미디어쿼리 */
+        .hero {
+            .swiper-slide {
+                .heroPlaceBox {
+                    width: 25%;
+                    bottom: 2%;
+                    right: 3%;
+                    text-align: right;
+                    .heroPlaceTxt {
+                        font-size: $font-size-16px;
+                        padding-right: 0;
+                    }
+                }
+            }
+            .swiper-button-next, .swiper-button-prev {
+                transform: scale(0.5);
+            }
+            .swiper-button-next {
+                margin-right: -1rem;
+                &:hover {
+                    transform: scale(0.5) translateX(0);
+            }
+                &:active {
+                    transform: scale(0.5) translateX(1.2rem);
+                }
+            }
+            .swiper-button-prev {
+                margin-left: -1rem;
+                &:hover {
+                    transform: scale(0.5) translateX(0);
+            }
+                &:active {
+                    transform: scale(0.5) translateX(-1.2rem);
+                }
+            }
+            .swiper-pagination-fraction {
+                bottom: 2%;
+                padding-right: 0;
+                padding-left: 3%;
+                text-align-last: left;
+            }
+            .swiper-pagination-current {
+                font-size: $font-size-20px;
+            }
+            .swiper-pagination-total {
+                font-size: $font-size-14px;
+            }
+            .txtBox {
+                h2 {
+                    font-size: $font-size-22px;
+                    span {
+                        font-size: $font-size-30px;
+                    }
+                }
+                p {
+                    font-size: $font-size-17px;
+                }
+                .search {
+                    h3 {
+                        font-size: $font-size-20px;
+                    }
+                    .search-bar {
+                        width: 100%;
+                        input {
+                            font-size: $font-size-14px;
+                            margin-left: 1.5rem;
+                        }
+                    }
+                }
+                .recommend {
+                    flex-direction: column;
+                    ul {
+                        li {
+                            margin: 0.1rem 0.313rem;
+                            text-align: center;
+                            a {
+                                font-size: $font-size-16px;
+                            }
+                        }
+                    }
+                    span {
+                        text-align: center;
+                    }
+                    ul {
+                        flex-direction: column;
+                    }
+                }
+            }
+            .arrowBox {
+                .arrow {
+                    &.left {
+                        transform: scale(0.5);
+                        left: -2%;
+                        &:hover {
+                            transform: scale(0.5);
+                        }
+                    }
+                    &.right {
+                        transform: scale(0.5);
+                        right: -2%;
+                        &:hover {
+                            transform: scale(0.5);
+                        }
+                    }
+                }
+            }
+            .pageBox {
+                flex-direction: column;
+                bottom: 1rem;
+                right: 4%;
+                span {
+                    font-size: $font-size-14px;
+                    b {
+                        font-size: $font-size-18px;
+                    }
+                }
+                p {
+                    font-size: $font-size-18px;
+                    margin-left: 0;
+                }
+            }
+        }
+        /* 국립공원 알아보기 배경 하늘 미디어쿼리*/
+        .more-bg-sky {
+            height: 23.75rem;
+            bottom: 0;
+        }
+        /* layout 미디어쿼리 */
+        .layout {
+            display: flex;
+            flex-direction: column;
+            /* 박스별 제목 (h3) 공통 미디어쿼리 */
+            h3 {
+                font-size: $font-size-22px;
+            }
+            /* group-left 미디어쿼리*/
+            .group-left {
+                /* 자주 찾는 서비스 미디어쿼리*/
+                .serviceBox {
+                    height: 40rem;
+                    ul {
+                        max-width: 25rem;
+                        margin: 2rem auto;
+                        li {
+                            width: 44%;
+                            margin: 1.5%;
+                            a {
+                                i {}
+                                span {
+                                    font-size: $font-size-17px;
+                                }
+                            }
+                        }
+                    }
+                }
+                /* 새로운 소식 미디어쿼리 */
+                .newsBox {
+                    height: 23rem;
+                    .newsBox-inner {
+                        .tabMenu {
+                            width: 100%;
+                            display: grid;
+                            grid-template-columns: 7rem 7rem;
+                            justify-content: start;
+                            position: absolute;
+                            top: 1.5rem;
+                            left: 1rem;
+                            margin-top: 0;
+                            li {
+                                width: 6.3rem;
+                                margin: 0 0.3rem;
+                                &:nth-child(5) {
+                                    position: absolute;
+                                    width: 5.2rem;
+                                    height: 1.8rem;
+                                    right: 1rem;
+                                    top: 13rem;
+                                    a {
+                                        width: 100%;
+                                        height: 100%;
+                                        font-size: $font-size-18px;
+                                        position: relative;
+                                        i {
+                                            position: absolute;
+                                            top: 0;
+                                            right: 0;
+                                            transform: scale(0.8);
+                                            &::after {
+                                                content: '더보기';
+                                                width: 3.6rem;
+                                                font-weight: 600;
+                                                font-style: normal;
+                                                color: #9a9a9a;
+                                                position: absolute;
+                                                top: 0.02rem;
+                                                left: -3.6rem;
+                                                cursor: pointer;
+                                            }
+                                        }
+                                    }
+                                }
+                                a {
+                                    font-size: $font-size-16px;
+                                }
+                            }
+                        }
+                        .txtBox {
+                            top: 7rem;
+                            left: 1.5rem;
+                            li {
+                                display: none;
+                                a {
+                                    width: 90%;
+                                    font-size: $font-size-14px;
+                                    margin-bottom: 0.4rem;
+                                }
+                                span {
+                                    font-size: $font-size-14px;
+                                }
+                                &:nth-child(1) {
+                                    display: block;
+                                }
+                                &:nth-child(2) {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+                /* wrapBox1 미디어쿼리 */
+                .wrapBox1 {
+                    height: 30rem;
+                    .wrapBox1-top {
+                        height: 44%;
+                        /* 자원봉사 미디어쿼리 */
+                        .volunteerBox {
+                            padding-left: 0;
+                            flex-direction: column;
+                            img {
+                                &.txt {
+                                    order: 2;
+                                    margin-top: 0.6rem;
+                                    width: 4rem;
+                                }
+                                &.icon {
+                                    order: 1;
+                                    margin-top: -0.4rem;
+                                    width: 4rem;
+                                }
+                            }
+                        }
+                        /* 실시간영상 미디어쿼리 */
+                        .liveBox {
+                            flex-direction: column;
+                            img {
+                                &.txt {
+                                    order: 2;
+                                    margin-top: 1.2rem;
+                                    width: 6.4rem;
+                                }
+                                &.icon {
+                                    order: 1;
+                                    width: 26%;
+                                    width: 3.2rem;
+                                }
+                            }
+                        }
+                    }
+                    /* snsBox 미디어쿼리 */
+                    .snsBox {
+                        height: 56%;
+                        .snsBox-inner {
+                            h4 {
+                                font-size: $font-size-18px;
+                                margin-top: 0.9rem;
+                            }
+                            ul {
+                                width: 16rem;
+                                height: 60%;
+                                margin-top: 0.7rem;
+                                display: flex;
+                                justify-content: center;
+                                flex-wrap: wrap;
+                                li {
+                                    margin: 0.5rem 0.5rem;
+                                    a {
+                                        span {}
+                                        i {}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                /* wrapBox2 미디어쿼리 */
+                .wrapBox2 {
+                    flex-direction: column;
+                    height: 45rem;
+                    padding: 0;
+                    /* 홍보이미지 미디어쿼리 */
+                    .promoBox {
+                        width: 92%;
+                        max-width: 25rem;
+                        height: 54%;
+                        margin: 0 auto;
+                        margin-bottom: 2rem;
+                        .swiper {
+                            
+                        }
+                        .swiper-pagination {
+                            bottom: 0.35rem;
+                        }
+                    }
+                    /* 웹툰 설정*/
+                    .webtoonBox {
+                        width: 92%;
+                        max-width: 25rem;
+                        height: 46%;
+                        margin: 0 auto;
+                        img {
+                            position: static;
+                            top: -10rem;
+                            left: -1rem;
+                        }
+                        .txtBox {
+                            h4 {
+                                top: 1rem;
+                                left: 1.3rem;
+                            }
+                            p {
+                                top: 3.8rem;
+                                left: 1.3rem;
+                            }
+                        }
+                    }
+                }
+            }
+            /* group-right 미디어쿼리 */
+            .group-right {
+                padding: 1.25rem;
+                /* 실시간 탐방통제정보 미디어쿼리 */
+                .controlBox {
+                    padding: 1.5rem;
+                    max-width: 25rem;
+                    margin: 2rem auto;
+                    p {
+                        font-size: $font-size-17px;
+                    }
+                    .legend {
+                        li {
+                            width: 31%;
+                        }
+                    }
+                    .location {
+                        li {
+                            width: calc((100% - 2.2rem) / 3);
+                        }
+                    }
+                }
+                /* wrapBox3 미디어쿼리 */
+                .wrapBox3 {
+                    height: 62rem;
+                    flex-direction: column;
+                    /* 국립공원바로가기 미디어쿼리 */
+                    .linkBox {
+                        width: 100%;
+                        height: 48%;
+                        padding-right: 0;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        .linkBox-inner {
+                            width: 18.25rem;
+                            ul {
+                                
+                            }
+                        }
+                    }
+                    /* 스마트 국립공원 미디어쿼리 */
+                    .smartBox {
+                        width: 100%;
+                        height: 48%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding-left: 0;
+                        .smartBox-inner {
+                            width: 100%;
+                            max-width: 18.25rem;
+                            height: 25.688rem;
+                            ul {
+                                width: 15.21rem;
+                                li {
+                                    margin: 0.3rem auto;
+                                }
+                            }
+                        }
+                    }
+                }
+                /* 국립공원 사진전 미디어쿼리 */
+                .galleryBox {
+                    width: 100%;
+                    height: 20.5rem;
+                    position: relative;
+                    border: none;
+                    > h3 {
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                    img {
+                        width: 70%;
+                        min-width: 17.5rem;
+                        object-fit: cover;
+                        filter: brightness(0.7);
+                        margin: 2rem auto;
+                        margin-top: 4rem;
+                    }
+                    .txtBox {
+                        padding-left: 0;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 1rem;
+                        left: 0;
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: column;
+                        align-items: center;
+                        h4 {
+                            color: #fff;
+                            text-align: center;
+                        }
+                        p {
+                            color: #fff;
+                        }
+                        span {
+                            position: relative;
+                            margin-right: 0;
+                            margin-top: 2rem;
+                            &:hover {
+                                background-color: #3F3F3F;
+                                border: 1px solid #3f3f3f;
+                                color: #fff;
+                                font-weight: 400;
+                            }
+                            &:active {
+                                background-color: #fefefe;
+                                border: 1px solid #a1a1a1;
+                                color: #3f3f3f;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+                /* 자주하는 질문 미디어쿼리 */
+                .questionBox {
+                    .questionBox-inner {
+                        .grid {
+                            .questionTitle {
+                                grid-template-columns: 20% 24% 1fr;
+                                padding: 0 0.4rem;
+                                li {
+                                    &:nth-child(1) {
+                                        display: none;
+                                    }
+                                }
+                            }
+                            .questionContents {
+                                > li {
+                                    .list {
+                                        grid-template-columns: 20% 24% 1fr;
+                                        padding: 0 0.4rem;
+                                        li {
+                                            &:nth-child(1) {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            /* group-bottom 미디어쿼리 */
+            .group-bottom {
+                grid-column: 1;
+                padding: 1.25rem;
+                height: 35.188rem;
+                .moreBox {
+                    height: 28.9rem;
+                    .object {
+                        height: 23.75rem;
+                        bottom: -5.2rem;
+                    }
+                    .card {
+                        // background-color: red;
+                        max-width: 25rem;
+                        width: 84%;
+                        margin: 0 auto;
+                        flex-wrap: wrap;
+                        padding-left: 0;
+                        > li {
+                            width: 100%;
+                            max-width: 25rem;
+                            padding: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+                                margin-top: 1.6rem;
+                                height: 4rem;
+                            }
+                            h4 {
+                                font-size: $font-size-18px;
+                                margin-bottom: 0;
+                                margin-left: -0.5rem;
+                                i {
+                                    margin-right: 0.8rem;
+                                }
+                            }
+                            .list {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* subpage 미디어쿼리 */
+    .subpage {
+        /* subHeroBox 설정 */
+        .subHeroBox {
+            height: 200px;
+            /* 검색 설정 */
+            .search {
+                h3 {
+                    font-size: $font-size-20px;
+                }
+                .search-bar {
+                    width: 66%;
+                    input {
+                        margin-left: 1.2rem;
+                    }
+                }
+            }
+            /* 추천검색어 설정 */
+            .recommend {
+                display: none;
+            }
+        }
+        /* subpage-inner 미디어쿼리 */
+        .subpage-inner {
+            margin-top: 20px;
+            /* side-nav-bar 미디어쿼리 */
+            .side-nav-bar {
+                display: none;
+            }
+            /* sub-contentsBox 미디어쿼리 */
+            .sub-contentsBox {
+                margin-left: 20px;
+                margin-right: 20px;
+                .subpage-gallery {
+                    .titleBox {
+                        h3 {
+                            font-size: $font-size-28px;
+                        }
+                        .rightBox {
+                            flex-direction: column;
+                            /* breadcrumb 미디어쿼리 */
+                            .breadcrumb {
+                                width: 100%;
+                                margin-right: 0;
+                                margin-left: -8px;
+                                margin-bottom: 20px;
+                                li:nth-child(1) {
+                                    margin-left: -2px;
+                                }
+                            }
+                            /* iconBox 미디어쿼리 */
+                            .iconBox {
+                                width: 100%;
+                                justify-content: flex-end;
+                            }
+                        }
+                    }
+                    /* mainContents 미디어쿼리 */
+                    .mainContents {
+                        /* selectBox 미디어쿼리 */
+                        .selectBox {
+                            padding: 20px;
+                            ul {
+                                li {
+                                    font-size: $font-size-14px;
+                                    margin-bottom: 16px;
+                                }
+                            }
+                        }
+                        /* middleBox 미디어쿼리 */
+                        .middleBox {
+                            flex-direction: column;
+                            .optionBox {
+                                order: 2;
+                            }
+                            .searchBox {
+                                order: 1;
+                                margin-bottom: 26px;
+                                .search-bar {
+                                    width: 260px;
+                                    input {
+                                        width: 70%;
+                                    }
+                                }
+                            }
+                        }
+                        /* subpage-gallery-box 미디어쿼리 */
+                        .subpage-gallery-box {
+                            .cardWrap {
+                                > li {
+                                    width: 100%;
+                                    padding: 18px;
+                                    margin-bottom: 20px;
+                                    a {
+                                        display: flex;
+                                        img {
+                                            width: 40%;
+                                            margin-bottom: 0;
+                                            object-fit: cover;
+                                            border-radius: 8px;
+                                        }
+                                        .txtBoxWrap {
+                                            width: 60%;
+                                            margin-left: 16px;
+                                            .txtBox {
+                                                p {
+                                                    margin-bottom: 6px;
+                                                    letter-spacing: -0.8px;
+                                                }
+                                                h4 {
+                                                    margin-bottom: 6px;
+                                                }
+                                            }
+                                            .infoBox {
+                                                flex-direction: row;
+                                                flex-wrap: wrap;
+                                                span {
+                                                    width: 100%;
+                                                    margin-right: 0;
+                                                    &:nth-child(2), &:nth-child(3) {
+                                                        width: 50%;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .paginationBox {
+                                margin-top: 30px;
+                                .prev {
+                                    margin-right: 10px;
+                                }
+                                .indexBox {
+                                    li {
+                                        @for $i from 3 through 10 {
+                                            &:nth-child(#{$i}) {
+                                              display: none;
+                                            }
+                                        }
+                                        margin: 0 2px;
+                                    }
+                                }
+                                .next {
+                                    margin-left: 10px;
+                                }
+                            }
+                        }
+                    }
+                    .opinionBox {
+                        padding: 26px;
+                        form {
+                            .topBox {
+                                p {
+                                    font-size: $font-size-18px;
+                                    margin-bottom: 26px;
+                                }
+                                .radioBox {
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    div {
+                                        margin-bottom: 12px;
+                                        input {
+                                            margin-left: 0;
+                                        }
+                                    }
+                                }
+                            }
+                            .bottomBox {
+                                flex-direction: column;
+                                align-items: center;
+                                .inputBox {
+                                    margin-right: 0;
+                                    margin-bottom: 30px;
+                                    input {
+                                        &::placeholder {
+                                        font-size: $font-size-14px;
+                                        }
+                                    }
                                 }
                             }
                         }

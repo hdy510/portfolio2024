@@ -246,8 +246,17 @@ $(document).ready(function () {
   // 12초마다 반복
   setInterval(questionSlide, 12000);
     
-
-
+  // [서브페이지 하단 의견 수집 input placeholder 길이 조정 위한 텍스트 변경]
+  function updatePlaceholder() {
+    const input = $('.subpage .opinionBox .bottomBox input');
+    if (window.innerWidth <= 520) {
+      input.attr('placeholder', '여러분의 소중한 의견을 남겨주세요.');
+    } else {
+      input.attr('placeholder', '홈페이지 이용에 대한 여러분의 소중한 의견을 남겨주세요.');
+    }
+  }
+  updatePlaceholder();
+  window.addEventListener("resize", updatePlaceholder);
 
 
 

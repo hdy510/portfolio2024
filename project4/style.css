@@ -1713,6 +1713,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 /* subpage 설정 */
 .subpage {
   margin-top: 7.5rem;
+  display: none;
   /* subHeroBox 설정 */
   /* subpage-inner 설정 */
 }
@@ -2180,17 +2181,20 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   margin-bottom: 40px;
   transition: all 0.3s;
 }
+.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a {
+  display: block;
+}
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a img {
   width: 100%;
   margin-bottom: 22px;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBox p {
+.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .txtBox p {
   color: #777;
   font-size: 0.875rem;
   font-weight: 500;
   margin-bottom: 12px;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBox h4 {
+.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .txtBox h4 {
   color: #004EA2;
   font-size: 1rem;
   font-weight: 600;
@@ -2200,17 +2204,17 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   -webkit-line-clamp: 1;
   overflow: hidden;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .infoBox {
+.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox {
   display: flex;
   flex-direction: column;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .infoBox span {
+.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox span {
   font-size: 0.875rem;
   color: #777;
   margin-right: 10px;
   margin-bottom: 5px;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .infoBox span i {
+.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox span i {
   width: 16px;
   text-align: center;
   color: #004EA2;
@@ -2289,6 +2293,10 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   font-weight: 600;
   font-size: 1.063rem;
   margin-bottom: 36px;
+  line-height: 1.5;
+}
+.subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox form .topBox p span {
+  white-space: nowrap;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox form .topBox .radioBox {
   display: flex;
@@ -2334,7 +2342,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   padding: 14px;
   margin-right: 16px;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox form .bottomBox .inputBox input[type=text] {
+.subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox form .bottomBox .inputBox input {
   width: 100%;
   border: none;
   background: none;
@@ -2347,13 +2355,13 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-size: 1rem;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox form .bottomBox .inputBox input[type=text]::-moz-placeholder {
+.subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox form .bottomBox .inputBox input::-moz-placeholder {
   color: #777;
   font-weight: 600;
   font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-size: 1rem;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox form .bottomBox .inputBox input[type=text]::placeholder {
+.subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox form .bottomBox .inputBox input::placeholder {
   color: #777;
   font-weight: 600;
   font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
@@ -2474,7 +2482,7 @@ footer .footer-inner .txtBox .info p span {
 }
 
 /* 와이드 데스크탑 미디어쿼리 설정 */
-@media (min-width: 87.5rem) {
+@media (min-width: 1400px) {
   header {
     /* util 설정 */
     /* gnb 설정 */
@@ -2553,7 +2561,7 @@ footer .footer-inner .txtBox .info p span {
   }
 }
 /* 1201px ~ 1399px 구간 미디어쿼리*/
-@media (min-width: 75.063rem) and (max-width: 87.438rem) {
+@media (min-width: 1201px) and (max-width: 1399px) {
   /* header 미디어쿼리 */
   header {
     /* side-menu 미디어쿼리 */
@@ -2619,7 +2627,7 @@ footer .footer-inner .txtBox .info p span {
   }
 }
 /* 769px ~ 1200px 태블릿 구간 미디어쿼리 */
-@media (min-width: 48.063rem) and (max-width: 75rem) {
+@media (min-width: 769px) and (max-width: 1200px) {
   /* header 미디어쿼리 */
   header .gnb .gnb-inner ul.depth1 {
     display: none;
@@ -3012,8 +3020,8 @@ footer .footer-inner .txtBox .info p span {
     display: none;
   }
 }
-/* ~ 768px 모바일 구간 미디어쿼리 */
-@media (max-width: 48rem) {
+/* 426px ~ 768px 대형 모바일 구간 미디어쿼리 */
+@media (min-width: 426px) and (max-width: 768px) {
   /* header 미디어쿼리 */
   header {
     /* util 미디어쿼리 */
@@ -3555,6 +3563,9 @@ footer .footer-inner .txtBox .info p span {
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery {
     /* mainContents 미디어쿼리 */
   }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .titleBox h3 {
+    font-size: 2.25rem;
+  }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .titleBox .rightBox {
     flex-direction: column;
     /* breadcrumb 미디어쿼리 */
@@ -3637,6 +3648,764 @@ footer .footer-inner .txtBox .info p span {
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox form .bottomBox .inputBox {
     margin-right: 0;
     margin-bottom: 30px;
+  }
+  /* footer 미디어쿼리 */
+  footer {
+    height: 48.875rem;
+  }
+  footer .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+  footer .footer-inner h2 {
+    order: 2;
+    margin-right: 0;
+    margin-top: 1rem;
+  }
+  footer .footer-inner .txtBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 1;
+  }
+  footer .footer-inner .txtBox .nav {
+    margin-bottom: 3rem;
+  }
+  footer .footer-inner .txtBox .nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .footer-inner .txtBox .nav ul li {
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+  }
+  footer .footer-inner .txtBox .nav ul li a {
+    padding-left: 0;
+  }
+  footer .footer-inner .txtBox .nav ul li a::after {
+    content: "";
+    margin-left: 0;
+  }
+  footer .footer-inner .txtBox .info {
+    width: 95%;
+  }
+  footer .footer-inner .txtBox .info p {
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    text-align: center;
+  }
+  footer .footer-inner .txtBox .info p span {
+    margin-right: 0;
+  }
+  footer .footer-inner .txtBox .info p:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+  }
+  /* dimmed 처리 설정 */
+  .dimmed-bg1 {
+    display: none;
+  }
+}
+/* ~ 425px 모바일 구간 미디어쿼리 */
+@media (max-width: 425px) {
+  /* header 미디어쿼리 */
+  header {
+    /* util 미디어쿼리 */
+  }
+  header .util .util-inner {
+    /* 국립공원 날씨 정보 미디어쿼리 */
+    /* 로그인 회원가입 미디어쿼리 */
+  }
+  header .util .util-inner .weather span {
+    width: 6.5rem;
+  }
+  header .util .util-inner .weather span a {
+    width: 100%;
+    padding: 0.313rem 0;
+  }
+  header .util .util-inner .weather .listBox > li .list li {
+    margin-right: 1rem;
+  }
+  header .util .util-inner .user {
+    display: none;
+  }
+  header .gnb .gnb-inner ul.depth1 {
+    display: none;
+  }
+  header .gnb .gnb-inner .menu-btn {
+    display: flex;
+  }
+  /* main 미디어쿼리 */
+  .main {
+    /* hero 미디어쿼리 */
+    /* 국립공원 알아보기 배경 하늘 미디어쿼리*/
+    /* layout 미디어쿼리 */
+  }
+  .main .hero .swiper-slide .heroPlaceBox {
+    width: 25%;
+    bottom: 2%;
+    right: 3%;
+    text-align: right;
+  }
+  .main .hero .swiper-slide .heroPlaceBox .heroPlaceTxt {
+    font-size: 1rem;
+    padding-right: 0;
+  }
+  .main .hero .swiper-button-next, .main .hero .swiper-button-prev {
+    transform: scale(0.5);
+  }
+  .main .hero .swiper-button-next {
+    margin-right: -1rem;
+  }
+  .main .hero .swiper-button-next:hover {
+    transform: scale(0.5) translateX(0);
+  }
+  .main .hero .swiper-button-next:active {
+    transform: scale(0.5) translateX(1.2rem);
+  }
+  .main .hero .swiper-button-prev {
+    margin-left: -1rem;
+  }
+  .main .hero .swiper-button-prev:hover {
+    transform: scale(0.5) translateX(0);
+  }
+  .main .hero .swiper-button-prev:active {
+    transform: scale(0.5) translateX(-1.2rem);
+  }
+  .main .hero .swiper-pagination-fraction {
+    bottom: 2%;
+    padding-right: 0;
+    padding-left: 3%;
+    -moz-text-align-last: left;
+         text-align-last: left;
+  }
+  .main .hero .swiper-pagination-current {
+    font-size: 1.25rem;
+  }
+  .main .hero .swiper-pagination-total {
+    font-size: 0.875rem;
+  }
+  .main .hero .txtBox h2 {
+    font-size: 1.375rem;
+  }
+  .main .hero .txtBox h2 span {
+    font-size: 1.875rem;
+  }
+  .main .hero .txtBox p {
+    font-size: 1.063rem;
+  }
+  .main .hero .txtBox .search h3 {
+    font-size: 1.25rem;
+  }
+  .main .hero .txtBox .search .search-bar {
+    width: 100%;
+  }
+  .main .hero .txtBox .search .search-bar input {
+    font-size: 0.875rem;
+    margin-left: 1.5rem;
+  }
+  .main .hero .txtBox .recommend {
+    flex-direction: column;
+  }
+  .main .hero .txtBox .recommend ul li {
+    margin: 0.1rem 0.313rem;
+    text-align: center;
+  }
+  .main .hero .txtBox .recommend ul li a {
+    font-size: 1rem;
+  }
+  .main .hero .txtBox .recommend span {
+    text-align: center;
+  }
+  .main .hero .txtBox .recommend ul {
+    flex-direction: column;
+  }
+  .main .hero .arrowBox .arrow.left {
+    transform: scale(0.5);
+    left: -2%;
+  }
+  .main .hero .arrowBox .arrow.left:hover {
+    transform: scale(0.5);
+  }
+  .main .hero .arrowBox .arrow.right {
+    transform: scale(0.5);
+    right: -2%;
+  }
+  .main .hero .arrowBox .arrow.right:hover {
+    transform: scale(0.5);
+  }
+  .main .hero .pageBox {
+    flex-direction: column;
+    bottom: 1rem;
+    right: 4%;
+  }
+  .main .hero .pageBox span {
+    font-size: 0.875rem;
+  }
+  .main .hero .pageBox span b {
+    font-size: 1.125rem;
+  }
+  .main .hero .pageBox p {
+    font-size: 1.125rem;
+    margin-left: 0;
+  }
+  .main .more-bg-sky {
+    height: 23.75rem;
+    bottom: 0;
+  }
+  .main .layout {
+    display: flex;
+    flex-direction: column;
+    /* 박스별 제목 (h3) 공통 미디어쿼리 */
+    /* group-left 미디어쿼리*/
+    /* group-right 미디어쿼리 */
+    /* group-bottom 미디어쿼리 */
+  }
+  .main .layout h3 {
+    font-size: 1.375rem;
+  }
+  .main .layout .group-left {
+    /* 자주 찾는 서비스 미디어쿼리*/
+    /* 새로운 소식 미디어쿼리 */
+    /* wrapBox1 미디어쿼리 */
+    /* wrapBox2 미디어쿼리 */
+  }
+  .main .layout .group-left .serviceBox {
+    height: 40rem;
+  }
+  .main .layout .group-left .serviceBox ul {
+    max-width: 25rem;
+    margin: 2rem auto;
+  }
+  .main .layout .group-left .serviceBox ul li {
+    width: 44%;
+    margin: 1.5%;
+  }
+  .main .layout .group-left .serviceBox ul li a span {
+    font-size: 1.063rem;
+  }
+  .main .layout .group-left .newsBox {
+    height: 23rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .tabMenu {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 7rem 7rem;
+    justify-content: start;
+    position: absolute;
+    top: 1.5rem;
+    left: 1rem;
+    margin-top: 0;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li {
+    width: 6.3rem;
+    margin: 0 0.3rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li:nth-child(5) {
+    position: absolute;
+    width: 5.2rem;
+    height: 1.8rem;
+    right: 1rem;
+    top: 13rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li:nth-child(5) a {
+    width: 100%;
+    height: 100%;
+    font-size: 1.125rem;
+    position: relative;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li:nth-child(5) a i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: scale(0.8);
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li:nth-child(5) a i::after {
+    content: "더보기";
+    width: 3.6rem;
+    font-weight: 600;
+    font-style: normal;
+    color: #9a9a9a;
+    position: absolute;
+    top: 0.02rem;
+    left: -3.6rem;
+    cursor: pointer;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li a {
+    font-size: 1rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .txtBox {
+    top: 7rem;
+    left: 1.5rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .txtBox li {
+    display: none;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .txtBox li a {
+    width: 90%;
+    font-size: 0.875rem;
+    margin-bottom: 0.4rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .txtBox li span {
+    font-size: 0.875rem;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .txtBox li:nth-child(1) {
+    display: block;
+  }
+  .main .layout .group-left .newsBox .newsBox-inner .txtBox li:nth-child(2) {
+    display: block;
+  }
+  .main .layout .group-left .wrapBox1 {
+    height: 30rem;
+    /* snsBox 미디어쿼리 */
+  }
+  .main .layout .group-left .wrapBox1 .wrapBox1-top {
+    height: 44%;
+    /* 자원봉사 미디어쿼리 */
+    /* 실시간영상 미디어쿼리 */
+  }
+  .main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox {
+    padding-left: 0;
+    flex-direction: column;
+  }
+  .main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox img.txt {
+    order: 2;
+    margin-top: 0.6rem;
+    width: 4rem;
+  }
+  .main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox img.icon {
+    order: 1;
+    margin-top: -0.4rem;
+    width: 4rem;
+  }
+  .main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox {
+    flex-direction: column;
+  }
+  .main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox img.txt {
+    order: 2;
+    margin-top: 1.2rem;
+    width: 6.4rem;
+  }
+  .main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox img.icon {
+    order: 1;
+    width: 26%;
+    width: 3.2rem;
+  }
+  .main .layout .group-left .wrapBox1 .snsBox {
+    height: 56%;
+  }
+  .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner h4 {
+    font-size: 1.125rem;
+    margin-top: 0.9rem;
+  }
+  .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul {
+    width: 16rem;
+    height: 60%;
+    margin-top: 0.7rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li {
+    margin: 0.5rem 0.5rem;
+  }
+  .main .layout .group-left .wrapBox2 {
+    flex-direction: column;
+    height: 45rem;
+    padding: 0;
+    /* 홍보이미지 미디어쿼리 */
+    /* 웹툰 설정*/
+  }
+  .main .layout .group-left .wrapBox2 .promoBox {
+    width: 92%;
+    max-width: 25rem;
+    height: 54%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+  .main .layout .group-left .wrapBox2 .promoBox .swiper-pagination {
+    bottom: 0.35rem;
+  }
+  .main .layout .group-left .wrapBox2 .webtoonBox {
+    width: 92%;
+    max-width: 25rem;
+    height: 46%;
+    margin: 0 auto;
+  }
+  .main .layout .group-left .wrapBox2 .webtoonBox img {
+    position: static;
+    top: -10rem;
+    left: -1rem;
+  }
+  .main .layout .group-left .wrapBox2 .webtoonBox .txtBox h4 {
+    top: 1rem;
+    left: 1.3rem;
+  }
+  .main .layout .group-left .wrapBox2 .webtoonBox .txtBox p {
+    top: 3.8rem;
+    left: 1.3rem;
+  }
+  .main .layout .group-right {
+    padding: 1.25rem;
+    /* 실시간 탐방통제정보 미디어쿼리 */
+    /* wrapBox3 미디어쿼리 */
+    /* 국립공원 사진전 미디어쿼리 */
+    /* 자주하는 질문 미디어쿼리 */
+  }
+  .main .layout .group-right .controlBox {
+    padding: 1.5rem;
+    max-width: 25rem;
+    margin: 2rem auto;
+  }
+  .main .layout .group-right .controlBox p {
+    font-size: 1.063rem;
+  }
+  .main .layout .group-right .controlBox .legend li {
+    width: 31%;
+  }
+  .main .layout .group-right .controlBox .location li {
+    width: calc((100% - 2.2rem) / 3);
+  }
+  .main .layout .group-right .wrapBox3 {
+    height: 62rem;
+    flex-direction: column;
+    /* 국립공원바로가기 미디어쿼리 */
+    /* 스마트 국립공원 미디어쿼리 */
+  }
+  .main .layout .group-right .wrapBox3 .linkBox {
+    width: 100%;
+    height: 48%;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner {
+    width: 18.25rem;
+  }
+  .main .layout .group-right .wrapBox3 .smartBox {
+    width: 100%;
+    height: 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+  }
+  .main .layout .group-right .wrapBox3 .smartBox .smartBox-inner {
+    width: 100%;
+    max-width: 18.25rem;
+    height: 25.688rem;
+  }
+  .main .layout .group-right .wrapBox3 .smartBox .smartBox-inner ul {
+    width: 15.21rem;
+  }
+  .main .layout .group-right .wrapBox3 .smartBox .smartBox-inner ul li {
+    margin: 0.3rem auto;
+  }
+  .main .layout .group-right .galleryBox {
+    width: 100%;
+    height: 20.5rem;
+    position: relative;
+    border: none;
+  }
+  .main .layout .group-right .galleryBox > h3 {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .main .layout .group-right .galleryBox img {
+    width: 70%;
+    min-width: 17.5rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+    filter: brightness(0.7);
+    margin: 2rem auto;
+    margin-top: 4rem;
+  }
+  .main .layout .group-right .galleryBox .txtBox {
+    padding-left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main .layout .group-right .galleryBox .txtBox h4 {
+    color: #fff;
+    text-align: center;
+  }
+  .main .layout .group-right .galleryBox .txtBox p {
+    color: #fff;
+  }
+  .main .layout .group-right .galleryBox .txtBox span {
+    position: relative;
+    margin-right: 0;
+    margin-top: 2rem;
+  }
+  .main .layout .group-right .galleryBox .txtBox span:hover {
+    background-color: #3F3F3F;
+    border: 1px solid #3f3f3f;
+    color: #fff;
+    font-weight: 400;
+  }
+  .main .layout .group-right .galleryBox .txtBox span:active {
+    background-color: #fefefe;
+    border: 1px solid #a1a1a1;
+    color: #3f3f3f;
+    font-weight: 600;
+  }
+  .main .layout .group-right .questionBox .questionBox-inner .grid .questionTitle {
+    grid-template-columns: 20% 24% 1fr;
+    padding: 0 0.4rem;
+  }
+  .main .layout .group-right .questionBox .questionBox-inner .grid .questionTitle li:nth-child(1) {
+    display: none;
+  }
+  .main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li .list {
+    grid-template-columns: 20% 24% 1fr;
+    padding: 0 0.4rem;
+  }
+  .main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li .list li:nth-child(1) {
+    display: none;
+  }
+  .main .layout .group-bottom {
+    grid-column: 1;
+    padding: 1.25rem;
+    height: 35.188rem;
+  }
+  .main .layout .group-bottom .moreBox {
+    height: 28.9rem;
+  }
+  .main .layout .group-bottom .moreBox .object {
+    height: 23.75rem;
+    bottom: -5.2rem;
+  }
+  .main .layout .group-bottom .moreBox .card {
+    max-width: 25rem;
+    width: 84%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    padding-left: 0;
+  }
+  .main .layout .group-bottom .moreBox .card > li {
+    width: 100%;
+    max-width: 25rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .main .layout .group-bottom .moreBox .card > li:nth-child(1), .main .layout .group-bottom .moreBox .card > li:nth-child(2), .main .layout .group-bottom .moreBox .card > li:nth-child(3), .main .layout .group-bottom .moreBox .card > li:nth-child(4) {
+    margin-top: 1.6rem;
+    height: 4rem;
+  }
+  .main .layout .group-bottom .moreBox .card > li h4 {
+    font-size: 1.125rem;
+    margin-bottom: 0;
+    margin-left: -0.5rem;
+  }
+  .main .layout .group-bottom .moreBox .card > li h4 i {
+    margin-right: 0.8rem;
+  }
+  .main .layout .group-bottom .moreBox .card > li .list {
+    display: none;
+  }
+  /* subpage 미디어쿼리 */
+  .subpage {
+    /* subHeroBox 설정 */
+    /* subpage-inner 미디어쿼리 */
+  }
+  .subpage .subHeroBox {
+    height: 200px;
+    /* 검색 설정 */
+    /* 추천검색어 설정 */
+  }
+  .subpage .subHeroBox .search h3 {
+    font-size: 1.25rem;
+  }
+  .subpage .subHeroBox .search .search-bar {
+    width: 66%;
+  }
+  .subpage .subHeroBox .search .search-bar input {
+    margin-left: 1.2rem;
+  }
+  .subpage .subHeroBox .recommend {
+    display: none;
+  }
+  .subpage .subpage-inner {
+    margin-top: 20px;
+    /* side-nav-bar 미디어쿼리 */
+    /* sub-contentsBox 미디어쿼리 */
+  }
+  .subpage .subpage-inner .side-nav-bar {
+    display: none;
+  }
+  .subpage .subpage-inner .sub-contentsBox {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery {
+    /* mainContents 미디어쿼리 */
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .titleBox h3 {
+    font-size: 1.75rem;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .titleBox .rightBox {
+    flex-direction: column;
+    /* breadcrumb 미디어쿼리 */
+    /* iconBox 미디어쿼리 */
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .titleBox .rightBox .breadcrumb {
+    width: 100%;
+    margin-right: 0;
+    margin-left: -8px;
+    margin-bottom: 20px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .titleBox .rightBox .breadcrumb li:nth-child(1) {
+    margin-left: -2px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .titleBox .rightBox .iconBox {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents {
+    /* selectBox 미디어쿼리 */
+    /* middleBox 미디어쿼리 */
+    /* subpage-gallery-box 미디어쿼리 */
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox {
+    padding: 20px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox ul li {
+    font-size: 0.875rem;
+    margin-bottom: 16px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox {
+    flex-direction: column;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .optionBox {
+    order: 2;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox {
+    order: 1;
+    margin-bottom: 26px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox .search-bar {
+    width: 260px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox .search-bar input {
+    width: 70%;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li {
+    width: 100%;
+    padding: 18px;
+    margin-bottom: 20px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a {
+    display: flex;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a img {
+    width: 40%;
+    margin-bottom: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 8px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap {
+    width: 60%;
+    margin-left: 16px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .txtBox p {
+    margin-bottom: 6px;
+    letter-spacing: -0.8px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .txtBox h4 {
+    margin-bottom: 6px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox span {
+    width: 100%;
+    margin-right: 0;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox span:nth-child(2), .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox span:nth-child(3) {
+    width: 50%;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox {
+    margin-top: 30px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .prev {
+    margin-right: 10px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li {
+    margin: 0 2px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(3) {
+    display: none;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(4) {
+    display: none;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(5) {
+    display: none;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(6) {
+    display: none;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(7) {
+    display: none;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(8) {
+    display: none;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(9) {
+    display: none;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(10) {
+    display: none;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .next {
+    margin-left: 10px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox {
+    padding: 26px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox form .topBox p {
+    font-size: 1.125rem;
+    margin-bottom: 26px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox form .topBox .radioBox {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox form .topBox .radioBox div {
+    margin-bottom: 12px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox form .topBox .radioBox div input {
+    margin-left: 0;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox form .bottomBox {
+    flex-direction: column;
+    align-items: center;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox form .bottomBox .inputBox {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox form .bottomBox .inputBox input::-moz-placeholder {
+    font-size: 0.875rem;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .opinionBox form .bottomBox .inputBox input::placeholder {
+    font-size: 0.875rem;
   }
   /* footer 미디어쿼리 */
   footer {
