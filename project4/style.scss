@@ -2135,6 +2135,21 @@ header {
                                 }
                             }
                         }
+                        .btn {
+                            background-color: #fff;
+                            padding: 8px 24px;
+                            text-align: center;
+                            color: $color-blue-main;
+                            font-size: 16px;
+                            border-radius: 8px;
+                            border: 1px solid $color-blue-main;
+                            cursor: pointer;
+                            margin-top: 20px;
+                            display: none;
+                            &:hover {
+                                background-color: #f1f6ff;
+                            }
+                        }
                         &.park {
                             margin-bottom: 35px;
                         }
@@ -4600,10 +4615,14 @@ footer {
                         .selectBox {
                             padding: 20px;
                             ul {
+                                display: none;
                                 li {
                                     font-size: $font-size-14px;
                                     margin-bottom: 16px;
                                 }
+                            }
+                            .btn {
+                                display: block;
                             }
                         }
                         /* middleBox 미디어쿼리 */
@@ -4611,6 +4630,9 @@ footer {
                             flex-direction: column;
                             .optionBox {
                                 order: 2;
+                                li:nth-child(2) {
+                                margin-right: 0;
+                                }
                             }
                             .searchBox {
                                 order: 1;

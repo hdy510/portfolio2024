@@ -2087,6 +2087,21 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox ul li:hover {
   color: #5a5a5a;
 }
+.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox .btn {
+  background-color: #fff;
+  padding: 8px 24px;
+  text-align: center;
+  color: #004EA2;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #004EA2;
+  cursor: pointer;
+  margin-top: 20px;
+  display: none;
+}
+.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox .btn:hover {
+  background-color: #f1f6ff;
+}
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox.park {
   margin-bottom: 35px;
 }
@@ -4283,15 +4298,24 @@ footer .footer-inner .txtBox .info p span {
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox {
     padding: 20px;
   }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox ul {
+    display: none;
+  }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox ul li {
     font-size: 0.875rem;
     margin-bottom: 16px;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox .btn {
+    display: block;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox {
     flex-direction: column;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .optionBox {
     order: 2;
+  }
+  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .optionBox li:nth-child(2) {
+    margin-right: 0;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox {
     order: 1;

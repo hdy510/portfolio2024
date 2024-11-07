@@ -245,6 +245,47 @@ $(document).ready(function () {
   questionSlide();
   // 12초마다 반복
   setInterval(questionSlide, 12000);
+
+  // [서브페이지 회차별 정보와 공원별 정보 펼치기 접기]
+  $('.subpage .selectBox .btn').click(function () {
+    // 변수 선언
+    const $roundBtn = $('.subpage .selectBox.round .btn');
+    const $parkBtn = $('.subpage .selectBox.park .btn');
+    const $roundList = $('.subpage .selectBox.round ul');
+    const $parkList = $('.subpage .selectBox.park ul');
+    // 함수 선언
+    function selectBoxToggle (listName) {
+      if (listName.is(':visible')) {
+        // 리스트가 열려 있을 경우: 슬라이드 업으로 닫기
+        listName.slideUp(500, function() {
+          listName.css('display', 'none'); // 애니메이션 완료 후 display: none
+        });
+      } else {
+        // 리스트가 닫혀 있을 경우: display를 flex로 설정 후 슬라이드 다운으로 열기
+        listName.css('display', 'flex').hide().slideDown(500);
+      }
+    }
+    // 토글 함수 실행
+    if ($(this).is($roundBtn)) {
+      selectBoxToggle($roundList);
+    } else if ($(this).is($parkBtn)) {
+      selectBoxToggle($parkList);
+    }
+    // 텍스트 변경
+    $(this).text($(this).text() === '선택하기' ? '접기' : '선택하기');
+    
+    // if ($roundList.is(':visible')) {
+    //   // 리스트가 열려 있을 경우: 슬라이드 업으로 닫기
+    //   $roundList.slideUp(500, function() {
+    //       $roundList.css('display', 'none'); // 애니메이션 완료 후 display: none
+    //   });
+    // } else {
+    //   // 리스트가 닫혀 있을 경우: display를 flex로 설정 후 슬라이드 다운으로 열기
+    //   $roundList.css('display', 'flex').hide().slideDown(500);
+    // }
+    // $(this).text($(this).text() === '선택하기' ? '접기' : '선택하기');
+
+  });
     
   // [서브페이지 하단 의견 수집 input placeholder 길이 조정 위한 텍스트 변경]
   function updatePlaceholder() {
