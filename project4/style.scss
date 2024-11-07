@@ -1864,7 +1864,6 @@ header {
     /* subpage-inner 설정 */
     .subpage-inner {
         width: 100%;
-        height: 2000px;
         display: flex;
         margin-top: 80px;
         /* side-nav-bar 설정 */
@@ -1998,26 +1997,28 @@ header {
             height: 100%;
             margin-left: 50px;
             margin-right: 40px;
+            padding-top: 20px;
             /* 국립공원사진전 설정 */
             .subpage-gallery {
                 /* titleBox 설정 */
                 .titleBox {
                     border-bottom: 0.125rem dashed #DDDDDD;
                     margin-bottom: 40px;
-                    display: flex;
-                    justify-content: space-between;
                     h3 {
                         font-family: $font-family-scoredream-5Medium;
                         color: $color-blue-main;
                         font-size: $font-size-40px;
-                        margin-bottom: 1.25rem;
+                        margin-bottom: 20px;
                     }
                     .rightBox {
                         display: flex;
                         align-items: center;
+                        justify-content: flex-end;
+                        margin-bottom: 1.25rem;
                         /* breadcrumb 설정 */
                         .breadcrumb {
                             display: flex;
+                            flex-wrap: wrap;
                             margin-right: 10px;
                             li {
                                 margin: 0 13px;
@@ -2029,6 +2030,7 @@ header {
                                     color: #B6B6B6;
                                     font-size: $font-size-16px;
                                     font-weight: 600;
+                                    white-space: nowrap;
                                     i {
                                         display: block;
                                         background-image: url(imgs/sub-breadcrumb-icons.png);
@@ -2143,6 +2145,7 @@ header {
                         align-items: center;
                         .optionBox {
                             display: flex;
+                            orphans: 1;
                             li {
                                 width: 129px;
                                 height: 41px;
@@ -2161,6 +2164,7 @@ header {
                             }
                         }
                         .searchBox {
+                            order: 2;
                             .search-bar {
                                 background-color: #fff;
                                 border: 0.125rem solid $color-blue-main;
@@ -2232,7 +2236,7 @@ header {
                                     .txtBox {
                                         p {
                                             color: #777;
-                                            font-size: $font-size-16px;
+                                            font-size: $font-size-14px;
                                             font-weight: 500;
                                             margin-bottom: 12px;
                                         }
@@ -2241,15 +2245,23 @@ header {
                                             font-size: $font-size-16px;
                                             font-weight: 600;
                                             margin-bottom: 12px;
+                                            display: -webkit-box;
+                                            -webkit-box-orient: vertical;
+                                            -webkit-line-clamp: 1;
+                                            overflow: hidden;
                                         }
                                     }
                                     .infoBox {
-                                        text-align: right;
+                                        display: flex;
+                                        flex-direction: column;
                                         span {
                                             font-size: $font-size-14px;
                                             color: #777;
                                             margin-right: 10px;
+                                            margin-bottom: 5px;
                                             i {
+                                                width: 16px;
+                                                text-align: center;
                                                 color: $color-blue-main;
                                                 margin-right: 8px;
                                             }
@@ -2284,9 +2296,7 @@ header {
                                 margin: 0 5px;
                                 cursor: pointer;
                                 transition: all 0.3s;
-                                i {
-                                    
-                                }
+                                i {}
                                 &:hover {
                                     background-color: $color-blue-main;
                                     i {
@@ -2322,6 +2332,7 @@ header {
                 }
                 .opinionBox {
                     margin-top: 70px;
+                    margin-bottom: 130px;
                     background-color: #F5F7FB;
                     border-radius: 10px;
                     padding: 42px;
@@ -2329,8 +2340,6 @@ header {
                         .topBox {
                             border: none;
                             min-width: 0;
-                            display: flex;
-                            justify-content: space-between;
                             legend {
                                 display: none;
                             }
@@ -2338,31 +2347,36 @@ header {
                                 color: #5A5A5A;
                                 font-weight: 600;
                                 font-size: $font-size-17px;
+                                margin-bottom: 36px;
                             }
                             .radioBox {
                                 display: flex;
                                 align-items: center;
-                                input {
-                                    margin-left: 20px;
-                                    margin-right: 8px;
-                                    appearance: none;
-                                    -webkit-appearance: none;
-                                    width: 20px;
-                                    height: 20px;
-                                    border: 1px solid #B6B6B6;
-                                    border-radius: 50%;
-                                    background-color: #fff;
-                                    cursor: pointer;
-                                    &:checked {
-                                        background: #004EA2;  /* 배경색 유지 */
-                                        box-shadow: inset 0 0 0 5px #fff;  /* 내부 원 크기와 색상 */
+                                div {
+                                    display: flex;
+                                    align-items: center;
+                                    input {
+                                        margin-left: 20px;
+                                        margin-right: 8px;
+                                        appearance: none;
+                                        -webkit-appearance: none;
+                                        width: 20px;
+                                        height: 20px;
+                                        border: 1px solid #B6B6B6;
+                                        border-radius: 50%;
+                                        background-color: #fff;
+                                        cursor: pointer;
+                                        &:checked {
+                                            background: #004EA2;  /* 배경색 유지 */
+                                            box-shadow: inset 0 0 0 5px #fff;  /* 내부 원 크기와 색상 */
+                                        }
                                     }
-                                }
-                                label {
-                                    color: #5A5A5A;
-                                    font-weight: 600;
-                                    font-size: $font-size-17px;
-                                    cursor: pointer;
+                                    label {
+                                        color: #5A5A5A;
+                                        font-weight: 600;
+                                        font-size: $font-size-17px;
+                                        cursor: pointer;
+                                    }
                                 }
                             }
                         }
@@ -2405,6 +2419,7 @@ header {
                                 border-radius: 6px;
                                 font-size: $font-size-17px;
                                 font-family: $font-family-pretendard;
+                                padding: 14px;
                                 cursor: pointer;
                                 transition: all 0.3s;
                                 &:hover {
@@ -3105,6 +3120,14 @@ footer {
                 }
             }
         }
+        /* subpage-inner 미디어쿼리 */
+        .subpage-inner {
+            margin-top: 20px;
+            /* side-nav-bar 설정 */
+            .side-nav-bar {
+                display: none;
+            }
+        }
     }
     /* footer 미디어쿼리 */
     footer {
@@ -3167,7 +3190,7 @@ footer {
     }
 }
 
-/* ~768px 모바일 구간 미디어쿼리 */
+/* ~ 768px 모바일 구간 미디어쿼리 */
 @media (max-width:48rem) {
     /* header 미디어쿼리 */
     header {
@@ -3737,6 +3760,125 @@ footer {
                             }
                             .list {
                                 display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* subpage 미디어쿼리 */
+    .subpage {
+        /* subHeroBox 설정 */
+        .subHeroBox {
+            height: 200px;
+            /* 검색 설정 */
+            .search {
+                .search-bar {
+                    width: 66%;
+                    input {
+                        margin-left: 1.2rem;
+                    }
+                }
+            }
+            /* 추천검색어 설정 */
+            .recommend {
+                display: none;
+            }
+        }
+        /* subpage-inner 미디어쿼리 */
+        .subpage-inner {
+            margin-top: 20px;
+            /* side-nav-bar 미디어쿼리 */
+            .side-nav-bar {
+                display: none;
+            }
+            /* sub-contentsBox 미디어쿼리 */
+            .sub-contentsBox {
+                margin-left: 20px;
+                margin-right: 20px;
+                .subpage-gallery {
+                    .titleBox {
+                        .rightBox {
+                            flex-direction: column;
+                            /* breadcrumb 미디어쿼리 */
+                            .breadcrumb {
+                                width: 100%;
+                                margin-right: 0;
+                                margin-left: -8px;
+                                margin-bottom: 10px;
+                                li:nth-child(1) {
+                                    margin-left: -2px;
+                                }
+                            }
+                            /* iconBox 미디어쿼리 */
+                            .iconBox {
+                                width: 100%;
+                                justify-content: flex-end;
+                            }
+                        }
+                    }
+                    /* mainContents 미디어쿼리 */
+                    .mainContents {
+                        /* middleBox 미디어쿼리 */
+                        .middleBox {
+                            flex-direction: column;
+                            .optionBox {
+                                order: 2;
+                            }
+                            .searchBox {
+                                order: 1;
+                                margin-bottom: 26px;
+                                .search-bar {
+                                    width: 260px;
+                                    input {
+                                        width: 70%;
+                                    }
+                                }
+                            }
+                        }
+                        /* subpage-gallery-box 미디어쿼리 */
+                        .subpage-gallery-box {
+                            .cardWrap {
+                                > li {
+                                    width: calc(95% / 2);
+                                }
+                            }
+                            .paginationBox {
+                                .indexBox {
+                                    li {
+                                        @for $i from 3 through 10 {
+                                            &:nth-child(#{$i}) {
+                                              display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .opinionBox {
+                        form {
+                            .topBox {
+                                .radioBox {
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    div {
+                                        margin-bottom: 12px;
+                                        input {
+                                            margin-left: 0;
+                                        }
+                                    }
+                                }
+                            }
+                            .bottomBox {
+                                flex-direction: column;
+                                align-items: center;
+                                .inputBox {
+                                    margin-right: 0;
+                                    margin-bottom: 30px;
+                                }
                             }
                         }
                     }
