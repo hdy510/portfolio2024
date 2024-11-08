@@ -8,13 +8,24 @@ $(document).ready(function () {
     // 스크롤 상단으로 이동
     $('html, body').animate({scrollTop: 0}, 0);
   });
-  // 2. 국립공원사진전 클릭시 subpage 로 이동
+  // 2. 메인에서 국립공원사진전 클릭 시 subpage 로 이동
   $('.main .group-right .galleryBox .txtBox span').click(function () {
     $('section.main').hide();
     $('section.subpage').show();
+    // 국립공원사진전 페이지로 이동
+    $('.subpage .sub-contentsBox .subpage-gallery').show().siblings().hide();
     // 스크롤 상단으로 이동
     $('html, body').animate({scrollTop: 0}, 0);
-  })
+  });
+  // 3. 메인에서 공지사항 글 클릭 시 subpage 로 이동
+  $('.main .group-left .newsBox .txtBox li a').click(function () {
+    $('section.main').hide();
+    $('section.subpage').show();
+    // 공지사항 페이지로 이동
+    $('.subpage .sub-contentsBox .subpage-announcement').show().siblings().hide();
+    // 스크롤 상단으로 이동
+    $('html, body').animate({scrollTop: 0}, 0);
+  });
 
   // [gnb 메뉴 hover 시, 하위 메뉴 보이기]
   $('nav.gnb ul.depth1 .list1').mouseenter(function () {
@@ -213,12 +224,6 @@ $(document).ready(function () {
     $('.newsBox .txtBox.'+indexClass).addClass('active').siblings().removeClass('active');
   })
 
-
-
-
-
-
-
   // [자주하는 질문 자동 슬라이드]
   function questionSlide() {
     const $items = $('.questionBox .questionContents > li');
@@ -284,7 +289,11 @@ $(document).ready(function () {
     //   $roundList.css('display', 'flex').hide().slideDown(500);
     // }
     // $(this).text($(this).text() === '선택하기' ? '접기' : '선택하기');
+  });
 
+  // [서브페이지 회차별 정보와 공원별 정보 li 클릭시 선택되게 하기]
+  $('.subpage .selectBox ul li').click(function () {
+    $(this).addClass('active').siblings().removeClass('active');
   });
     
   // [서브페이지 하단 의견 수집 input placeholder 길이 조정 위한 텍스트 변경]

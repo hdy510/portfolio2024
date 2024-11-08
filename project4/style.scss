@@ -379,8 +379,6 @@ header {
         width: 20rem;
         height: 100vh;
         background-color: #fff;
-        // overflow-y: scroll;
-        // overscroll-behavior: none;
         transition: right 0.5s;
         &.on {
             right: 0;
@@ -542,6 +540,7 @@ header {
                                         font-weight: 400;
                                         display: block;
                                         padding: 0.5rem 0.625rem;
+                                        width: 100%;
                                         cursor: pointer;
                                         &:hover {
                                             font-weight: 500;
@@ -1968,6 +1967,7 @@ header {
                                         display: block;
                                         padding: 0.5rem 0.625rem;
                                         cursor: pointer;
+                                        width: 100%;
                                         &:hover {
                                             font-weight: 500;
                                         }
@@ -1995,6 +1995,7 @@ header {
         }
         .sub-contentsBox {
             // background-color: rgb(219, 219, 219);
+            width: 100%;
             height: 100%;
             margin-left: 50px;
             margin-right: 40px;
@@ -2346,6 +2347,7 @@ header {
                         }
                     }
                 }
+                /* 의견박스 설정 */
                 .opinionBox {
                     margin-top: 70px;
                     margin-bottom: 130px;
@@ -2453,7 +2455,315 @@ header {
             }
             /* 공지사항 설정 */
             .subpage-announcement {
-                
+                /* titleBox 설정 */
+                .titleBox {
+                    border-bottom: 0.125rem dashed #DDDDDD;
+                    margin-bottom: 40px;
+                    h3 {
+                        font-family: $font-family-scoredream-5Medium;
+                        color: $color-blue-main;
+                        font-size: $font-size-40px;
+                        margin-bottom: 20px;
+                    }
+                    .rightBox {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        margin-bottom: 1.25rem;
+                        /* breadcrumb 설정 */
+                        .breadcrumb {
+                            display: flex;
+                            flex-wrap: wrap;
+                            margin-right: 10px;
+                            li {
+                                margin: 0 13px;
+                                margin-right: 0;
+                                display: flex;
+                                align-items: center;
+                                a {
+                                    display: block;
+                                    color: #B6B6B6;
+                                    font-size: $font-size-16px;
+                                    font-weight: 600;
+                                    white-space: nowrap;
+                                    i {
+                                        display: block;
+                                        background-image: url(imgs/sub-breadcrumb-icons.png);
+                                        background-position: 0 0;
+                                        background-size: cover;
+                                        width: 48px;
+                                        height: 48px;
+                                    }
+                                }
+                                &.now {
+                                    a {
+                                        color: $color-blue-main;
+                                        font-weight: 700;
+                                    }
+                                    &::after {
+                                        content: '';
+                                        width: 0;
+                                        height: 0;
+                                    }
+                                }
+                                &::after {
+                                    content: '';
+                                    background-image: url(imgs/sub-breadcrumb-arrow.png);
+                                    background-repeat: no-repeat;
+                                    width: 7px;
+                                    height: 8px;
+                                    color: #ddd;
+                                    margin-left: 13px;
+                                }
+                            }
+                        }
+                        /* iconBox 설정 */
+                        .iconBox {
+                            display: flex;
+                            span {
+                                width: 48px;
+                                height: 48px;
+                                background-color: #F5F5F5;
+                                border-radius: 50px;
+                                margin: 0 5px;
+                                cursor: pointer;
+                                i {
+                                    display: block;
+                                    background-image: url(imgs/sub-breadcrumb-icons.png);
+                                    background-size: cover;
+                                    width: 48px;
+                                    height: 48px;
+                                }
+                                &.share i {
+                                    background-position: -48px 0;
+                                }
+                                &.copy i {
+                                    background-position: -95px 0;
+                                }
+                                &.print i {
+                                    background-position: -144px 0;
+                                }
+                            }
+                        }
+                    }
+                }
+                /* mainContents 설정 */
+                .mainContents {
+                    /* topBox 설정 */
+                    .topBox {
+                        h4 {
+                            font-size: 1.5rem;
+                            background-color: #F5F7FB;
+                            border-top: 3px solid $color-blue-main;
+                            border-bottom: 2px solid $color-blue-main;
+                            padding: 26px 30px;
+                        }
+                        .writeInfoBox {
+                            padding: 25px 0;
+                            display: flex;
+                            justify-content: flex-end;
+                            border-bottom: 1px solid #DDDDDD;
+                            li {
+                                margin-left: 50px;
+                                b {
+                                    font-size: $font-size-16px;
+                                    color: #5a5a5a;
+                                    font-weight: 500;
+                                    margin-right: 16px;
+                                }
+                                span {
+                                    font-size: $font-size-16px;
+                                    color: #b6b6b6;
+                                }
+                            }
+                        }
+                        .fileBox {
+                            border-bottom: 1px solid #DDDDDD;
+                            padding: 20px 0;
+                            display: flex;
+                            p {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                padding: 0 20px;
+                                color: #5a5a5a;
+                                font-weight: 600;
+                            }
+                            .fileList {
+                                li {
+                                    margin: 3px 0;
+                                    color: #777;
+                                    cursor: pointer;
+                                    display: flex;
+                                    align-items: center;
+                                    &::before {
+                                        content: '';
+                                        display: inline-block;
+                                        width: 32px;
+                                        height: 32px;
+                                        background-image: url(imgs/sub-breadcrumb-icons.png);
+                                        background-repeat: no-repeat;
+                                        background-position: -64px 0;
+                                        background-size: cover;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    /* detailBox 설정 */
+                    .detailBox {
+                        padding: 30px 40px;
+                        img {}
+                    }
+                    /* bottomBox 설정 */
+                    .bottomBox {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                        .listBtn {
+                            display: inline-block;
+                            border-radius: 6px;
+                            font-size: $font-size-17px;
+                            padding: 14px 36px;
+                            border: 1px solid $color-blue-main;
+                            color: $color-blue-main;
+                            background-color: #fff;
+                            margin-bottom: 20px;
+                            cursor: pointer;
+                            &:hover {
+                                background-color: #f1f6ff;
+                            }
+                        }
+                        .prevBox {
+                            width: 100%;
+                            padding: 25px;
+                            border-top: 1px solid #DDDDDD;
+                            border-bottom: 1px solid #DDDDDD;
+                            b {
+                                color: #5a5a5a;
+                                font-weight: 600;
+                                font-size: $font-size-16px;
+                                margin-right: 14px;
+                            }
+                            i {
+                                color: $color-blue-main;
+                                font-size: 22px;
+                                margin-right: 22px;
+                                transform: translateY(-2.8px);
+                            }
+                            span {
+                                color: #777777;
+                                font-size: $font-size-16px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+                /* 의견박스 설정 */
+                .opinionBox {
+                    margin-top: 70px;
+                    margin-bottom: 130px;
+                    background-color: #F5F7FB;
+                    border-radius: 10px;
+                    padding: 42px;
+                    form {
+                        .topBox {
+                            border: none;
+                            min-width: 0;
+                            legend {
+                                display: none;
+                            }
+                            p {
+                                color: #5A5A5A;
+                                font-weight: 600;
+                                font-size: $font-size-17px;
+                                margin-bottom: 36px;
+                                line-height: 1.5;
+                                span {
+                                    white-space: nowrap;
+                                }
+                            }
+                            .radioBox {
+                                display: flex;
+                                align-items: center;
+                                div {
+                                    display: flex;
+                                    align-items: center;
+                                    input {
+                                        margin-left: 20px;
+                                        margin-right: 8px;
+                                        appearance: none;
+                                        -webkit-appearance: none;
+                                        width: 20px;
+                                        height: 20px;
+                                        border: 1px solid #B6B6B6;
+                                        border-radius: 50%;
+                                        background-color: #fff;
+                                        cursor: pointer;
+                                        &:checked {
+                                            background: #004EA2;  /* 배경색 유지 */
+                                            box-shadow: inset 0 0 0 5px #fff;  /* 내부 원 크기와 색상 */
+                                        }
+                                    }
+                                    label {
+                                        color: #5A5A5A;
+                                        font-weight: 600;
+                                        font-size: $font-size-17px;
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+                        .bottomBox {
+                            display: flex;
+                            justify-content: space-between;
+                            margin-top: 24px;
+                            .inputBox {
+                                width: 100%;
+                                background-color: #fff;;
+                                border: 1px solid #DDDDDD;
+                                border-radius: 6px;
+                                padding: 14px;
+                                margin-right: 16px;
+                                input {
+                                    width: 100%;
+                                    border: none;
+                                    background: none;
+                                    outline: none;
+                                    padding: 0;
+                                    margin: 0;
+                                    box-shadow: none;
+                                    color: #777;
+                                    font-weight: 600;
+                                    font-family: $font-family-pretendard;
+                                    font-size: $font-size-16px;
+                                    &::placeholder {
+                                        color: #777;
+                                        font-weight: 600;
+                                        font-family: $font-family-pretendard;
+                                        font-size: $font-size-16px;
+                                    }
+                                }
+                            }
+                            button {
+                                border: 1px solid $color-blue-main;
+                                width: 134px;
+                                background-color: $color-blue-main;
+                                color: #fff;
+                                border-radius: 6px;
+                                font-size: $font-size-17px;
+                                font-family: $font-family-pretendard;
+                                padding: 14px;
+                                cursor: pointer;
+                                transition: all 0.3s;
+                                &:hover {
+                                    background-color: #fff;
+                                    color: $color-blue-main;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -3871,7 +4181,7 @@ footer {
                             .paginationBox {
                                 .indexBox {
                                     li {
-                                        @for $i from 3 through 10 {
+                                        @for $i from 4 through 10 {
                                             &:nth-child(#{$i}) {
                                               display: none;
                                             }
@@ -3881,6 +4191,7 @@ footer {
                             }
                         }
                     }
+                    /* 의견 박스 미디어쿼리 */
                     .opinionBox {
                         form {
                             .topBox {
@@ -4705,6 +5016,7 @@ footer {
                             }
                         }
                     }
+                    /* 의견박스 미디어쿼리 */
                     .opinionBox {
                         padding: 26px;
                         form {
