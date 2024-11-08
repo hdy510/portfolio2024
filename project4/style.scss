@@ -2000,8 +2000,8 @@ header {
             margin-left: 50px;
             margin-right: 40px;
             padding-top: 20px;
-            /* 국립공원사진전 설정 */
-            .subpage-gallery {
+            /* article 공통 우선 설정 */
+            > article {
                 /* titleBox 설정 */
                 .titleBox {
                     border-bottom: 0.125rem dashed #DDDDDD;
@@ -2094,6 +2094,114 @@ header {
                         }
                     }
                 }
+                /* 의견박스 설정 */
+                .opinionBox {
+                    margin-top: 40px;
+                        margin-bottom: 40px;
+                    background-color: #F5F7FB;
+                    border-radius: 10px;
+                    padding: 42px;
+                    form {
+                        .topBox {
+                            border: none;
+                            min-width: 0;
+                            legend {
+                                display: none;
+                            }
+                            p {
+                                color: #5A5A5A;
+                                font-weight: 600;
+                                font-size: $font-size-17px;
+                                margin-bottom: 36px;
+                                line-height: 1.5;
+                                span {
+                                    white-space: nowrap;
+                                }
+                            }
+                            .radioBox {
+                                display: flex;
+                                align-items: center;
+                                div {
+                                    display: flex;
+                                    align-items: center;
+                                    input {
+                                        margin-left: 20px;
+                                        margin-right: 8px;
+                                        appearance: none;
+                                        -webkit-appearance: none;
+                                        width: 20px;
+                                        height: 20px;
+                                        border: 1px solid #B6B6B6;
+                                        border-radius: 50%;
+                                        background-color: #fff;
+                                        cursor: pointer;
+                                        &:checked {
+                                            background: #004EA2;  /* 배경색 유지 */
+                                            box-shadow: inset 0 0 0 5px #fff;  /* 내부 원 크기와 색상 */
+                                        }
+                                    }
+                                    label {
+                                        color: #5A5A5A;
+                                        font-weight: 600;
+                                        font-size: $font-size-17px;
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+                        .bottomBox {
+                            display: flex;
+                            justify-content: space-between;
+                            margin-top: 24px;
+                            .inputBox {
+                                width: 100%;
+                                background-color: #fff;;
+                                border: 1px solid #DDDDDD;
+                                border-radius: 6px;
+                                padding: 14px;
+                                margin-right: 16px;
+                                input {
+                                    width: 100%;
+                                    border: none;
+                                    background: none;
+                                    outline: none;
+                                    padding: 0;
+                                    margin: 0;
+                                    box-shadow: none;
+                                    color: #777;
+                                    font-weight: 600;
+                                    font-family: $font-family-pretendard;
+                                    font-size: $font-size-16px;
+                                    &::placeholder {
+                                        color: #777;
+                                        font-weight: 600;
+                                        font-family: $font-family-pretendard;
+                                        font-size: $font-size-16px;
+                                    }
+                                }
+                            }
+                            button {
+                                border: 1px solid $color-blue-main;
+                                width: 134px;
+                                background-color: $color-blue-main;
+                                color: #fff;
+                                border-radius: 6px;
+                                font-size: $font-size-17px;
+                                font-family: $font-family-pretendard;
+                                padding: 14px;
+                                cursor: pointer;
+                                transition: all 0.3s;
+                                &:hover {
+                                    background-color: #fff;
+                                    color: $color-blue-main;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            /* 국립공원사진전 설정 */
+            .subpage-gallery {
                 /* mainContents 설정 */
                 .mainContents {
                     /* selectBox 설정 */
@@ -2347,206 +2455,9 @@ header {
                         }
                     }
                 }
-                /* 의견박스 설정 */
-                .opinionBox {
-                    margin-top: 70px;
-                    margin-bottom: 130px;
-                    background-color: #F5F7FB;
-                    border-radius: 10px;
-                    padding: 42px;
-                    form {
-                        .topBox {
-                            border: none;
-                            min-width: 0;
-                            legend {
-                                display: none;
-                            }
-                            p {
-                                color: #5A5A5A;
-                                font-weight: 600;
-                                font-size: $font-size-17px;
-                                margin-bottom: 36px;
-                                line-height: 1.5;
-                                span {
-                                    white-space: nowrap;
-                                }
-                            }
-                            .radioBox {
-                                display: flex;
-                                align-items: center;
-                                div {
-                                    display: flex;
-                                    align-items: center;
-                                    input {
-                                        margin-left: 20px;
-                                        margin-right: 8px;
-                                        appearance: none;
-                                        -webkit-appearance: none;
-                                        width: 20px;
-                                        height: 20px;
-                                        border: 1px solid #B6B6B6;
-                                        border-radius: 50%;
-                                        background-color: #fff;
-                                        cursor: pointer;
-                                        &:checked {
-                                            background: #004EA2;  /* 배경색 유지 */
-                                            box-shadow: inset 0 0 0 5px #fff;  /* 내부 원 크기와 색상 */
-                                        }
-                                    }
-                                    label {
-                                        color: #5A5A5A;
-                                        font-weight: 600;
-                                        font-size: $font-size-17px;
-                                        cursor: pointer;
-                                    }
-                                }
-                            }
-                        }
-                        .bottomBox {
-                            display: flex;
-                            justify-content: space-between;
-                            margin-top: 24px;
-                            .inputBox {
-                                width: 100%;
-                                background-color: #fff;;
-                                border: 1px solid #DDDDDD;
-                                border-radius: 6px;
-                                padding: 14px;
-                                margin-right: 16px;
-                                input {
-                                    width: 100%;
-                                    border: none;
-                                    background: none;
-                                    outline: none;
-                                    padding: 0;
-                                    margin: 0;
-                                    box-shadow: none;
-                                    color: #777;
-                                    font-weight: 600;
-                                    font-family: $font-family-pretendard;
-                                    font-size: $font-size-16px;
-                                    &::placeholder {
-                                        color: #777;
-                                        font-weight: 600;
-                                        font-family: $font-family-pretendard;
-                                        font-size: $font-size-16px;
-                                    }
-                                }
-                            }
-                            button {
-                                border: 1px solid $color-blue-main;
-                                width: 134px;
-                                background-color: $color-blue-main;
-                                color: #fff;
-                                border-radius: 6px;
-                                font-size: $font-size-17px;
-                                font-family: $font-family-pretendard;
-                                padding: 14px;
-                                cursor: pointer;
-                                transition: all 0.3s;
-                                &:hover {
-                                    background-color: #fff;
-                                    color: $color-blue-main;
-                                }
-                            }
-                        }
-                    }
-                }
             }
             /* 공지사항 설정 */
             .subpage-announcement {
-                /* titleBox 설정 */
-                .titleBox {
-                    border-bottom: 0.125rem dashed #DDDDDD;
-                    margin-bottom: 40px;
-                    h3 {
-                        font-family: $font-family-scoredream-5Medium;
-                        color: $color-blue-main;
-                        font-size: $font-size-40px;
-                        margin-bottom: 20px;
-                    }
-                    .rightBox {
-                        display: flex;
-                        align-items: center;
-                        justify-content: flex-end;
-                        margin-bottom: 1.25rem;
-                        /* breadcrumb 설정 */
-                        .breadcrumb {
-                            display: flex;
-                            flex-wrap: wrap;
-                            margin-right: 10px;
-                            li {
-                                margin: 0 13px;
-                                margin-right: 0;
-                                display: flex;
-                                align-items: center;
-                                a {
-                                    display: block;
-                                    color: #B6B6B6;
-                                    font-size: $font-size-16px;
-                                    font-weight: 600;
-                                    white-space: nowrap;
-                                    i {
-                                        display: block;
-                                        background-image: url(imgs/sub-breadcrumb-icons.png);
-                                        background-position: 0 0;
-                                        background-size: cover;
-                                        width: 48px;
-                                        height: 48px;
-                                    }
-                                }
-                                &.now {
-                                    a {
-                                        color: $color-blue-main;
-                                        font-weight: 700;
-                                    }
-                                    &::after {
-                                        content: '';
-                                        width: 0;
-                                        height: 0;
-                                    }
-                                }
-                                &::after {
-                                    content: '';
-                                    background-image: url(imgs/sub-breadcrumb-arrow.png);
-                                    background-repeat: no-repeat;
-                                    width: 7px;
-                                    height: 8px;
-                                    color: #ddd;
-                                    margin-left: 13px;
-                                }
-                            }
-                        }
-                        /* iconBox 설정 */
-                        .iconBox {
-                            display: flex;
-                            span {
-                                width: 48px;
-                                height: 48px;
-                                background-color: #F5F5F5;
-                                border-radius: 50px;
-                                margin: 0 5px;
-                                cursor: pointer;
-                                i {
-                                    display: block;
-                                    background-image: url(imgs/sub-breadcrumb-icons.png);
-                                    background-size: cover;
-                                    width: 48px;
-                                    height: 48px;
-                                }
-                                &.share i {
-                                    background-position: -48px 0;
-                                }
-                                &.copy i {
-                                    background-position: -95px 0;
-                                }
-                                &.print i {
-                                    background-position: -144px 0;
-                                }
-                            }
-                        }
-                    }
-                }
                 /* mainContents 설정 */
                 .mainContents {
                     /* topBox 설정 */
@@ -2557,6 +2468,7 @@ header {
                             border-top: 3px solid $color-blue-main;
                             border-bottom: 2px solid $color-blue-main;
                             padding: 26px 30px;
+                            line-height: 1.5;
                         }
                         .writeInfoBox {
                             padding: 25px 0;
@@ -2613,7 +2525,9 @@ header {
                     /* detailBox 설정 */
                     .detailBox {
                         padding: 30px 40px;
-                        img {}
+                        img {
+                            width: 100%;
+                        }
                     }
                     /* bottomBox 설정 */
                     .bottomBox {
@@ -2655,111 +2569,6 @@ header {
                                 color: #777777;
                                 font-size: $font-size-16px;
                                 cursor: pointer;
-                            }
-                        }
-                    }
-                }
-                /* 의견박스 설정 */
-                .opinionBox {
-                    margin-top: 70px;
-                    margin-bottom: 130px;
-                    background-color: #F5F7FB;
-                    border-radius: 10px;
-                    padding: 42px;
-                    form {
-                        .topBox {
-                            border: none;
-                            min-width: 0;
-                            legend {
-                                display: none;
-                            }
-                            p {
-                                color: #5A5A5A;
-                                font-weight: 600;
-                                font-size: $font-size-17px;
-                                margin-bottom: 36px;
-                                line-height: 1.5;
-                                span {
-                                    white-space: nowrap;
-                                }
-                            }
-                            .radioBox {
-                                display: flex;
-                                align-items: center;
-                                div {
-                                    display: flex;
-                                    align-items: center;
-                                    input {
-                                        margin-left: 20px;
-                                        margin-right: 8px;
-                                        appearance: none;
-                                        -webkit-appearance: none;
-                                        width: 20px;
-                                        height: 20px;
-                                        border: 1px solid #B6B6B6;
-                                        border-radius: 50%;
-                                        background-color: #fff;
-                                        cursor: pointer;
-                                        &:checked {
-                                            background: #004EA2;  /* 배경색 유지 */
-                                            box-shadow: inset 0 0 0 5px #fff;  /* 내부 원 크기와 색상 */
-                                        }
-                                    }
-                                    label {
-                                        color: #5A5A5A;
-                                        font-weight: 600;
-                                        font-size: $font-size-17px;
-                                        cursor: pointer;
-                                    }
-                                }
-                            }
-                        }
-                        .bottomBox {
-                            display: flex;
-                            justify-content: space-between;
-                            margin-top: 24px;
-                            .inputBox {
-                                width: 100%;
-                                background-color: #fff;;
-                                border: 1px solid #DDDDDD;
-                                border-radius: 6px;
-                                padding: 14px;
-                                margin-right: 16px;
-                                input {
-                                    width: 100%;
-                                    border: none;
-                                    background: none;
-                                    outline: none;
-                                    padding: 0;
-                                    margin: 0;
-                                    box-shadow: none;
-                                    color: #777;
-                                    font-weight: 600;
-                                    font-family: $font-family-pretendard;
-                                    font-size: $font-size-16px;
-                                    &::placeholder {
-                                        color: #777;
-                                        font-weight: 600;
-                                        font-family: $font-family-pretendard;
-                                        font-size: $font-size-16px;
-                                    }
-                                }
-                            }
-                            button {
-                                border: 1px solid $color-blue-main;
-                                width: 134px;
-                                background-color: $color-blue-main;
-                                color: #fff;
-                                border-radius: 6px;
-                                font-size: $font-size-17px;
-                                font-family: $font-family-pretendard;
-                                padding: 14px;
-                                cursor: pointer;
-                                transition: all 0.3s;
-                                &:hover {
-                                    background-color: #fff;
-                                    color: $color-blue-main;
-                                }
                             }
                         }
                     }
@@ -3453,9 +3262,29 @@ footer {
         /* subpage-inner 미디어쿼리 */
         .subpage-inner {
             margin-top: 20px;
-            /* side-nav-bar 설정 */
+            /* side-nav-bar 미디어쿼리 */
             .side-nav-bar {
                 display: none;
+            }
+            .sub-contentsBox {
+                margin-left: 40px;
+                /* 공지사항 미디어쿼리 */
+                .subpage-announcement {
+                    /* mainContents 설정 */
+                    .mainContents {
+                        /* topBox 설정 */
+                        .topBox {
+                            .writeInfoBox {
+                                li {
+                                    margin-left: 30px;
+                                    b {
+                                        margin-right: 8px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -4097,7 +3926,6 @@ footer {
             }
         }
     }
-
     /* subpage 미디어쿼리 */
     .subpage {
         /* subHeroBox 설정 */
@@ -4128,7 +3956,9 @@ footer {
             .sub-contentsBox {
                 margin-left: 20px;
                 margin-right: 20px;
-                .subpage-gallery {
+                /* article 공통 우선 미디어쿼리 */
+                > article {
+                    /* titleBox 미디어쿼리 */
                     .titleBox {
                         h3 {
                             font-size: 2.25rem;
@@ -4141,17 +3971,70 @@ footer {
                                 margin-right: 0;
                                 margin-left: -8px;
                                 margin-bottom: 10px;
-                                li:nth-child(1) {
-                                    margin-left: -2px;
+                                li {
+                                    a {
+                                        i {
+                                            width: 40px;
+                                            height: 40px;
+                                        }
+                                    }
+                                    &:nth-child(1) {
+                                        margin-left: -2px;
+                                    }
                                 }
                             }
                             /* iconBox 미디어쿼리 */
                             .iconBox {
                                 width: 100%;
                                 justify-content: flex-end;
+                                span {
+                                    width: 38px;
+                                    height: 38px;
+                                    i {
+                                        width: 38px;
+                                        height: 38px;
+                                    }
+                                    &.share i {
+                                        background-position: -38px 0;
+                                    }
+                                    &.copy i {
+                                        background-position: -76px 0;
+                                    }
+                                    &.print i {
+                                        background-position: -114px 0;
+                                    }
+                                }
                             }
                         }
                     }
+                    /* 의견 박스 미디어쿼리 */
+                    .opinionBox {
+                        form {
+                            .topBox {
+                                .radioBox {
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    div {
+                                        margin-bottom: 12px;
+                                        input {
+                                            margin-left: 0;
+                                        }
+                                    }
+                                }
+                            }
+                            .bottomBox {
+                                flex-direction: column;
+                                align-items: center;
+                                .inputBox {
+                                    margin-right: 0;
+                                    margin-bottom: 30px;
+                                }
+                            }
+                        }
+                    } 
+                }
+                /* 국립공원사진전 미디어쿼리 */
+                .subpage-gallery {
                     /* mainContents 미디어쿼리 */
                     .mainContents {
                         /* middleBox 미디어쿼리 */
@@ -4191,29 +4074,32 @@ footer {
                             }
                         }
                     }
-                    /* 의견 박스 미디어쿼리 */
-                    .opinionBox {
-                        form {
-                            .topBox {
-                                .radioBox {
-                                    flex-direction: column;
-                                    align-items: flex-start;
-                                    div {
-                                        margin-bottom: 12px;
-                                        input {
-                                            margin-left: 0;
-                                        }
+                }
+                /* 공지사항 미디어쿼리 */
+                .subpage-announcement {
+                    /* mainContents 설정 */
+                    .mainContents {
+                        /* topBox 설정 */
+                        .topBox {
+                            h4 {
+                                font-size: $font-size-20px;
+                            }
+                            .writeInfoBox {
+                                flex-direction: column;
+                                padding: 16px 0;
+                                li {
+                                    margin-left: 30px;
+                                    margin-top: 6px;
+                                    margin-bottom: 6px;
+                                    b {
+                                        margin-right: 8px;
                                     }
                                 }
                             }
-                            .bottomBox {
-                                flex-direction: column;
-                                align-items: center;
-                                .inputBox {
-                                    margin-right: 0;
-                                    margin-bottom: 30px;
-                                }
-                            }
+                        }
+                        /* detailBox 설정 */
+                        .detailBox {
+                            padding: 20px 26px;
                         }
                     }
                 }
@@ -4859,7 +4745,6 @@ footer {
             }
         }
     }
-
     /* subpage 미디어쿼리 */
     .subpage {
         /* subHeroBox 설정 */
@@ -4893,8 +4778,11 @@ footer {
             .sub-contentsBox {
                 margin-left: 20px;
                 margin-right: 20px;
-                .subpage-gallery {
+                /* article 공통 우선 미디어쿼리 */
+                > article {
+                    /* titleBox 미디어쿼리 */
                     .titleBox {
+                        margin-bottom: 26px;
                         h3 {
                             font-size: $font-size-28px;
                         }
@@ -4906,17 +4794,85 @@ footer {
                                 margin-right: 0;
                                 margin-left: -8px;
                                 margin-bottom: 20px;
-                                li:nth-child(1) {
-                                    margin-left: -2px;
+                                li {
+                                    margin: 0 6px;
+                                    a {
+                                        font-size: $font-size-14px;
+                                        i {
+                                            width: 34px;
+                                            height: 34px;
+                                        }
+                                    }
+                                    &:nth-child(1) {
+                                        margin-left: -2px;
+                                    }
                                 }
                             }
                             /* iconBox 미디어쿼리 */
                             .iconBox {
                                 width: 100%;
                                 justify-content: flex-end;
+                                span {
+                                    width: 38px;
+                                    height: 38px;
+                                    i {
+                                        width: 38px;
+                                        height: 38px;
+                                    }
+                                    &.share i {
+                                        background-position: -38px 0;
+                                    }
+                                    &.copy i {
+                                        background-position: -76px 0;
+                                    }
+                                    &.print i {
+                                        background-position: -114px 0;
+                                    }
+                                }
                             }
                         }
                     }
+                    /* 의견박스 미디어쿼리 */
+                    .opinionBox {
+                        padding: 26px;
+                        form {
+                            .topBox {
+                                p {
+                                    font-size: $font-size-17px;
+                                    margin-bottom: 26px;
+                                }
+                                .radioBox {
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    div {
+                                        margin-bottom: 12px;
+                                        input {
+                                            margin-left: 0;
+                                        }
+                                        label {
+                                            font-size: $font-size-16px;
+                                        }
+                                    }
+                                }
+                            }
+                            .bottomBox {
+                                flex-direction: column;
+                                align-items: center;
+                                .inputBox {
+                                    margin-right: 0;
+                                    margin-bottom: 30px;
+                                    input {
+                                        &::placeholder {
+                                        font-size: $font-size-14px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                /* 국립공원사진전 미디어쿼리 */
+                .subpage-gallery {
                     /* mainContents 미디어쿼리 */
                     .mainContents {
                         /* selectBox 미디어쿼리 */
@@ -5016,38 +4972,75 @@ footer {
                             }
                         }
                     }
-                    /* 의견박스 미디어쿼리 */
-                    .opinionBox {
-                        padding: 26px;
-                        form {
-                            .topBox {
-                                p {
-                                    font-size: $font-size-18px;
-                                    margin-bottom: 26px;
+                }
+                /* 공지사항 미디어쿼리 */
+                .subpage-announcement {
+                    /* mainContents 미디어쿼리 */
+                    .mainContents {
+                        /* topBox 미디어쿼리 */
+                        .topBox {
+                            h4 {
+                                font-size: $font-size-18px;
+                                padding: 12px;
+                            }
+                            .writeInfoBox {
+                                flex-direction: column;
+                                padding: 16px 0;
+                                li {
+                                    margin-left: 10px;
+                                    margin-top: 6px;
+                                    margin-bottom: 6px;
+                                    b {
+                                        margin-right: 8px;
+                                        font-size: $font-size-14px;
+                                    }
+                                    span {
+                                        font-size: $font-size-14px;
+                                    }
                                 }
-                                .radioBox {
-                                    flex-direction: column;
-                                    align-items: flex-start;
-                                    div {
-                                        margin-bottom: 12px;
-                                        input {
-                                            margin-left: 0;
+                            }
+                            .fileBox {
+                                padding: 12px 0;
+                                p {
+                                    font-size: $font-size-14px;
+                                    padding: 0 8px;
+                                }
+                                .fileList {
+                                    li {
+                                        font-size: $font-size-14px;
+                                        &::before {
+                                            width: 30px;
+                                            height: 30px;
+                                            background-position: -60px 0;
                                         }
                                     }
                                 }
                             }
-                            .bottomBox {
-                                flex-direction: column;
-                                align-items: center;
-                                .inputBox {
-                                    margin-right: 0;
-                                    margin-bottom: 30px;
-                                    input {
-                                        &::placeholder {
-                                        font-size: $font-size-14px;
-                                        }
-                                    }
+                        }
+                        /* detailBox 미디어쿼리 */
+                        .detailBox {
+                            padding: 16px 16px;
+                        }
+                        /* bottomBox 미디어쿼리 */
+                        .bottomBox {
+                            .listBtn {
+                                font-size: $font-size-14px;
+                                padding: 8px 18px;
+                            }
+                            .prevBox {
+                                padding: 16px 8px 16px 8px;
+                                display: flex;
+                                b {
+                                    width: 80px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    margin-right: 10px;
                                 }
+                                i {
+                                    transform: translateY(3px);
+                                }
+                                span {}
                             }
                         }
                     }
