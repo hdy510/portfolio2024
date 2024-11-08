@@ -10,22 +10,68 @@ $(document).ready(function () {
   });
   // 2. 메인에서 국립공원사진전 클릭 시 subpage 로 이동
   $('.main .group-right .galleryBox .txtBox span').click(function () {
+    // 변수 선언
+    let $snbGallery = $('.subpage .side-nav-bar .d-2-2');
+    // 메인화면과 서브페이지 전환
     $('section.main').hide();
     $('section.subpage').show();
     // 국립공원사진전 페이지로 이동
     $('.subpage .sub-contentsBox .subpage-gallery').show().siblings().hide();
     // 스크롤 상단으로 이동
     $('html, body').animate({scrollTop: 0}, 0);
+    
+    // 메뉴 열림 상태 적용
+    // 1. 열려있던 메뉴 초기화
+    $('.subpage .depth-2-title strong').removeClass('on');
+    $('.subpage .depth-3-Box').removeClass('open');
+    $('.subpage .depth-3-Box li').removeClass('checked');
+    // 2. 해당 메뉴 열기
+    $snbGallery.find('strong').addClass('on');
+    $snbGallery.find('.depth-3-Box').addClass('open');
+    $snbGallery.find('.d-3-1').addClass('checked');
   });
   // 3. 메인에서 공지사항 글 클릭 시 subpage 로 이동
   $('.main .group-left .newsBox .txtBox li a').click(function () {
+    // 변수 선언
+    let $snbAnnouncement = $('.subpage .side-nav-bar .d-2-1');
+    // 메인화면과 서브페이지 전환
     $('section.main').hide();
     $('section.subpage').show();
     // 공지사항 페이지로 이동
     $('.subpage .sub-contentsBox .subpage-announcement').show().siblings().hide();
     // 스크롤 상단으로 이동
     $('html, body').animate({scrollTop: 0}, 0);
+    
+    // 메뉴 열림 상태 적용
+    // 1. 열려있던 메뉴 초기화
+    $('.subpage .depth-2-title strong').removeClass('on');
+    $('.subpage .depth-3-Box').removeClass('open');
+    $('.subpage .depth-3-Box li').removeClass('checked');
+    // 2. 해당 메뉴 열기
+    $snbAnnouncement.find('strong').addClass('on');
+    $snbAnnouncement.find('.depth-3-Box').addClass('open');
+    $snbAnnouncement.find('.d-3-1').addClass('checked');
   });
+  // 4. 서브페이지에서 snb 에서 국립공원사진전 클릭 시 국립공원사진전 페이지로 이동
+  $('.subpage .side-nav-bar .d-2-2 .d-3-1').click(function () {
+    // 국립공원사진전 페이지로 이동
+    $('.subpage .sub-contentsBox .subpage-gallery').show().siblings().hide();
+    // 스크롤 상단으로 이동
+    $('html, body').animate({scrollTop: 0}, 0);
+    // 메뉴 체크 표시 변경
+    $('.subpage .side-nav-bar .depth-3-Box li').removeClass('checked');
+    $(this).addClass('checked');
+  });
+    // 5. 서브페이지에서 snb 에서 공지사항 클릭 시 공지사항 페이지로 이동
+    $('.subpage .side-nav-bar .d-2-1 .d-3-1').click(function () {
+      // 공지사항 페이지로 이동
+      $('.subpage .sub-contentsBox .subpage-announcement').show().siblings().hide();
+      // 스크롤 상단으로 이동
+      $('html, body').animate({scrollTop: 0}, 0);
+      // 메뉴 체크 표시 변경
+      $('.subpage .side-nav-bar .depth-3-Box li').removeClass('checked');
+      $(this).addClass('checked');
+    });
 
   // [gnb 메뉴 hover 시, 하위 메뉴 보이기]
   $('nav.gnb ul.depth1 .list1').mouseenter(function () {
@@ -49,7 +95,7 @@ $(document).ready(function () {
     $('.dimmed-bg1').removeClass('open');
   });
   
-  // [side-menu 등장 토글] & [*서브페이지의 side-nav-bar 도 동일하게 적용*]
+  // [side-menu 등장 토글]
   // 1. menu-btn 클릭 시, side-menu 보이기
   $('.gnb .menu-btn').click(function () {
     $('.side-menu').addClass('on');
@@ -79,13 +125,13 @@ $(document).ready(function () {
     $('.depth-2-title li strong').removeClass('on')
   })
 
-  // [side-menu 의 side-menu-icons 클릭으로 3 depth 메뉴 접히고 펼치기 설정] & [*서브페이지의 side-nav-bar 도 동일하게 적용*]
+  // [side-menu 의 depth-2-title 의 제목 클릭으로 3 depth 메뉴 접히고 펼치기 설정] & [*서브페이지의 side-nav-bar 도 동일하게 적용*]
   $('.depth-2-title li strong').click(function () {
     // 클릭한 요소의 형제 요소를 변수에 저장
-    const depth3Box = $(this).siblings('.depth-3-Box');
+    const $depth3Box = $(this).siblings('.depth-3-Box');
     // 열려있을 때, 닫기
-    if (depth3Box.hasClass('open')) {
-      depth3Box.removeClass('open');
+    if ($depth3Box.hasClass('open')) {
+      $depth3Box.removeClass('open');
       // 아이콘 변경
       $(this).find('i').removeClass('on')
       // 밑줄 효과 제거
@@ -98,7 +144,7 @@ $(document).ready(function () {
       // 모든 열려있는 3depth 메뉴 닫기
       $('.depth-3-Box').removeClass('open'); 
       // 해당 메뉴만 열기
-      depth3Box.addClass('open');
+      $depth3Box.addClass('open');
       // 아이콘 변경
       $('.depth-2-title > li strong').find('i').removeClass('on')
       $(this).find('i').addClass('on')
