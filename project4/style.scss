@@ -547,6 +547,12 @@ header {
                                         }
                                         
                                     }
+                                    &.checked {
+                                        a {
+                                            color: $color-blue-main;
+                                            font-weight: 500;
+                                        }
+                                    }
                                 }
                                 &.open {
                                     height: auto;

@@ -506,6 +506,10 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > 
 header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box li a:hover {
   font-weight: 500;
 }
+header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box li.checked a {
+  color: #004EA2;
+  font-weight: 500;
+}
 header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box.open {
   height: auto;
 }

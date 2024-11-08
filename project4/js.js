@@ -3,10 +3,24 @@ $(document).ready(function () {
   // 1. gnb 로고 클릭시 메인페이지로 이동
   $('nav.gnb h1 a').click(function (e) {
     e.preventDefault();
+    // 1. 메인화면과 서브페이지 전환
     $('section.subpage').hide();
     $('section.main').show();
-    // 스크롤 상단으로 이동
+    // 2. 스크롤 상단으로 이동
     $('html, body').animate({scrollTop: 0}, 0);
+
+    // 3. side-menu 열린상태에서 로고 클릭했을 경우
+    // 3-1. side-menu 닫기
+    $('.side-menu').removeClass('on');
+    // 3-2. dimmed-bg2 해제 설정
+    $('.dimmed-bg2').removeClass('open');
+    // 3-3. side-menu 메뉴 열림 상태 초기화
+    // 메뉴 체크 표시 변경
+    $('.side-menu .depth-3-Box li').removeClass('checked');
+    // 열려있던 메뉴 초기화
+    $('.side-menu .depth-2-title strong').removeClass('on');
+    $('.side-menu .depth-3-Box').removeClass('open');
+    $('.side-menu .depth-3-Box li').removeClass('checked');
   });
   // 2. 메인에서 국립공원사진전 클릭 시 subpage 로 이동
   $('.main .group-right .galleryBox .txtBox span').click(function () {
@@ -20,7 +34,7 @@ $(document).ready(function () {
     // 스크롤 상단으로 이동
     $('html, body').animate({scrollTop: 0}, 0);
     
-    // 메뉴 열림 상태 적용
+    // side-nav-bar 메뉴 열림 상태 적용
     // 1. 열려있던 메뉴 초기화
     $('.subpage .depth-2-title strong').removeClass('on');
     $('.subpage .depth-3-Box').removeClass('open');
@@ -42,7 +56,7 @@ $(document).ready(function () {
     // 스크롤 상단으로 이동
     $('html, body').animate({scrollTop: 0}, 0);
     
-    // 메뉴 열림 상태 적용
+    // side-nav-bar 메뉴 열림 상태 적용
     // 1. 열려있던 메뉴 초기화
     $('.subpage .depth-2-title strong').removeClass('on');
     $('.subpage .depth-3-Box').removeClass('open');
@@ -62,16 +76,52 @@ $(document).ready(function () {
     $('.subpage .side-nav-bar .depth-3-Box li').removeClass('checked');
     $(this).addClass('checked');
   });
-    // 5. 서브페이지에서 snb 에서 공지사항 클릭 시 공지사항 페이지로 이동
-    $('.subpage .side-nav-bar .d-2-1 .d-3-1').click(function () {
+  // 5. 서브페이지에서 snb 에서 공지사항 클릭 시 공지사항 페이지로 이동
+  $('.subpage .side-nav-bar .d-2-1 .d-3-1').click(function () {
+    // 공지사항 페이지로 이동
+    $('.subpage .sub-contentsBox .subpage-announcement').show().siblings().hide();
+    // 스크롤 상단으로 이동
+    $('html, body').animate({scrollTop: 0}, 0);
+    // 메뉴 체크 표시 변경
+    $('.subpage .side-nav-bar .depth-3-Box li').removeClass('checked');
+    $(this).addClass('checked');
+  });
+  // 6. 메인에서 화면 가로폭 좁을 때의 side-menu 의 메뉴 클릭 시 페이지 전환
+  // 6-1. 국립공원사진전 클릭 시 국립공원사진전 페이지로 이동
+  $('.side-menu .d-2-2 .d-3-1').click(function () {
+    // side-menu 닫기
+    $('.side-menu').removeClass('on');
+    // dimmed-bg2 해제 설정
+    $('.dimmed-bg2').removeClass('open');
+    // 메인화면과 서브페이지 전환
+    $('section.main').hide();
+    $('section.subpage').show();
+    // 국립공원사진전 페이지로 이동
+    $('.subpage .sub-contentsBox .subpage-gallery').show().siblings().hide();
+    // 스크롤 상단으로 이동
+    $('html, body').animate({scrollTop: 0}, 0);
+    // 메뉴 체크 표시 변경
+    $('.side-menu .depth-3-Box li').removeClass('checked');
+    $(this).addClass('checked');
+  });
+    // 6-2. 공지사항 클릭 시 공지사항 페이지로 이동
+    $('.side-menu .d-2-1 .d-3-1').click(function () {
+      // side-menu 닫기
+      $('.side-menu').removeClass('on');
+      // dimmed-bg2 해제 설정
+      $('.dimmed-bg2').removeClass('open');
+      // 메인화면과 서브페이지 전환
+      $('section.main').hide();
+      $('section.subpage').show();
       // 공지사항 페이지로 이동
       $('.subpage .sub-contentsBox .subpage-announcement').show().siblings().hide();
       // 스크롤 상단으로 이동
       $('html, body').animate({scrollTop: 0}, 0);
       // 메뉴 체크 표시 변경
-      $('.subpage .side-nav-bar .depth-3-Box li').removeClass('checked');
+      $('.side-menu .depth-3-Box li').removeClass('checked');
       $(this).addClass('checked');
     });
+
 
   // [gnb 메뉴 hover 시, 하위 메뉴 보이기]
   $('nav.gnb ul.depth1 .list1').mouseenter(function () {
@@ -107,6 +157,12 @@ $(document).ready(function () {
     $('.side-menu').removeClass('on');
     // dimmed-bg2 해제 설정
     $('.dimmed-bg2').removeClass('open');
+  });
+  // 3. dimmed-bg2 클릭 시에도 side-menu 숨기기
+  $('.dimmed-bg2').click(function () {
+    $('.side-menu').removeClass('on');
+    // dimmed-bg2 해제 설정
+    $(this).removeClass('open');
   });
 
   // [side-menu 의 depth-1-Box 의 li a 들 토글 설정] & [*서브페이지의 side-nav-bar 도 동일하게 적용*]
