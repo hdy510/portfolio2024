@@ -92,7 +92,7 @@ header .util .util-inner .weather span a {
 header .util .util-inner .weather .listBox {
   width: 13rem;
   height: 78%;
-  margin-top: 4px;
+  margin-top: 0.25rem;
   overflow: hidden;
   position: relative;
 }
@@ -166,8 +166,8 @@ header .gnb .gnb-inner h1 a {
   display: inline-block;
   background-image: url("imgs/logo.png");
   background-repeat: no-repeat;
-  width: 180px;
-  height: 40px;
+  width: 180px; /* px 고정값 */
+  height: 40px; /* px 고정값 */
   font-size: 0;
   color: transparent;
 }
@@ -251,7 +251,7 @@ header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner .gnb-title p {
   text-align: center;
   line-height: 1.5;
   width: 80%;
-  margin-top: 24px;
+  margin-top: 1.5rem;
 }
 header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner .gnb-title p span {
   white-space: nowrap;
@@ -454,7 +454,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > 
   content: "";
   display: block;
   width: 0;
-  height: 1px;
+  height: 0.063rem;
   background-color: #B6C8DC;
   border-radius: 50%;
   position: absolute;
@@ -482,7 +482,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > 
   transition: all 1s;
 }
 header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box li {
-  margin: 8px 0;
+  margin: 0.5rem 0;
   display: flex;
   align-items: center;
 }
@@ -540,7 +540,6 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 }
 .main .hero .swiper-slide {
   text-align: center;
-  font-size: 18px;
   background: #fff;
   display: flex;
   justify-content: center;
@@ -818,8 +817,8 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 .main .layout .group-left .serviceBox ul li a i {
   display: block;
   background-image: url("imgs/service-icons.png");
-  width: 64px;
-  height: 62px;
+  width: 64px; /* px 고정값 */
+  height: 62px; /* px 고정값 */
 }
 .main .layout .group-left .serviceBox ul li a span {
   font-size: 1.125rem;
@@ -827,25 +826,25 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   text-align: center;
 }
 .main .layout .group-left .serviceBox ul li:nth-child(2) i {
-  background-position: -64px 0;
+  background-position: -64px 0; /* px 고정값 */
 }
 .main .layout .group-left .serviceBox ul li:nth-child(3) i {
-  background-position: -128px 0;
+  background-position: -128px 0; /* px 고정값 */
 }
 .main .layout .group-left .serviceBox ul li:nth-child(4) i {
-  background-position: -192px 0;
+  background-position: -192px 0; /* px 고정값 */
 }
 .main .layout .group-left .serviceBox ul li:nth-child(5) i {
-  background-position: 0rem 62px;
+  background-position: 0rem 62px; /* px 고정값 */
 }
 .main .layout .group-left .serviceBox ul li:nth-child(6) i {
-  background-position: -64px 62px;
+  background-position: -64px 62px; /* px 고정값 */
 }
 .main .layout .group-left .serviceBox ul li:nth-child(7) i {
-  background-position: -128px 62px;
+  background-position: -128px 62px; /* px 고정값 */
 }
 .main .layout .group-left .serviceBox ul li:nth-child(8) i {
-  background-position: -192px 62px;
+  background-position: -192px 62px; /* px 고정값 */
 }
 .main .layout .group-left .newsBox {
   height: 25rem;
@@ -939,7 +938,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   /* 실시간영상 설정*/
 }
 .main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox {
-  border: 1px solid #D7D7D7;
+  border: 0.063rem solid #D7D7D7;
   border-radius: 1rem;
   width: 48%;
   height: 100%;
@@ -969,7 +968,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   transform: scale(1.05);
 }
 .main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox {
-  border: 1px solid #D7D7D7;
+  border: 0.063rem solid #D7D7D7;
   border-radius: 1rem;
   width: 48%;
   height: 100%;
@@ -1040,22 +1039,22 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li a i {
   display: block;
   background-image: url(imgs/sns-icon.png);
-  width: 50px;
-  height: 50px;
+  width: 50px; /* px 고정값 */
+  height: 50px; /* px 고정값 */
   transform: scale(0.8);
   transition: all 0.3s;
 }
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(2) i {
-  background-position: -60px 0;
+  background-position: -60px 0; /* px 고정값 */
 }
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(3) i {
-  background-position: -120px 0;
+  background-position: -120px 0; /* px 고정값 */
 }
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(4) i {
-  background-position: -180px 0;
+  background-position: -180px 0; /* px 고정값 */
 }
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(5) i {
-  background-position: -240px 0;
+  background-position: -240px 0; /* px 고정값 */
 }
 .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:hover i {
   transform: scale(1);
@@ -1067,7 +1066,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   /* 웹툰 설정*/
 }
 .main .layout .group-left .wrapBox2 .promoBox {
-  border: 1px solid #D7D7D7;
+  border: 0.063rem solid #D7D7D7;
   border-radius: 1.25rem;
   width: 50%;
   height: 100%;
@@ -1097,7 +1096,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 }
 .main .layout .group-left .wrapBox2 .promoBox .swiper-slide {
   text-align: center;
-  font-size: 18px;
+  font-size: 1.125rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1109,6 +1108,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 1.25rem;
+  cursor: pointer;
 }
 .main .layout .group-left .wrapBox2 .promoBox .promoBoxSwiper {
   position: absolute;
@@ -1117,7 +1117,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 .main .layout .group-left .wrapBox2 .promoBox .swiper-button-next, .main .layout .group-left .wrapBox2 .promoBox .swiper-button-prev {
   width: 2rem;
   height: 2rem;
-  top: 19.2px;
+  top: 19.2px; /* px 고정값 */
   color: #004EA2;
 }
 .main .layout .group-left .wrapBox2 .promoBox .swiper-button-next:after, .main .layout .group-left .wrapBox2 .promoBox .swiper-button-prev:after {
@@ -1217,7 +1217,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 }
 .main .layout .group-right .controlBox {
   margin-bottom: 3.75rem;
-  border: 1px solid #D1D1D1;
+  border: 0.063rem solid #D1D1D1;
   border-radius: 1.25rem;
   background-color: #fff;
   padding: 2.5rem;
@@ -1336,7 +1336,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner {
   width: 18.25rem;
-  border: 1px solid #D1D1D1;
+  border: 0.063rem solid #D1D1D1;
   border-radius: 0.75rem;
   background-color: #fff;
   height: 23.688rem;
@@ -1447,7 +1447,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 }
 .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li a {
   display: inline-block;
-  border: 1px solid #427EAF;
+  border: 0.063rem solid #427EAF;
   border-radius: 0.125rem;
   background-color: #fff;
   color: #427eaf;
@@ -1468,7 +1468,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   padding-left: 0.5rem;
 }
 .main .layout .group-right .wrapBox3 .smartBox .smartBox-inner {
-  border: 1px solid #D1D1D1;
+  border: 0.063rem solid #D1D1D1;
   border-radius: 0.75rem;
   background-color: #fff;
   height: 23.688rem;
@@ -1489,7 +1489,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #A8CDDB;
+  border: 0.063rem solid #A8CDDB;
   border-radius: 0.5rem;
   background-color: #F5FCFF;
   color: #3D3D3D;
@@ -1504,7 +1504,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 .main .layout .group-right .galleryBox {
   background-color: #cdffd0;
   height: 14.5rem;
-  border: 1px solid #D1D1D1;
+  border: 0.063rem solid #D1D1D1;
   border-radius: 1.25rem;
   background-color: #fff;
   display: flex;
@@ -1539,7 +1539,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 .main .layout .group-right .galleryBox .txtBox span {
   color: #fff;
   background-color: #3F3F3F;
-  border: 1px solid #3f3f3f;
+  border: 0.063rem solid #3f3f3f;
   border-radius: 0.75rem;
   padding: 1.125rem 1.625rem;
   position: absolute;
@@ -1551,7 +1551,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 }
 .main .layout .group-right .galleryBox .txtBox span:hover {
   background-color: #fefefe;
-  border: 1px solid #a1a1a1;
+  border: 0.063rem solid #a1a1a1;
   color: #3f3f3f;
   font-weight: 600;
 }
@@ -1570,7 +1570,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   margin-left: 0.4rem;
 }
 .main .layout .group-right .questionBox .questionBox-inner {
-  border: 1px solid #D1D1D1;
+  border: 0.063rem solid #D1D1D1;
   border-radius: 0.75rem;
   background-color: #fff;
   height: 6.938rem;
@@ -1665,10 +1665,10 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   width: 16.25rem;
   height: auto;
   padding: 2rem;
-  border: 1px solid #d1d1d1;
+  border: 0.063rem solid #d1d1d1;
   border-radius: 0.625rem;
   background-color: #fff;
-  box-shadow: 0 7px 12px rgba(150, 161, 174, 0.4);
+  box-shadow: 0 0.438rem 0.75rem rgba(150, 161, 174, 0.4);
   transition: all 0.3s;
 }
 .main .layout .group-bottom .moreBox .card > li:nth-child(1) {
@@ -1827,39 +1827,39 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 .subpage .subpage-inner {
   width: 100%;
   display: flex;
-  margin-top: 80px;
+  margin-top: 5rem;
   /* side-nav-bar 설정 */
 }
 .subpage .subpage-inner .side-nav-bar {
-  min-width: 280px;
+  min-width: 17.5rem;
   height: 100%;
-  margin-left: 40px;
+  margin-left: 2.5rem;
   position: relative;
   /* depth1TitleBox 설정 */
   /* depth2TitleBox 설정 */
 }
 .subpage .subpage-inner .side-nav-bar .depth1TitleBox {
-  width: 280px;
-  height: 182px;
+  width: 17.5rem;
+  height: 11.375rem;
   background-color: #004EA2;
-  border-radius: 56px 56px 10px 10px;
+  border-radius: 3.5rem 3.5rem 0.625rem 0.625rem;
 }
 .subpage .subpage-inner .side-nav-bar .depth1TitleBox h2 {
   color: #fff;
   font-size: 1.75rem;
   font-family: "S-CoreDream-5Medium", sans-serif;
   text-align: center;
-  padding-top: 53px;
+  padding-top: 3.313rem;
 }
 .subpage .subpage-inner .side-nav-bar .depth2TitleBox {
-  width: 248px;
+  width: 15.5rem;
   background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
-  padding: 13px 20px 13px 22px;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.25rem 1.125rem rgba(0, 0, 0, 0.25);
+  padding: 0.813rem 1.25rem 0.813rem 1.375rem;
   position: absolute;
-  left: 16px;
-  top: 114px;
+  left: 1rem;
+  top: 7.125rem;
 }
 .subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner {
   display: none;
@@ -1886,7 +1886,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   content: "";
   display: block;
   width: 0;
-  height: 1px;
+  height: 0.063rem;
   background-color: #B6C8DC;
   border-radius: 50%;
   position: absolute;
@@ -1914,7 +1914,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   transition: all 1s;
 }
 .subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box li {
-  margin: 8px 0;
+  margin: 0.5rem 0;
   display: flex;
   align-items: center;
 }
@@ -1952,9 +1952,9 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 .subpage .subpage-inner .sub-contentsBox {
   width: 100%;
   height: 100%;
-  margin-left: 50px;
-  margin-right: 40px;
-  padding-top: 20px;
+  margin-left: 3.125rem;
+  margin-right: 2.5rem;
+  padding-top: 1.25rem;
   /* article 공통 우선 설정 */
   /* 국립공원사진전 설정 */
   /* 공지사항 설정 */
@@ -1965,13 +1965,13 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 }
 .subpage .subpage-inner .sub-contentsBox > article .titleBox {
   border-bottom: 0.125rem dashed #DDDDDD;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 .subpage .subpage-inner .sub-contentsBox > article .titleBox h3 {
   font-family: "S-CoreDream-5Medium", sans-serif;
   color: #004EA2;
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox {
   display: flex;
@@ -1984,10 +1984,10 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb {
   display: flex;
   flex-wrap: wrap;
-  margin-right: 10px;
+  margin-right: 0.625rem;
 }
 .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li {
-  margin: 0 13px;
+  margin: 0 0.813rem;
   margin-right: 0;
   display: flex;
   align-items: center;
@@ -2004,8 +2004,8 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   background-image: url(imgs/sub-breadcrumb-icons.png);
   background-position: 0 0;
   background-size: cover;
-  width: 48px;
-  height: 48px;
+  width: 48px; /* px 고정값 */
+  height: 48px; /* px 고정값 */
 }
 .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li.now a {
   color: #004EA2;
@@ -2020,44 +2020,44 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   content: "";
   background-image: url(imgs/sub-breadcrumb-arrow.png);
   background-repeat: no-repeat;
-  width: 7px;
-  height: 8px;
+  width: 7px; /* px 고정값 */
+  height: 8px; /* px 고정값 */
   color: #ddd;
-  margin-left: 13px;
+  margin-left: 0.813rem;
 }
 .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox {
   display: flex;
 }
 .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span {
-  width: 48px;
-  height: 48px;
+  width: 3rem;
+  height: 3rem;
   background-color: #F5F5F5;
-  border-radius: 50px;
-  margin: 0 5px;
+  border-radius: 3.125rem;
+  margin: 0 0.313rem;
   cursor: pointer;
 }
 .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span i {
   display: block;
   background-image: url(imgs/sub-breadcrumb-icons.png);
   background-size: cover;
-  width: 48px;
-  height: 48px;
+  width: 48px; /* px 고정값 */
+  height: 48px; /* px 고정값 */
 }
 .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span.share i {
-  background-position: -48px 0;
+  background-position: -48px 0; /* px 고정값 */
 }
 .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span.copy i {
-  background-position: -95px 0;
+  background-position: -95px 0; /* px 고정값 */
 }
 .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span.print i {
-  background-position: -144px 0;
+  background-position: -144px 0; /* px 고정값 */
 }
 .subpage .subpage-inner .sub-contentsBox > article .opinionBox {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
   background-color: #F5F7FB;
-  border-radius: 10px;
-  padding: 42px;
+  border-radius: 0.625rem;
+  padding: 2.625rem;
 }
 .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox {
   border: none;
@@ -2070,7 +2070,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   color: #5A5A5A;
   font-weight: 600;
   font-size: 1.063rem;
-  margin-bottom: 36px;
+  margin-bottom: 2.25rem;
   line-height: 1.5;
 }
 .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox p span {
@@ -2085,21 +2085,21 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   align-items: center;
 }
 .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox div input {
-  margin-left: 20px;
-  margin-right: 8px;
+  margin-left: 1.25rem;
+  margin-right: 0.5rem;
   -moz-appearance: none;
        appearance: none;
   -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 1px solid #B6B6B6;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.063rem solid #B6B6B6;
   border-radius: 50%;
   background-color: #fff;
   cursor: pointer;
 }
 .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox div input:checked {
   background: #004EA2; /* 배경색 유지 */
-  box-shadow: inset 0 0 0 5px #fff; /* 내부 원 크기와 색상 */
+  box-shadow: inset 0 0 0 0.313rem #fff; /* 내부 원 크기와 색상 */
 }
 .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox div label {
   color: #5A5A5A;
@@ -2110,15 +2110,15 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox {
   display: flex;
   justify-content: space-between;
-  margin-top: 24px;
+  margin-top: 1.5rem;
 }
 .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox .inputBox {
   width: 100%;
   background-color: #fff;
-  border: 1px solid #DDDDDD;
-  border-radius: 6px;
-  padding: 14px;
-  margin-right: 16px;
+  border: 0.063rem solid #DDDDDD;
+  border-radius: 0.375rem;
+  padding: 0.875rem;
+  margin-right: 1rem;
 }
 .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox .inputBox input {
   width: 100%;
@@ -2146,14 +2146,14 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   font-size: 1rem;
 }
 .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox button {
-  border: 1px solid #004EA2;
-  width: 134px;
+  border: 0.063rem solid #004EA2;
+  width: 8.375rem;
   background-color: #004EA2;
   color: #fff;
-  border-radius: 6px;
+  border-radius: 0.375rem;
   font-size: 1.063rem;
   font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  padding: 14px;
+  padding: 0.875rem;
   cursor: pointer;
   transition: all 0.3s;
 }
@@ -2170,16 +2170,16 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   /* subpage-gallery-box 설정 */
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox {
-  padding: 30px;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  border: 1px solid #D7D7D7;
-  border-radius: 10px;
+  padding: 1.875rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 0.063rem solid #D7D7D7;
+  border-radius: 0.625rem;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox h3 {
   font-size: 1.25rem;
   color: #004EA2;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox ul {
   display: flex;
@@ -2188,8 +2188,8 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox ul li {
   font-size: 1.063rem;
   color: #B6B6B6;
-  padding-left: 15px;
-  margin-bottom: 20px;
+  padding-left: 0.938rem;
+  margin-bottom: 1.25rem;
   cursor: pointer;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox ul li:last-child::after {
@@ -2198,7 +2198,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox ul li::after {
   content: "|";
   color: #ddd;
-  margin-left: 15px;
+  margin-left: 0.938rem;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox ul li.active {
   font-weight: 600;
@@ -2209,18 +2209,18 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox .btn {
   background-color: #f1f6ff;
-  padding: 8px 24px;
+  padding: 0.5rem 1.5rem;
   text-align: center;
   color: #004EA2;
-  font-size: 16px;
-  border-radius: 8px;
-  border: 1px solid #004EA2;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 0.063rem solid #004EA2;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 1.25rem;
   display: none;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox.park {
-  margin-bottom: 35px;
+  margin-bottom: 2.188rem;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox {
   display: flex;
@@ -2232,20 +2232,20 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   orphans: 1;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .optionBox li {
-  width: 129px;
-  height: 41px;
-  border-radius: 10px;
+  width: 8.063rem;
+  height: 2.563rem;
+  border-radius: 0.625rem;
   background-color: #004EA2;
   color: #fff;
   font-size: 0.875rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 10px;
+  margin-right: 0.625rem;
   cursor: pointer;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .optionBox li i {
-  margin-right: 10px;
+  margin-right: 0.625rem;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox {
   order: 2;
@@ -2255,8 +2255,8 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   border: 0.125rem solid #004EA2;
   border-radius: 3.125rem;
   position: relative;
-  width: 290px;
-  height: 41px;
+  width: 18.125rem;
+  height: 2.563rem;
   box-sizing: content-box;
   display: flex;
   align-items: center;
@@ -2280,8 +2280,8 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   position: absolute;
   top: 0;
   right: 0;
-  width: 41px;
-  height: 41px;
+  width: 2.563rem;
+  height: 2.563rem;
   transition: all 0.3s;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox .search-bar button:focus {
@@ -2298,7 +2298,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   transition: all 0.3s;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box {
-  margin-top: 35px;
+  margin-top: 2.188rem;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap {
   display: flex;
@@ -2306,11 +2306,11 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   justify-content: space-between;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li {
-  border: 1px solid rgba(0, 78, 162, 0.5);
-  border-radius: 16px;
+  border: 0.063rem solid rgba(0, 78, 162, 0.5);
+  border-radius: 1rem;
   width: 31.6666666667%;
-  padding: 28px;
-  margin-bottom: 40px;
+  padding: 1.75rem;
+  margin-bottom: 2.5rem;
   transition: all 0.3s;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a {
@@ -2318,19 +2318,19 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a img {
   width: 100%;
-  margin-bottom: 22px;
+  margin-bottom: 1.375rem;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .txtBox p {
   color: #777;
   font-size: 0.875rem;
   font-weight: 500;
-  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .txtBox h4 {
   color: #004EA2;
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
@@ -2343,18 +2343,18 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox span {
   font-size: 0.875rem;
   color: #777;
-  margin-right: 10px;
-  margin-bottom: 5px;
+  margin-right: 0.625rem;
+  margin-bottom: 0.313rem;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox span i {
-  width: 16px;
+  width: 1rem;
   text-align: center;
   color: #004EA2;
-  margin-right: 8px;
+  margin-right: 0.5rem;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 2px 7px rgba(0, 78, 162, 0.3);
+  transform: translateY(-0.625rem);
+  box-shadow: 0 0.125rem 0.438rem rgba(0, 78, 162, 0.3);
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox {
   display: flex;
@@ -2362,15 +2362,15 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   /* 페이지 버튼 mixin 설정*/
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox > span {
-  width: 34px;
-  height: 34px;
+  width: 2.125rem;
+  height: 2.125rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50px;
+  border-radius: 3.125rem;
   color: #004EA2;
-  border: 1px solid #004EA2;
-  margin: 0 5px;
+  border: 0.063rem solid #004EA2;
+  margin: 0 0.313rem;
   cursor: pointer;
   transition: all 0.3s;
 }
@@ -2381,22 +2381,22 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   color: #fff;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .prev {
-  margin-right: 20px;
+  margin-right: 1.25rem;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox {
   display: flex;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li {
-  width: 34px;
-  height: 34px;
+  width: 2.125rem;
+  height: 2.125rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50px;
+  border-radius: 3.125rem;
   color: #b6b6b6;
   font-size: 1.063rem;
   font-weight: 600;
-  margin: 0 4px;
+  margin: 0 0.25rem;
   cursor: pointer;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li.on {
@@ -2404,7 +2404,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   color: #fff;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .next {
-  margin-left: 20px;
+  margin-left: 1.25rem;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-announcement {
   /* mainContents 설정 */
@@ -2417,45 +2417,45 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox h4 {
   font-size: 1.5rem;
   background-color: #F5F7FB;
-  border-top: 3px solid #004EA2;
-  border-bottom: 2px solid #004EA2;
-  padding: 26px 30px;
+  border-top: 0.188rem solid #004EA2;
+  border-bottom: 0.125rem solid #004EA2;
+  padding: 1.625rem 1.875rem;
   line-height: 1.5;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox {
-  padding: 25px 0;
+  padding: 1.563rem 0;
   display: flex;
   justify-content: flex-end;
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 0.063rem solid #DDDDDD;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li {
-  margin-left: 50px;
+  margin-left: 3.125rem;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li b {
   font-size: 1rem;
   color: #5a5a5a;
   font-weight: 500;
-  margin-right: 16px;
+  margin-right: 1rem;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li span {
   font-size: 1rem;
   color: #b6b6b6;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .fileBox {
-  border-bottom: 1px solid #DDDDDD;
-  padding: 20px 0;
+  border-bottom: 0.063rem solid #DDDDDD;
+  padding: 1.25rem 0;
   display: flex;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .fileBox p {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 1.25rem;
   color: #5a5a5a;
   font-weight: 600;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .fileBox .fileList li {
-  margin: 3px 0;
+  margin: 0.188rem 0;
   color: #777;
   cursor: pointer;
   display: flex;
@@ -2464,15 +2464,15 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .fileBox .fileList li::before {
   content: "";
   display: inline-block;
-  width: 32px;
-  height: 32px;
+  width: 32px; /* px 고정값 */
+  height: 32px; /* px 고정값 */
   background-image: url(imgs/sub-breadcrumb-icons.png);
   background-repeat: no-repeat;
-  background-position: -64px 0;
+  background-position: -64px 0; /* px 고정값 */
   background-size: cover;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .detailBox {
-  padding: 30px 40px;
+  padding: 1.875rem 2.5rem;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .detailBox img {
   width: 100%;
@@ -2484,13 +2484,13 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .listBtn {
   display: inline-block;
-  border-radius: 6px;
+  border-radius: 0.375rem;
   font-size: 1.063rem;
-  padding: 14px 36px;
-  border: 1px solid #004EA2;
+  padding: 0.875rem 2.25rem;
+  border: 0.063rem solid #004EA2;
   color: #004EA2;
   background-color: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   cursor: pointer;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .listBtn:hover {
@@ -2498,21 +2498,21 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .prevBox {
   width: 100%;
-  padding: 25px;
-  border-top: 1px solid #DDDDDD;
-  border-bottom: 1px solid #DDDDDD;
+  padding: 1.563rem;
+  border-top: 0.063rem solid #DDDDDD;
+  border-bottom: 0.063rem solid #DDDDDD;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .prevBox b {
   color: #5a5a5a;
   font-weight: 600;
   font-size: 1rem;
-  margin-right: 14px;
+  margin-right: 0.875rem;
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .prevBox i {
   color: #004EA2;
-  font-size: 22px;
-  margin-right: 22px;
-  transform: translateY(-2.8px);
+  font-size: 1.375rem;
+  margin-right: 1.375rem;
+  transform: translateY(-0.175rem);
 }
 .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .prevBox span {
   color: #777777;
@@ -2536,8 +2536,8 @@ footer .footer-inner h2 {
   margin-right: 3rem;
   background-color: #fff;
   display: inline;
-  width: 204px;
-  height: 56px;
+  width: 204px; /* px 고정값 */
+  height: 56px; /* px 고정값 */
   font-size: 0;
   background-image: url(imgs/logo.png);
   background-repeat: no-repeat;
@@ -2690,7 +2690,7 @@ footer .footer-inner .txtBox .info p span {
   .subpage .subpage-inner {
     max-width: 87.5rem;
     margin: 0 auto;
-    margin-top: 80px;
+    margin-top: 5rem;
   }
   /* dimmed 처리 미디어쿼리 */
   .dimmed-bg2 {
@@ -3031,13 +3031,13 @@ footer .footer-inner .txtBox .info p span {
   }
   .main .layout .group-right .galleryBox .txtBox span:hover {
     background-color: #3F3F3F;
-    border: 1px solid #3f3f3f;
+    border: 0.063rem solid #3f3f3f;
     color: #fff;
     font-weight: 400;
   }
   .main .layout .group-right .galleryBox .txtBox span:active {
     background-color: #fefefe;
-    border: 1px solid #a1a1a1;
+    border: 0.063rem solid #a1a1a1;
     color: #3f3f3f;
     font-weight: 600;
   }
@@ -3092,14 +3092,14 @@ footer .footer-inner .txtBox .info p span {
     width: 50%;
   }
   .subpage .subpage-inner {
-    margin-top: 20px;
+    margin-top: 1.25rem;
     /* side-nav-bar 미디어쿼리 */
   }
   .subpage .subpage-inner .side-nav-bar {
     display: none;
   }
   .subpage .subpage-inner .sub-contentsBox {
-    margin-left: 40px;
+    margin-left: 2.5rem;
     /* 공지사항 미디어쿼리 */
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement {
@@ -3109,10 +3109,10 @@ footer .footer-inner .txtBox .info p span {
     /* topBox 설정 */
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li {
-    margin-left: 30px;
+    margin-left: 1.875rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li b {
-    margin-right: 8px;
+    margin-right: 0.5rem;
   }
   /* footer 미디어쿼리 */
   footer {
@@ -3616,13 +3616,13 @@ footer .footer-inner .txtBox .info p span {
   }
   .main .layout .group-right .galleryBox .txtBox span:hover {
     background-color: #3F3F3F;
-    border: 1px solid #3f3f3f;
+    border: 0.063rem solid #3f3f3f;
     color: #fff;
     font-weight: 400;
   }
   .main .layout .group-right .galleryBox .txtBox span:active {
     background-color: #fefefe;
-    border: 1px solid #a1a1a1;
+    border: 0.063rem solid #a1a1a1;
     color: #3f3f3f;
     font-weight: 600;
   }
@@ -3688,7 +3688,7 @@ footer .footer-inner .txtBox .info p span {
     /* subpage-inner 미디어쿼리 */
   }
   .subpage .subHeroBox {
-    height: 200px;
+    height: 12.5rem;
     /* 검색 설정 */
     /* 추천검색어 설정 */
   }
@@ -3702,7 +3702,7 @@ footer .footer-inner .txtBox .info p span {
     display: none;
   }
   .subpage .subpage-inner {
-    margin-top: 20px;
+    margin-top: 1.25rem;
     /* side-nav-bar 미디어쿼리 */
     /* sub-contentsBox 미디어쿼리 */
   }
@@ -3710,8 +3710,8 @@ footer .footer-inner .txtBox .info p span {
     display: none;
   }
   .subpage .subpage-inner .sub-contentsBox {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
     /* article 공통 우선 미디어쿼리 */
     /* 국립공원사진전 미디어쿼리 */
     /* 공지사항 미디어쿼리 */
@@ -3731,43 +3731,43 @@ footer .footer-inner .txtBox .info p span {
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb {
     width: 100%;
     margin-right: 0;
-    margin-left: -8px;
-    margin-bottom: 10px;
+    margin-left: -0.5rem;
+    margin-bottom: 0.625rem;
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li a i {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li:nth-child(1) {
-    margin-left: -2px;
+    margin-left: -0.125rem;
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox {
     width: 100%;
     justify-content: flex-end;
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span {
-    width: 38px;
-    height: 38px;
+    width: 2.375rem;
+    height: 2.375rem;
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span i {
-    width: 38px;
-    height: 38px;
+    width: 38px; /* 고정값 */
+    height: 38px; /* 고정값 */
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span.share i {
-    background-position: -38px 0;
+    background-position: -38px 0; /* 고정값 */
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span.copy i {
-    background-position: -76px 0;
+    background-position: -76px 0; /* 고정값 */
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span.print i {
-    background-position: -114px 0;
+    background-position: -114px 0; /* 고정값 */
   }
   .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox {
     flex-direction: column;
     align-items: flex-start;
   }
   .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox div {
-    margin-bottom: 12px;
+    margin-bottom: 0.75rem;
   }
   .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox div input {
     margin-left: 0;
@@ -3778,7 +3778,7 @@ footer .footer-inner .txtBox .info p span {
   }
   .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox .inputBox {
     margin-right: 0;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery {
     /* mainContents 미디어쿼리 */
@@ -3795,10 +3795,10 @@ footer .footer-inner .txtBox .info p span {
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox {
     order: 1;
-    margin-bottom: 26px;
+    margin-bottom: 1.625rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox .search-bar {
-    width: 260px;
+    width: 16.25rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox .search-bar input {
     width: 70%;
@@ -3839,18 +3839,18 @@ footer .footer-inner .txtBox .info p span {
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox {
     flex-direction: column;
-    padding: 16px 0;
+    padding: 1rem 0;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li {
-    margin-left: 30px;
-    margin-top: 6px;
-    margin-bottom: 6px;
+    margin-left: 1.875rem;
+    margin-top: 0.375rem;
+    margin-bottom: 0.375rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li b {
-    margin-right: 8px;
+    margin-right: 0.5rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .detailBox {
-    padding: 20px 26px;
+    padding: 1.25rem 1.625rem;
   }
   /* footer 미디어쿼리 */
   footer {
@@ -4354,13 +4354,13 @@ footer .footer-inner .txtBox .info p span {
   }
   .main .layout .group-right .galleryBox .txtBox span:hover {
     background-color: #3F3F3F;
-    border: 1px solid #3f3f3f;
+    border: 0.063rem solid #3f3f3f;
     color: #fff;
     font-weight: 400;
   }
   .main .layout .group-right .galleryBox .txtBox span:active {
     background-color: #fefefe;
-    border: 1px solid #a1a1a1;
+    border: 0.063rem solid #a1a1a1;
     color: #3f3f3f;
     font-weight: 600;
   }
@@ -4426,7 +4426,7 @@ footer .footer-inner .txtBox .info p span {
     /* subpage-inner 미디어쿼리 */
   }
   .subpage .subHeroBox {
-    height: 200px;
+    height: 12.5rem;
     /* 검색 설정 */
     /* 추천검색어 설정 */
   }
@@ -4443,7 +4443,7 @@ footer .footer-inner .txtBox .info p span {
     display: none;
   }
   .subpage .subpage-inner {
-    margin-top: 20px;
+    margin-top: 1.25rem;
     /* side-nav-bar 미디어쿼리 */
     /* sub-contentsBox 미디어쿼리 */
   }
@@ -4451,8 +4451,8 @@ footer .footer-inner .txtBox .info p span {
     display: none;
   }
   .subpage .subpage-inner .sub-contentsBox {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
     /* article 공통 우선 미디어쿼리 */
     /* 국립공원사진전 미디어쿼리 */
     /* 공지사항 미디어쿼리 */
@@ -4462,7 +4462,7 @@ footer .footer-inner .txtBox .info p span {
     /* 의견박스 미디어쿼리 */
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox {
-    margin-bottom: 26px;
+    margin-bottom: 1.625rem;
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox h3 {
     font-size: 1.75rem;
@@ -4475,56 +4475,56 @@ footer .footer-inner .txtBox .info p span {
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb {
     width: 100%;
     margin-right: 0;
-    margin-left: -8px;
-    margin-bottom: 20px;
+    margin-left: -0.5rem;
+    margin-bottom: 1.25rem;
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li {
-    margin: 0 6px;
+    margin: 0 0.375rem;
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li a {
     font-size: 0.875rem;
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li a i {
-    width: 34px;
-    height: 34px;
+    width: 34px; /* 고정값 */
+    height: 34px; /* 고정값 */
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li:nth-child(1) {
-    margin-left: -2px;
+    margin-left: -0.125rem;
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox {
     width: 100%;
     justify-content: flex-end;
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span {
-    width: 38px;
-    height: 38px;
+    width: 2.375rem;
+    height: 2.375rem;
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span i {
-    width: 38px;
-    height: 38px;
+    width: 38px; /* 고정값 */
+    height: 38px; /* 고정값 */
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span.share i {
-    background-position: -38px 0;
+    background-position: -38px 0; /* 고정값 */
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span.copy i {
-    background-position: -76px 0;
+    background-position: -76px 0; /* 고정값 */
   }
   .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span.print i {
-    background-position: -114px 0;
+    background-position: -114px 0; /* 고정값 */
   }
   .subpage .subpage-inner .sub-contentsBox > article .opinionBox {
-    padding: 26px;
+    padding: 1.625rem;
   }
   .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox p {
     font-size: 1.063rem;
-    margin-bottom: 26px;
+    margin-bottom: 1.625rem;
   }
   .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox {
     flex-direction: column;
     align-items: flex-start;
   }
   .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox div {
-    margin-bottom: 12px;
+    margin-bottom: 0.75rem;
   }
   .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox div input {
     margin-left: 0;
@@ -4538,7 +4538,7 @@ footer .footer-inner .txtBox .info p span {
   }
   .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox .inputBox {
     margin-right: 0;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
   }
   .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox .inputBox input::-moz-placeholder {
     font-size: 0.875rem;
@@ -4555,14 +4555,14 @@ footer .footer-inner .txtBox .info p span {
     /* subpage-gallery-box 미디어쿼리 */
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox {
-    padding: 20px;
+    padding: 1.25rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox ul {
     display: none;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox ul li {
     font-size: 0.875rem;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox .btn {
     display: block;
@@ -4578,18 +4578,18 @@ footer .footer-inner .txtBox .info p span {
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox {
     order: 1;
-    margin-bottom: 26px;
+    margin-bottom: 1.625rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox .search-bar {
-    width: 260px;
+    width: 16.25rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox .search-bar input {
     width: 70%;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li {
     width: 100%;
-    padding: 18px;
-    margin-bottom: 20px;
+    padding: 1.125rem;
+    margin-bottom: 1.25rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a {
     display: flex;
@@ -4599,18 +4599,18 @@ footer .footer-inner .txtBox .info p span {
     margin-bottom: 0;
     -o-object-fit: cover;
        object-fit: cover;
-    border-radius: 8px;
+    border-radius: 0.5rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap {
     width: 60%;
-    margin-left: 16px;
+    margin-left: 1rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .txtBox p {
-    margin-bottom: 6px;
-    letter-spacing: -0.8px;
+    margin-bottom: 0.375rem;
+    letter-spacing: -0.05rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .txtBox h4 {
-    margin-bottom: 6px;
+    margin-bottom: 0.375rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox {
     flex-direction: row;
@@ -4624,13 +4624,13 @@ footer .footer-inner .txtBox .info p span {
     width: 50%;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox {
-    margin-top: 30px;
+    margin-top: 1.875rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .prev {
-    margin-right: 10px;
+    margin-right: 0.625rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li {
-    margin: 0 2px;
+    margin: 0 0.125rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(3) {
     display: none;
@@ -4657,7 +4657,7 @@ footer .footer-inner .txtBox .info p span {
     display: none;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .next {
-    margin-left: 10px;
+    margin-left: 0.625rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement {
     /* mainContents 미디어쿼리 */
@@ -4669,59 +4669,59 @@ footer .footer-inner .txtBox .info p span {
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox h4 {
     font-size: 1.125rem;
-    padding: 12px;
+    padding: 0.75rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox {
     flex-direction: column;
-    padding: 16px 0;
+    padding: 1rem 0;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li {
-    margin-left: 10px;
-    margin-top: 6px;
-    margin-bottom: 6px;
+    margin-left: 0.625rem;
+    margin-top: 0.375rem;
+    margin-bottom: 0.375rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li b {
-    margin-right: 8px;
+    margin-right: 0.5rem;
     font-size: 0.875rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li span {
     font-size: 0.875rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .fileBox {
-    padding: 12px 0;
+    padding: 0.75rem 0;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .fileBox p {
     font-size: 0.875rem;
-    padding: 0 8px;
+    padding: 0 0.5rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .fileBox .fileList li {
     font-size: 0.875rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .fileBox .fileList li::before {
-    width: 30px;
-    height: 30px;
-    background-position: -60px 0;
+    width: 30px; /* 고정값 */
+    height: 30px; /* 고정값 */
+    background-position: -60px 0; /* 고정값 */
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .detailBox {
-    padding: 16px 16px;
+    padding: 1rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .listBtn {
     font-size: 0.875rem;
-    padding: 8px 18px;
+    padding: 0.5rem 1.125rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .prevBox {
-    padding: 16px 8px 16px 8px;
+    padding: 1rem 0.5rem 1rem 0.5rem;
     display: flex;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .prevBox b {
-    width: 80px;
+    width: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 10px;
+    margin-right: 0.625rem;
   }
   .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .prevBox i {
-    transform: translateY(3px);
+    transform: translateY(0.188rem);
   }
   /* footer 미디어쿼리 */
   footer {
