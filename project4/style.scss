@@ -1584,8 +1584,10 @@ header .side-menu .depth-3-Box {
         }
         span {
             color: #fff;
-            background-color: #3F3F3F;
-            border: 0.063rem solid #3f3f3f;
+            // background-color: #3F3F3F;
+            // border: 0.063rem solid #3f3f3f;
+            background-color: $color-blue-main;
+            border: 1px solid $color-blue-main;
             border-radius: 0.75rem;
             padding: 1.125rem 1.625rem;
             position: absolute;
@@ -1595,9 +1597,8 @@ header .side-menu .depth-3-Box {
             cursor: pointer;
             transition: all 0.3s;
             &:hover {
-                background-color: #fefefe;
-                border: 0.063rem solid #a1a1a1;
-                color: #3f3f3f;
+                background-color: #fff;
+                color: $color-blue-main;
                 font-weight: 600;
             }
         }
@@ -3447,24 +3448,6 @@ footer {
             flex-direction: column;
         }
     }
-    // .arrowBox {
-    //     .arrow {
-    //         &.left {
-    //             transform: scale(0.5);
-    //             left: -2%;
-    //             &:hover {
-    //                 transform: scale(0.5);
-    //             }
-    //         }
-    //         &.right {
-    //             transform: scale(0.5);
-    //             right: -2%;
-    //             &:hover {
-    //                 transform: scale(0.5);
-    //             }
-    //         }
-    //     }
-    // }
     /* hero pageBox 설정 */
     .main .hero .pageBox {
         flex-direction: column;
@@ -4188,20 +4171,26 @@ footer {
     }
     /* hero txtBox 설정 */
     .main .hero .txtBox {
+        width: 62%;
+        top: 53%;
         h2 {
-            font-size: $font-size-22px;
+            font-size: $font-size-26px;
+            margin-bottom: 8rem;
             span {
-                font-size: $font-size-30px;
+                font-size: $font-size-38px;
             }
         }
         p {
-            font-size: $font-size-17px;
+            display: none;
         }
     }
     /* hero 검색 설정 */
     .main .hero .search {
+        margin-bottom: 0;
         h3 {
-            font-size: $font-size-20px;
+            font-size: $font-size-18px;
+            font-weight: 500;
+            margin-bottom: 2.5rem;
         }
         .search-bar {
             width: 100%;
@@ -4214,6 +4203,7 @@ footer {
     /* hero 추천검색어 설정 */
     .main .hero .recommend {
         flex-direction: column;
+        display: none;
         ul {
             li {
                 margin: 0.1rem 0.313rem;
@@ -4230,24 +4220,6 @@ footer {
             flex-direction: column;
         }
     }
-    // .arrowBox {
-    //     .arrow {
-    //         &.left {
-    //             transform: scale(0.5);
-    //             left: -2%;
-    //             &:hover {
-    //                 transform: scale(0.5);
-    //             }
-    //         }
-    //         &.right {
-    //             transform: scale(0.5);
-    //             right: -2%;
-    //             &:hover {
-    //                 transform: scale(0.5);
-    //             }
-    //         }
-    //     }
-    // }
     /* hero pageBox 설정 */
     .main .hero .pageBox  {
         flex-direction: column;
