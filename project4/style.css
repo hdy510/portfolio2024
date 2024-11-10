@@ -15,7 +15,6 @@
 font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 font-family: 'S-CoreDream-5Medium'; 
 */
-/* 변수설정 */
 /* 전체설정 */
 * {
   margin: 0;
@@ -48,10 +47,9 @@ header {
   top: 0;
   left: 0;
   z-index: 100;
-  /* util 설정 */
-  /* gnb 설정 */
-  /* side-menu 설정 */
 }
+
+/* util 설정 */
 header .util {
   width: 100%;
   height: 2.5rem;
@@ -66,19 +64,19 @@ header .util .util-inner {
   display: flex;
   justify-content: space-between;
   font-size: 0.875rem;
-  /* 국립공원 날씨 정보 설정 */
-  /* 로그인 회원가입 설정 */
 }
-header .util .util-inner .weather {
+
+/* 국립공원 날씨 정보 설정 */
+header .weather {
   display: flex;
 }
-header .util .util-inner .weather span {
+header .weather span {
   margin-left: 0.75rem;
   margin-right: 1.375rem;
   display: flex;
   align-items: center;
 }
-header .util .util-inner .weather span a {
+header .weather span a {
   height: 90%;
   background-color: #002752;
   border-radius: 0.313rem;
@@ -89,62 +87,66 @@ header .util .util-inner .weather span a {
   color: #fff;
   font-weight: 500;
 }
-header .util .util-inner .weather .listBox {
+header .weather .listBox {
   width: 13rem;
   height: 78%;
   margin-top: 0.25rem;
   overflow: hidden;
   position: relative;
 }
-header .util .util-inner .weather .listBox > li {
+header .weather .listBox > li {
   position: absolute;
   top: 120%;
   left: 0;
   transition: all 1s;
 }
-header .util .util-inner .weather .listBox > li.on {
+header .weather .listBox > li.on {
   top: 0;
   opacity: 1;
 }
-header .util .util-inner .weather .listBox > li.off {
+header .weather .listBox > li.off {
   top: -100%;
   opacity: 0;
 }
-header .util .util-inner .weather .listBox > li.ready {
+header .weather .listBox > li.ready {
   top: 120%;
   opacity: 0;
 }
-header .util .util-inner .weather .listBox > li .list {
+header .weather .listBox > li .list {
   display: flex;
 }
-header .util .util-inner .weather .listBox > li .list li {
+header .weather .listBox > li .list li {
   display: flex;
   align-items: center;
   margin-right: 1.375rem;
   font-weight: 600;
 }
-header .util .util-inner .weather .listBox > li .list li:nth-child(2) {
+header .weather .listBox > li .list li:nth-child(2) {
   width: 2.1rem;
 }
-header .util .util-inner .weather .listBox > li .list li:nth-child(3) {
+header .weather .listBox > li .list li:nth-child(3) {
   width: 1.6rem;
 }
-header .util .util-inner .weather .listBox > li .list li img {
+header .weather .listBox > li .list li img {
   width: 1.5rem;
 }
-header .util .util-inner .user {
+
+/* 로그인 회원가입 설정 */
+header .user {
   display: flex;
   align-items: center;
 }
-header .util .util-inner .user ul {
+header .user ul {
   display: flex;
 }
-header .util .util-inner .user ul li a {
+header .user ul li a {
   display: block;
   color: #fff;
   padding: 0.313rem 0.75rem;
   font-weight: 500;
 }
+
+/* gnb 설정 */
 header .gnb {
   height: 5rem;
   font-family: "S-CoreDream-5Medium", sans-serif;
@@ -155,7 +157,6 @@ header .gnb .gnb-inner {
   display: flex;
   justify-content: space-between;
   height: 5rem;
-  /* 햄버거버튼 설정 */
 }
 header .gnb .gnb-inner h1 {
   margin-left: 0.8rem;
@@ -171,15 +172,16 @@ header .gnb .gnb-inner h1 a {
   font-size: 0;
   color: transparent;
 }
-header .gnb .gnb-inner ul.depth1 {
+
+/* gnb 1뎁스 설정 */
+header .depth1 {
   display: flex;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 {
+header .depth1 .list1 {
   padding: 0.313rem 1.375rem;
   margin-top: 1.25rem;
-  /* 2뎁스 설정 */
 }
-header .gnb .gnb-inner ul.depth1 li.list1::after {
+header .depth1 .list1::after {
   content: "";
   display: block;
   width: 0;
@@ -188,11 +190,12 @@ header .gnb .gnb-inner ul.depth1 li.list1::after {
   margin-top: 0.375rem;
   transition: all 0.3s;
 }
-header .gnb .gnb-inner ul.depth1 li.list1:hover::after {
+header .depth1 .list1:hover::after {
   width: 100%;
   background-color: #004EA2;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items {
+/* gnb items 설정 */
+header .items {
   position: absolute;
   top: 0;
   left: 0;
@@ -203,34 +206,36 @@ header .gnb .gnb-inner ul.depth1 li.list1 .items {
   height: 0;
   transition: height 0.5s;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items.open.n1 {
+header .items.open.n1 {
   height: 44.813rem;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items.open.n2 {
+header .items.open.n2 {
   height: 18.5rem;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items.open.n3 {
+header .items.open.n3 {
   height: 42.438rem;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items.open.n4 {
+header .items.open.n4 {
   height: 29.563rem;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items.open.n5 {
+header .items.open.n5 {
   height: 35.906rem;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items.open.n6 {
+header .items.open.n6 {
   height: 19.313rem;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items.open.n7 {
+header .items.open.n7 {
   height: 23.938rem;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner {
+header .items .items-inner {
   max-width: 87.5rem;
   margin: 0 auto;
   background-color: #004EA2;
   display: flex;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner .gnb-title {
+
+/* gnb-title 설정 */
+header .gnb-title {
   width: 20%;
   height: 32%;
   display: flex;
@@ -238,13 +243,13 @@ header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner .gnb-title {
   align-items: center;
   margin-top: 1.25rem;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner .gnb-title strong {
+header .gnb-title strong {
   font-size: 1.875rem;
   color: #fff;
   font-weight: 500;
   margin-top: 3rem;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner .gnb-title p {
+header .gnb-title p {
   font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   color: #fff;
   font-size: 1rem;
@@ -253,18 +258,20 @@ header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner .gnb-title p {
   width: 80%;
   margin-top: 1.5rem;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner .gnb-title p span {
+header .gnb-title p span {
   white-space: nowrap;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 {
+
+/* gnb 2뎁스 설정 */
+header .depth2 {
   background-color: #fff;
   width: 80%;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 li.list2 {
+header .depth2 .list2 {
   width: 100%;
   display: flex;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 li.list2 > .depth2-title {
+header .depth2 .list2 > .depth2-title {
   background-color: #F5F7FB;
   width: 25%;
   padding-top: 1.5rem;
@@ -275,20 +282,22 @@ header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 li.list2
   border-left: 0.063rem solid #d7d7d7;
   transition: all 0.3s;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 li.list2 > .depth2-title > a {
+header .depth2 .list2 > .depth2-title > a {
   display: inline-block;
   font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: #004EA2;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 li.list2 > .depth2-title:hover {
+header .depth2 .list2 > .depth2-title:hover {
   background-color: #004EA2;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 li.list2 > .depth2-title:hover a {
+header .depth2 .list2 > .depth2-title:hover a {
   color: #fff;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 li.list2 ul.depth3 {
+
+/* gnb 3뎁스 설정*/
+header .depth3 {
   width: 75%;
   display: flex;
   flex-wrap: wrap;
@@ -298,7 +307,7 @@ header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 li.list2
   padding-bottom: 0.469rem;
   padding-left: 0.469rem;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 li.list2 ul.depth3 li.list3 > a {
+header .depth3 .list3 > a {
   display: block;
   width: 11.656rem;
   height: 2.438rem;
@@ -310,10 +319,12 @@ header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 li.list2
   font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-size: 1rem;
 }
-header .gnb .gnb-inner ul.depth1 li.list1 .items .items-inner ul.depth2 li.list2 ul.depth3 li.list3 > a:hover {
+header .depth3 .list3 > a:hover {
   font-weight: 600;
 }
-header .gnb .gnb-inner .menu-btn {
+
+/* gnb 햄버거버튼 설정 */
+header .menu-btn {
   width: 2.375rem;
   height: 2.375rem;
   margin-top: 1.3rem;
@@ -325,13 +336,15 @@ header .gnb .gnb-inner .menu-btn {
   border: 0.063rem solid #82A4CA;
   border-radius: 3.125rem;
 }
-header .gnb .gnb-inner .menu-btn i {
+header .menu-btn i {
   background-image: url(imgs/menu-btn-icons.png);
   background-position: 0 0;
   background-size: cover;
   width: 1.125rem;
   height: 1.125rem;
 }
+
+/* side-menu 설정 */
 header .side-menu {
   position: fixed;
   top: 2.5rem;
@@ -345,6 +358,8 @@ header .side-menu {
 header .side-menu.on {
   right: 0;
 }
+
+/* side-menu topBox 설정 */
 header .side-menu .topBox {
   width: 100%;
   height: 5.02rem;
@@ -397,16 +412,20 @@ header .side-menu .topBox .menu-btn-close i {
   width: 1.125rem;
   height: 1.125rem;
 }
+
+/* side-menu bottomBox 설정 */
 header .side-menu .bottomBox {
   display: flex;
   height: 100%;
 }
-header .side-menu .bottomBox .depth-1-Box {
+
+/* side-menu 1뎁스 설정 */
+header .side-menu .depth-1-Box {
   background-color: #004EA2;
   width: 10.125rem;
   height: 100%;
 }
-header .side-menu .bottomBox .depth-1-Box ul li a {
+header .side-menu .depth-1-Box ul li a {
   display: block;
   font-family: "S-CoreDream-5Medium", sans-serif;
   font-size: 0.875rem;
@@ -414,13 +433,15 @@ header .side-menu .bottomBox .depth-1-Box ul li a {
   padding: 1.5rem 0.825rem;
   transition: all 0.3s;
 }
-header .side-menu .bottomBox .depth-1-Box ul li a:hover {
+header .side-menu .depth-1-Box ul li a:hover {
   background-color: #468CD9;
 }
-header .side-menu .bottomBox .depth-1-Box ul li a.active {
+header .side-menu .depth-1-Box ul li a.active {
   background-color: #468CD9;
 }
-header .side-menu .bottomBox .depth-2-Box {
+
+/* side-menu 2뎁스 설정 */
+header .side-menu .depth-2-Box {
   width: 15.063rem;
   height: 100%;
   padding: 0.813rem 1.188rem;
@@ -428,20 +449,21 @@ header .side-menu .bottomBox .depth-2-Box {
   overscroll-behavior: none;
   position: relative;
 }
-header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner {
+header .side-menu .depth-2-Box .depth-2-Box-inner {
   position: absolute;
   display: none;
-  /* (js 파일 참고) 하단에 보이지 않는 블럭을 추가해 하단 정보가 가려지는 것을 방지*/
 }
-header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner.active {
+header .side-menu .depth-2-Box .depth-2-Box-inner.active {
   display: block;
 }
-header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > li {
+
+/* side-menu 2뎁스 title 설정 */
+header .side-menu .depth-2-title > li {
   color: #004EA2;
   font-size: 1rem;
   font-weight: 600;
 }
-header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > li strong {
+header .side-menu .depth-2-title > li strong {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -450,7 +472,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > 
   position: relative;
   width: 9.978rem;
 }
-header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > li strong::after {
+header .side-menu .depth-2-title > li strong::after {
   content: "";
   display: block;
   width: 0;
@@ -462,10 +484,10 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > 
   left: -0.4rem;
   transition: all 0.3s ease;
 }
-header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > li strong.on::after {
+header .side-menu .depth-2-title > li strong.on::after {
   width: 105%;
 }
-header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > li strong i {
+header .side-menu .depth-2-title > li strong i {
   display: block;
   background-image: url(imgs/side-menu-icons.png);
   background-size: cover;
@@ -473,20 +495,22 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > 
   height: 1.625rem;
   margin-top: -0.3rem;
 }
-header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > li strong i.on {
+header .side-menu .depth-2-title > li strong i.on {
   background-position: -1.625rem 0;
 }
-header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box {
+
+/* side-menu 3뎁스 설정 */
+header .side-menu .depth-3-Box {
   height: 0;
   overflow: hidden;
   transition: all 1s;
 }
-header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box li {
+header .side-menu .depth-3-Box li {
   margin: 0.5rem 0;
   display: flex;
   align-items: center;
 }
-header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box li::before {
+header .side-menu .depth-3-Box li::before {
   content: "";
   display: block;
   width: 0.125rem;
@@ -494,7 +518,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > 
   background-color: #777;
   border-radius: 50%;
 }
-header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box li a {
+header .side-menu .depth-3-Box li a {
   color: #777;
   font-size: 0.875rem;
   font-weight: 400;
@@ -503,17 +527,19 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > 
   width: 100%;
   cursor: pointer;
 }
-header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box li a:hover {
+header .side-menu .depth-3-Box li a:hover {
   font-weight: 500;
 }
-header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box li.checked a {
+header .side-menu .depth-3-Box li.checked a {
   color: #004EA2;
   font-weight: 500;
 }
-header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box.open {
+header .side-menu .depth-3-Box.open {
   height: auto;
 }
-header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
+
+/* (js 파일 참고) 하단에 보이지 않는 블럭을 추가해 하단 정보가 가려지는 것을 방지*/
+.block {
   width: 100%;
   height: 16rem;
 }
@@ -522,17 +548,14 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 .main {
   width: 100%;
   position: relative;
-  /* hero 설정 */
-  /* 국립공원 알아보기 배경 하늘 설정*/
-  /* layout 설정 */
 }
+
+/* hero 설정 */
 .main .hero {
   width: 100%;
   height: 40.813rem;
   margin-top: 7.563rem;
   position: relative;
-  /* txtBox 설정 */
-  /* 배경이미지 페이지 설정 */
 }
 .main .hero .swiper {
   width: 100%;
@@ -609,6 +632,8 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 .main .hero .swiper-pagination-total {
   font-size: 1rem;
 }
+
+/* hero txtBox 설정 */
 .main .hero .txtBox {
   color: #fff;
   font-family: "S-CoreDream-4Regular", sans-serif;
@@ -618,8 +643,6 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   left: 50%;
   z-index: 2;
   transform: translate(-50%, -50%);
-  /* 검색 설정 */
-  /* 추천검색어 설정 */
 }
 .main .hero .txtBox h2 {
   font-size: 1.875rem;
@@ -644,18 +667,20 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   font-weight: 500;
   white-space: nowrap;
 }
-.main .hero .txtBox .search {
+
+/* hero 검색 설정 */
+.main .hero .search {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 1.25rem;
 }
-.main .hero .txtBox .search h3 {
+.main .hero .search h3 {
   font-size: 1.75rem;
   text-align: center;
   margin-bottom: 1.25rem;
 }
-.main .hero .txtBox .search .search-bar {
+.main .hero .search .search-bar {
   background-color: #fff;
   border: 0.125rem solid #004EA2;
   border-radius: 3.125rem;
@@ -666,13 +691,13 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   display: flex;
   align-items: center;
 }
-.main .hero .txtBox .search .search-bar input {
+.main .hero .search .search-bar input {
   all: unset;
   color: #0d0d0d;
   width: 80%;
   margin-left: 1.875rem;
 }
-.main .hero .txtBox .search .search-bar button {
+.main .hero .search .search-bar button {
   all: unset;
   display: flex;
   justify-content: center;
@@ -689,50 +714,54 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   height: 3.125rem;
   transition: all 0.3s;
 }
-.main .hero .txtBox .search .search-bar button:focus {
+.main .hero .search .search-bar button:focus {
   outline: none;
 }
-.main .hero .txtBox .search .search-bar button:hover {
+.main .hero .search .search-bar button:hover {
   background-color: #fff;
 }
-.main .hero .txtBox .search .search-bar button:hover i {
+.main .hero .search .search-bar button:hover i {
   color: #004EA2;
 }
-.main .hero .txtBox .search .search-bar button i {
+.main .hero .search .search-bar button i {
   color: #fff;
   transition: all 0.3s;
 }
-.main .hero .txtBox .recommend {
+
+/* hero 추천검색어 설정 */
+.main .hero .recommend {
   font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-size: 1.125rem;
   display: flex;
   justify-content: center;
 }
-.main .hero .txtBox .recommend span {
+.main .hero .recommend span {
   padding: 0.313rem;
   margin: 0.313rem;
   font-weight: 600;
 }
-.main .hero .txtBox .recommend span i {
+.main .hero .recommend span i {
   color: #ffdd1f;
   margin-right: 0.375rem;
 }
-.main .hero .txtBox .recommend ul {
+.main .hero .recommend ul {
   display: flex;
 }
-.main .hero .txtBox .recommend ul li {
+.main .hero .recommend ul li {
   padding: 0.313rem;
   margin: 0.313rem;
 }
-.main .hero .txtBox .recommend ul li a {
+.main .hero .recommend ul li a {
   display: block;
   color: #fff;
   transition: all 0.3s;
 }
-.main .hero .txtBox .recommend ul li:hover a {
+.main .hero .recommend ul li:hover a {
   color: #128edc;
   font-weight: 700;
 }
+
+/* hero pageBox 설정 */
 .main .hero .pageBox {
   font-family: "S-CoreDream-4Regular", sans-serif;
   color: #fff;
@@ -754,6 +783,8 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   font-size: 1.375rem;
   margin-left: 1rem;
 }
+
+/* 국립공원 알아보기 배경 하늘 설정 */
 .main .more-bg-sky {
   width: 100%;
   height: 33.75rem;
@@ -763,44 +794,43 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   left: 0;
   z-index: -1;
 }
+
+/* layout 설정 */
 .main .layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 40.188rem;
   margin-top: 4.375rem;
-  /* 박스별 제목 (h3) 공통 설정 */
-  /* group-left 설정*/
-  /* group-right 설정*/
-  /* group-bottom 설정*/
 }
+/* 박스별 제목 (h3) 공통 설정 */
 .main .layout h3 {
   font-family: "S-CoreDream-5Medium", sans-serif;
   font-size: 1.625rem;
   margin-bottom: 2rem;
   width: 100%;
 }
+
+/* main group-left 설정*/
 .main .layout .group-left {
   display: flex;
   flex-direction: column;
   padding: 1.25rem;
-  /* 자주 찾는 서비스 설정*/
-  /* 새로운 소식 설정*/
-  /* wrapBox1 설정*/
-  /* wrapBox2 설정*/
 }
-.main .layout .group-left .serviceBox {
+
+/* main 자주 찾는 서비스 설정*/
+.main .serviceBox {
   height: 25rem;
 }
-.main .layout .group-left .serviceBox ul {
+.main .serviceBox ul {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-.main .layout .group-left .serviceBox ul li {
+.main .serviceBox ul li {
   width: 22%;
   margin: 1%;
 }
-.main .layout .group-left .serviceBox ul li a {
+.main .serviceBox ul li a {
   background-color: #F5FCFF;
   border-radius: 0.875rem;
   border: 0.063rem solid #A8CDDB;
@@ -811,48 +841,50 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   width: 100%;
   height: 7.813rem;
 }
-.main .layout .group-left .serviceBox ul li a:hover {
+.main .serviceBox ul li a:hover {
   background-color: #e8f7ff;
 }
-.main .layout .group-left .serviceBox ul li a i {
+.main .serviceBox ul li a i {
   display: block;
   background-image: url("imgs/service-icons.png");
   width: 64px; /* px 고정값 */
   height: 62px; /* px 고정값 */
 }
-.main .layout .group-left .serviceBox ul li a span {
+.main .serviceBox ul li a span {
   font-size: 1.125rem;
   font-weight: 600;
   text-align: center;
 }
-.main .layout .group-left .serviceBox ul li:nth-child(2) i {
+.main .serviceBox ul li:nth-child(2) i {
   background-position: -64px 0; /* px 고정값 */
 }
-.main .layout .group-left .serviceBox ul li:nth-child(3) i {
+.main .serviceBox ul li:nth-child(3) i {
   background-position: -128px 0; /* px 고정값 */
 }
-.main .layout .group-left .serviceBox ul li:nth-child(4) i {
+.main .serviceBox ul li:nth-child(4) i {
   background-position: -192px 0; /* px 고정값 */
 }
-.main .layout .group-left .serviceBox ul li:nth-child(5) i {
+.main .serviceBox ul li:nth-child(5) i {
   background-position: 0rem 62px; /* px 고정값 */
 }
-.main .layout .group-left .serviceBox ul li:nth-child(6) i {
+.main .serviceBox ul li:nth-child(6) i {
   background-position: -64px 62px; /* px 고정값 */
 }
-.main .layout .group-left .serviceBox ul li:nth-child(7) i {
+.main .serviceBox ul li:nth-child(7) i {
   background-position: -128px 62px; /* px 고정값 */
 }
-.main .layout .group-left .serviceBox ul li:nth-child(8) i {
+.main .serviceBox ul li:nth-child(8) i {
   background-position: -192px 62px; /* px 고정값 */
 }
-.main .layout .group-left .newsBox {
+
+/* main 새로운 소식 설정*/
+.main .newsBox {
   height: 25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.main .layout .group-left .newsBox .newsBox-inner {
+.main .newsBox .newsBox-inner {
   width: 93%;
   height: 74%;
   background-color: #f9f9f9;
@@ -863,24 +895,24 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   align-items: center;
   position: relative;
 }
-.main .layout .group-left .newsBox .newsBox-inner .tabMenu {
+.main .newsBox .newsBox-inner .tabMenu {
   width: 92%;
   display: flex;
   justify-content: space-between;
   margin-top: 4%;
   margin-bottom: 2%;
 }
-.main .layout .group-left .newsBox .newsBox-inner .tabMenu li {
+.main .newsBox .newsBox-inner .tabMenu li {
   padding: 0.313rem 0.513rem;
   border-radius: 0.5rem;
 }
-.main .layout .group-left .newsBox .newsBox-inner .tabMenu li a {
+.main .newsBox .newsBox-inner .tabMenu li a {
   display: block;
   padding: 0.313rem 0.313rem;
   font-size: 1.125rem;
   font-weight: 600;
 }
-.main .layout .group-left .newsBox .newsBox-inner .tabMenu li a i {
+.main .newsBox .newsBox-inner .tabMenu li a i {
   display: block;
   background-image: url("imgs/news-more-icon.png");
   background-size: cover;
@@ -888,56 +920,58 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   width: 1.25rem;
   height: 1.25rem;
 }
-.main .layout .group-left .newsBox .newsBox-inner .tabMenu li.active {
+.main .newsBox .newsBox-inner .tabMenu li.active {
   background-color: #004EA2;
 }
-.main .layout .group-left .newsBox .newsBox-inner .tabMenu li.active a {
+.main .newsBox .newsBox-inner .tabMenu li.active a {
   color: #fff;
 }
-.main .layout .group-left .newsBox .newsBox-inner .txtBox {
+.main .newsBox .newsBox-inner .txtBox {
   width: 92%;
   position: absolute;
   top: 5rem;
   left: 2.2rem;
   display: none;
 }
-.main .layout .group-left .newsBox .newsBox-inner .txtBox.active {
+.main .newsBox .newsBox-inner .txtBox.active {
   display: block;
 }
-.main .layout .group-left .newsBox .newsBox-inner .txtBox li {
+.main .newsBox .newsBox-inner .txtBox li {
   padding: 0.375rem 0;
   margin: 0.375rem 0;
   font-weight: 500;
   display: flex;
   justify-content: space-between;
 }
-.main .layout .group-left .newsBox .newsBox-inner .txtBox li a {
+.main .newsBox .newsBox-inner .txtBox li a {
   width: calc(90% - 6.24rem);
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   overflow: hidden;
 }
-.main .layout .group-left .newsBox .newsBox-inner .txtBox li span {
+.main .newsBox .newsBox-inner .txtBox li span {
   width: 6.24rem;
   color: #777;
 }
-.main .layout .group-left .wrapBox1 {
-  height: 21.6rem;
+
+/* main wrapBox1 설정*/
+.main .group-left .wrapBox1 {
   display: flex;
   flex-direction: column;
-  /* snsBox 설정*/
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-top {
+
+/* main wrapBox1-top 설정*/
+.main .group-left .wrapBox1-top {
   width: 100%;
   height: 44%;
   display: flex;
   justify-content: space-between;
   padding: 1.5rem;
-  /* 자원봉사 설정*/
-  /* 실시간영상 설정*/
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox {
+
+/* main 자원봉사 설정*/
+.main .volunteerBox {
   border: 0.063rem solid #D7D7D7;
   border-radius: 1rem;
   width: 48%;
@@ -950,24 +984,26 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   align-items: center;
   cursor: pointer;
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox span {
+.main .volunteerBox span {
   font-size: 0;
   color: transparent;
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox img {
+.main .volunteerBox img {
   margin: 0 0.4rem;
   transition: all 0.3s;
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox img.txt {
+.main .volunteerBox img.txt {
   width: 4.6rem;
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox img.icon {
+.main .volunteerBox img.icon {
   width: 4.6rem;
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox:hover img {
+.main .volunteerBox:hover img {
   transform: scale(1.05);
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox {
+
+/* main 실시간영상 설정*/
+.main .liveBox {
   border: 0.063rem solid #D7D7D7;
   border-radius: 1rem;
   width: 48%;
@@ -978,30 +1014,32 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   align-items: center;
   cursor: pointer;
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox span {
+.main .liveBox span {
   font-size: 0;
   color: transparent;
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox img {
+.main .liveBox img {
   margin: 0 0.4rem;
   transition: all 0.3s;
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox img.txt {
+.main .liveBox img.txt {
   width: 7.8rem;
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox img.icon {
+.main .liveBox img.icon {
   width: 3.6rem;
 }
-.main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox:hover img {
+.main .liveBox:hover img {
   transform: scale(1.05);
 }
-.main .layout .group-left .wrapBox1 .snsBox {
+
+/* main snsBox 설정*/
+.main .snsBox {
   width: 100%;
   height: 56%;
   padding: 1.5rem;
   margin-top: -1.5rem;
 }
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner {
+.main .snsBox .snsBox-inner {
   width: 100%;
   height: 100%;
   border: 0.063rem solid #D7D7D7;
@@ -1012,31 +1050,31 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   justify-content: center;
   align-items: center;
 }
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner h4 {
+.main .snsBox .snsBox-inner h4 {
   font-size: 1.125rem;
   font-weight: 600;
   color: #2c2c2c;
   text-align: center;
   margin-top: 1.5rem;
 }
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul {
+.main .snsBox .snsBox-inner ul {
   height: 80%;
   margin-top: 1rem;
   padding: 0 1rem;
 }
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li {
+.main .snsBox .snsBox-inner ul li {
   float: left;
   height: 3.125rem;
   margin: 0.5rem 1rem;
 }
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li a {
+.main .snsBox .snsBox-inner ul li a {
   position: relative;
 }
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li a span {
+.main .snsBox .snsBox-inner ul li a span {
   font-size: 0;
   position: absolute;
 }
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li a i {
+.main .snsBox .snsBox-inner ul li a i {
   display: block;
   background-image: url(imgs/sns-icon.png);
   width: 50px; /* px 고정값 */
@@ -1044,28 +1082,30 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   transform: scale(0.8);
   transition: all 0.3s;
 }
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(2) i {
+.main .snsBox .snsBox-inner ul li:nth-child(2) i {
   background-position: -60px 0; /* px 고정값 */
 }
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(3) i {
+.main .snsBox .snsBox-inner ul li:nth-child(3) i {
   background-position: -120px 0; /* px 고정값 */
 }
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(4) i {
+.main .snsBox .snsBox-inner ul li:nth-child(4) i {
   background-position: -180px 0; /* px 고정값 */
 }
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:nth-child(5) i {
+.main .snsBox .snsBox-inner ul li:nth-child(5) i {
   background-position: -240px 0; /* px 고정값 */
 }
-.main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li:hover i {
+.main .snsBox .snsBox-inner ul li:hover i {
   transform: scale(1);
 }
-.main .layout .group-left .wrapBox2 {
+
+/* main wrapBox2 설정*/
+.main .group-left .wrapBox2 {
   display: flex;
   padding: 1.5rem;
-  /* 홍보이미지 설정*/
-  /* 웹툰 설정*/
 }
-.main .layout .group-left .wrapBox2 .promoBox {
+
+/* main 홍보이미지 설정*/
+.main .promoBox {
   border: 0.063rem solid #D7D7D7;
   border-radius: 1.25rem;
   width: 50%;
@@ -1077,24 +1117,24 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   align-items: center;
   position: relative;
 }
-.main .layout .group-left .wrapBox2 .promoBox h3 {
+.main .promoBox h3 {
   color: #0d0d0d;
   position: absolute;
   width: 80%;
   top: 1.7rem;
   left: 1.7rem;
 }
-.main .layout .group-left .wrapBox2 .promoBox .swiper {
+.main .promoBox .swiper {
   width: 16.875rem;
   height: 20.5rem;
   border-radius: 1.25rem;
   margin-top: 2rem;
 }
-.main .layout .group-left .wrapBox2 .promoBox .swiper-wrapper {
+.main .promoBox .swiper-wrapper {
   width: 16.875rem;
   border-radius: 1.25rem;
 }
-.main .layout .group-left .wrapBox2 .promoBox .swiper-slide {
+.main .promoBox .swiper-slide {
   text-align: center;
   font-size: 1.125rem;
   display: flex;
@@ -1102,7 +1142,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   align-items: center;
   position: relative;
 }
-.main .layout .group-left .wrapBox2 .promoBox .swiper-slide img {
+.main .promoBox .swiper-slide img {
   display: block;
   width: 88%;
   -o-object-fit: cover;
@@ -1110,24 +1150,24 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   border-radius: 1.25rem;
   cursor: pointer;
 }
-.main .layout .group-left .wrapBox2 .promoBox .promoBoxSwiper {
+.main .promoBox .promoBoxSwiper {
   position: absolute;
   z-index: 1;
 }
-.main .layout .group-left .wrapBox2 .promoBox .swiper-button-next, .main .layout .group-left .wrapBox2 .promoBox .swiper-button-prev {
+.main .promoBox .swiper-button-next, .main .promoBox .swiper-button-prev {
   width: 2rem;
   height: 2rem;
   top: 19.2px; /* px 고정값 */
   color: #004EA2;
 }
-.main .layout .group-left .wrapBox2 .promoBox .swiper-button-next:after, .main .layout .group-left .wrapBox2 .promoBox .swiper-button-prev:after {
+.main .promoBox .swiper-button-next:after, .main .promoBox .swiper-button-prev:after {
   font-size: 0.875rem;
   font-weight: 700;
 }
-.main .layout .group-left .wrapBox2 .promoBox .swiper-button-next {
+.main .promoBox .swiper-button-next {
   margin-right: 0rem;
 }
-.main .layout .group-left .wrapBox2 .promoBox .swiper-button-stop {
+.main .promoBox .swiper-button-stop {
   width: 2rem;
   height: 2rem;
   position: absolute;
@@ -1136,7 +1176,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   z-index: 3;
   cursor: pointer;
 }
-.main .layout .group-left .wrapBox2 .promoBox .swiper-button-stop i {
+.main .promoBox .swiper-button-stop i {
   display: block;
   width: 2rem;
   height: 2rem;
@@ -1144,25 +1184,27 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   background-position: 0 0;
   background-size: cover;
 }
-.main .layout .group-left .wrapBox2 .promoBox .swiper-button-prev {
+.main .promoBox .swiper-button-prev {
   margin-left: 10rem;
 }
-.main .layout .group-left .wrapBox2 .promoBox .swiper-pagination {
+.main .promoBox .swiper-pagination {
   bottom: 2rem;
 }
-.main .layout .group-left .wrapBox2 .promoBox .swiper-pagination .swiper-pagination-bullet-active {
+.main .promoBox .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #004EA2;
 }
-.main .layout .group-left .wrapBox2 .promoBox .imgBox {
+.main .promoBox .imgBox {
   display: none;
   margin-top: 4rem;
 }
-.main .layout .group-left .wrapBox2 .promoBox .imgBox img {
+.main .promoBox .imgBox img {
   width: 28%;
   margin: 0 0.5rem;
   cursor: pointer;
 }
-.main .layout .group-left .wrapBox2 .webtoonBox {
+
+/* main 웹툰 설정*/
+.main .webtoonBox {
   border: 0.063rem solid #D7D7D7;
   border-radius: 1.5rem;
   width: 50%;
@@ -1172,11 +1214,11 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   position: relative;
   cursor: pointer;
 }
-.main .layout .group-left .wrapBox2 .webtoonBox img {
+.main .webtoonBox img {
   width: 105%;
   transition: all 0.3s;
 }
-.main .layout .group-left .wrapBox2 .webtoonBox .txtBox {
+.main .webtoonBox .txtBox {
   width: calc(100% - 0.125rem);
   height: 30%;
   position: absolute;
@@ -1184,13 +1226,13 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   left: 0.063rem;
   transition: all 0.3s;
 }
-.main .layout .group-left .wrapBox2 .webtoonBox .txtBox .dimmed {
+.main .webtoonBox .txtBox .dimmed {
   width: 100%;
   height: 100%;
   background-color: #202020;
   opacity: 0.8;
 }
-.main .layout .group-left .wrapBox2 .webtoonBox .txtBox h4 {
+.main .webtoonBox .txtBox h4 {
   color: #fff;
   font-family: "S-CoreDream-4Regular", sans-serif;
   font-size: 1.625rem;
@@ -1198,24 +1240,24 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   top: 1.4rem;
   left: 1.6rem;
 }
-.main .layout .group-left .wrapBox2 .webtoonBox .txtBox p {
+.main .webtoonBox .txtBox p {
   color: #fff;
   font-size: 1rem;
   position: absolute;
   top: 4.2rem;
   left: 1.6rem;
 }
-.main .layout .group-left .wrapBox2 .webtoonBox:hover img {
+.main .webtoonBox:hover img {
   filter: brightness(0.85);
 }
+
+/* main group-right 설정*/
 .main .layout .group-right {
   padding: 2.5rem;
-  /* 실시간 탐방통제정보 설정*/
-  /* wrapBox3 설정*/
-  /* 국립공원 사진전 설정 */
-  /* 자주하는 질문 설정 */
 }
-.main .layout .group-right .controlBox {
+
+/* main 실시간 탐방통제정보 설정*/
+.main .controlBox {
   margin-bottom: 3.75rem;
   border: 0.063rem solid #D1D1D1;
   border-radius: 1.25rem;
@@ -1225,10 +1267,10 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   flex-direction: column;
   align-items: center;
 }
-.main .layout .group-right .controlBox h3 {
+.main .controlBox h3 {
   white-space: nowrap;
 }
-.main .layout .group-right .controlBox p {
+.main .controlBox p {
   font-size: 1.125rem;
   line-height: 1.5;
   color: #777;
@@ -1236,14 +1278,14 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   margin-bottom: 2.125rem;
   width: 100%;
 }
-.main .layout .group-right .controlBox .legend {
+.main .controlBox .legend {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 2.75rem;
   width: 100%;
   position: relative;
 }
-.main .layout .group-right .controlBox .legend::after {
+.main .controlBox .legend::after {
   content: "";
   display: block;
   width: 100%;
@@ -1252,7 +1294,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   position: absolute;
   bottom: -1.5rem;
 }
-.main .layout .group-right .controlBox .legend li {
+.main .controlBox .legend li {
   width: 16%;
   height: 2.4rem;
   color: #fff;
@@ -1263,78 +1305,80 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   font-size: 0.875rem;
   margin: 0 0.34rem;
 }
-.main .layout .group-right .controlBox .legend li:nth-child(1) {
+.main .controlBox .legend li:nth-child(1) {
   background-color: #ff0000;
 }
-.main .layout .group-right .controlBox .legend li:nth-child(2) {
+.main .controlBox .legend li:nth-child(2) {
   background-color: #F29B76;
 }
-.main .layout .group-right .controlBox .legend li:nth-child(3) {
+.main .controlBox .legend li:nth-child(3) {
   background-color: #F2F2F2;
   color: #777;
 }
-.main .layout .group-right .controlBox .location {
+.main .controlBox .location {
   display: flex;
   flex-wrap: wrap;
 }
-.main .layout .group-right .controlBox .location li {
+.main .controlBox .location li {
   width: calc((100% - 3.6rem) / 5);
   height: 2.6rem;
   border-radius: 3.75rem;
   font-size: 0.875rem;
   margin: 0.4rem 0.36rem;
 }
-.main .layout .group-right .controlBox .location li.high {
+.main .controlBox .location li.high {
   background-color: #ff0000;
 }
-.main .layout .group-right .controlBox .location li.high:hover {
+.main .controlBox .location li.high:hover {
   background-color: #e10000;
 }
-.main .layout .group-right .controlBox .location li.high a {
+.main .controlBox .location li.high a {
   color: #fff;
 }
-.main .layout .group-right .controlBox .location li.mid {
+.main .controlBox .location li.mid {
   background-color: #F29B76;
 }
-.main .layout .group-right .controlBox .location li.mid:hover {
+.main .controlBox .location li.mid:hover {
   background-color: #e48d67;
 }
-.main .layout .group-right .controlBox .location li.mid a {
+.main .controlBox .location li.mid a {
   color: #fff;
 }
-.main .layout .group-right .controlBox .location li.low {
+.main .controlBox .location li.low {
   background-color: #F2F2F2;
 }
-.main .layout .group-right .controlBox .location li.low:hover {
+.main .controlBox .location li.low:hover {
   background-color: #e9e9e9;
 }
-.main .layout .group-right .controlBox .location li.low a {
+.main .controlBox .location li.low a {
   color: #777;
 }
-.main .layout .group-right .controlBox .location li a {
+.main .controlBox .location li a {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.main .layout .group-right .wrapBox3 {
+
+/* main wrapBox3 설정*/
+.main .wrapBox3 {
   height: 28rem;
   display: flex;
   justify-content: space-between;
   margin-bottom: 3.75rem;
-  /* 국립공원바로가기 설정*/
-  /* 스마트 국립공원 설정 */
 }
-.main .layout .group-right .wrapBox3 .linkBox {
+
+/* main 국립공원바로가기 설정*/
+.main .linkBox {
   width: 50%;
   height: 100%;
   padding-right: 1rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox h3 {
+.main .linkBox h3 {
   padding-left: 0.5rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner {
+.main .linkBox .linkBox-inner {
   width: 18.25rem;
   border: 0.063rem solid #D1D1D1;
   border-radius: 0.75rem;
@@ -1345,107 +1389,107 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   background-repeat: no-repeat;
   background-position: -1.6rem 0.2rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul {
+.main .linkBox .linkBox-inner ul {
   width: 100%;
   height: 100%;
   position: relative;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li {
+.main .linkBox .linkBox-inner ul li {
   position: absolute;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(1) {
+.main .linkBox .linkBox-inner ul li:nth-child(1) {
   top: 4.375rem;
   left: 5.25rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(2) {
+.main .linkBox .linkBox-inner ul li:nth-child(2) {
   top: 7.75rem;
   left: 1.875rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(3) {
+.main .linkBox .linkBox-inner ul li:nth-child(3) {
   top: 9.375rem;
   left: 6.25rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(4) {
+.main .linkBox .linkBox-inner ul li:nth-child(4) {
   top: 11.875rem;
   left: 2.188rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(5) {
+.main .linkBox .linkBox-inner ul li:nth-child(5) {
   top: 13.75rem;
   left: 6.25rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(6) {
+.main .linkBox .linkBox-inner ul li:nth-child(6) {
   top: 15.625rem;
   left: 3.125rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(7) {
+.main .linkBox .linkBox-inner ul li:nth-child(7) {
   top: 16.25rem;
   left: 6.875rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(8) {
+.main .linkBox .linkBox-inner ul li:nth-child(8) {
   top: 20.625rem;
   left: 2.875rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(9) {
+.main .linkBox .linkBox-inner ul li:nth-child(9) {
   top: 18.125rem;
   left: 0.625rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(10) {
+.main .linkBox .linkBox-inner ul li:nth-child(10) {
   top: 13.75rem;
   left: 10rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(11) {
+.main .linkBox .linkBox-inner ul li:nth-child(11) {
   top: 11.563rem;
   left: 8.125rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(12) {
+.main .linkBox .linkBox-inner ul li:nth-child(12) {
   top: 8.75rem;
   left: 10rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(13) {
+.main .linkBox .linkBox-inner ul li:nth-child(13) {
   top: 6.563rem;
   left: 8.125rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(14) {
+.main .linkBox .linkBox-inner ul li:nth-child(14) {
   top: 4.375rem;
   left: 9.375rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(15) {
+.main .linkBox .linkBox-inner ul li:nth-child(15) {
   top: 1.125rem;
   left: 10.5rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(16) {
+.main .linkBox .linkBox-inner ul li:nth-child(16) {
   top: 3.25rem;
   left: 12.75rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(17) {
+.main .linkBox .linkBox-inner ul li:nth-child(17) {
   top: 5.375rem;
   left: 14.375rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(18) {
+.main .linkBox .linkBox-inner ul li:nth-child(18) {
   top: 7.375rem;
   left: 13.125rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(19) {
+.main .linkBox .linkBox-inner ul li:nth-child(19) {
   top: 9.375rem;
   left: 14.375rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(20) {
+.main .linkBox .linkBox-inner ul li:nth-child(20) {
   top: 11.375rem;
   left: 11.875rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(21) {
+.main .linkBox .linkBox-inner ul li:nth-child(21) {
   top: 13.438rem;
   left: 13.125rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(22) {
+.main .linkBox .linkBox-inner ul li:nth-child(22) {
   top: 11.375rem;
   left: 15rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li:nth-child(23) {
+.main .linkBox .linkBox-inner ul li:nth-child(23) {
   top: 16.5rem;
   left: 11.25rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li a {
+.main .linkBox .linkBox-inner ul li a {
   display: inline-block;
   border: 0.063rem solid #427EAF;
   border-radius: 0.125rem;
@@ -1454,20 +1498,22 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   padding: 0.375rem;
   font-size: 0.813rem;
 }
-.main .layout .group-right .wrapBox3 .linkBox .linkBox-inner ul li a:hover {
+.main .linkBox .linkBox-inner ul li a:hover {
   background-color: #f1f6ff;
   color: #3871a0;
 }
-.main .layout .group-right .wrapBox3 .smartBox {
+
+/* main 스마트 국립공원 설정 */
+.main .smartBox {
   width: 47%;
   min-width: 16.964rem;
   height: 100%;
   padding-left: 1rem;
 }
-.main .layout .group-right .wrapBox3 .smartBox h3 {
+.main .smartBox h3 {
   padding-left: 0.5rem;
 }
-.main .layout .group-right .wrapBox3 .smartBox .smartBox-inner {
+.main .smartBox .smartBox-inner {
   border: 0.063rem solid #D1D1D1;
   border-radius: 0.75rem;
   background-color: #fff;
@@ -1476,16 +1522,16 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   justify-content: center;
   align-items: center;
 }
-.main .layout .group-right .wrapBox3 .smartBox .smartBox-inner ul {
+.main .smartBox .smartBox-inner ul {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
-.main .layout .group-right .wrapBox3 .smartBox .smartBox-inner ul li {
+.main .smartBox .smartBox-inner ul li {
   width: 80%;
   margin: 0.2rem auto;
 }
-.main .layout .group-right .wrapBox3 .smartBox .smartBox-inner ul li a {
+.main .smartBox .smartBox-inner ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1497,11 +1543,13 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   height: 2.1rem;
   font-size: 0.875rem;
 }
-.main .layout .group-right .wrapBox3 .smartBox .smartBox-inner ul li a:hover {
+.main .smartBox .smartBox-inner ul li a:hover {
   background-color: #eaf8fe;
   font-weight: 600;
 }
-.main .layout .group-right .galleryBox {
+
+/* main 국립공원 사진전 설정 */
+.main .galleryBox {
   background-color: #cdffd0;
   height: 14.5rem;
   border: 0.063rem solid #D1D1D1;
@@ -1512,31 +1560,31 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   cursor: pointer;
   position: relative;
 }
-.main .layout .group-right .galleryBox > h3 {
+.main .galleryBox > h3 {
   display: none;
 }
-.main .layout .group-right .galleryBox img {
+.main .galleryBox img {
   border-radius: 1.25rem;
   transition: all 0.3s;
 }
-.main .layout .group-right .galleryBox .txtBox {
+.main .galleryBox .txtBox {
   width: 100%;
   height: 100%;
   padding-left: 2rem;
   position: relative;
 }
-.main .layout .group-right .galleryBox .txtBox h4 {
+.main .galleryBox .txtBox h4 {
   font-size: 1.5rem;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
 }
-.main .layout .group-right .galleryBox .txtBox p {
+.main .galleryBox .txtBox p {
   font-size: 1.125rem;
   color: #9D9D9D;
   font-weight: 600;
   margin-bottom: 1rem;
 }
-.main .layout .group-right .galleryBox .txtBox span {
+.main .galleryBox .txtBox span {
   color: #fff;
   background-color: #3F3F3F;
   border: 0.063rem solid #3f3f3f;
@@ -1549,16 +1597,18 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   cursor: pointer;
   transition: all 0.3s;
 }
-.main .layout .group-right .galleryBox .txtBox span:hover {
+.main .galleryBox .txtBox span:hover {
   background-color: #fefefe;
   border: 0.063rem solid #a1a1a1;
   color: #3f3f3f;
   font-weight: 600;
 }
-.main .layout .group-right .questionBox {
+
+/* main 자주하는 질문 설정 */
+.main .questionBox {
   position: relative;
 }
-.main .layout .group-right .questionBox span {
+.main .questionBox span {
   font-size: 1.125rem;
   font-weight: 500;
   position: absolute;
@@ -1566,10 +1616,10 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   right: 0;
   cursor: pointer;
 }
-.main .layout .group-right .questionBox span i {
+.main .questionBox span i {
   margin-left: 0.4rem;
 }
-.main .layout .group-right .questionBox .questionBox-inner {
+.main .questionBox .questionBox-inner {
   border: 0.063rem solid #D1D1D1;
   border-radius: 0.75rem;
   background-color: #fff;
@@ -1577,27 +1627,27 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   display: flex;
   align-items: center;
 }
-.main .layout .group-right .questionBox .questionBox-inner .grid {
+.main .questionBox .questionBox-inner .grid {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 2.5rem 2.5rem;
 }
-.main .layout .group-right .questionBox .questionBox-inner .grid .questionTitle {
+.main .questionBox .questionBox-inner .grid .questionTitle {
   display: grid;
   grid-template-columns: 8% 12% 12% 1fr;
   align-items: center;
   padding: 0 1.25rem;
 }
-.main .layout .group-right .questionBox .questionBox-inner .grid .questionTitle li {
+.main .questionBox .questionBox-inner .grid .questionTitle li {
   text-align: center;
   font-weight: 600;
 }
-.main .layout .group-right .questionBox .questionBox-inner .grid .questionContents {
+.main .questionBox .questionBox-inner .grid .questionContents {
   position: relative;
   overflow: hidden;
 }
-.main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li {
+.main .questionBox .questionBox-inner .grid .questionContents > li {
   width: 100%;
   height: 50%;
   position: absolute;
@@ -1605,44 +1655,48 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   top: 0;
   transition: all 1s;
 }
-.main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li.on {
+.main .questionBox .questionBox-inner .grid .questionContents > li.on {
   top: 0;
   opacity: 1;
 }
-.main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li.off {
+.main .questionBox .questionBox-inner .grid .questionContents > li.off {
   top: -100%;
   opacity: 0;
 }
-.main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li.ready {
+.main .questionBox .questionBox-inner .grid .questionContents > li.ready {
   top: 100%;
   opacity: 0;
 }
-.main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li .list {
+.main .questionBox .questionBox-inner .grid .questionContents > li .list {
   display: grid;
   grid-template-columns: 8% 12% 12% 1fr;
   padding: 0 1.25rem;
   margin-top: 0.7rem;
 }
-.main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li .list li {
+.main .questionBox .questionBox-inner .grid .questionContents > li .list li {
   text-align: center;
   cursor: pointer;
 }
-.main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li .list li:nth-child(4) {
+.main .questionBox .questionBox-inner .grid .questionContents > li .list li:nth-child(4) {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   overflow: hidden;
 }
+
+/* main group-bottom 설정*/
 .main .layout .group-bottom {
   grid-column: 1/span 2;
   height: 40.188rem;
   padding: 1.25rem 2.5rem 1.25rem 1.25rem;
 }
-.main .layout .group-bottom .moreBox {
+
+/* main 국립공원 알아보기 설정 */
+.main .moreBox {
   height: 38.9rem;
   position: relative;
 }
-.main .layout .group-bottom .moreBox .object {
+.main .moreBox .object {
   width: 100%;
   height: 33.75rem;
   position: absolute;
@@ -1654,14 +1708,14 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   background-repeat: no-repeat;
   background-size: contain;
 }
-.main .layout .group-bottom .moreBox .card {
+.main .moreBox .card {
   display: flex;
   justify-content: space-between;
   height: 2.5rem;
   margin-top: 4rem;
   padding-left: 1.25rem;
 }
-.main .layout .group-bottom .moreBox .card > li {
+.main .moreBox .card > li {
   width: 16.25rem;
   height: auto;
   padding: 2rem;
@@ -1671,47 +1725,47 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   box-shadow: 0 0.438rem 0.75rem rgba(150, 161, 174, 0.4);
   transition: all 0.3s;
 }
-.main .layout .group-bottom .moreBox .card > li:nth-child(1) {
+.main .moreBox .card > li:nth-child(1) {
   height: 18.875rem;
 }
-.main .layout .group-bottom .moreBox .card > li:nth-child(2) {
+.main .moreBox .card > li:nth-child(2) {
   margin-top: 4rem;
   height: 16.875rem;
 }
-.main .layout .group-bottom .moreBox .card > li:nth-child(3) {
+.main .moreBox .card > li:nth-child(3) {
   margin-top: 8rem;
   height: 16.875rem;
 }
-.main .layout .group-bottom .moreBox .card > li:nth-child(4) {
+.main .moreBox .card > li:nth-child(4) {
   margin-top: 12rem;
   height: 14rem;
 }
-.main .layout .group-bottom .moreBox .card > li:hover {
+.main .moreBox .card > li:hover {
   transform: translateY(-0.6rem);
 }
-.main .layout .group-bottom .moreBox .card > li h4 {
+.main .moreBox .card > li h4 {
   color: #07a33e;
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
   cursor: pointer;
 }
-.main .layout .group-bottom .moreBox .card > li h4 i {
+.main .moreBox .card > li h4 i {
   margin-right: 1.25rem;
 }
-.main .layout .group-bottom .moreBox .card > li .list {
+.main .moreBox .card > li .list {
   padding-left: 0.2rem;
 }
-.main .layout .group-bottom .moreBox .card > li .list li {
+.main .moreBox .card > li .list li {
   padding: 0.375rem 0;
   margin: 0.375rem 0;
   cursor: pointer;
 }
-.main .layout .group-bottom .moreBox .card > li .list li a {
+.main .moreBox .card > li .list li a {
   display: block;
   color: #808080;
 }
-.main .layout .group-bottom .moreBox .card > li .list li a:hover {
+.main .moreBox .card > li .list li a:hover {
   font-weight: bold;
 }
 
@@ -1719,9 +1773,9 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
 .subpage {
   margin-top: 7.5rem;
   display: none;
-  /* subHeroBox 설정 */
-  /* subpage-inner 설정 */
 }
+
+/* subpage subHeroBox 설정 */
 .subpage .subHeroBox {
   background-image: url(imgs/subHeroBox-bg.png);
   background-size: cover;
@@ -1730,22 +1784,22 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* 검색 설정 */
-  /* 추천검색어 설정 */
 }
-.subpage .subHeroBox .search {
+
+/* subHeroBox 검색 설정 */
+.subHeroBox .search {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 1.25rem;
 }
-.subpage .subHeroBox .search h3 {
+.subHeroBox .search h3 {
   font-size: 1.75rem;
   text-align: center;
   margin-bottom: 1.25rem;
   color: #fff;
 }
-.subpage .subHeroBox .search .search-bar {
+.subHeroBox .search .search-bar {
   background-color: #fff;
   border: 0.125rem solid #004EA2;
   border-radius: 3.125rem;
@@ -1756,13 +1810,13 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   display: flex;
   align-items: center;
 }
-.subpage .subHeroBox .search .search-bar input {
+.subHeroBox .search .search-bar input {
   all: unset;
   color: #0d0d0d;
   width: 80%;
   margin-left: 1.875rem;
 }
-.subpage .subHeroBox .search .search-bar button {
+.subHeroBox .search .search-bar button {
   all: unset;
   display: flex;
   justify-content: center;
@@ -1779,79 +1833,86 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   height: 3.125rem;
   transition: all 0.3s;
 }
-.subpage .subHeroBox .search .search-bar button:focus {
+.subHeroBox .search .search-bar button:focus {
   outline: none;
 }
-.subpage .subHeroBox .search .search-bar button:hover {
+.subHeroBox .search .search-bar button:hover {
   background-color: #fff;
 }
-.subpage .subHeroBox .search .search-bar button:hover i {
+.subHeroBox .search .search-bar button:hover i {
   color: #004EA2;
 }
-.subpage .subHeroBox .search .search-bar button i {
+.subHeroBox .search .search-bar button i {
   color: #fff;
   transition: all 0.3s;
 }
-.subpage .subHeroBox .recommend {
+
+/* subHeroBox 추천검색어 설정 */
+.subHeroBox .recommend {
   font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-size: 1.125rem;
   display: flex;
   justify-content: center;
 }
-.subpage .subHeroBox .recommend span {
+.subHeroBox .recommend span {
   padding: 0.313rem;
   margin: 0.313rem;
   font-weight: 600;
   color: #fff;
 }
-.subpage .subHeroBox .recommend span i {
+.subHeroBox .recommend span i {
   color: #ffdd1f;
   margin-right: 0.375rem;
 }
-.subpage .subHeroBox .recommend ul {
+.subHeroBox .recommend ul {
   display: flex;
 }
-.subpage .subHeroBox .recommend ul li {
+.subHeroBox .recommend ul li {
   padding: 0.313rem;
   margin: 0.313rem;
 }
-.subpage .subHeroBox .recommend ul li a {
+.subHeroBox .recommend ul li a {
   display: block;
   color: #fff;
   transition: all 0.3s;
 }
-.subpage .subHeroBox .recommend ul li:hover a {
+.subHeroBox .recommend ul li:hover a {
   color: #128edc;
   font-weight: 700;
 }
+
+/* subpage subpage-inner 설정 */
 .subpage .subpage-inner {
   width: 100%;
   display: flex;
   margin-top: 5rem;
-  /* side-nav-bar 설정 */
 }
-.subpage .subpage-inner .side-nav-bar {
+
+/* subpage side-nav-bar 설정 */
+.subpage .side-nav-bar {
   min-width: 17.5rem;
   height: 100%;
   margin-left: 2.5rem;
   position: relative;
-  /* depth1TitleBox 설정 */
-  /* depth2TitleBox 설정 */
 }
-.subpage .subpage-inner .side-nav-bar .depth1TitleBox {
+
+/* subpage side-nav-bar 1뎁스 설정 */
+.subpage .side-nav-bar .depth1TitleBox {
   width: 17.5rem;
   height: 11.375rem;
   background-color: #004EA2;
   border-radius: 3.5rem 3.5rem 0.625rem 0.625rem;
 }
-.subpage .subpage-inner .side-nav-bar .depth1TitleBox h2 {
+.subpage .side-nav-bar .depth1TitleBox h2 {
   color: #fff;
   font-size: 1.75rem;
   font-family: "S-CoreDream-5Medium", sans-serif;
   text-align: center;
   padding-top: 3.313rem;
 }
-.subpage .subpage-inner .side-nav-bar .depth2TitleBox {
+
+/* subpage side-nav-bar 2뎁스 설정 */
+.subpage .side-nav-bar .depth2TitleBox {
   width: 15.5rem;
   background-color: #fff;
   border-radius: 0.625rem;
@@ -1861,19 +1922,20 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   left: 1rem;
   top: 7.125rem;
 }
-.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner {
+.subpage .side-nav-bar .depth2TitleBox .depth-2-Box-inner {
   display: none;
-  /* (js 파일 참고) 하단에 보이지 않는 블럭을 추가해 하단 정보가 가려지는 것을 방지*/
 }
-.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner.active {
+.subpage .side-nav-bar .depth2TitleBox .depth-2-Box-inner.active {
   display: block;
 }
-.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li {
+
+/* subpage side-nav-bar 2뎁스 title 설정 */
+.subpage .side-nav-bar .depth-2-title > li {
   color: #004EA2;
   font-size: 1.063rem;
   font-weight: 600;
 }
-.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li strong {
+.subpage .side-nav-bar .depth-2-title > li strong {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1882,7 +1944,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   cursor: pointer;
   position: relative;
 }
-.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li strong::after {
+.subpage .side-nav-bar .depth-2-title > li strong::after {
   content: "";
   display: block;
   width: 0;
@@ -1894,10 +1956,10 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   left: -0.4rem;
   transition: all 0.3s ease;
 }
-.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li strong.on::after {
+.subpage .side-nav-bar .depth-2-title > li strong.on::after {
   width: 105%;
 }
-.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li strong i {
+.subpage .side-nav-bar .depth-2-title > li strong i {
   display: block;
   background-image: url(imgs/side-menu-icons.png);
   background-size: cover;
@@ -1905,20 +1967,22 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   height: 1.625rem;
   margin-top: 0rem;
 }
-.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li strong i.on {
+.subpage .side-nav-bar .depth-2-title > li strong i.on {
   background-position: -1.625rem 0;
 }
-.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box {
+
+/* subpage side-nav-bar 3뎁스 설정 */
+.subpage .side-nav-bar .depth-3-Box {
   height: 0;
   overflow: hidden;
   transition: all 1s;
 }
-.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box li {
+.subpage .side-nav-bar .depth-3-Box li {
   margin: 0.5rem 0;
   display: flex;
   align-items: center;
 }
-.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box li::before {
+.subpage .side-nav-bar .depth-3-Box li::before {
   content: "";
   display: block;
   width: 0.125rem;
@@ -1926,7 +1990,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   background-color: #777;
   border-radius: 50%;
 }
-.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box li a {
+.subpage .side-nav-bar .depth-3-Box li a {
   color: #777;
   font-size: 1rem;
   font-weight: 400;
@@ -1935,71 +1999,65 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   cursor: pointer;
   width: 100%;
 }
-.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box li a:hover {
+.subpage .side-nav-bar .depth-3-Box li a:hover {
   font-weight: 500;
 }
-.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box li.checked a {
+.subpage .side-nav-bar .depth-3-Box li.checked a {
   color: #4478b0;
   font-weight: 600;
 }
-.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner ul.depth-2-title > li ul.depth-3-Box.open {
+.subpage .side-nav-bar .depth-3-Box.open {
   height: auto;
 }
-.subpage .subpage-inner .side-nav-bar .depth2TitleBox .depth-2-Box-inner .block {
-  width: 100%;
-  height: 16rem;
-}
-.subpage .subpage-inner .sub-contentsBox {
+
+/* subpage sub-contentsBox 설정 */
+.subpage .sub-contentsBox {
   width: 100%;
   height: 100%;
   margin-left: 3.125rem;
   margin-right: 2.5rem;
   padding-top: 1.25rem;
-  /* article 공통 우선 설정 */
-  /* 국립공원사진전 설정 */
-  /* 공지사항 설정 */
 }
-.subpage .subpage-inner .sub-contentsBox > article {
-  /* titleBox 설정 */
-  /* 의견박스 설정 */
-}
-.subpage .subpage-inner .sub-contentsBox > article .titleBox {
+
+/* subpage article 공통 우선 설정 */
+/* subpage article 공통 titleBox 설정 */
+.subpage article .titleBox {
   border-bottom: 0.125rem dashed #DDDDDD;
   margin-bottom: 2.5rem;
 }
-.subpage .subpage-inner .sub-contentsBox > article .titleBox h3 {
+.subpage article .titleBox h3 {
   font-family: "S-CoreDream-5Medium", sans-serif;
   color: #004EA2;
   font-size: 2.5rem;
   margin-bottom: 1.25rem;
 }
-.subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox {
+.subpage article .titleBox .rightBox {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   margin-bottom: 1.25rem;
-  /* breadcrumb 설정 */
-  /* iconBox 설정 */
 }
-.subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb {
+
+/* subpage article 공통 titleBox breadcrumb 설정 */
+.subpage article .titleBox .breadcrumb {
   display: flex;
   flex-wrap: wrap;
   margin-right: 0.625rem;
 }
-.subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li {
+.subpage article .titleBox .breadcrumb li {
   margin: 0 0.813rem;
   margin-right: 0;
   display: flex;
   align-items: center;
 }
-.subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li a {
+.subpage article .titleBox .breadcrumb li a {
   display: block;
   color: #B6B6B6;
   font-size: 1rem;
   font-weight: 600;
   white-space: nowrap;
 }
-.subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li a i {
+.subpage article .titleBox .breadcrumb li a i {
   display: block;
   background-image: url(imgs/sub-breadcrumb-icons.png);
   background-position: 0 0;
@@ -2007,16 +2065,16 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   width: 48px; /* px 고정값 */
   height: 48px; /* px 고정값 */
 }
-.subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li.now a {
+.subpage article .titleBox .breadcrumb li.now a {
   color: #004EA2;
   font-weight: 700;
 }
-.subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li.now::after {
+.subpage article .titleBox .breadcrumb li.now::after {
   content: "";
   width: 0;
   height: 0;
 }
-.subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li::after {
+.subpage article .titleBox .breadcrumb li::after {
   content: "";
   background-image: url(imgs/sub-breadcrumb-arrow.png);
   background-repeat: no-repeat;
@@ -2025,10 +2083,12 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   color: #ddd;
   margin-left: 0.813rem;
 }
-.subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox {
+
+/* subpage article 공통 titleBox iconBox 설정 */
+.subpage article .titleBox .iconBox {
   display: flex;
 }
-.subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span {
+.subpage article .titleBox .iconBox span {
   width: 3rem;
   height: 3rem;
   background-color: #F5F5F5;
@@ -2036,55 +2096,57 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   margin: 0 0.313rem;
   cursor: pointer;
 }
-.subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span i {
+.subpage article .titleBox .iconBox span i {
   display: block;
   background-image: url(imgs/sub-breadcrumb-icons.png);
   background-size: cover;
   width: 48px; /* px 고정값 */
   height: 48px; /* px 고정값 */
 }
-.subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span.share i {
+.subpage article .titleBox .iconBox span.share i {
   background-position: -48px 0; /* px 고정값 */
 }
-.subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span.copy i {
+.subpage article .titleBox .iconBox span.copy i {
   background-position: -95px 0; /* px 고정값 */
 }
-.subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span.print i {
+.subpage article .titleBox .iconBox span.print i {
   background-position: -144px 0; /* px 고정값 */
 }
-.subpage .subpage-inner .sub-contentsBox > article .opinionBox {
+
+/* subpage article 공통 의견박스 설정 */
+.subpage article .opinionBox {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
   background-color: #F5F7FB;
   border-radius: 0.625rem;
   padding: 2.625rem;
 }
-.subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox {
+.subpage article .opinionBox form .topBox {
   border: none;
   min-width: 0;
 }
-.subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox legend {
+.subpage article .opinionBox form .topBox legend {
   display: none;
 }
-.subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox p {
+.subpage article .opinionBox form .topBox p {
   color: #5A5A5A;
   font-weight: 600;
   font-size: 1.063rem;
   margin-bottom: 2.25rem;
   line-height: 1.5;
 }
-.subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox p span {
+.subpage article .opinionBox form .topBox p span {
   white-space: nowrap;
 }
-.subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox {
+.subpage article .opinionBox form .topBox .radioBox {
   display: flex;
   align-items: center;
 }
-.subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox div {
+.subpage article .opinionBox form .topBox .radioBox div {
   display: flex;
   align-items: center;
 }
-.subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox div input {
+.subpage article .opinionBox form .topBox .radioBox div input {
   margin-left: 1.25rem;
   margin-right: 0.5rem;
   -moz-appearance: none;
@@ -2097,22 +2159,22 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   background-color: #fff;
   cursor: pointer;
 }
-.subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox div input:checked {
-  background: #004EA2; /* 배경색 유지 */
-  box-shadow: inset 0 0 0 0.313rem #fff; /* 내부 원 크기와 색상 */
+.subpage article .opinionBox form .topBox .radioBox div input:checked {
+  background: #004EA2;
+  box-shadow: inset 0 0 0 0.313rem #fff;
 }
-.subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox div label {
+.subpage article .opinionBox form .topBox .radioBox div label {
   color: #5A5A5A;
   font-weight: 600;
   font-size: 1.063rem;
   cursor: pointer;
 }
-.subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox {
+.subpage article .opinionBox form .bottomBox {
   display: flex;
   justify-content: space-between;
   margin-top: 1.5rem;
 }
-.subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox .inputBox {
+.subpage article .opinionBox form .bottomBox .inputBox {
   width: 100%;
   background-color: #fff;
   border: 0.063rem solid #DDDDDD;
@@ -2120,7 +2182,7 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   padding: 0.875rem;
   margin-right: 1rem;
 }
-.subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox .inputBox input {
+.subpage article .opinionBox form .bottomBox .inputBox input {
   width: 100%;
   border: none;
   background: none;
@@ -2133,19 +2195,19 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-size: 1rem;
 }
-.subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox .inputBox input::-moz-placeholder {
+.subpage article .opinionBox form .bottomBox .inputBox input::-moz-placeholder {
   color: #777;
   font-weight: 600;
   font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-size: 1rem;
 }
-.subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox .inputBox input::placeholder {
+.subpage article .opinionBox form .bottomBox .inputBox input::placeholder {
   color: #777;
   font-weight: 600;
   font-family: "Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-size: 1rem;
 }
-.subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox button {
+.subpage article .opinionBox form .bottomBox button {
   border: 0.063rem solid #004EA2;
   width: 8.375rem;
   background-color: #004EA2;
@@ -2157,57 +2219,52 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   cursor: pointer;
   transition: all 0.3s;
 }
-.subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox button:hover {
+.subpage article .opinionBox form .bottomBox button:hover {
   background-color: #fff;
   color: #004EA2;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery {
-  /* mainContents 설정 */
-}
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents {
-  /* selectBox 설정 */
-  /* middleBox 설정 */
-  /* subpage-gallery-box 설정 */
-}
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox {
+
+/* subpage 국립공원사진전 설정 */
+/* subpage 국립공원사진전 selectBox 설정 */
+.subpage .subpage-gallery .selectBox {
   padding: 1.875rem;
   padding-bottom: 1.25rem;
   margin-bottom: 1.25rem;
   border: 0.063rem solid #D7D7D7;
   border-radius: 0.625rem;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox h3 {
+.subpage .subpage-gallery .selectBox h3 {
   font-size: 1.25rem;
   color: #004EA2;
   margin-bottom: 1.25rem;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox ul {
+.subpage .subpage-gallery .selectBox ul {
   display: flex;
   flex-wrap: wrap;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox ul li {
+.subpage .subpage-gallery .selectBox ul li {
   font-size: 1.063rem;
   color: #B6B6B6;
   padding-left: 0.938rem;
   margin-bottom: 1.25rem;
   cursor: pointer;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox ul li:last-child::after {
+.subpage .subpage-gallery .selectBox ul li:last-child::after {
   content: "";
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox ul li::after {
+.subpage .subpage-gallery .selectBox ul li::after {
   content: "|";
   color: #ddd;
   margin-left: 0.938rem;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox ul li.active {
+.subpage .subpage-gallery .selectBox ul li.active {
   font-weight: 600;
   color: #5A5A5A;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox ul li:hover {
+.subpage .subpage-gallery .selectBox ul li:hover {
   color: #5a5a5a;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox .btn {
+.subpage .subpage-gallery .selectBox .btn {
   background-color: #f1f6ff;
   padding: 0.5rem 1.5rem;
   text-align: center;
@@ -2219,19 +2276,21 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   margin-top: 1.25rem;
   display: none;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox.park {
+.subpage .subpage-gallery .selectBox.park {
   margin-bottom: 2.188rem;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox {
+
+/* subpage 국립공원사진전 middleBox 설정 */
+.subpage .subpage-gallery .middleBox {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .optionBox {
+.subpage .subpage-gallery .middleBox .optionBox {
   display: flex;
   orphans: 1;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .optionBox li {
+.subpage .subpage-gallery .middleBox .optionBox li {
   width: 8.063rem;
   height: 2.563rem;
   border-radius: 0.625rem;
@@ -2244,13 +2303,13 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   margin-right: 0.625rem;
   cursor: pointer;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .optionBox li i {
+.subpage .subpage-gallery .middleBox .optionBox li i {
   margin-right: 0.625rem;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox {
+.subpage .subpage-gallery .middleBox .searchBox {
   order: 2;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox .search-bar {
+.subpage .subpage-gallery .middleBox .searchBox .search-bar {
   background-color: #fff;
   border: 0.125rem solid #004EA2;
   border-radius: 3.125rem;
@@ -2261,13 +2320,13 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   display: flex;
   align-items: center;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox .search-bar input {
+.subpage .subpage-gallery .middleBox .searchBox .search-bar input {
   all: unset;
   color: #0d0d0d;
   width: 80%;
   margin-left: 1.875rem;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox .search-bar button {
+.subpage .subpage-gallery .middleBox .searchBox .search-bar button {
   all: unset;
   display: flex;
   justify-content: center;
@@ -2284,28 +2343,30 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   height: 2.563rem;
   transition: all 0.3s;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox .search-bar button:focus {
+.subpage .subpage-gallery .middleBox .searchBox .search-bar button:focus {
   outline: none;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox .search-bar button:hover {
+.subpage .subpage-gallery .middleBox .searchBox .search-bar button:hover {
   background-color: #fff;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox .search-bar button:hover i {
+.subpage .subpage-gallery .middleBox .searchBox .search-bar button:hover i {
   color: #004EA2;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox .search-bar button i {
+.subpage .subpage-gallery .middleBox .searchBox .search-bar button i {
   color: #fff;
   transition: all 0.3s;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box {
+
+/* subpage 국립공원사진전 subpage-gallery-box 설정 */
+.subpage .subpage-gallery .subpage-gallery-box {
   margin-top: 2.188rem;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap {
+.subpage .subpage-gallery .subpage-gallery-box .cardWrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li {
+.subpage .subpage-gallery .subpage-gallery-box .cardWrap > li {
   border: 0.063rem solid rgba(0, 78, 162, 0.5);
   border-radius: 1rem;
   width: 31.6666666667%;
@@ -2313,20 +2374,20 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   margin-bottom: 2.5rem;
   transition: all 0.3s;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a {
+.subpage .subpage-gallery .subpage-gallery-box .cardWrap > li a {
   display: block;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a img {
+.subpage .subpage-gallery .subpage-gallery-box .cardWrap > li a img {
   width: 100%;
   margin-bottom: 1.375rem;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .txtBox p {
+.subpage .subpage-gallery .subpage-gallery-box .cardWrap > li a .txtBoxWrap .txtBox p {
   color: #777;
   font-size: 0.875rem;
   font-weight: 500;
   margin-bottom: 0.75rem;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .txtBox h4 {
+.subpage .subpage-gallery .subpage-gallery-box .cardWrap > li a .txtBoxWrap .txtBox h4 {
   color: #004EA2;
   font-size: 1rem;
   font-weight: 600;
@@ -2336,32 +2397,31 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   -webkit-line-clamp: 1;
   overflow: hidden;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox {
+.subpage .subpage-gallery .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox {
   display: flex;
   flex-direction: column;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox span {
+.subpage .subpage-gallery .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox span {
   font-size: 0.875rem;
   color: #777;
   margin-right: 0.625rem;
   margin-bottom: 0.313rem;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox span i {
+.subpage .subpage-gallery .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox span i {
   width: 1rem;
   text-align: center;
   color: #004EA2;
   margin-right: 0.5rem;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li:hover {
+.subpage .subpage-gallery .subpage-gallery-box .cardWrap > li:hover {
   transform: translateY(-0.625rem);
   box-shadow: 0 0.125rem 0.438rem rgba(0, 78, 162, 0.3);
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox {
+.subpage .subpage-gallery .subpage-gallery-box .paginationBox {
   display: flex;
   justify-content: center;
-  /* 페이지 버튼 mixin 설정*/
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox > span {
+.subpage .subpage-gallery .subpage-gallery-box .paginationBox > span {
   width: 2.125rem;
   height: 2.125rem;
   display: flex;
@@ -2374,19 +2434,19 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   cursor: pointer;
   transition: all 0.3s;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox > span:hover {
+.subpage .subpage-gallery .subpage-gallery-box .paginationBox > span:hover {
   background-color: #004EA2;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox > span:hover i {
+.subpage .subpage-gallery .subpage-gallery-box .paginationBox > span:hover i {
   color: #fff;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .prev {
+.subpage .subpage-gallery .subpage-gallery-box .paginationBox .prev {
   margin-right: 1.25rem;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox {
+.subpage .subpage-gallery .subpage-gallery-box .paginationBox .indexBox {
   display: flex;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li {
+.subpage .subpage-gallery .subpage-gallery-box .paginationBox .indexBox li {
   width: 2.125rem;
   height: 2.125rem;
   display: flex;
@@ -2399,22 +2459,16 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   margin: 0 0.25rem;
   cursor: pointer;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li.on {
+.subpage .subpage-gallery .subpage-gallery-box .paginationBox .indexBox li.on {
   background-color: #004EA2;
   color: #fff;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .next {
+.subpage .subpage-gallery .subpage-gallery-box .paginationBox .next {
   margin-left: 1.25rem;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement {
-  /* mainContents 설정 */
-}
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents {
-  /* topBox 설정 */
-  /* detailBox 설정 */
-  /* bottomBox 설정 */
-}
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox h4 {
+/* subpage 공지사항 설정 */
+/* subpage 공지사항 topBox 설정 */
+.subpage .subpage-announcement .topBox h4 {
   font-size: 1.5rem;
   background-color: #F5F7FB;
   border-top: 0.188rem solid #004EA2;
@@ -2422,31 +2476,31 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   padding: 1.625rem 1.875rem;
   line-height: 1.5;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox {
+.subpage .subpage-announcement .topBox .writeInfoBox {
   padding: 1.563rem 0;
   display: flex;
   justify-content: flex-end;
   border-bottom: 0.063rem solid #DDDDDD;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li {
+.subpage .subpage-announcement .topBox .writeInfoBox li {
   margin-left: 3.125rem;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li b {
+.subpage .subpage-announcement .topBox .writeInfoBox li b {
   font-size: 1rem;
   color: #5a5a5a;
   font-weight: 500;
   margin-right: 1rem;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li span {
+.subpage .subpage-announcement .topBox .writeInfoBox li span {
   font-size: 1rem;
   color: #b6b6b6;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .fileBox {
+.subpage .subpage-announcement .topBox .fileBox {
   border-bottom: 0.063rem solid #DDDDDD;
   padding: 1.25rem 0;
   display: flex;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .fileBox p {
+.subpage .subpage-announcement .topBox .fileBox p {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2454,14 +2508,14 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   color: #5a5a5a;
   font-weight: 600;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .fileBox .fileList li {
+.subpage .subpage-announcement .topBox .fileBox .fileList li {
   margin: 0.188rem 0;
   color: #777;
   cursor: pointer;
   display: flex;
   align-items: center;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .fileBox .fileList li::before {
+.subpage .subpage-announcement .topBox .fileBox .fileList li::before {
   content: "";
   display: inline-block;
   width: 32px; /* px 고정값 */
@@ -2471,18 +2525,22 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   background-position: -64px 0; /* px 고정값 */
   background-size: cover;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .detailBox {
+
+/* subpage 공지사항 detailBox 설정 */
+.subpage .subpage-announcement .detailBox {
   padding: 1.875rem 2.5rem;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .detailBox img {
+.subpage .subpage-announcement .detailBox img {
   width: 100%;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox {
+
+/* subpage 공지사항 listBox 설정 */
+.subpage .subpage-announcement .listBox {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .listBtn {
+.subpage .subpage-announcement .listBox .listBtn {
   display: inline-block;
   border-radius: 0.375rem;
   font-size: 1.063rem;
@@ -2493,28 +2551,28 @@ header .side-menu .bottomBox .depth-2-Box .depth-2-Box-inner .block {
   margin-bottom: 1.25rem;
   cursor: pointer;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .listBtn:hover {
+.subpage .subpage-announcement .listBox .listBtn:hover {
   background-color: #f1f6ff;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .prevBox {
+.subpage .subpage-announcement .listBox .prevBox {
   width: 100%;
   padding: 1.563rem;
   border-top: 0.063rem solid #DDDDDD;
   border-bottom: 0.063rem solid #DDDDDD;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .prevBox b {
+.subpage .subpage-announcement .listBox .prevBox b {
   color: #5a5a5a;
   font-weight: 600;
   font-size: 1rem;
   margin-right: 0.875rem;
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .prevBox i {
+.subpage .subpage-announcement .listBox .prevBox i {
   color: #004EA2;
   font-size: 1.375rem;
   margin-right: 1.375rem;
   transform: translateY(-0.175rem);
 }
-.subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .prevBox span {
+.subpage .subpage-announcement .listBox .prevBox span {
   color: #777777;
   font-size: 1rem;
   cursor: pointer;
@@ -2585,7 +2643,7 @@ footer .footer-inner .txtBox .info p span {
   margin-right: 1.5rem;
 }
 
-/* dimmed 처리 설정 */
+/* .dimmed 처리 설정 */
 .dimmed-bg1 {
   width: 100vw;
   height: 100vh;
@@ -2620,141 +2678,127 @@ footer .footer-inner .txtBox .info p span {
 
 /* 와이드 데스크탑 미디어쿼리 설정 */
 @media (min-width: 1400px) {
-  header {
-    /* util 설정 */
-    /* gnb 설정 */
-    /* side-menu 설정 */
-  }
+  /* util 설정 */
   header .util .util-inner {
     max-width: 87.5rem;
     margin: 0 auto;
   }
+  /* gnb 설정 */
   header .gnb .gnb-inner {
     max-width: 87.5rem;
     margin: 0 auto;
   }
+  /* side-menu 설정 */
   header .side-menu {
     display: none;
   }
-  /* main 미디어쿼리 */
-  .main {
-    /* layout 미디어쿼리 */
-  }
+  /* layout 설정 */
   .main .layout {
     max-width: 87.5rem;
     margin: 0 auto;
     margin-top: 4.375rem;
-    /* group-bottom 미디어쿼리 */
   }
-  .main .layout .group-left {
-    /* 새로운 소식 설정*/
-  }
-  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li {
+  /* main 새로운 소식 설정*/
+  .main .newsBox .newsBox-inner .tabMenu li {
     padding: 0.313rem 1.013rem;
   }
-  .main .layout .group-left .wrapBox2 {
-    /* 홍보이미지 미디어쿼리 */
-    /* 웹툰 미디어쿼리 */
+  /* main wrapBox1 설정*/
+  .main .group-left .wrapBox1 {
+    height: 21.6rem;
   }
-  .main .layout .group-left .wrapBox2 .promoBox .swiper-slide img {
+  /* main 홍보이미지 설정 */
+  .main .promoBox .swiper-slide img {
     width: 88%;
   }
-  .main .layout .group-left .wrapBox2 .promoBox .swiper-pagination {
+  .main .promoBox .swiper-pagination {
     bottom: 0;
   }
-  .main .layout .group-left .wrapBox2 .webtoonBox .txtBox h4 {
+  /* main 웹툰 설정 */
+  .main .webtoonBox .txtBox h4 {
     left: 1.4rem;
   }
-  .main .layout .group-left .wrapBox2 .webtoonBox .txtBox p {
+  .main .webtoonBox .txtBox p {
     font-size: 1.125rem;
     left: 1.4rem;
     display: block;
   }
-  .main .layout .group-right {
-    /* 국립공원 사진전 미디어쿼리 */
-  }
-  .main .layout .group-right .galleryBox {
+  /* main 국립공원 사진전 설정 */
+  .main .galleryBox {
     height: 14.5rem;
   }
-  .main .layout .group-bottom .moreBox .card > li {
+  /* main 국립공원 알아보기 설정 */
+  .moreBox .card > li {
     width: 18.25rem;
     padding: 2.5rem;
   }
-  /* subpage 미디어쿼리 */
-  .subpage {
-    /* subHeroBox 미디어쿼리 */
-  }
+  /* subpage subHeroBox 설정 */
   .subpage .subHeroBox .search .search-bar {
     width: 35%;
   }
+  /* subpage subpage-inner 설정 */
   .subpage .subpage-inner {
     max-width: 87.5rem;
     margin: 0 auto;
     margin-top: 5rem;
   }
-  /* dimmed 처리 미디어쿼리 */
+  /* dimmed 처리 설정 */
   .dimmed-bg2 {
     display: none;
   }
 }
-/* 1201px ~ 1399px 구간 미디어쿼리*/
+/* 1201px ~ 1399px 구간 설정*/
 @media (min-width: 1201px) and (max-width: 1399px) {
-  /* header 미디어쿼리 */
-  header {
-    /* side-menu 미디어쿼리 */
-  }
+  /* side-menu 설정 */
   header .side-menu {
     display: none;
   }
-  /* main 미디어쿼리 */
-  .main {
-    /* layout 미디어쿼리 */
+  /* main wrapBox1 설정*/
+  .main .group-left .wrapBox1 {
+    height: 21.6rem;
   }
-  .main .layout .group-left .wrapBox2 {
+  /* main wrapBox2 설정*/
+  .main .group-left .wrapBox2 {
     flex-direction: column;
     justify-content: space-between;
     height: 32.25rem;
-    /* 홍보이미지 미디어쿼리 */
-    /* 웹툰 미디어쿼리 */
   }
-  .main .layout .group-left .wrapBox2 .promoBox {
+  /* main 홍보이미지 설정 */
+  .main .promoBox {
     width: 100%;
     height: 62%;
     margin-right: 0;
   }
-  .main .layout .group-left .wrapBox2 .promoBox .swiper {
+  .main .promoBox .swiper {
     display: none;
   }
-  .main .layout .group-left .wrapBox2 .promoBox .imgBox {
+  .main .promoBox .imgBox {
     display: flex;
     justify-content: center;
   }
-  .main .layout .group-left .wrapBox2 .webtoonBox {
+  /* main 웹툰 설정 */
+  .main .webtoonBox {
     width: 100%;
     height: 34%;
     margin-left: 0;
   }
-  .main .layout .group-left .wrapBox2 .webtoonBox img {
+  .main .webtoonBox img {
     position: absolute;
     width: 105%;
     top: -20rem;
     left: -1rem;
   }
-  .main .layout .group-left .wrapBox2 .webtoonBox .txtBox {
+  .main .webtoonBox .txtBox {
     height: 40%;
   }
-  .main .layout .group-left .wrapBox2 .webtoonBox .txtBox h4 {
+  .main .webtoonBox .txtBox h4 {
     top: 1rem;
   }
-  .main .layout .group-left .wrapBox2 .webtoonBox .txtBox p {
+  .main .webtoonBox .txtBox p {
     display: block;
     top: 2rem;
     left: 6rem;
   }
-  /* subpage 미디어쿼리 */
-  .subpage {
-    /* subHeroBox 미디어쿼리 */
-  }
+  /* subpage subHeroBox 설정 */
   .subpage .subHeroBox .search .search-bar {
     width: 40%;
   }
@@ -2765,68 +2809,62 @@ footer .footer-inner .txtBox .info p span {
 }
 /* 769px ~ 1200px 태블릿 구간 미디어쿼리 */
 @media (min-width: 769px) and (max-width: 1200px) {
-  /* header 미디어쿼리 */
-  header .gnb .gnb-inner ul.depth1 {
+  /* gnb 설정 */
+  .gnb .gnb-inner ul.depth1 {
     display: none;
   }
-  header .gnb .gnb-inner .menu-btn {
+  .gnb .gnb-inner .menu-btn {
     display: flex;
   }
-  /* main 미디어쿼리 */
+  /* main 설정 */
   .main {
     height: 248rem;
-    /* hero 미디어쿼리 */
-    /* 국립공원 알아보기 배경 하늘 미디어쿼리*/
-    /* layout 미디어쿼리 */
   }
-  .main .hero .txtBox .search .search-bar {
+  /* hero 검색 설정 */
+  .main .hero .search .search-bar {
     width: 80%;
   }
-  .main .hero .txtBox .recommend {
+  /* hero 추천검색어 설정 */
+  .main .hero .recommend {
     flex-direction: column;
   }
-  .main .hero .txtBox .recommend span {
+  .main .hero .recommend span {
     text-align: center;
   }
-  .main .hero .txtBox .recommend ul {
+  .main .hero .recommend ul {
     flex-direction: column;
   }
-  .main .hero .txtBox .recommend ul li {
+  .main .hero .recommend ul li {
     text-align: center;
     margin: 0.15rem 0.313rem;
   }
+  /* 국립공원 알아보기 배경 하늘 설정*/
   .main .more-bg-sky {
     height: 23.75rem;
     bottom: -5rem;
   }
+  /* layout 설정 */
   .main .layout {
     max-width: 52rem;
     margin: 0 auto;
     margin-top: 4.375rem;
-    /* group-left 미디어쿼리*/
-    /* group-right 미디어쿼리 */
-    /* group-bottom 미디어쿼리 */
   }
-  .main .layout .group-left {
-    /* 자주 찾는 서비스 미디어쿼리*/
-    /* 새로운 소식 미디어쿼리*/
-    /* wrapBox1 미디어쿼리*/
-    /* wrapBox2 미디어쿼리 */
-  }
-  .main .layout .group-left .serviceBox {
+  /* main 자주 찾는 서비스 설정*/
+  .main .serviceBox {
     height: 40rem;
   }
-  .main .layout .group-left .serviceBox ul li {
+  .main .serviceBox ul li {
     width: 44%;
     margin: 1.5%;
   }
-  .main .layout .group-left .newsBox {
+  /* main 새로운 소식 설정*/
+  .main .newsBox {
     height: 22rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner {
+  .main .newsBox .newsBox-inner {
     position: relative;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .tabMenu {
+  .main .newsBox .newsBox-inner .tabMenu {
     width: 100%;
     display: grid;
     grid-template-columns: 7rem 7rem;
@@ -2836,74 +2874,76 @@ footer .footer-inner .txtBox .info p span {
     left: 1.5rem;
     margin-top: 0;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li {
+  .main .newsBox .newsBox-inner .tabMenu li {
     width: 6.5rem;
     margin: 0 0.3rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li:nth-child(5) {
+  .main .newsBox .newsBox-inner .tabMenu li:nth-child(5) {
     position: absolute;
     right: -2rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li a {
+  .main .newsBox .newsBox-inner .tabMenu li a {
     font-size: 1rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .txtBox {
+  .main .newsBox .newsBox-inner .txtBox {
     top: 7rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .txtBox li {
+  .main .newsBox .newsBox-inner .txtBox li {
     display: none;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .txtBox li a {
+  .main .newsBox .newsBox-inner .txtBox li a {
     width: 90%;
     font-size: 0.875rem;
     margin-bottom: 0.4rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .txtBox li:nth-child(1) {
+  .main .newsBox .newsBox-inner .txtBox li:nth-child(1) {
     display: block;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .txtBox li:nth-child(2) {
+  .main .newsBox .newsBox-inner .txtBox li:nth-child(2) {
     display: block;
   }
-  .main .layout .group-left .wrapBox1 {
+  /* main wrapBox1 설정*/
+  .main .wrapBox1 {
     height: 30rem;
-    /* snsBox 미디어쿼리*/
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top {
+  /* main wrapBox1-top 설정*/
+  .main .group-left .wrapBox1-top {
     height: 42%;
-    /* 자원봉사 미디어쿼리*/
-    /* 실시간영상 미디어쿼리*/
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox {
+  /* main 자원봉사 설정*/
+  .main .volunteerBox {
     padding-left: 0;
     flex-direction: column;
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox img.txt {
+  .main .volunteerBox img.txt {
     order: 2;
     margin-top: 0.6rem;
     width: 4rem;
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox img.icon {
+  .main .volunteerBox img.icon {
     order: 1;
     margin-top: -0.4rem;
     width: 4rem;
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox {
+  /* main 실시간영상 설정*/
+  .main .liveBox {
     flex-direction: column;
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox img.txt {
+  .main .liveBox img.txt {
     order: 2;
     margin-top: 1.2rem;
     width: 6.4rem;
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox img.icon {
+  .main .liveBox img.icon {
     order: 1;
     width: 26%;
     width: 3.2rem;
   }
-  .main .layout .group-left .wrapBox1 .snsBox {
+  /* mainsnsBox 설정*/
+  .main .snsBox {
     height: 58%;
   }
-  .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul {
+  .main .snsBox .snsBox-inner ul {
     width: 16rem;
     height: 60%;
     margin-top: 0.7rem;
@@ -2911,67 +2951,63 @@ footer .footer-inner .txtBox .info p span {
     justify-content: center;
     flex-wrap: wrap;
   }
-  .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li {
+  .main .snsBox .snsBox-inner ul li {
     margin: 0.5rem 0.5rem;
   }
-  .main .layout .group-left .wrapBox2 {
+  /* main wrapBox2 설정 */
+  .main .wrapBox2 {
     flex-direction: column;
     height: 57rem;
-    /* 홍보이미지 미디어쿼리 */
-    /* 웹툰 미디어쿼리 */
   }
-  .main .layout .group-left .wrapBox2 .promoBox {
+  /* main 홍보이미지 설정 */
+  .main .promoBox {
     width: 100%;
     height: 50%;
     margin-bottom: 2rem;
   }
-  .main .layout .group-left .wrapBox2 .promoBox .swiper {
+  .main .promoBox .swiper {
     height: 22.5rem;
   }
-  .main .layout .group-left .wrapBox2 .promoBox .swiper-slide img {
+  .main .promoBox .swiper-slide img {
     width: 95%;
   }
-  .main .layout .group-left .wrapBox2 .promoBox .swiper-pagination {
+  .main .promoBox .swiper-pagination {
     bottom: 0.4rem;
   }
-  .main .layout .group-left .wrapBox2 .webtoonBox {
+  /* main 웹툰 설정 */
+  .main .webtoonBox {
     width: 100%;
     height: 50%;
     margin-left: 0;
   }
-  .main .layout .group-left .wrapBox2 .webtoonBox .txtBox h4 {
+  .main .webtoonBox .txtBox h4 {
     left: 1.4rem;
   }
-  .main .layout .group-left .wrapBox2 .webtoonBox .txtBox p {
+  .main .webtoonBox .txtBox p {
     font-size: 1.125rem;
     display: block;
     left: 1.4rem;
   }
-  .main .layout .group-right {
-    /* 실시간 탐방통제정보 미디어쿼리 */
-    /* wrapBox3 미디어쿼리 */
-    /* 국립공원 사진전 미디어쿼리 */
-    /* 자주하는 질문 미디어쿼리 */
-  }
-  .main .layout .group-right .controlBox {
+  /* main 실시간 탐방통제정보 설정 */
+  .main .controlBox {
     padding: 1.625rem;
   }
-  .main .layout .group-right .controlBox p {
+  .main .controlBox p {
     font-size: 1.063rem;
   }
-  .main .layout .group-right .controlBox .legend li {
+  .main .controlBox .legend li {
     width: 31%;
   }
-  .main .layout .group-right .controlBox .location li {
+  .main .controlBox .location li {
     width: calc((100% - 2.4rem) / 3);
   }
-  .main .layout .group-right .wrapBox3 {
+  /* main wrapBox3 설정 */
+  .main .wrapBox3 {
     height: 62rem;
     flex-direction: column;
-    /* 국립공원바로가기 미디어쿼리 */
-    /* 스마트 국립공원 미디어쿼리 */
   }
-  .main .layout .group-right .wrapBox3 .linkBox {
+  /* main 국립공원바로가기 설정 */
+  .main .linkBox {
     width: 100%;
     height: 48%;
     padding-right: 0;
@@ -2979,10 +3015,11 @@ footer .footer-inner .txtBox .info p span {
     flex-direction: column;
     align-items: center;
   }
-  .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner {
+  .main .linkBox .linkBox-inner {
     width: 18.25rem;
   }
-  .main .layout .group-right .wrapBox3 .smartBox {
+  /* main 스마트 국립공원 설정 */
+  .main .smartBox {
     width: 100%;
     height: 48%;
     display: flex;
@@ -2990,22 +3027,23 @@ footer .footer-inner .txtBox .info p span {
     align-items: center;
     padding-left: 0;
   }
-  .main .layout .group-right .wrapBox3 .smartBox .smartBox-inner {
+  .main .smartBox .smartBox-inner {
     width: 100%;
     height: 25.688rem;
   }
-  .main .layout .group-right .wrapBox3 .smartBox .smartBox-inner ul li {
+  .main .smartBox .smartBox-inner ul li {
     margin: 0.3rem auto;
   }
-  .main .layout .group-right .galleryBox {
+  /* main 국립공원 사진전 설정 */
+  .main .galleryBox {
     height: 15.5rem;
     position: relative;
   }
-  .main .layout .group-right .galleryBox img {
+  .main .galleryBox img {
     width: 100%;
     filter: brightness(0.7);
   }
-  .main .layout .group-right .galleryBox .txtBox {
+  .main .galleryBox .txtBox {
     padding-left: 0;
     width: 100%;
     height: 100%;
@@ -3017,104 +3055,99 @@ footer .footer-inner .txtBox .info p span {
     flex-direction: column;
     align-items: center;
   }
-  .main .layout .group-right .galleryBox .txtBox h4 {
+  .main .galleryBox .txtBox h4 {
     color: #fff;
     text-align: center;
   }
-  .main .layout .group-right .galleryBox .txtBox p {
+  .main .galleryBox .txtBox p {
     color: #fff;
   }
-  .main .layout .group-right .galleryBox .txtBox span {
+  .main .galleryBox .txtBox span {
     position: relative;
     margin-right: 0;
     margin-top: 2rem;
   }
-  .main .layout .group-right .galleryBox .txtBox span:hover {
+  .main .galleryBox .txtBox span:hover {
     background-color: #3F3F3F;
     border: 0.063rem solid #3f3f3f;
     color: #fff;
     font-weight: 400;
   }
-  .main .layout .group-right .galleryBox .txtBox span:active {
+  .main .galleryBox .txtBox span:active {
     background-color: #fefefe;
     border: 0.063rem solid #a1a1a1;
     color: #3f3f3f;
     font-weight: 600;
   }
-  .main .layout .group-right .questionBox .questionBox-inner .grid .questionTitle {
+  /* main 자주하는 질문 설정 */
+  .main .questionBox .questionBox-inner .grid .questionTitle {
     grid-template-columns: 20% 24% 1fr;
     padding: 0 0.4rem;
   }
-  .main .layout .group-right .questionBox .questionBox-inner .grid .questionTitle li:nth-child(1) {
+  .main .questionBox .questionBox-inner .grid .questionTitle li:nth-child(1) {
     display: none;
   }
-  .main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li .list {
+  .main .questionBox .questionBox-inner .grid .questionContents > li .list {
     grid-template-columns: 20% 24% 1fr;
     padding: 0 0.4rem;
   }
-  .main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li .list li:nth-child(1) {
+  .main .questionBox .questionBox-inner .grid .questionContents > li .list li:nth-child(1) {
     display: none;
   }
+  /* main group-bottom 설정 */
   .main .layout .group-bottom {
     height: 50.188rem;
     padding: 1.25rem;
   }
-  .main .layout .group-bottom .moreBox {
+  /* main 국립공원 알아보기 설정 */
+  .main .moreBox {
     height: 50.188rem;
   }
-  .main .layout .group-bottom .moreBox .object {
+  .main .moreBox .object {
     height: 23.75rem;
     bottom: 0;
   }
-  .main .layout .group-bottom .moreBox .card {
+  .main .moreBox .card {
     width: 100%;
     margin: 0 auto;
     flex-wrap: wrap;
     padding-left: 0;
   }
-  .main .layout .group-bottom .moreBox .card > li {
+  .main .moreBox .card > li {
     width: 48%;
   }
-  .main .layout .group-bottom .moreBox .card > li:nth-child(2) {
+  .main .moreBox .card > li:nth-child(2) {
     margin-top: 0;
     height: 18.875rem;
   }
-  .main .layout .group-bottom .moreBox .card > li:nth-child(3), .main .layout .group-bottom .moreBox .card > li:nth-child(4) {
+  .main .moreBox .card > li:nth-child(3), .main .moreBox .card > li:nth-child(4) {
     margin-top: 2rem;
     height: 15.875rem;
   }
-  /* subpage 미디어쿼리 */
-  .subpage {
-    /* subHeroBox 미디어쿼리 */
-    /* subpage-inner 미디어쿼리 */
-  }
-  .subpage .subHeroBox .search .search-bar {
+  /* subHeroBox 검색 설정 */
+  .subHeroBox .search .search-bar {
     width: 50%;
   }
+  /* subpage subpage-inner 설정 */
   .subpage .subpage-inner {
     margin-top: 1.25rem;
-    /* side-nav-bar 미디어쿼리 */
   }
-  .subpage .subpage-inner .side-nav-bar {
+  /* subpage side-nav-bar 설정 */
+  .subpage .side-nav-bar {
     display: none;
   }
-  .subpage .subpage-inner .sub-contentsBox {
+  /* subpage sub-contentsBox 설정 */
+  .subpage .sub-contentsBox {
     margin-left: 2.5rem;
-    /* 공지사항 미디어쿼리 */
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement {
-    /* mainContents 설정 */
-  }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents {
-    /* topBox 설정 */
-  }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li {
+  /* subpage 공지사항 topBox 설정 */
+  .subpage .subpage-announcement .topBox .writeInfoBox li {
     margin-left: 1.875rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li b {
+  .subpage .subpage-announcement .topBox .writeInfoBox li b {
     margin-right: 0.5rem;
   }
-  /* footer 미디어쿼리 */
+  /* footer 설정 */
   footer {
     height: 48.875rem;
   }
@@ -3175,39 +3208,29 @@ footer .footer-inner .txtBox .info p span {
 }
 /* 426px ~ 768px 대형 모바일 구간 미디어쿼리 */
 @media (min-width: 426px) and (max-width: 768px) {
-  /* header 미디어쿼리 */
-  header {
-    /* util 미디어쿼리 */
-  }
-  header .util .util-inner {
-    /* 국립공원 날씨 정보 미디어쿼리 */
-    /* 로그인 회원가입 미디어쿼리 */
-  }
-  header .util .util-inner .weather span {
+  /* 국립공원 날씨 정보 설정 */
+  header .weather span {
     width: 6.5rem;
   }
-  header .util .util-inner .weather span a {
+  header .weather span a {
     width: 100%;
     padding: 0.313rem 0;
   }
-  header .util .util-inner .weather .listBox > li .list li {
+  header .weather .listBox > li .list li {
     margin-right: 1rem;
   }
-  header .util .util-inner .user {
+  /* 로그인 회원가입 설정 */
+  header .user {
     display: none;
   }
+  /* gnb 설정 */
   header .gnb .gnb-inner ul.depth1 {
     display: none;
   }
   header .gnb .gnb-inner .menu-btn {
     display: flex;
   }
-  /* main 미디어쿼리 */
-  .main {
-    /* hero 미디어쿼리 */
-    /* 국립공원 알아보기 배경 하늘 미디어쿼리*/
-    /* layout 미디어쿼리 */
-  }
+  /* hero 설정 */
   .main .hero .swiper-slide .heroPlaceBox {
     width: 25%;
     bottom: 2%;
@@ -3252,6 +3275,7 @@ footer .footer-inner .txtBox .info p span {
   .main .hero .swiper-pagination-total {
     font-size: 0.875rem;
   }
+  /* hero txtBox 설정 */
   .main .hero .txtBox h2 {
     font-size: 1.375rem;
   }
@@ -3261,46 +3285,35 @@ footer .footer-inner .txtBox .info p span {
   .main .hero .txtBox p {
     font-size: 1.063rem;
   }
-  .main .hero .txtBox .search h3 {
+  /* hero 검색 설정 */
+  .main .hero .search h3 {
     font-size: 1.25rem;
   }
-  .main .hero .txtBox .search .search-bar {
+  .main .hero .search .search-bar {
     width: 100%;
   }
-  .main .hero .txtBox .search .search-bar input {
+  .main .hero .search .search-bar input {
     font-size: 0.875rem;
     margin-left: 1.5rem;
   }
-  .main .hero .txtBox .recommend {
+  /* hero 추천검색어 설정 */
+  .main .hero .recommend {
     flex-direction: column;
   }
-  .main .hero .txtBox .recommend ul li {
+  .main .hero .recommend ul li {
     margin: 0.1rem 0.313rem;
     text-align: center;
   }
-  .main .hero .txtBox .recommend ul li a {
+  .main .hero .recommend ul li a {
     font-size: 1rem;
   }
-  .main .hero .txtBox .recommend span {
+  .main .hero .recommend span {
     text-align: center;
   }
-  .main .hero .txtBox .recommend ul {
+  .main .hero .recommend ul {
     flex-direction: column;
   }
-  .main .hero .arrowBox .arrow.left {
-    transform: scale(0.5);
-    left: -2%;
-  }
-  .main .hero .arrowBox .arrow.left:hover {
-    transform: scale(0.5);
-  }
-  .main .hero .arrowBox .arrow.right {
-    transform: scale(0.5);
-    right: -2%;
-  }
-  .main .hero .arrowBox .arrow.right:hover {
-    transform: scale(0.5);
-  }
+  /* hero pageBox 설정 */
   .main .hero .pageBox {
     flex-direction: column;
     bottom: 1rem;
@@ -3316,45 +3329,40 @@ footer .footer-inner .txtBox .info p span {
     font-size: 1.125rem;
     margin-left: 0;
   }
+  /* 국립공원 알아보기 배경 하늘 설정 */
   .main .more-bg-sky {
     height: 23.75rem;
     bottom: 0;
   }
+  /* layout 설정 */
   .main .layout {
     display: flex;
     flex-direction: column;
-    /* 박스별 제목 (h3) 공통 미디어쿼리 */
-    /* group-left 미디어쿼리*/
-    /* group-right 미디어쿼리 */
-    /* group-bottom 미디어쿼리 */
   }
+  /* 박스별 제목 (h3) 공통 설정 */
   .main .layout h3 {
     font-size: 1.375rem;
   }
-  .main .layout .group-left {
-    /* 자주 찾는 서비스 미디어쿼리*/
-    /* 새로운 소식 미디어쿼리 */
-    /* wrapBox1 미디어쿼리 */
-    /* wrapBox2 미디어쿼리 */
-  }
-  .main .layout .group-left .serviceBox {
+  /* main 자주 찾는 서비스 설정 */
+  .main .serviceBox {
     height: 40rem;
   }
-  .main .layout .group-left .serviceBox ul {
+  .main .serviceBox ul {
     max-width: 25rem;
     margin: 2rem auto;
   }
-  .main .layout .group-left .serviceBox ul li {
+  .main .serviceBox ul li {
     width: 44%;
     margin: 1.5%;
   }
-  .main .layout .group-left .serviceBox ul li a span {
+  .main .serviceBox ul li a span {
     font-size: 1.063rem;
   }
-  .main .layout .group-left .newsBox {
+  /* main 새로운 소식 설정 */
+  .main .newsBox {
     height: 23rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .tabMenu {
+  .main .newsBox .newsBox-inner .tabMenu {
     width: 100%;
     display: grid;
     grid-template-columns: 7rem 7rem;
@@ -3364,30 +3372,30 @@ footer .footer-inner .txtBox .info p span {
     left: 1rem;
     margin-top: 0;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li {
+  .main .newsBox .newsBox-inner .tabMenu li {
     width: 6.3rem;
     margin: 0 0.3rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li:nth-child(5) {
+  .main .newsBox .newsBox-inner .tabMenu li:nth-child(5) {
     position: absolute;
     width: 5.2rem;
     height: 1.8rem;
     right: 1rem;
     top: 13rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li:nth-child(5) a {
+  .main .newsBox .newsBox-inner .tabMenu li:nth-child(5) a {
     width: 100%;
     height: 100%;
     font-size: 1.125rem;
     position: relative;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li:nth-child(5) a i {
+  .main .newsBox .newsBox-inner .tabMenu li:nth-child(5) a i {
     position: absolute;
     top: 0;
     right: 0;
     transform: scale(0.8);
   }
-  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li:nth-child(5) a i::after {
+  .main .newsBox .newsBox-inner .tabMenu li:nth-child(5) a i::after {
     content: "더보기";
     width: 3.6rem;
     font-weight: 600;
@@ -3398,74 +3406,76 @@ footer .footer-inner .txtBox .info p span {
     left: -3.6rem;
     cursor: pointer;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li a {
+  .main .newsBox .newsBox-inner .tabMenu li a {
     font-size: 1rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .txtBox {
+  .main .newsBox .newsBox-inner .txtBox {
     top: 7rem;
     left: 1.5rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .txtBox li {
+  .main .newsBox .newsBox-inner .txtBox li {
     display: none;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .txtBox li a {
+  .main .newsBox .newsBox-inner .txtBox li a {
     width: 90%;
     font-size: 0.875rem;
     margin-bottom: 0.4rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .txtBox li span {
+  .main .newsBox .newsBox-inner .txtBox li span {
     font-size: 0.875rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .txtBox li:nth-child(1) {
+  .main .newsBox .newsBox-inner .txtBox li:nth-child(1) {
     display: block;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .txtBox li:nth-child(2) {
+  .main .newsBox .newsBox-inner .txtBox li:nth-child(2) {
     display: block;
   }
-  .main .layout .group-left .wrapBox1 {
+  /* main wrapBox1 설정 */
+  .main .group-left .wrapBox1 {
     height: 30rem;
-    /* snsBox 미디어쿼리 */
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top {
+  /* main wrapBox1-top 설정*/
+  .main .group-left .wrapBox1-top {
     height: 44%;
-    /* 자원봉사 미디어쿼리 */
-    /* 실시간영상 미디어쿼리 */
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox {
+  /* main 자원봉사 설정 */
+  .main .volunteerBox {
     padding-left: 0;
     flex-direction: column;
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox img.txt {
+  .main .volunteerBox img.txt {
     order: 2;
     margin-top: 0.6rem;
     width: 4rem;
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox img.icon {
+  .main .volunteerBox img.icon {
     order: 1;
     margin-top: -0.4rem;
     width: 4rem;
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox {
+  /* main 실시간영상 설정 */
+  .main .liveBox {
     flex-direction: column;
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox img.txt {
+  .main .liveBox img.txt {
     order: 2;
     margin-top: 1.2rem;
     width: 6.4rem;
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox img.icon {
+  .main .liveBox img.icon {
     order: 1;
     width: 26%;
     width: 3.2rem;
   }
-  .main .layout .group-left .wrapBox1 .snsBox {
+  /* main snsBox 설정 */
+  .main .snsBox {
     height: 56%;
   }
-  .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner h4 {
+  .main .snsBox .snsBox-inner h4 {
     font-size: 1.125rem;
     margin-top: 0.9rem;
   }
-  .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul {
+  .main .snsBox .snsBox-inner ul {
     width: 16rem;
     height: 60%;
     margin-top: 0.7rem;
@@ -3473,73 +3483,72 @@ footer .footer-inner .txtBox .info p span {
     justify-content: center;
     flex-wrap: wrap;
   }
-  .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li {
+  .main .snsBox .snsBox-inner ul li {
     margin: 0.5rem 0.5rem;
   }
-  .main .layout .group-left .wrapBox2 {
+  /* main wrapBox2 설정 */
+  .main .group-left .wrapBox2 {
     flex-direction: column;
     height: 45rem;
     padding: 0;
-    /* 홍보이미지 미디어쿼리 */
-    /* 웹툰 설정*/
   }
-  .main .layout .group-left .wrapBox2 .promoBox {
+  /* main 홍보이미지 설정 */
+  .main .promoBox {
     width: 92%;
     max-width: 25rem;
     height: 54%;
     margin: 0 auto;
     margin-bottom: 2rem;
   }
-  .main .layout .group-left .wrapBox2 .promoBox .swiper-pagination {
+  .main .promoBox .swiper-pagination {
     bottom: 0.35rem;
   }
-  .main .layout .group-left .wrapBox2 .webtoonBox {
+  /* main 웹툰 설정*/
+  .main .webtoonBox {
     width: 92%;
     max-width: 25rem;
     height: 46%;
     margin: 0 auto;
   }
-  .main .layout .group-left .wrapBox2 .webtoonBox img {
+  .main .webtoonBox img {
     position: static;
     top: -10rem;
     left: -1rem;
   }
-  .main .layout .group-left .wrapBox2 .webtoonBox .txtBox h4 {
+  .main .webtoonBox .txtBox h4 {
     top: 1rem;
     left: 1.3rem;
   }
-  .main .layout .group-left .wrapBox2 .webtoonBox .txtBox p {
+  .main .webtoonBox .txtBox p {
     top: 3.8rem;
     left: 1.3rem;
   }
+  /* main group-right 설정 */
   .main .layout .group-right {
     padding: 1.25rem;
-    /* 실시간 탐방통제정보 미디어쿼리 */
-    /* wrapBox3 미디어쿼리 */
-    /* 국립공원 사진전 미디어쿼리 */
-    /* 자주하는 질문 미디어쿼리 */
   }
-  .main .layout .group-right .controlBox {
+  /* main 실시간 탐방통제정보 설정 */
+  .main .controlBox {
     padding: 1.5rem;
     max-width: 25rem;
     margin: 2rem auto;
   }
-  .main .layout .group-right .controlBox p {
+  .main .controlBox p {
     font-size: 1.063rem;
   }
-  .main .layout .group-right .controlBox .legend li {
+  .main .controlBox .legend li {
     width: 31%;
   }
-  .main .layout .group-right .controlBox .location li {
+  .main .controlBox .location li {
     width: calc((100% - 2.2rem) / 3);
   }
-  .main .layout .group-right .wrapBox3 {
+  /* main wrapBox3 설정 */
+  .main .wrapBox3 {
     height: 62rem;
     flex-direction: column;
-    /* 국립공원바로가기 미디어쿼리 */
-    /* 스마트 국립공원 미디어쿼리 */
   }
-  .main .layout .group-right .wrapBox3 .linkBox {
+  /* main 국립공원바로가기 설정 */
+  .main .linkBox {
     width: 100%;
     height: 48%;
     padding-right: 0;
@@ -3547,10 +3556,11 @@ footer .footer-inner .txtBox .info p span {
     flex-direction: column;
     align-items: center;
   }
-  .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner {
+  .main .linkBox .linkBox-inner {
     width: 18.25rem;
   }
-  .main .layout .group-right .wrapBox3 .smartBox {
+  /* main 스마트 국립공원 설정 */
+  .main .smartBox {
     width: 100%;
     height: 48%;
     display: flex;
@@ -3558,30 +3568,31 @@ footer .footer-inner .txtBox .info p span {
     align-items: center;
     padding-left: 0;
   }
-  .main .layout .group-right .wrapBox3 .smartBox .smartBox-inner {
+  .main .smartBox .smartBox-inner {
     width: 100%;
     max-width: 18.25rem;
     height: 25.688rem;
   }
-  .main .layout .group-right .wrapBox3 .smartBox .smartBox-inner ul {
+  .main .smartBox .smartBox-inner ul {
     width: 15.21rem;
   }
-  .main .layout .group-right .wrapBox3 .smartBox .smartBox-inner ul li {
+  .main .smartBox .smartBox-inner ul li {
     margin: 0.3rem auto;
   }
-  .main .layout .group-right .galleryBox {
+  /* main 국립공원 사진전 설정 */
+  .main .galleryBox {
     width: 100%;
     height: 20.5rem;
     position: relative;
     border: none;
   }
-  .main .layout .group-right .galleryBox > h3 {
+  .main .galleryBox > h3 {
     display: block;
     position: absolute;
     top: 0;
     left: 0;
   }
-  .main .layout .group-right .galleryBox img {
+  .main .galleryBox img {
     width: 70%;
     min-width: 18.5rem;
     -o-object-fit: cover;
@@ -3590,7 +3601,7 @@ footer .footer-inner .txtBox .info p span {
     margin: 2rem auto;
     margin-top: 4rem;
   }
-  .main .layout .group-right .galleryBox .txtBox {
+  .main .galleryBox .txtBox {
     padding-left: 0;
     width: 100%;
     height: 100%;
@@ -3602,64 +3613,67 @@ footer .footer-inner .txtBox .info p span {
     flex-direction: column;
     align-items: center;
   }
-  .main .layout .group-right .galleryBox .txtBox h4 {
+  .main .galleryBox .txtBox h4 {
     color: #fff;
     text-align: center;
   }
-  .main .layout .group-right .galleryBox .txtBox p {
+  .main .galleryBox .txtBox p {
     color: #fff;
   }
-  .main .layout .group-right .galleryBox .txtBox span {
+  .main .galleryBox .txtBox span {
     position: relative;
     margin-right: 0;
     margin-top: 2rem;
   }
-  .main .layout .group-right .galleryBox .txtBox span:hover {
+  .main .galleryBox .txtBox span:hover {
     background-color: #3F3F3F;
     border: 0.063rem solid #3f3f3f;
     color: #fff;
     font-weight: 400;
   }
-  .main .layout .group-right .galleryBox .txtBox span:active {
+  .main .galleryBox .txtBox span:active {
     background-color: #fefefe;
     border: 0.063rem solid #a1a1a1;
     color: #3f3f3f;
     font-weight: 600;
   }
-  .main .layout .group-right .questionBox .questionBox-inner .grid .questionTitle {
+  /* main 자주하는 질문 설정 */
+  .main .questionBox .questionBox-inner .grid .questionTitle {
     grid-template-columns: 20% 24% 1fr;
     padding: 0 0.4rem;
   }
-  .main .layout .group-right .questionBox .questionBox-inner .grid .questionTitle li:nth-child(1) {
+  .main .questionBox .questionBox-inner .grid .questionTitle li:nth-child(1) {
     display: none;
   }
-  .main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li .list {
+  .main .questionBox .questionBox-inner .grid .questionContents > li .list {
     grid-template-columns: 20% 24% 1fr;
     padding: 0 0.4rem;
   }
-  .main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li .list li:nth-child(1) {
+  .main .questionBox .questionBox-inner .grid .questionContents > li .list li:nth-child(1) {
     display: none;
   }
+  /* main group-bottom 설정 */
   .main .layout .group-bottom {
     grid-column: 1;
     padding: 1.25rem;
     height: 35.188rem;
   }
-  .main .layout .group-bottom .moreBox {
+  /* main 국립공원 알아보기 설정 */
+  .main .moreBox {
     height: 28.9rem;
   }
-  .main .layout .group-bottom .moreBox .object {
+  .main .moreBox .object {
     height: 23.75rem;
     bottom: -5.2rem;
   }
-  .main .layout .group-bottom .moreBox .card {
+  .main .moreBox .card {
     max-width: 25rem;
     width: 84%;
     margin: 0 auto;
     flex-wrap: wrap;
     padding-left: 0;
   }
-  .main .layout .group-bottom .moreBox .card > li {
+  .main .moreBox .card > li {
     width: 100%;
     max-width: 25rem;
     padding: 0;
@@ -3667,192 +3681,174 @@ footer .footer-inner .txtBox .info p span {
     justify-content: center;
     align-items: center;
   }
-  .main .layout .group-bottom .moreBox .card > li:nth-child(1), .main .layout .group-bottom .moreBox .card > li:nth-child(2), .main .layout .group-bottom .moreBox .card > li:nth-child(3), .main .layout .group-bottom .moreBox .card > li:nth-child(4) {
+  .main .moreBox .card > li:nth-child(1), .main .moreBox .card > li:nth-child(2), .main .moreBox .card > li:nth-child(3), .main .moreBox .card > li:nth-child(4) {
     margin-top: 1.6rem;
     height: 4rem;
   }
-  .main .layout .group-bottom .moreBox .card > li h4 {
+  .main .moreBox .card > li h4 {
     font-size: 1.125rem;
     margin-bottom: 0;
     margin-left: -0.5rem;
   }
-  .main .layout .group-bottom .moreBox .card > li h4 i {
+  .main .moreBox .card > li h4 i {
     margin-right: 0.8rem;
   }
-  .main .layout .group-bottom .moreBox .card > li .list {
+  .main .moreBox .card > li .list {
     display: none;
   }
-  /* subpage 미디어쿼리 */
-  .subpage {
-    /* subHeroBox 설정 */
-    /* subpage-inner 미디어쿼리 */
-  }
+  /* subpage subHeroBox 설정 */
   .subpage .subHeroBox {
     height: 12.5rem;
-    /* 검색 설정 */
-    /* 추천검색어 설정 */
   }
-  .subpage .subHeroBox .search .search-bar {
+  /* subHeroBox 검색 설정 */
+  .subHeroBox .search .search-bar {
     width: 66%;
   }
-  .subpage .subHeroBox .search .search-bar input {
+  .subHeroBox .search .search-bar input {
     margin-left: 1.2rem;
   }
-  .subpage .subHeroBox .recommend {
+  /* subHeroBox 추천검색어 설정 */
+  .subHeroBox .recommend {
     display: none;
   }
+  /* subpage subpage-inner 설정 */
   .subpage .subpage-inner {
     margin-top: 1.25rem;
-    /* side-nav-bar 미디어쿼리 */
-    /* sub-contentsBox 미디어쿼리 */
   }
-  .subpage .subpage-inner .side-nav-bar {
+  /* subpage side-nav-bar 설정 */
+  .subpage .side-nav-bar {
     display: none;
   }
-  .subpage .subpage-inner .sub-contentsBox {
+  /* subpage sub-contentsBox 설정 */
+  .subpage .sub-contentsBox {
     margin-left: 1.25rem;
     margin-right: 1.25rem;
-    /* article 공통 우선 미디어쿼리 */
-    /* 국립공원사진전 미디어쿼리 */
-    /* 공지사항 미디어쿼리 */
   }
-  .subpage .subpage-inner .sub-contentsBox > article {
-    /* titleBox 미디어쿼리 */
-    /* 의견 박스 미디어쿼리 */
-  }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox h3 {
+  /* subpage article 공통 titleBox 설정 */
+  .subpage article .titleBox h3 {
     font-size: 2.25rem;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox {
+  .subpage article .titleBox .rightBox {
     flex-direction: column;
-    /* breadcrumb 미디어쿼리 */
-    /* iconBox 미디어쿼리 */
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb {
+  /* subpage article 공통 titleBox breadcrumb 설정 */
+  .subpage article .titleBox .breadcrumb {
     width: 100%;
     margin-right: 0;
     margin-left: -0.5rem;
     margin-bottom: 0.625rem;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li a i {
+  .subpage article .titleBox .breadcrumb li a i {
     width: 2.5rem;
     height: 2.5rem;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li:nth-child(1) {
+  .subpage article .titleBox .breadcrumb li:nth-child(1) {
     margin-left: -0.125rem;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox {
+  /* subpage article 공통 titleBox iconBox 설정 */
+  .subpage article .titleBox .iconBox {
     width: 100%;
     justify-content: flex-end;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span {
+  .subpage article .titleBox .iconBox span {
     width: 2.375rem;
     height: 2.375rem;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span i {
+  .subpage article .titleBox .iconBox span i {
     width: 38px; /* 고정값 */
     height: 38px; /* 고정값 */
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span.share i {
+  .subpage article .titleBox .iconBox span.share i {
     background-position: -38px 0; /* 고정값 */
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span.copy i {
+  .subpage article .titleBox .iconBox span.copy i {
     background-position: -76px 0; /* 고정값 */
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span.print i {
+  .subpage article .titleBox .iconBox span.print i {
     background-position: -114px 0; /* 고정값 */
   }
-  .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox {
+  /* subpage article 공통 의견박스 설정 */
+  .subpage article .opinionBox form .topBox .radioBox {
     flex-direction: column;
     align-items: flex-start;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox div {
+  .subpage article .opinionBox form .topBox .radioBox div {
     margin-bottom: 0.75rem;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox div input {
+  .subpage article .opinionBox form .topBox .radioBox div input {
     margin-left: 0;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox {
+  .subpage article .opinionBox form .bottomBox {
     flex-direction: column;
     align-items: center;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox .inputBox {
+  .subpage article .opinionBox form .bottomBox .inputBox {
     margin-right: 0;
     margin-bottom: 1.875rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery {
-    /* mainContents 미디어쿼리 */
-  }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents {
-    /* middleBox 미디어쿼리 */
-    /* subpage-gallery-box 미디어쿼리 */
-  }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox {
+  /* subpage 국립공원사진전 middleBox 설정 */
+  .subpage .subpage-gallery .middleBox {
     flex-direction: column;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .optionBox {
+  .subpage .subpage-gallery .middleBox .optionBox {
     order: 2;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox {
+  .subpage .subpage-gallery .middleBox .searchBox {
     order: 1;
     margin-bottom: 1.625rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox .search-bar {
+  .subpage .subpage-gallery .middleBox .searchBox .search-bar {
     width: 16.25rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox .search-bar input {
+  .subpage .subpage-gallery .middleBox .searchBox .search-bar input {
     width: 70%;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li {
+  /* subpage 국립공원사진전 subpage-gallery-box 설정 */
+  .subpage .subpage-gallery .subpage-gallery-box .cardWrap > li {
     width: 47.5%;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(4) {
+  .subpage .subpage-gallery .subpage-gallery-box .paginationBox .indexBox li:nth-child(4) {
     display: none;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(5) {
+  .subpage .subpage-gallery .subpage-gallery-box .paginationBox .indexBox li:nth-child(5) {
     display: none;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(6) {
+  .subpage .subpage-gallery .subpage-gallery-box .paginationBox .indexBox li:nth-child(6) {
     display: none;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(7) {
+  .subpage .subpage-gallery .subpage-gallery-box .paginationBox .indexBox li:nth-child(7) {
     display: none;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(8) {
+  .subpage .subpage-gallery .subpage-gallery-box .paginationBox .indexBox li:nth-child(8) {
     display: none;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(9) {
+  .subpage .subpage-gallery .subpage-gallery-box .paginationBox .indexBox li:nth-child(9) {
     display: none;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(10) {
+  .subpage .subpage-gallery .subpage-gallery-box .paginationBox .indexBox li:nth-child(10) {
     display: none;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement {
-    /* mainContents 설정 */
-  }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents {
-    /* topBox 설정 */
-    /* detailBox 설정 */
-  }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox h4 {
+  /* subpage 공지사항 topBox 설정 */
+  .subpage .subpage-announcement .topBox h4 {
     font-size: 1.25rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox {
+  .subpage .subpage-announcement .topBox .writeInfoBox {
     flex-direction: column;
     padding: 1rem 0;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li {
+  .subpage .subpage-announcement .topBox .writeInfoBox li {
     margin-left: 1.875rem;
     margin-top: 0.375rem;
     margin-bottom: 0.375rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li b {
+  .subpage .subpage-announcement .topBox .writeInfoBox li b {
     margin-right: 0.5rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .detailBox {
+  /* subpage 공지사항 detailBox 설정 */
+  .subpage .subpage-announcement .detailBox {
     padding: 1.25rem 1.625rem;
   }
-  /* footer 미디어쿼리 */
+  /* footer 설정 */
   footer {
     height: 48.875rem;
   }
@@ -3913,39 +3909,29 @@ footer .footer-inner .txtBox .info p span {
 }
 /* ~ 425px 모바일 구간 미디어쿼리 */
 @media (max-width: 425px) {
-  /* header 미디어쿼리 */
-  header {
-    /* util 미디어쿼리 */
-  }
-  header .util .util-inner {
-    /* 국립공원 날씨 정보 미디어쿼리 */
-    /* 로그인 회원가입 미디어쿼리 */
-  }
-  header .util .util-inner .weather span {
+  /* 국립공원 날씨 정보 설정 */
+  header .weather span {
     width: 6.5rem;
   }
-  header .util .util-inner .weather span a {
+  header .weather span a {
     width: 100%;
     padding: 0.313rem 0;
   }
-  header .util .util-inner .weather .listBox > li .list li {
+  header .weather .listBox > li .list li {
     margin-right: 1rem;
   }
-  header .util .util-inner .user {
+  /* 로그인 회원가입 설정 */
+  header .user {
     display: none;
   }
+  /* gnb 설정 */
   header .gnb .gnb-inner ul.depth1 {
     display: none;
   }
   header .gnb .gnb-inner .menu-btn {
     display: flex;
   }
-  /* main 미디어쿼리 */
-  .main {
-    /* hero 미디어쿼리 */
-    /* 국립공원 알아보기 배경 하늘 미디어쿼리*/
-    /* layout 미디어쿼리 */
-  }
+  /* hero 설정 */
   .main .hero .swiper-slide .heroPlaceBox {
     width: 25%;
     bottom: 2%;
@@ -3990,6 +3976,7 @@ footer .footer-inner .txtBox .info p span {
   .main .hero .swiper-pagination-total {
     font-size: 0.875rem;
   }
+  /* hero txtBox 설정 */
   .main .hero .txtBox h2 {
     font-size: 1.375rem;
   }
@@ -3999,46 +3986,35 @@ footer .footer-inner .txtBox .info p span {
   .main .hero .txtBox p {
     font-size: 1.063rem;
   }
-  .main .hero .txtBox .search h3 {
+  /* hero 검색 설정 */
+  .main .hero .search h3 {
     font-size: 1.25rem;
   }
-  .main .hero .txtBox .search .search-bar {
+  .main .hero .search .search-bar {
     width: 100%;
   }
-  .main .hero .txtBox .search .search-bar input {
+  .main .hero .search .search-bar input {
     font-size: 0.875rem;
     margin-left: 1.5rem;
   }
-  .main .hero .txtBox .recommend {
+  /* hero 추천검색어 설정 */
+  .main .hero .recommend {
     flex-direction: column;
   }
-  .main .hero .txtBox .recommend ul li {
+  .main .hero .recommend ul li {
     margin: 0.1rem 0.313rem;
     text-align: center;
   }
-  .main .hero .txtBox .recommend ul li a {
+  .main .hero .recommend ul li a {
     font-size: 1rem;
   }
-  .main .hero .txtBox .recommend span {
+  .main .hero .recommend span {
     text-align: center;
   }
-  .main .hero .txtBox .recommend ul {
+  .main .hero .recommend ul {
     flex-direction: column;
   }
-  .main .hero .arrowBox .arrow.left {
-    transform: scale(0.5);
-    left: -2%;
-  }
-  .main .hero .arrowBox .arrow.left:hover {
-    transform: scale(0.5);
-  }
-  .main .hero .arrowBox .arrow.right {
-    transform: scale(0.5);
-    right: -2%;
-  }
-  .main .hero .arrowBox .arrow.right:hover {
-    transform: scale(0.5);
-  }
+  /* hero pageBox 설정 */
   .main .hero .pageBox {
     flex-direction: column;
     bottom: 1rem;
@@ -4054,45 +4030,40 @@ footer .footer-inner .txtBox .info p span {
     font-size: 1.125rem;
     margin-left: 0;
   }
+  /* 국립공원 알아보기 배경 하늘 설정 */
   .main .more-bg-sky {
     height: 23.75rem;
     bottom: 0;
   }
+  /* layout 설정 */
   .main .layout {
     display: flex;
     flex-direction: column;
-    /* 박스별 제목 (h3) 공통 미디어쿼리 */
-    /* group-left 미디어쿼리*/
-    /* group-right 미디어쿼리 */
-    /* group-bottom 미디어쿼리 */
   }
+  /* 박스별 제목 (h3) 공통 설정 */
   .main .layout h3 {
     font-size: 1.375rem;
   }
-  .main .layout .group-left {
-    /* 자주 찾는 서비스 미디어쿼리*/
-    /* 새로운 소식 미디어쿼리 */
-    /* wrapBox1 미디어쿼리 */
-    /* wrapBox2 미디어쿼리 */
-  }
-  .main .layout .group-left .serviceBox {
+  /* main 자주 찾는 서비스 설정*/
+  .main .serviceBox {
     height: 40rem;
   }
-  .main .layout .group-left .serviceBox ul {
+  .main .serviceBox ul {
     max-width: 25rem;
     margin: 2rem auto;
   }
-  .main .layout .group-left .serviceBox ul li {
+  .main .serviceBox ul li {
     width: 44%;
     margin: 1.5%;
   }
-  .main .layout .group-left .serviceBox ul li a span {
+  .main .serviceBox ul li a span {
     font-size: 1.063rem;
   }
-  .main .layout .group-left .newsBox {
+  /* main 새로운 소식 설정 */
+  .main .newsBox {
     height: 23rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .tabMenu {
+  .main .newsBox .newsBox-inner .tabMenu {
     width: 100%;
     display: grid;
     grid-template-columns: 7rem 7rem;
@@ -4102,30 +4073,30 @@ footer .footer-inner .txtBox .info p span {
     left: 1rem;
     margin-top: 0;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li {
+  .main .newsBox .newsBox-inner .tabMenu li {
     width: 6.3rem;
     margin: 0 0.3rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li:nth-child(5) {
+  .main .newsBox .newsBox-inner .tabMenu li:nth-child(5) {
     position: absolute;
     width: 5.2rem;
     height: 1.8rem;
     right: 1rem;
     top: 13rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li:nth-child(5) a {
+  .main .newsBox .newsBox-inner .tabMenu li:nth-child(5) a {
     width: 100%;
     height: 100%;
     font-size: 1.125rem;
     position: relative;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li:nth-child(5) a i {
+  .main .newsBox .newsBox-inner .tabMenu li:nth-child(5) a i {
     position: absolute;
     top: 0;
     right: 0;
     transform: scale(0.8);
   }
-  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li:nth-child(5) a i::after {
+  .main .newsBox .newsBox-inner .tabMenu li:nth-child(5) a i::after {
     content: "더보기";
     width: 3.6rem;
     font-weight: 600;
@@ -4136,74 +4107,76 @@ footer .footer-inner .txtBox .info p span {
     left: -3.6rem;
     cursor: pointer;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .tabMenu li a {
+  .main .newsBox .newsBox-inner .tabMenu li a {
     font-size: 1rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .txtBox {
+  .main .newsBox .newsBox-inner .txtBox {
     top: 7rem;
     left: 1.5rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .txtBox li {
+  .main .newsBox .newsBox-inner .txtBox li {
     display: none;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .txtBox li a {
+  .main .newsBox .newsBox-inner .txtBox li a {
     width: 90%;
     font-size: 0.875rem;
     margin-bottom: 0.4rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .txtBox li span {
+  .main .newsBox .newsBox-inner .txtBox li span {
     font-size: 0.875rem;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .txtBox li:nth-child(1) {
+  .main .newsBox .newsBox-inner .txtBox li:nth-child(1) {
     display: block;
   }
-  .main .layout .group-left .newsBox .newsBox-inner .txtBox li:nth-child(2) {
+  .main .newsBox .newsBox-inner .txtBox li:nth-child(2) {
     display: block;
   }
-  .main .layout .group-left .wrapBox1 {
+  /* main wrapBox1 설정 */
+  .main .group-left .wrapBox1 {
     height: 30rem;
-    /* snsBox 미디어쿼리 */
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top {
+  /* main wrapBox1-top 설정*/
+  .main .group-left .wrapBox1-top {
     height: 44%;
-    /* 자원봉사 미디어쿼리 */
-    /* 실시간영상 미디어쿼리 */
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox {
+  /* main 자원봉사 설정*/
+  .main .volunteerBox {
     padding-left: 0;
     flex-direction: column;
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox img.txt {
+  .main .volunteerBox img.txt {
     order: 2;
     margin-top: 0.6rem;
     width: 4rem;
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top .volunteerBox img.icon {
+  .main .volunteerBox img.icon {
     order: 1;
     margin-top: -0.4rem;
     width: 4rem;
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox {
+  /* main 실시간영상 설정*/
+  .main .liveBox {
     flex-direction: column;
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox img.txt {
+  .main .liveBox img.txt {
     order: 2;
     margin-top: 1.2rem;
     width: 6.4rem;
   }
-  .main .layout .group-left .wrapBox1 .wrapBox1-top .liveBox img.icon {
+  .main .liveBox img.icon {
     order: 1;
     width: 26%;
     width: 3.2rem;
   }
-  .main .layout .group-left .wrapBox1 .snsBox {
+  /* main snsBox 설정 */
+  .main .snsBox {
     height: 56%;
   }
-  .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner h4 {
+  .main .snsBox .snsBox-inner h4 {
     font-size: 1.125rem;
     margin-top: 0.9rem;
   }
-  .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul {
+  .main .snsBox .snsBox-inner ul {
     width: 16rem;
     height: 60%;
     margin-top: 0.7rem;
@@ -4211,73 +4184,72 @@ footer .footer-inner .txtBox .info p span {
     justify-content: center;
     flex-wrap: wrap;
   }
-  .main .layout .group-left .wrapBox1 .snsBox .snsBox-inner ul li {
+  .main .snsBox .snsBox-inner ul li {
     margin: 0.5rem 0.5rem;
   }
-  .main .layout .group-left .wrapBox2 {
+  /* main wrapBox2 설정 */
+  .main .group-left .wrapBox2 {
     flex-direction: column;
     height: 45rem;
     padding: 0;
-    /* 홍보이미지 미디어쿼리 */
-    /* 웹툰 설정*/
   }
-  .main .layout .group-left .wrapBox2 .promoBox {
+  /* main 홍보이미지 설정*/
+  .main .promoBox {
     width: 92%;
     max-width: 25rem;
     height: 54%;
     margin: 0 auto;
     margin-bottom: 2rem;
   }
-  .main .layout .group-left .wrapBox2 .promoBox .swiper-pagination {
+  .main .promoBox .swiper-pagination {
     bottom: 0.35rem;
   }
-  .main .layout .group-left .wrapBox2 .webtoonBox {
+  /* main 웹툰 설정*/
+  .main .webtoonBox {
     width: 92%;
     max-width: 25rem;
     height: 46%;
     margin: 0 auto;
   }
-  .main .layout .group-left .wrapBox2 .webtoonBox img {
+  .main .webtoonBox img {
     position: static;
     top: -10rem;
     left: -1rem;
   }
-  .main .layout .group-left .wrapBox2 .webtoonBox .txtBox h4 {
+  .main .webtoonBox .txtBox h4 {
     top: 1rem;
     left: 1.3rem;
   }
-  .main .layout .group-left .wrapBox2 .webtoonBox .txtBox p {
+  .main .webtoonBox .txtBox p {
     top: 3.8rem;
     left: 1.3rem;
   }
+  /* main group-right 설정 */
   .main .layout .group-right {
     padding: 1.25rem;
-    /* 실시간 탐방통제정보 미디어쿼리 */
-    /* wrapBox3 미디어쿼리 */
-    /* 국립공원 사진전 미디어쿼리 */
-    /* 자주하는 질문 미디어쿼리 */
   }
-  .main .layout .group-right .controlBox {
+  /* main 실시간 탐방통제정보 설정*/
+  .main .controlBox {
     padding: 1.5rem;
     max-width: 25rem;
     margin: 2rem auto;
   }
-  .main .layout .group-right .controlBox p {
+  .main .controlBox p {
     font-size: 1.063rem;
   }
-  .main .layout .group-right .controlBox .legend li {
+  .main .controlBox .legend li {
     width: 31%;
   }
-  .main .layout .group-right .controlBox .location li {
+  .main .controlBox .location li {
     width: calc((100% - 2.2rem) / 3);
   }
-  .main .layout .group-right .wrapBox3 {
+  /* main wrapBox3 설정*/
+  .main .wrapBox3 {
     height: 62rem;
     flex-direction: column;
-    /* 국립공원바로가기 미디어쿼리 */
-    /* 스마트 국립공원 미디어쿼리 */
   }
-  .main .layout .group-right .wrapBox3 .linkBox {
+  /* main 국립공원바로가기 설정*/
+  .main .linkBox {
     width: 100%;
     height: 48%;
     padding-right: 0;
@@ -4285,10 +4257,11 @@ footer .footer-inner .txtBox .info p span {
     flex-direction: column;
     align-items: center;
   }
-  .main .layout .group-right .wrapBox3 .linkBox .linkBox-inner {
+  .main .linkBox .linkBox-inner {
     width: 18.25rem;
   }
-  .main .layout .group-right .wrapBox3 .smartBox {
+  /* main 스마트 국립공원 설정 */
+  .main .smartBox {
     width: 100%;
     height: 48%;
     display: flex;
@@ -4296,30 +4269,31 @@ footer .footer-inner .txtBox .info p span {
     align-items: center;
     padding-left: 0;
   }
-  .main .layout .group-right .wrapBox3 .smartBox .smartBox-inner {
+  .main .smartBox .smartBox-inner {
     width: 100%;
     max-width: 18.25rem;
     height: 25.688rem;
   }
-  .main .layout .group-right .wrapBox3 .smartBox .smartBox-inner ul {
+  .main .smartBox .smartBox-inner ul {
     width: 15.21rem;
   }
-  .main .layout .group-right .wrapBox3 .smartBox .smartBox-inner ul li {
+  .main .smartBox .smartBox-inner ul li {
     margin: 0.3rem auto;
   }
-  .main .layout .group-right .galleryBox {
+  /* main 국립공원 사진전 설정 */
+  .main .galleryBox {
     width: 100%;
     height: 20.5rem;
     position: relative;
     border: none;
   }
-  .main .layout .group-right .galleryBox > h3 {
+  .main .galleryBox > h3 {
     display: block;
     position: absolute;
     top: 0;
     left: 0;
   }
-  .main .layout .group-right .galleryBox img {
+  .main .galleryBox img {
     width: 70%;
     min-width: 17.5rem;
     -o-object-fit: cover;
@@ -4328,7 +4302,7 @@ footer .footer-inner .txtBox .info p span {
     margin: 2rem auto;
     margin-top: 4rem;
   }
-  .main .layout .group-right .galleryBox .txtBox {
+  .main .galleryBox .txtBox {
     padding-left: 0;
     width: 100%;
     height: 100%;
@@ -4340,64 +4314,67 @@ footer .footer-inner .txtBox .info p span {
     flex-direction: column;
     align-items: center;
   }
-  .main .layout .group-right .galleryBox .txtBox h4 {
+  .main .galleryBox .txtBox h4 {
     color: #fff;
     text-align: center;
   }
-  .main .layout .group-right .galleryBox .txtBox p {
+  .main .galleryBox .txtBox p {
     color: #fff;
   }
-  .main .layout .group-right .galleryBox .txtBox span {
+  .main .galleryBox .txtBox span {
     position: relative;
     margin-right: 0;
     margin-top: 2rem;
   }
-  .main .layout .group-right .galleryBox .txtBox span:hover {
+  .main .galleryBox .txtBox span:hover {
     background-color: #3F3F3F;
     border: 0.063rem solid #3f3f3f;
     color: #fff;
     font-weight: 400;
   }
-  .main .layout .group-right .galleryBox .txtBox span:active {
+  .main .galleryBox .txtBox span:active {
     background-color: #fefefe;
     border: 0.063rem solid #a1a1a1;
     color: #3f3f3f;
     font-weight: 600;
   }
-  .main .layout .group-right .questionBox .questionBox-inner .grid .questionTitle {
+  /* main 자주하는 질문 설정 */
+  .main .questionBox .questionBox-inner .grid .questionTitle {
     grid-template-columns: 20% 24% 1fr;
     padding: 0 0.4rem;
   }
-  .main .layout .group-right .questionBox .questionBox-inner .grid .questionTitle li:nth-child(1) {
+  .main .questionBox .questionBox-inner .grid .questionTitle li:nth-child(1) {
     display: none;
   }
-  .main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li .list {
+  .main .questionBox .questionBox-inner .grid .questionContents > li .list {
     grid-template-columns: 20% 24% 1fr;
     padding: 0 0.4rem;
   }
-  .main .layout .group-right .questionBox .questionBox-inner .grid .questionContents > li .list li:nth-child(1) {
+  .main .questionBox .questionBox-inner .grid .questionContents > li .list li:nth-child(1) {
     display: none;
   }
+  /* main group-bottom 설정 */
   .main .layout .group-bottom {
     grid-column: 1;
     padding: 1.25rem;
     height: 35.188rem;
   }
-  .main .layout .group-bottom .moreBox {
+  /* main 국립공원 알아보기 설정 */
+  .main .moreBox {
     height: 28.9rem;
   }
-  .main .layout .group-bottom .moreBox .object {
+  .main .moreBox .object {
     height: 23.75rem;
     bottom: -5.2rem;
   }
-  .main .layout .group-bottom .moreBox .card {
+  .main .moreBox .card {
     max-width: 25rem;
     width: 84%;
     margin: 0 auto;
     flex-wrap: wrap;
     padding-left: 0;
   }
-  .main .layout .group-bottom .moreBox .card > li {
+  .main .moreBox .card > li {
     width: 100%;
     max-width: 25rem;
     padding: 0;
@@ -4405,325 +4382,307 @@ footer .footer-inner .txtBox .info p span {
     justify-content: center;
     align-items: center;
   }
-  .main .layout .group-bottom .moreBox .card > li:nth-child(1), .main .layout .group-bottom .moreBox .card > li:nth-child(2), .main .layout .group-bottom .moreBox .card > li:nth-child(3), .main .layout .group-bottom .moreBox .card > li:nth-child(4) {
+  .main .moreBox .card > li:nth-child(1), .main .moreBox .card > li:nth-child(2), .main .moreBox .card > li:nth-child(3), .main .moreBox .card > li:nth-child(4) {
     margin-top: 1.6rem;
     height: 4rem;
   }
-  .main .layout .group-bottom .moreBox .card > li h4 {
+  .main .moreBox .card > li h4 {
     font-size: 1.125rem;
     margin-bottom: 0;
     margin-left: -0.5rem;
   }
-  .main .layout .group-bottom .moreBox .card > li h4 i {
+  .main .moreBox .card > li h4 i {
     margin-right: 0.8rem;
   }
-  .main .layout .group-bottom .moreBox .card > li .list {
+  .main .moreBox .card > li .list {
     display: none;
   }
-  /* subpage 미디어쿼리 */
-  .subpage {
-    /* subHeroBox 설정 */
-    /* subpage-inner 미디어쿼리 */
-  }
+  /* subpage subHeroBox 설정 */
   .subpage .subHeroBox {
     height: 12.5rem;
-    /* 검색 설정 */
-    /* 추천검색어 설정 */
   }
-  .subpage .subHeroBox .search h3 {
+  /* subHeroBox 검색 설정 */
+  .subHeroBox .search h3 {
     font-size: 1.25rem;
   }
-  .subpage .subHeroBox .search .search-bar {
+  .subHeroBox .search .search-bar {
     width: 66%;
   }
-  .subpage .subHeroBox .search .search-bar input {
+  .subHeroBox .search .search-bar input {
     margin-left: 1.2rem;
   }
-  .subpage .subHeroBox .recommend {
+  /* subHeroBox 추천검색어 설정 */
+  .subHeroBox .recommend {
     display: none;
   }
+  /* subpage subpage-inner 설정 */
   .subpage .subpage-inner {
     margin-top: 1.25rem;
-    /* side-nav-bar 미디어쿼리 */
-    /* sub-contentsBox 미디어쿼리 */
   }
-  .subpage .subpage-inner .side-nav-bar {
+  /* subpage side-nav-bar 설정 */
+  .subpage .side-nav-bar {
     display: none;
   }
-  .subpage .subpage-inner .sub-contentsBox {
+  /* subpage sub-contentsBox 설정 */
+  .subpage .sub-contentsBox {
     margin-left: 1.25rem;
     margin-right: 1.25rem;
-    /* article 공통 우선 미디어쿼리 */
-    /* 국립공원사진전 미디어쿼리 */
-    /* 공지사항 미디어쿼리 */
   }
-  .subpage .subpage-inner .sub-contentsBox > article {
-    /* titleBox 미디어쿼리 */
-    /* 의견박스 미디어쿼리 */
-  }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox {
+  /* subpage article 공통 titleBox 설정 */
+  .subpage article .titleBox {
     margin-bottom: 1.625rem;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox h3 {
+  .subpage article .titleBox h3 {
     font-size: 1.75rem;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox {
+  .subpage article .titleBox .rightBox {
     flex-direction: column;
-    /* breadcrumb 미디어쿼리 */
-    /* iconBox 미디어쿼리 */
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb {
+  /* subpage article 공통 titleBox breadcrumb 설정 */
+  .subpage article .titleBox .breadcrumb {
     width: 100%;
     margin-right: 0;
     margin-left: -0.5rem;
     margin-bottom: 1.25rem;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li {
+  .subpage article .titleBox .breadcrumb li {
     margin: 0 0.375rem;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li a {
+  .subpage article .titleBox .breadcrumb li a {
     font-size: 0.875rem;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li a i {
+  .subpage article .titleBox .breadcrumb li a i {
     width: 34px; /* 고정값 */
     height: 34px; /* 고정값 */
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .breadcrumb li:nth-child(1) {
+  .subpage article .titleBox .breadcrumb li:nth-child(1) {
     margin-left: -0.125rem;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox {
+  /* subpage article 공통 titleBox iconBox 설정 */
+  .subpage article .titleBox .iconBox {
     width: 100%;
     justify-content: flex-end;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span {
+  .subpage article .titleBox .iconBox span {
     width: 2.375rem;
     height: 2.375rem;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span i {
+  .subpage article .titleBox .iconBox span i {
     width: 38px; /* 고정값 */
     height: 38px; /* 고정값 */
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span.share i {
+  .subpage article .titleBox .iconBox span.share i {
     background-position: -38px 0; /* 고정값 */
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span.copy i {
+  .subpage article .titleBox .iconBox span.copy i {
     background-position: -76px 0; /* 고정값 */
   }
-  .subpage .subpage-inner .sub-contentsBox > article .titleBox .rightBox .iconBox span.print i {
+  .subpage article .titleBox .iconBox span.print i {
     background-position: -114px 0; /* 고정값 */
   }
-  .subpage .subpage-inner .sub-contentsBox > article .opinionBox {
+  /* subpage article 공통 의견박스 설정 */
+  .subpage article .opinionBox {
     padding: 1.625rem;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox p {
+  .subpage article .opinionBox form .topBox p {
     font-size: 1.063rem;
     margin-bottom: 1.625rem;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox {
+  .subpage article .opinionBox form .topBox .radioBox {
     flex-direction: column;
     align-items: flex-start;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox div {
+  .subpage article .opinionBox form .topBox .radioBox div {
     margin-bottom: 0.75rem;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox div input {
+  .subpage article .opinionBox form .topBox .radioBox div input {
     margin-left: 0;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .topBox .radioBox div label {
+  .subpage article .opinionBox form .topBox .radioBox div label {
     font-size: 1rem;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox {
+  .subpage article .opinionBox form .bottomBox {
     flex-direction: column;
     align-items: center;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox .inputBox {
+  .subpage article .opinionBox form .bottomBox .inputBox {
     margin-right: 0;
     margin-bottom: 1.875rem;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox .inputBox input::-moz-placeholder {
+  .subpage article .opinionBox form .bottomBox .inputBox input::-moz-placeholder {
     font-size: 0.875rem;
   }
-  .subpage .subpage-inner .sub-contentsBox > article .opinionBox form .bottomBox .inputBox input::placeholder {
+  .subpage article .opinionBox form .bottomBox .inputBox input::placeholder {
     font-size: 0.875rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery {
-    /* mainContents 미디어쿼리 */
-  }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents {
-    /* selectBox 미디어쿼리 */
-    /* middleBox 미디어쿼리 */
-    /* subpage-gallery-box 미디어쿼리 */
-  }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox {
+  /* subpage 국립공원사진전 selectBox 설정 */
+  .subpage .subpage-gallery .selectBox {
     padding: 1.25rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox ul {
+  .subpage .subpage-gallery .selectBox ul {
     display: none;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox ul li {
+  .subpage .subpage-gallery .selectBox ul li {
     font-size: 0.875rem;
     margin-bottom: 1rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .selectBox .btn {
+  .subpage .subpage-gallery .selectBox .btn {
     display: block;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox {
+  /* subpage 국립공원사진전 middleBox 설정 */
+  .subpage .subpage-gallery .middleBox {
     flex-direction: column;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .optionBox {
+  .subpage .subpage-gallery .middleBox .optionBox {
     order: 2;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .optionBox li:nth-child(2) {
+  .subpage .subpage-gallery .middleBox .optionBox li:nth-child(2) {
     margin-right: 0;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox {
+  .subpage .subpage-gallery .middleBox .searchBox {
     order: 1;
     margin-bottom: 1.625rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox .search-bar {
+  .subpage .subpage-gallery .middleBox .searchBox .search-bar {
     width: 16.25rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .middleBox .searchBox .search-bar input {
+  .subpage .subpage-gallery .middleBox .searchBox .search-bar input {
     width: 70%;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li {
+  /* subpage 국립공원사진전 subpage-gallery-box 설정 */
+  .subpage .subpage-gallery .subpage-gallery-box .cardWrap > li {
     width: 100%;
     padding: 1.125rem;
     margin-bottom: 1.25rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a {
+  .subpage .subpage-gallery .subpage-gallery-box .cardWrap > li a {
     display: flex;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a img {
+  .subpage .subpage-gallery .subpage-gallery-box .cardWrap > li a img {
     width: 40%;
     margin-bottom: 0;
     -o-object-fit: cover;
        object-fit: cover;
     border-radius: 0.5rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap {
+  .subpage .subpage-gallery .subpage-gallery-box .cardWrap > li a .txtBoxWrap {
     width: 60%;
     margin-left: 1rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .txtBox p {
+  .subpage .subpage-gallery .subpage-gallery-box .cardWrap > li a .txtBoxWrap .txtBox p {
     margin-bottom: 0.375rem;
     letter-spacing: -0.05rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .txtBox h4 {
+  .subpage .subpage-gallery .subpage-gallery-box .cardWrap > li a .txtBoxWrap .txtBox h4 {
     margin-bottom: 0.375rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox {
+  .subpage .subpage-gallery .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox {
     flex-direction: row;
     flex-wrap: wrap;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox span {
+  .subpage .subpage-gallery .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox span {
     width: 100%;
     margin-right: 0;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox span:nth-child(2), .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox span:nth-child(3) {
+  .subpage .subpage-gallery .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox span:nth-child(2), .subpage .subpage-gallery .subpage-gallery-box .cardWrap > li a .txtBoxWrap .infoBox span:nth-child(3) {
     width: 50%;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox {
+  .subpage .subpage-gallery .subpage-gallery-box .paginationBox {
     margin-top: 1.875rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .prev {
+  .subpage .subpage-gallery .subpage-gallery-box .paginationBox .prev {
     margin-right: 0.625rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li {
+  .subpage .subpage-gallery .subpage-gallery-box .paginationBox .indexBox li {
     margin: 0 0.125rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(3) {
+  .subpage .subpage-gallery .subpage-gallery-box .paginationBox .indexBox li:nth-child(3) {
     display: none;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(4) {
+  .subpage .subpage-gallery .subpage-gallery-box .paginationBox .indexBox li:nth-child(4) {
     display: none;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(5) {
+  .subpage .subpage-gallery .subpage-gallery-box .paginationBox .indexBox li:nth-child(5) {
     display: none;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(6) {
+  .subpage .subpage-gallery .subpage-gallery-box .paginationBox .indexBox li:nth-child(6) {
     display: none;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(7) {
+  .subpage .subpage-gallery .subpage-gallery-box .paginationBox .indexBox li:nth-child(7) {
     display: none;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(8) {
+  .subpage .subpage-gallery .subpage-gallery-box .paginationBox .indexBox li:nth-child(8) {
     display: none;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(9) {
+  .subpage .subpage-gallery .subpage-gallery-box .paginationBox .indexBox li:nth-child(9) {
     display: none;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .indexBox li:nth-child(10) {
+  .subpage .subpage-gallery .subpage-gallery-box .paginationBox .indexBox li:nth-child(10) {
     display: none;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-gallery .mainContents .subpage-gallery-box .paginationBox .next {
+  .subpage .subpage-gallery .subpage-gallery-box .paginationBox .next {
     margin-left: 0.625rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement {
-    /* mainContents 미디어쿼리 */
-  }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents {
-    /* topBox 미디어쿼리 */
-    /* detailBox 미디어쿼리 */
-    /* bottomBox 미디어쿼리 */
-  }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox h4 {
+  /* subpage 공지사항 topBox 설정 */
+  .subpage .subpage-announcement .topBox h4 {
     font-size: 1.125rem;
     padding: 0.75rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox {
+  .subpage .subpage-announcement .topBox .writeInfoBox {
     flex-direction: column;
     padding: 1rem 0;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li {
+  .subpage .subpage-announcement .topBox .writeInfoBox li {
     margin-left: 0.625rem;
     margin-top: 0.375rem;
     margin-bottom: 0.375rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li b {
+  .subpage .subpage-announcement .topBox .writeInfoBox li b {
     margin-right: 0.5rem;
     font-size: 0.875rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .writeInfoBox li span {
+  .subpage .subpage-announcement .topBox .writeInfoBox li span {
     font-size: 0.875rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .fileBox {
+  .subpage .subpage-announcement .topBox .fileBox {
     padding: 0.75rem 0;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .fileBox p {
+  .subpage .subpage-announcement .topBox .fileBox p {
     font-size: 0.875rem;
     padding: 0 0.5rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .fileBox .fileList li {
+  .subpage .subpage-announcement .topBox .fileBox .fileList li {
     font-size: 0.875rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .topBox .fileBox .fileList li::before {
+  .subpage .subpage-announcement .topBox .fileBox .fileList li::before {
     width: 30px; /* 고정값 */
     height: 30px; /* 고정값 */
     background-position: -60px 0; /* 고정값 */
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .detailBox {
+  /* subpage 공지사항 detailBox 설정 */
+  .subpage .subpage-announcement .detailBox {
     padding: 1rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .listBtn {
+  /* subpage 공지사항 listBox 설정 */
+  .subpage .subpage-announcement .listBox .listBtn {
     font-size: 0.875rem;
     padding: 0.5rem 1.125rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .prevBox {
+  .subpage .subpage-announcement .listBox .prevBox {
     padding: 1rem 0.5rem 1rem 0.5rem;
     display: flex;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .prevBox b {
+  .subpage .subpage-announcement .listBox .prevBox b {
     width: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 0.625rem;
   }
-  .subpage .subpage-inner .sub-contentsBox .subpage-announcement .mainContents .bottomBox .prevBox i {
+  .subpage .subpage-announcement .listBox .prevBox i {
     transform: translateY(0.188rem);
   }
-  /* footer 미디어쿼리 */
+  /* footer 설정 */
   footer {
     height: 48.875rem;
   }

@@ -400,7 +400,7 @@ $(document).ready(function () {
     
   // [서브페이지 하단 의견 수집 input placeholder 길이 조정 위한 텍스트 변경]
   function updatePlaceholder() {
-    const input = $('.subpage .opinionBox .bottomBox input');
+    let input = $('.subpage .opinionBox .bottomBox input');
     if (window.innerWidth <= 520) {
       input.attr('placeholder', '여러분의 소중한 의견을 남겨주세요.');
     } else {
