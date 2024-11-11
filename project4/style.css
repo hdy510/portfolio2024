@@ -166,9 +166,10 @@ header .gnb .gnb-inner h1 {
 header .gnb .gnb-inner h1 a {
   display: inline-block;
   background-image: url("imgs/logo.png");
+  background-size: 11.25rem 2.5rem;
   background-repeat: no-repeat;
-  width: 180px; /* px 고정값 */
-  height: 40px; /* px 고정값 */
+  width: 11.25rem;
+  height: 2.5rem;
   font-size: 0;
   color: transparent;
 }
@@ -847,8 +848,9 @@ header .side-menu .depth-3-Box.open {
 .main .serviceBox ul li a i {
   display: block;
   background-image: url("imgs/service-icons.png");
-  width: 64px; /* px 고정값 */
-  height: 62px; /* px 고정값 */
+  background-size: 16rem 7.75rem;
+  width: 4rem;
+  height: 3.875rem;
 }
 .main .serviceBox ul li a span {
   font-size: 1.125rem;
@@ -856,25 +858,25 @@ header .side-menu .depth-3-Box.open {
   text-align: center;
 }
 .main .serviceBox ul li:nth-child(2) i {
-  background-position: -64px 0; /* px 고정값 */
+  background-position: -4rem 0;
 }
 .main .serviceBox ul li:nth-child(3) i {
-  background-position: -128px 0; /* px 고정값 */
+  background-position: -8rem 0;
 }
 .main .serviceBox ul li:nth-child(4) i {
-  background-position: -192px 0; /* px 고정값 */
+  background-position: -12rem 0;
 }
 .main .serviceBox ul li:nth-child(5) i {
-  background-position: 0rem 62px; /* px 고정값 */
+  background-position: 0 3.875rem;
 }
 .main .serviceBox ul li:nth-child(6) i {
-  background-position: -64px 62px; /* px 고정값 */
+  background-position: -4rem 3.875rem;
 }
 .main .serviceBox ul li:nth-child(7) i {
-  background-position: -128px 62px; /* px 고정값 */
+  background-position: -8rem 3.875rem;
 }
 .main .serviceBox ul li:nth-child(8) i {
-  background-position: -192px 62px; /* px 고정값 */
+  background-position: -12rem 3.875rem;
 }
 
 /* main 새로운 소식 설정*/
@@ -915,7 +917,7 @@ header .side-menu .depth-3-Box.open {
 .main .newsBox .newsBox-inner .tabMenu li a i {
   display: block;
   background-image: url("imgs/news-more-icon.png");
-  background-size: cover;
+  background-size: 1.25rem 1.25rem;
   background-position: 0 0;
   width: 1.25rem;
   height: 1.25rem;
@@ -1077,22 +1079,23 @@ header .side-menu .depth-3-Box.open {
 .main .snsBox .snsBox-inner ul li a i {
   display: block;
   background-image: url(imgs/sns-icon.png);
-  width: 50px; /* px 고정값 */
-  height: 50px; /* px 고정값 */
+  background-size: 18.125rem 3.125rem;
+  width: 3.125rem;
+  height: 3.125rem;
   transform: scale(0.8);
   transition: all 0.3s;
 }
 .main .snsBox .snsBox-inner ul li:nth-child(2) i {
-  background-position: -60px 0; /* px 고정값 */
+  background-position: -3.75rem 0;
 }
 .main .snsBox .snsBox-inner ul li:nth-child(3) i {
-  background-position: -120px 0; /* px 고정값 */
+  background-position: -7.5rem 0;
 }
 .main .snsBox .snsBox-inner ul li:nth-child(4) i {
-  background-position: -180px 0; /* px 고정값 */
+  background-position: -11.25rem 0;
 }
 .main .snsBox .snsBox-inner ul li:nth-child(5) i {
-  background-position: -240px 0; /* px 고정값 */
+  background-position: -15rem 0;
 }
 .main .snsBox .snsBox-inner ul li:hover i {
   transform: scale(1);
@@ -2060,9 +2063,9 @@ header .side-menu .depth-3-Box.open {
   display: block;
   background-image: url(imgs/sub-breadcrumb-icons.png);
   background-position: 0 0;
-  background-size: cover;
-  width: 48px; /* px 고정값 */
-  height: 48px; /* px 고정값 */
+  background-size: 12rem 3rem;
+  width: 3rem;
+  height: 3rem;
 }
 .subpage article .titleBox .breadcrumb li.now a {
   color: #004EA2;
@@ -2076,9 +2079,9 @@ header .side-menu .depth-3-Box.open {
 .subpage article .titleBox .breadcrumb li::after {
   content: "";
   background-image: url(imgs/sub-breadcrumb-arrow.png);
-  background-repeat: no-repeat;
-  width: 7px; /* px 고정값 */
-  height: 8px; /* px 고정값 */
+  background-size: 0.438rem 0.5rem;
+  width: 0.438rem;
+  height: 0.5rem;
   color: #ddd;
   margin-left: 0.813rem;
 }
@@ -2098,18 +2101,18 @@ header .side-menu .depth-3-Box.open {
 .subpage article .titleBox .iconBox span i {
   display: block;
   background-image: url(imgs/sub-breadcrumb-icons.png);
-  background-size: cover;
-  width: 48px; /* px 고정값 */
-  height: 48px; /* px 고정값 */
+  background-size: 12rem 3rem;
+  width: 3rem;
+  height: 3rem;
 }
 .subpage article .titleBox .iconBox span.share i {
-  background-position: -48px 0; /* px 고정값 */
+  background-position: -3rem 0;
 }
 .subpage article .titleBox .iconBox span.copy i {
-  background-position: -95px 0; /* px 고정값 */
+  background-position: -6rem 0;
 }
 .subpage article .titleBox .iconBox span.print i {
-  background-position: -144px 0; /* px 고정값 */
+  background-position: -9rem 0;
 }
 
 /* subpage article 공통 의견박스 설정 */
@@ -2521,12 +2524,11 @@ header .side-menu .depth-3-Box.open {
 .subpage .subpage-announcement .topBox .fileBox .fileList li::before {
   content: "";
   display: inline-block;
-  width: 32px; /* px 고정값 */
-  height: 32px; /* px 고정값 */
   background-image: url(imgs/sub-breadcrumb-icons.png);
-  background-repeat: no-repeat;
-  background-position: -64px 0; /* px 고정값 */
+  background-position: -4rem 0;
   background-size: cover;
+  width: 2rem;
+  height: 2rem;
 }
 
 /* subpage 공지사항 detailBox 설정 */
@@ -2788,12 +2790,13 @@ footer .footer-inner h2 {
   margin-right: 3rem;
   background-color: #fff;
   display: inline;
-  width: 204px; /* px 고정값 */
-  height: 56px; /* px 고정값 */
+  width: 12.75rem;
+  height: 3.5rem;
   font-size: 0;
   background-image: url(imgs/logo.png);
-  background-repeat: no-repeat;
+  background-size: 11.25rem 2.5rem;
   background-position: center center;
+  background-repeat: no-repeat;
   border-radius: 4.625rem;
   cursor: pointer;
 }

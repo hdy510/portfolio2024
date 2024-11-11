@@ -1,14 +1,6 @@
 $(document).ready(function () {
-  // 임시로 사용할 코드
-  // 국립공원 날씨 클릭 시 article.subpage-board 보이기
-  $('.util').click(function () {
-    $('section.main').hide();
-    $('section.subpage').show();
-    $('article.subpage-board').show().siblings().hide();
-  });
-
   // [페이지 이동 설정]
-  // 1. gnb 로고 클릭시 메인페이지로 이동
+  // #1. gnb 로고 클릭시 메인페이지로 이동
   $('nav.gnb h1 a').click(function (e) {
     e.preventDefault();
     // 1. 메인화면과 서브페이지 전환
@@ -29,8 +21,10 @@ $(document).ready(function () {
     $('.side-menu .depth-2-title strong').removeClass('on');
     $('.side-menu .depth-3-Box').removeClass('open');
     $('.side-menu .depth-3-Box li').removeClass('checked');
+    // 열어놨던 2depth 아이콘도 다시 + 로 변경
+    $('.depth-2-title li strong').find('i').removeClass('on')
   });
-  // 2. 메인에서 국립공원사진전 클릭 시 subpage 로 이동
+  // #2. 메인에서 국립공원사진전 클릭 시 subpage 로 이동
   $('.main .group-right .galleryBox .txtBox span').click(function () {
     // 변수 선언
     let $snbGallery = $('.subpage .side-nav-bar .d-2-2');
@@ -41,6 +35,9 @@ $(document).ready(function () {
     $('.subpage .sub-contentsBox .subpage-gallery').show().siblings().hide();
     // 스크롤 상단으로 이동
     $('html, body').animate({scrollTop: 0}, 0);
+    // 메뉴 체크 표시 변경
+    $('.side-menu .depth-3-Box li').removeClass('checked');
+    $('.side-menu .d-2-2 .d-3-1').addClass('checked');
     
     // side-nav-bar 메뉴 열림 상태 적용
     // 1. 열려있던 메뉴 초기화
@@ -52,7 +49,7 @@ $(document).ready(function () {
     $snbGallery.find('.depth-3-Box').addClass('open');
     $snbGallery.find('.d-3-1').addClass('checked');
   });
-  // 3. 메인에서 공지사항 글 클릭 시 subpage 로 이동
+  // #3. 메인에서 공지사항 글 클릭 시 subpage 로 이동
   $('.main .group-left .newsBox .txtBox li a').click(function () {
     // 변수 선언
     let $snbAnnouncement = $('.subpage .side-nav-bar .d-2-1');
@@ -63,6 +60,9 @@ $(document).ready(function () {
     $('.subpage .sub-contentsBox .subpage-announcement').show().siblings().hide();
     // 스크롤 상단으로 이동
     $('html, body').animate({scrollTop: 0}, 0);
+    // 메뉴 체크 표시 변경
+    $('.side-menu .depth-3-Box li').removeClass('checked');
+    $('.side-menu .d-2-1 .d-3-1').addClass('checked');
     
     // side-nav-bar 메뉴 열림 상태 적용
     // 1. 열려있던 메뉴 초기화
@@ -74,7 +74,33 @@ $(document).ready(function () {
     $snbAnnouncement.find('.depth-3-Box').addClass('open');
     $snbAnnouncement.find('.d-3-1').addClass('checked');
   });
-  // 4. 서브페이지에서 snb 에서 국립공원사진전 클릭 시 국립공원사진전 페이지로 이동
+  // #4. 메인에서 공지사항 더보기 (+) 버튼 클릭 시 서브 board 페이지로 이동
+  $('.main .newsBox .tabMenu li').eq(4).click(() => {
+    // 변수 선언
+    let $snbAnnouncement = $('.subpage .side-nav-bar .d-2-1');
+    // 메인화면과 서브페이지 전환
+    $('section.main').hide();
+    $('section.subpage').show();
+    // 서브 board 페이지로 이동
+    $('.subpage .sub-contentsBox .subpage-board').show().siblings().hide();
+    // 스크롤 상단으로 이동
+    $('html, body').animate({scrollTop: 0}, 0);
+    // 메뉴 체크 표시 변경
+    $('.side-menu .depth-3-Box li').removeClass('checked');
+    $('.side-menu .d-2-1 .d-3-1').addClass('checked');
+
+    // side-nav-bar 메뉴 열림 상태 적용
+    // 1. 열려있던 메뉴 초기화
+    $('.subpage .depth-2-title strong').removeClass('on');
+    $('.subpage .depth-3-Box').removeClass('open');
+    $('.subpage .depth-3-Box li').removeClass('checked');
+    // 2. 해당 메뉴 열기
+    $snbAnnouncement.find('strong').addClass('on');
+    $snbAnnouncement.find('.depth-3-Box').addClass('open');
+    $snbAnnouncement.find('.d-3-1').addClass('checked');
+
+  })
+  // #5. 서브페이지에서 snb 에서 국립공원사진전 클릭 시 국립공원사진전 페이지로 이동
   $('.subpage .side-nav-bar .d-2-2 .d-3-1').click(function () {
     // 국립공원사진전 페이지로 이동
     $('.subpage .sub-contentsBox .subpage-gallery').show().siblings().hide();
@@ -84,18 +110,18 @@ $(document).ready(function () {
     $('.subpage .side-nav-bar .depth-3-Box li').removeClass('checked');
     $(this).addClass('checked');
   });
-  // 5. 서브페이지에서 snb 에서 공지사항 클릭 시 공지사항 페이지로 이동
+  // #6. 서브페이지에서 snb 에서 공지사항 클릭 시 서브 board 페이지로 이동
   $('.subpage .side-nav-bar .d-2-1 .d-3-1').click(function () {
     // 공지사항 페이지로 이동
-    $('.subpage .sub-contentsBox .subpage-announcement').show().siblings().hide();
+    $('.subpage .sub-contentsBox .subpage-board').show().siblings().hide();
     // 스크롤 상단으로 이동
     $('html, body').animate({scrollTop: 0}, 0);
     // 메뉴 체크 표시 변경
     $('.subpage .side-nav-bar .depth-3-Box li').removeClass('checked');
     $(this).addClass('checked');
   });
-  // 6. 메인에서 화면 가로폭 좁을 때의 side-menu 의 메뉴 클릭 시 페이지 전환
-  // 6-1. 국립공원사진전 클릭 시 국립공원사진전 페이지로 이동
+  // #7. 메인에서 화면 가로폭 좁을 때의 side-menu 의 메뉴 클릭 시 페이지 전환
+  // 7-1. 국립공원사진전 클릭 시 국립공원사진전 페이지로 이동
   $('.side-menu .d-2-2 .d-3-1').click(function () {
     // side-menu 닫기
     $('.side-menu').removeClass('on');
@@ -112,23 +138,33 @@ $(document).ready(function () {
     $('.side-menu .depth-3-Box li').removeClass('checked');
     $(this).addClass('checked');
   });
-    // 6-2. 공지사항 클릭 시 공지사항 페이지로 이동
-    $('.side-menu .d-2-1 .d-3-1').click(function () {
-      // side-menu 닫기
-      $('.side-menu').removeClass('on');
-      // dimmed-bg2 해제 설정
-      $('.dimmed-bg2').removeClass('open');
-      // 메인화면과 서브페이지 전환
-      $('section.main').hide();
-      $('section.subpage').show();
-      // 공지사항 페이지로 이동
-      $('.subpage .sub-contentsBox .subpage-announcement').show().siblings().hide();
-      // 스크롤 상단으로 이동
-      $('html, body').animate({scrollTop: 0}, 0);
-      // 메뉴 체크 표시 변경
-      $('.side-menu .depth-3-Box li').removeClass('checked');
-      $(this).addClass('checked');
-    });
+  // 7-2. 공지사항 클릭 시 서브 board 페이지로 이동
+  $('.side-menu .d-2-1 .d-3-1').click(function () {
+    // side-menu 닫기
+    $('.side-menu').removeClass('on');
+    // dimmed-bg2 해제 설정
+    $('.dimmed-bg2').removeClass('open');
+    // 메인화면과 서브페이지 전환
+    $('section.main').hide();
+    $('section.subpage').show();
+    // 서브 board 페이지로 이동
+    $('.subpage .sub-contentsBox .subpage-board').show().siblings().hide();
+    // 스크롤 상단으로 이동
+    $('html, body').animate({scrollTop: 0}, 0);
+    // 메뉴 체크 표시 변경
+    $('.side-menu .depth-3-Box li').removeClass('checked');
+    $(this).addClass('checked');
+  });
+  // #8. 서브 board 페이지에서 게시글 클릭하면 공지사항 페이지로 이동
+  $('.subpage .subpage-board .contents-each').click(function () {
+    // 공지사항 페이지로 이동
+    $('.subpage .sub-contentsBox .subpage-announcement').show().siblings().hide();
+    // 스크롤 상단으로 이동
+    $('html, body').animate({scrollTop: 0}, 0);
+    // // 메뉴 체크 표시 변경
+    // $('.subpage .side-nav-bar .depth-3-Box li').removeClass('checked');
+    // $('.subpage .side-nav-bar .d-2-1 .d-3-1').addClass('checked');
+  });
 
 
   // [gnb 메뉴 hover 시, 하위 메뉴 보이기]
