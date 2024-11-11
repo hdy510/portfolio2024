@@ -2130,6 +2130,8 @@ header .side-menu .depth-3-Box {
         .topBox {
             border: none;
             min-width: 0;
+            display: flex;
+            flex-wrap: wrap;
             legend {
                 display: none;
             }
@@ -2139,6 +2141,7 @@ header .side-menu .depth-3-Box {
                 font-size: $font-size-17px;
                 margin-bottom: 2.25rem;
                 line-height: 1.5;
+                width: 100%;
                 span {
                     white-space: nowrap;
                 }
@@ -2146,6 +2149,7 @@ header .side-menu .depth-3-Box {
             .radioBox {
                 display: flex;
                 align-items: center;
+                width: 100%;
                 div {
                     display: flex;
                     align-items: center;
@@ -2291,7 +2295,7 @@ header .side-menu .depth-3-Box {
     align-items: center;
     .optionBox {
         display: flex;
-        orphans: 1;
+        order: 1;
         li {
             width: 8.063rem;
             height: 2.563rem;
@@ -2596,6 +2600,222 @@ header .side-menu .depth-3-Box {
     }
 }
 
+/* subpage 게시판 설정 */
+.subpage .subpage-board {
+    .mainContents {}
+}
+/* subpage 게시판 topBox 설정 */
+.subpage .subpage-board .topBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    .pageNumberBox {
+        display: flex;
+        li {
+            font-weight: 600;
+            font-size: $font-size-16px;
+            &:nth-child(2) {
+                padding-left: 0.5rem;
+                margin-left: 0.625rem;
+                border-left: 0.125rem solid #ddd;
+            }
+            span {}
+        }
+    }
+    .searchBox {
+        .search-bar {
+            background-color: #fff;
+            border: 0.125rem solid $color-blue-main;
+            border-radius: 3.125rem;
+            position: relative;
+            width: 18.125rem;
+            height: 2.563rem;
+            box-sizing: content-box;
+            display: flex;
+            align-items: center;
+            input {
+                all: unset;
+                color: $color-black;
+                width: 80%;
+                margin-left: 1.875rem;
+            }
+            button {
+                all: unset;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                background-color: $color-blue-main;
+                border: 0.125rem solid $color-blue-main;
+                box-sizing: border-box;
+                border-radius: 3.125rem;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 2.563rem;
+                height: 2.563rem;
+                transition: all 0.3s;
+                &:focus {
+                    outline: none;
+                }
+                &:hover {
+                    background-color: #fff;
+                    i {
+                        color: $color-blue-main;
+                    }
+                }
+                i {
+                    color: #fff;
+                    transition: all 0.3s;
+                }
+            }
+        }
+    }
+}
+/* subpage 게시판 boardBox 설정 */
+.subpage .subpage-board .boardBox {
+    margin-top: 1.25rem;
+    margin-bottom: 3.25rem;
+    .guide {
+        background-color: #F5F7FB;
+        border-top: 0.188rem solid $color-blue-main;
+        border-bottom: 0.125rem solid $color-blue-main;
+        display: flex;
+        padding: 1.125rem 0;
+        span {
+            font-size: $font-size-16px;
+            font-weight: 600;
+            text-align: center;
+            &.index {
+                width: 10%;
+                // background-color: rgb(255, 208, 208);
+            }
+            &.parkName {
+                width: 6%;
+                // background-color: rgb(255, 244, 182);
+            }
+            &.title {
+                width: 50%;
+                // background-color: rgb(213, 255, 197);
+            }
+            &.writer {
+                width: 13%;
+                // background-color: rgb(195, 255, 236);
+            }
+            &.view {
+                width: 10%;
+                // background-color: rgb(197, 233, 255);
+            }
+            &.date {
+                width: 11%;
+                // background-color: rgb(232, 190, 255);
+            }
+        }
+    }
+    .contents {
+        .contents-list-box {
+            .contents-lists {
+                border-bottom: 0.063rem solid #ddd;
+                .contents-each {
+                    display: flex;
+                    padding: 1.125rem 0;
+                    li {
+                        text-align: center;
+                        color: #777;
+                        &.index {
+                            width: 10%;
+                            // background-color: rgb(255, 208, 208);
+                        }
+                        &.parkName {
+                            width: 6%;
+                            // background-color: rgb(255, 244, 182);
+                        }
+                        &.title {
+                            width: 50%;
+                            color: #383838;
+                            font-weight: 500;
+                            line-height: 1.5;
+                            text-align: left;
+                            padding: 0 0.75rem;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            cursor: pointer;
+                            // background-color: rgb(213, 255, 197);
+                        }
+                        &.writer {
+                            width: 13%;
+                            // background-color: rgb(195, 255, 236);
+                        }
+                        &.view {
+                            width: 10%;
+                            // background-color: rgb(197, 233, 255);
+                        }
+                        &.date {
+                            width: 11%;
+                            // background-color: rgb(232, 190, 255);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* subpage 게시판 paginationBox 설정 */
+.subpage .subpage-board .paginationBox {
+    display: flex;
+    justify-content: center;
+    // 페이지 버튼 mixin 설정
+    @mixin pageBtn {
+        width: 2.125rem;
+        height: 2.125rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3.125rem;
+    }
+    @mixin pageBtnColor {
+        color: $color-blue-main;
+        border: 0.063rem solid $color-blue-main;
+    }
+    > span {
+        @include pageBtn;
+        @include pageBtnColor;
+        margin: 0 0.313rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        i {}
+        &:hover {
+            background-color: $color-blue-main;
+            i {
+                color: #fff;
+            }
+        }
+    }
+    .toFirst {}
+    .prev {
+        margin-right: 1.25rem;
+    }
+    .indexBox {
+        display: flex;
+        li {
+            @include pageBtn;
+            color: #b6b6b6;
+            font-size: $font-size-17px;
+            font-weight: 600;
+            margin: 0 0.25rem;
+            cursor: pointer;
+            &.on {
+                background-color: $color-blue-main;
+                color: #fff;
+            }
+        }
+    }
+    .next {
+        margin-left: 1.25rem;
+    }
+    .toLast {}
+}
 
 /* footer 설정*/
 footer {
@@ -3255,6 +3475,29 @@ footer {
                 margin-left: 1.875rem;
                 b {
                     margin-right: 0.5rem;
+                }
+            }
+        }
+    }
+    /* subpage 게시판 boardBox 설정 */
+    .subpage .subpage-board .boardBox {
+        .guide {
+            span {
+                &.writer {
+                    width: 6.25rem;
+                }
+            }
+        }
+        .contents {
+            .contents-list-box {
+                .contents-lists {
+                    .contents-each {
+                        li {
+                            &.writer {
+                                width: 6.25rem;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -3943,8 +4186,12 @@ footer {
     }
     /* subpage article 공통 의견박스 설정 */
     .subpage article .opinionBox {
+        padding: 1.875rem;
         form {
             .topBox {
+                p {
+                    font-size: $font-size-16px;
+                }
                 .radioBox {
                     flex-direction: column;
                     align-items: flex-start;
@@ -3952,6 +4199,9 @@ footer {
                         margin-bottom: 0.75rem;
                         input {
                             margin-left: 0;
+                        }
+                        label {
+                            font-size: $font-size-16px;
                         }
                     }
                 }
@@ -3962,6 +4212,11 @@ footer {
                 .inputBox {
                     margin-right: 0;
                     margin-bottom: 1.875rem;
+                    input {
+                        &::placeholder {
+                        font-size: $font-size-14px;
+                        }
+                    }
                 }
             }
         }
@@ -4023,6 +4278,126 @@ footer {
     /* subpage 공지사항 detailBox 설정 */
     .subpage .subpage-announcement .detailBox {
         padding: 1.25rem 1.625rem;
+    }
+    /* subpage 게시판 topBox 설정 */
+    .subpage .subpage-board .topBox {
+        flex-direction: column;
+        align-items: center;
+        .pageNumberBox {
+            order: 2;
+            margin-top: 1.25rem;
+            li {
+                &:nth-child(2) {}
+                span {}
+            }
+        }
+        .searchBox {
+            order: 1;
+            .search-bar {
+                width: 20rem;
+                input {
+                    margin-left: 1.375rem;
+                }
+                button {
+                    &:focus {}
+                    &:hover {
+                        i {}
+                    }
+                    i {}
+                }
+            }
+        }
+    }
+    /* subpage 게시판 boardBox 설정 */
+    .subpage .subpage-board .boardBox {
+        margin-bottom: 2.375rem;
+        .guide {
+            display: none;
+            span {
+                &.writer {
+                }
+            }
+        }
+        .contents {
+            .contents-list-box {
+                width: 95%;
+                margin: 0 auto;
+                .contents-lists {
+                    &:nth-child(1) {
+                        .contents-each {
+                            border-top: 0.063rem solid #ddd;
+                        }
+                    }
+                    .contents-each {
+                        flex-wrap: wrap;
+                        cursor: pointer;
+                        li {
+                            font-size: $font-size-14px;
+                            text-align: left;
+                            &.index {
+                                display: none;
+                            }
+                            &.parkName {
+                                order: 5;
+                                width: 50%;
+                                margin-top: 0.5rem;
+                                &::before {
+                                    content: '공원명';
+                                    font-weight: 500;
+                                    color: #777;
+                                    margin-right: 0.5rem;
+                                }
+                            }
+                            &.title {
+                                order: 1;
+                                width: 100%;
+                                font-size: $font-size-16px;
+                                white-space: wrap;
+                                padding: 0;
+                                margin-bottom: 0.625rem;
+                            }
+                            &.writer {
+                                order: 2;
+                                width: 50%;
+                                &::before {
+                                    content: '작성자';
+                                    font-weight: 500;
+                                    color: #777;
+                                    margin-right: 0.5rem;
+                                }
+                            }
+                            &.view {
+                                order: 3;
+                                width: 50%;
+                                &::before {
+                                    content: '조회수';
+                                    font-weight: 500;
+                                    color: #777;
+                                    margin-right: 0.5rem;
+                                }
+                            }
+                            &.date {
+                                order: 4;
+                                width: 50%;
+                                margin-top: 0.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* subpage 게시판 paginationBox 설정 */
+    .subpage .subpage-board .paginationBox {
+        .indexBox {
+            li {
+                @for $i from 4 through 10 {
+                    &:nth-child(#{$i}) {
+                        display: none;
+                    }
+                }
+            }
+        }
     }
     /* footer 설정 */
     footer {
@@ -4721,11 +5096,11 @@ footer {
     }
     /* subpage article 공통 의견박스 설정 */
     .subpage article .opinionBox {
-        padding: 1.625rem;
+        padding: 1.5rem;
         form {
             .topBox {
                 p {
-                    font-size: $font-size-17px;
+                    font-size: $font-size-16px;
                     margin-bottom: 1.625rem;
                 }
                 .radioBox {
@@ -4919,7 +5294,127 @@ footer {
             span {}
         }
     }
-    
+   /* subpage 게시판 topBox 설정 */
+    .subpage .subpage-board .topBox {
+        flex-direction: column;
+        align-items: center;
+        .pageNumberBox {
+            order: 2;
+            margin-top: 1.25rem;
+            li {
+                &:nth-child(2) {}
+                span {}
+            }
+        }
+        .searchBox {
+            order: 1;
+            .search-bar {
+                width: 13.75rem;
+                input {
+                    margin-left: 1.375rem;
+                }
+                button {
+                    &:focus {}
+                    &:hover {
+                        i {}
+                    }
+                    i {}
+                }
+            }
+        }
+    }
+    /* subpage 게시판 boardBox 설정 */
+    .subpage .subpage-board .boardBox {
+        .guide {
+            display: none;
+            span {
+                &.index {}
+                &.parkName {}
+                &.title {}
+                &.writer {}
+                &.view {}
+                &.date {}
+            }
+        }
+        .contents {
+            .contents-list-box {
+                .contents-lists {
+                    &:nth-child(1) {
+                        .contents-each {
+                            border-top: 0.063rem solid #ddd;
+                        }
+                    }
+                    .contents-each {
+                        flex-wrap: wrap;
+                        cursor: pointer;
+                        
+                        li {
+                            font-size: 0.75rem;
+                            text-align: left;
+                            &.index {
+                                display: none;
+                            }
+                            &.parkName {
+                                display: none;
+                            }
+                            &.title {
+                                order: 1;
+                                width: 100%;
+                                font-size: $font-size-16px;
+                                white-space: wrap;
+                                padding: 0;
+                                margin-bottom: 0.625rem;
+                            }
+                            &.writer {
+                                order: 2;
+                                width: 40%;
+                                &::before {
+                                    content: '작성자';
+                                    font-weight: 500;
+                                    color: #777;
+                                    margin-right: 0.5rem;
+                                }
+                            }
+                            &.view {
+                                order: 3;
+                                width: 60%;
+                                &::before {
+                                    content: '조회수';
+                                    font-weight: 500;
+                                    color: #777;
+                                    margin-right: 0.5rem;
+                                }
+                            }
+                            &.date {
+                                order: 4;
+                                width: 100%;
+                                margin-top: 0.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* subpage 게시판 paginationBox 설정 */
+    .subpage .subpage-board .paginationBox {
+        margin-top: -1.25rem;
+        .prev {
+            margin-right: 0.625rem;
+        }
+        .indexBox {
+            li {
+                @for $i from 3 through 10 {
+                    &:nth-child(#{$i}) {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .next {
+            margin-left: 0.625rem;
+        }
+    }
     /* footer 설정 */
     footer {
         height: 48.875rem;

@@ -1,4 +1,12 @@
 $(document).ready(function () {
+  // 임시로 사용할 코드
+  // 국립공원 날씨 클릭 시 article.subpage-board 보이기
+  $('.util').click(function () {
+    $('section.main').hide();
+    $('section.subpage').show();
+    $('article.subpage-board').show().siblings().hide();
+  });
+
   // [페이지 이동 설정]
   // 1. gnb 로고 클릭시 메인페이지로 이동
   $('nav.gnb h1 a').click(function (e) {

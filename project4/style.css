@@ -2123,6 +2123,8 @@ header .side-menu .depth-3-Box.open {
 .subpage article .opinionBox form .topBox {
   border: none;
   min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 .subpage article .opinionBox form .topBox legend {
   display: none;
@@ -2133,6 +2135,7 @@ header .side-menu .depth-3-Box.open {
   font-size: 1.063rem;
   margin-bottom: 2.25rem;
   line-height: 1.5;
+  width: 100%;
 }
 .subpage article .opinionBox form .topBox p span {
   white-space: nowrap;
@@ -2140,6 +2143,7 @@ header .side-menu .depth-3-Box.open {
 .subpage article .opinionBox form .topBox .radioBox {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 .subpage article .opinionBox form .topBox .radioBox div {
   display: flex;
@@ -2287,7 +2291,7 @@ header .side-menu .depth-3-Box.open {
 }
 .subpage .subpage-gallery .middleBox .optionBox {
   display: flex;
-  orphans: 1;
+  order: 1;
 }
 .subpage .subpage-gallery .middleBox .optionBox li {
   width: 8.063rem;
@@ -2577,6 +2581,197 @@ header .side-menu .depth-3-Box.open {
   cursor: pointer;
 }
 
+/* subpage 게시판 설정 */
+/* subpage 게시판 topBox 설정 */
+.subpage .subpage-board .topBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.subpage .subpage-board .topBox .pageNumberBox {
+  display: flex;
+}
+.subpage .subpage-board .topBox .pageNumberBox li {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.subpage .subpage-board .topBox .pageNumberBox li:nth-child(2) {
+  padding-left: 0.5rem;
+  margin-left: 0.625rem;
+  border-left: 0.125rem solid #ddd;
+}
+.subpage .subpage-board .topBox .searchBox .search-bar {
+  background-color: #fff;
+  border: 0.125rem solid #004EA2;
+  border-radius: 3.125rem;
+  position: relative;
+  width: 18.125rem;
+  height: 2.563rem;
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+}
+.subpage .subpage-board .topBox .searchBox .search-bar input {
+  all: unset;
+  color: #0d0d0d;
+  width: 80%;
+  margin-left: 1.875rem;
+}
+.subpage .subpage-board .topBox .searchBox .search-bar button {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #004EA2;
+  border: 0.125rem solid #004EA2;
+  box-sizing: border-box;
+  border-radius: 3.125rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.563rem;
+  height: 2.563rem;
+  transition: all 0.3s;
+}
+.subpage .subpage-board .topBox .searchBox .search-bar button:focus {
+  outline: none;
+}
+.subpage .subpage-board .topBox .searchBox .search-bar button:hover {
+  background-color: #fff;
+}
+.subpage .subpage-board .topBox .searchBox .search-bar button:hover i {
+  color: #004EA2;
+}
+.subpage .subpage-board .topBox .searchBox .search-bar button i {
+  color: #fff;
+  transition: all 0.3s;
+}
+
+/* subpage 게시판 boardBox 설정 */
+.subpage .subpage-board .boardBox {
+  margin-top: 1.25rem;
+  margin-bottom: 3.25rem;
+}
+.subpage .subpage-board .boardBox .guide {
+  background-color: #F5F7FB;
+  border-top: 0.188rem solid #004EA2;
+  border-bottom: 0.125rem solid #004EA2;
+  display: flex;
+  padding: 1.125rem 0;
+}
+.subpage .subpage-board .boardBox .guide span {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+.subpage .subpage-board .boardBox .guide span.index {
+  width: 10%;
+}
+.subpage .subpage-board .boardBox .guide span.parkName {
+  width: 6%;
+}
+.subpage .subpage-board .boardBox .guide span.title {
+  width: 50%;
+}
+.subpage .subpage-board .boardBox .guide span.writer {
+  width: 13%;
+}
+.subpage .subpage-board .boardBox .guide span.view {
+  width: 10%;
+}
+.subpage .subpage-board .boardBox .guide span.date {
+  width: 11%;
+}
+.subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists {
+  border-bottom: 0.063rem solid #ddd;
+}
+.subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each {
+  display: flex;
+  padding: 1.125rem 0;
+}
+.subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li {
+  text-align: center;
+  color: #777;
+}
+.subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.index {
+  width: 10%;
+}
+.subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.parkName {
+  width: 6%;
+}
+.subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.title {
+  width: 50%;
+  color: #383838;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+  padding: 0 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.writer {
+  width: 13%;
+}
+.subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.view {
+  width: 10%;
+}
+.subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.date {
+  width: 11%;
+}
+
+/* subpage 게시판 paginationBox 설정 */
+.subpage .subpage-board .paginationBox {
+  display: flex;
+  justify-content: center;
+}
+.subpage .subpage-board .paginationBox > span {
+  width: 2.125rem;
+  height: 2.125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3.125rem;
+  color: #004EA2;
+  border: 0.063rem solid #004EA2;
+  margin: 0 0.313rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.subpage .subpage-board .paginationBox > span:hover {
+  background-color: #004EA2;
+}
+.subpage .subpage-board .paginationBox > span:hover i {
+  color: #fff;
+}
+.subpage .subpage-board .paginationBox .prev {
+  margin-right: 1.25rem;
+}
+.subpage .subpage-board .paginationBox .indexBox {
+  display: flex;
+}
+.subpage .subpage-board .paginationBox .indexBox li {
+  width: 2.125rem;
+  height: 2.125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3.125rem;
+  color: #b6b6b6;
+  font-size: 1.063rem;
+  font-weight: 600;
+  margin: 0 0.25rem;
+  cursor: pointer;
+}
+.subpage .subpage-board .paginationBox .indexBox li.on {
+  background-color: #004EA2;
+  color: #fff;
+}
+.subpage .subpage-board .paginationBox .next {
+  margin-left: 1.25rem;
+}
 /* footer 설정*/
 footer {
   background-color: #004EA2;
@@ -3145,6 +3340,13 @@ footer .footer-inner .txtBox .info p span {
   }
   .subpage .subpage-announcement .topBox .writeInfoBox li b {
     margin-right: 0.5rem;
+  }
+  /* subpage 게시판 boardBox 설정 */
+  .subpage .subpage-board .boardBox .guide span.writer {
+    width: 6.25rem;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.writer {
+    width: 6.25rem;
   }
   /* footer 설정 */
   footer {
@@ -3767,6 +3969,12 @@ footer .footer-inner .txtBox .info p span {
     background-position: -114px 0; /* 고정값 */
   }
   /* subpage article 공통 의견박스 설정 */
+  .subpage article .opinionBox {
+    padding: 1.875rem;
+  }
+  .subpage article .opinionBox form .topBox p {
+    font-size: 1rem;
+  }
   .subpage article .opinionBox form .topBox .radioBox {
     flex-direction: column;
     align-items: flex-start;
@@ -3777,6 +3985,9 @@ footer .footer-inner .txtBox .info p span {
   .subpage article .opinionBox form .topBox .radioBox div input {
     margin-left: 0;
   }
+  .subpage article .opinionBox form .topBox .radioBox div label {
+    font-size: 1rem;
+  }
   .subpage article .opinionBox form .bottomBox {
     flex-direction: column;
     align-items: center;
@@ -3784,6 +3995,12 @@ footer .footer-inner .txtBox .info p span {
   .subpage article .opinionBox form .bottomBox .inputBox {
     margin-right: 0;
     margin-bottom: 1.875rem;
+  }
+  .subpage article .opinionBox form .bottomBox .inputBox input::-moz-placeholder {
+    font-size: 0.875rem;
+  }
+  .subpage article .opinionBox form .bottomBox .inputBox input::placeholder {
+    font-size: 0.875rem;
   }
   /* subpage 국립공원사진전 middleBox 설정 */
   .subpage .subpage-gallery .middleBox {
@@ -3846,6 +4063,115 @@ footer .footer-inner .txtBox .info p span {
   /* subpage 공지사항 detailBox 설정 */
   .subpage .subpage-announcement .detailBox {
     padding: 1.25rem 1.625rem;
+  }
+  /* subpage 게시판 topBox 설정 */
+  .subpage .subpage-board .topBox {
+    flex-direction: column;
+    align-items: center;
+  }
+  .subpage .subpage-board .topBox .pageNumberBox {
+    order: 2;
+    margin-top: 1.25rem;
+  }
+  .subpage .subpage-board .topBox .searchBox {
+    order: 1;
+  }
+  .subpage .subpage-board .topBox .searchBox .search-bar {
+    width: 20rem;
+  }
+  .subpage .subpage-board .topBox .searchBox .search-bar input {
+    margin-left: 1.375rem;
+  }
+  /* subpage 게시판 boardBox 설정 */
+  .subpage .subpage-board .boardBox {
+    margin-bottom: 2.375rem;
+  }
+  .subpage .subpage-board .boardBox .guide {
+    display: none;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists:nth-child(1) .contents-each {
+    border-top: 0.063rem solid #ddd;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each {
+    flex-wrap: wrap;
+    cursor: pointer;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li {
+    font-size: 0.875rem;
+    text-align: left;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.index {
+    display: none;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.parkName {
+    order: 5;
+    width: 50%;
+    margin-top: 0.5rem;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.parkName::before {
+    content: "공원명";
+    font-weight: 500;
+    color: #777;
+    margin-right: 0.5rem;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.title {
+    order: 1;
+    width: 100%;
+    font-size: 1rem;
+    white-space: wrap;
+    padding: 0;
+    margin-bottom: 0.625rem;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.writer {
+    order: 2;
+    width: 50%;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.writer::before {
+    content: "작성자";
+    font-weight: 500;
+    color: #777;
+    margin-right: 0.5rem;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.view {
+    order: 3;
+    width: 50%;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.view::before {
+    content: "조회수";
+    font-weight: 500;
+    color: #777;
+    margin-right: 0.5rem;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.date {
+    order: 4;
+    width: 50%;
+    margin-top: 0.5rem;
+  }
+  /* subpage 게시판 paginationBox 설정 */
+  .subpage .subpage-board .paginationBox .indexBox li:nth-child(4) {
+    display: none;
+  }
+  .subpage .subpage-board .paginationBox .indexBox li:nth-child(5) {
+    display: none;
+  }
+  .subpage .subpage-board .paginationBox .indexBox li:nth-child(6) {
+    display: none;
+  }
+  .subpage .subpage-board .paginationBox .indexBox li:nth-child(7) {
+    display: none;
+  }
+  .subpage .subpage-board .paginationBox .indexBox li:nth-child(8) {
+    display: none;
+  }
+  .subpage .subpage-board .paginationBox .indexBox li:nth-child(9) {
+    display: none;
+  }
+  .subpage .subpage-board .paginationBox .indexBox li:nth-child(10) {
+    display: none;
   }
   /* footer 설정 */
   footer {
@@ -4492,10 +4818,10 @@ footer .footer-inner .txtBox .info p span {
   }
   /* subpage article 공통 의견박스 설정 */
   .subpage article .opinionBox {
-    padding: 1.625rem;
+    padding: 1.5rem;
   }
   .subpage article .opinionBox form .topBox p {
-    font-size: 1.063rem;
+    font-size: 1rem;
     margin-bottom: 1.625rem;
   }
   .subpage article .opinionBox form .topBox .radioBox {
@@ -4691,6 +5017,112 @@ footer .footer-inner .txtBox .info p span {
   }
   .subpage .subpage-announcement .listBox .prevBox i {
     transform: translateY(0.188rem);
+  }
+  /* subpage 게시판 topBox 설정 */
+  .subpage .subpage-board .topBox {
+    flex-direction: column;
+    align-items: center;
+  }
+  .subpage .subpage-board .topBox .pageNumberBox {
+    order: 2;
+    margin-top: 1.25rem;
+  }
+  .subpage .subpage-board .topBox .searchBox {
+    order: 1;
+  }
+  .subpage .subpage-board .topBox .searchBox .search-bar {
+    width: 13.75rem;
+  }
+  .subpage .subpage-board .topBox .searchBox .search-bar input {
+    margin-left: 1.375rem;
+  }
+  /* subpage 게시판 boardBox 설정 */
+  .subpage .subpage-board .boardBox .guide {
+    display: none;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists:nth-child(1) .contents-each {
+    border-top: 0.063rem solid #ddd;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each {
+    flex-wrap: wrap;
+    cursor: pointer;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li {
+    font-size: 0.75rem;
+    text-align: left;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.index {
+    display: none;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.parkName {
+    display: none;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.title {
+    order: 1;
+    width: 100%;
+    font-size: 1rem;
+    white-space: wrap;
+    padding: 0;
+    margin-bottom: 0.625rem;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.writer {
+    order: 2;
+    width: 40%;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.writer::before {
+    content: "작성자";
+    font-weight: 500;
+    color: #777;
+    margin-right: 0.5rem;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.view {
+    order: 3;
+    width: 60%;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.view::before {
+    content: "조회수";
+    font-weight: 500;
+    color: #777;
+    margin-right: 0.5rem;
+  }
+  .subpage .subpage-board .boardBox .contents .contents-list-box .contents-lists .contents-each li.date {
+    order: 4;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  /* subpage 게시판 paginationBox 설정 */
+  .subpage .subpage-board .paginationBox {
+    margin-top: -1.25rem;
+  }
+  .subpage .subpage-board .paginationBox .prev {
+    margin-right: 0.625rem;
+  }
+  .subpage .subpage-board .paginationBox .indexBox li:nth-child(3) {
+    display: none;
+  }
+  .subpage .subpage-board .paginationBox .indexBox li:nth-child(4) {
+    display: none;
+  }
+  .subpage .subpage-board .paginationBox .indexBox li:nth-child(5) {
+    display: none;
+  }
+  .subpage .subpage-board .paginationBox .indexBox li:nth-child(6) {
+    display: none;
+  }
+  .subpage .subpage-board .paginationBox .indexBox li:nth-child(7) {
+    display: none;
+  }
+  .subpage .subpage-board .paginationBox .indexBox li:nth-child(8) {
+    display: none;
+  }
+  .subpage .subpage-board .paginationBox .indexBox li:nth-child(9) {
+    display: none;
+  }
+  .subpage .subpage-board .paginationBox .indexBox li:nth-child(10) {
+    display: none;
+  }
+  .subpage .subpage-board .paginationBox .next {
+    margin-left: 0.625rem;
   }
   /* footer 설정 */
   footer {
