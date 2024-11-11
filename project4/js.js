@@ -165,6 +165,13 @@ $(document).ready(function () {
     // $('.subpage .side-nav-bar .depth-3-Box li').removeClass('checked');
     // $('.subpage .side-nav-bar .d-2-1 .d-3-1').addClass('checked');
   });
+  // #9. 서브 공지사항 페이지에서 목록 클릭하면 서브 board 페이지로 이동
+  $('.subpage .subpage-announcement .mainContents .listBtn').click(() => {
+    // 공지사항 페이지로 이동
+    $('.subpage .sub-contentsBox .subpage-announcement').show().siblings().hide();
+    // 스크롤 상단으로 이동
+    $('html, body').animate({scrollTop: 0}, 0);
+  });
 
 
   // [gnb 메뉴 hover 시, 하위 메뉴 보이기]
