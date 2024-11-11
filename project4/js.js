@@ -168,7 +168,7 @@ $(document).ready(function () {
   // #9. 서브 공지사항 페이지에서 목록 클릭하면 서브 board 페이지로 이동
   $('.subpage .subpage-announcement .mainContents .listBtn').click(() => {
     // 공지사항 페이지로 이동
-    $('.subpage .sub-contentsBox .subpage-announcement').show().siblings().hide();
+    $('.subpage .sub-contentsBox .subpage-board').show().siblings().hide();
     // 스크롤 상단으로 이동
     $('html, body').animate({scrollTop: 0}, 0);
   });
