@@ -3940,14 +3940,19 @@ footer .footer-inner .txtBox .info p span {
     width: 100%;
     margin-right: 0;
     margin-left: -0.5rem;
-    margin-bottom: 0.625rem;
+    margin-bottom: 0.325rem;
   }
-  .subpage article .titleBox .breadcrumb li a i {
-    width: 2.5rem;
-    height: 2.5rem;
+  .subpage article .titleBox .breadcrumb li {
+    margin: 0 0.2rem;
+  }
+  .subpage article .titleBox .breadcrumb li a {
+    transform: scale(0.8);
   }
   .subpage article .titleBox .breadcrumb li:nth-child(1) {
     margin-left: -0.125rem;
+  }
+  .subpage article .titleBox .breadcrumb li::after {
+    margin-left: 0.2rem;
   }
   /* subpage article 공통 titleBox iconBox 설정 */
   .subpage article .titleBox .iconBox {
@@ -3955,21 +3960,8 @@ footer .footer-inner .txtBox .info p span {
     justify-content: flex-end;
   }
   .subpage article .titleBox .iconBox span {
-    width: 2.375rem;
-    height: 2.375rem;
-  }
-  .subpage article .titleBox .iconBox span i {
-    width: 38px; /* 고정값 */
-    height: 38px; /* 고정값 */
-  }
-  .subpage article .titleBox .iconBox span.share i {
-    background-position: -38px 0; /* 고정값 */
-  }
-  .subpage article .titleBox .iconBox span.copy i {
-    background-position: -76px 0; /* 고정값 */
-  }
-  .subpage article .titleBox .iconBox span.print i {
-    background-position: -114px 0; /* 고정값 */
+    transform: scale(0.8);
+    margin: 0 0.1rem;
   }
   /* subpage article 공통 의견박스 설정 */
   .subpage article .opinionBox {
@@ -4782,20 +4774,20 @@ footer .footer-inner .txtBox .info p span {
     width: 100%;
     margin-right: 0;
     margin-left: -0.5rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.925rem;
   }
   .subpage article .titleBox .breadcrumb li {
     margin: 0 0.375rem;
   }
   .subpage article .titleBox .breadcrumb li a {
     font-size: 0.875rem;
-  }
-  .subpage article .titleBox .breadcrumb li a i {
-    width: 34px; /* 고정값 */
-    height: 34px; /* 고정값 */
+    transform: scale(0.8);
   }
   .subpage article .titleBox .breadcrumb li:nth-child(1) {
     margin-left: -0.125rem;
+  }
+  .subpage article .titleBox .breadcrumb li::after {
+    margin-left: 0.2rem;
   }
   /* subpage article 공통 titleBox iconBox 설정 */
   .subpage article .titleBox .iconBox {
@@ -4803,21 +4795,8 @@ footer .footer-inner .txtBox .info p span {
     justify-content: flex-end;
   }
   .subpage article .titleBox .iconBox span {
-    width: 2.375rem;
-    height: 2.375rem;
-  }
-  .subpage article .titleBox .iconBox span i {
-    width: 38px; /* 고정값 */
-    height: 38px; /* 고정값 */
-  }
-  .subpage article .titleBox .iconBox span.share i {
-    background-position: -38px 0; /* 고정값 */
-  }
-  .subpage article .titleBox .iconBox span.copy i {
-    background-position: -76px 0; /* 고정값 */
-  }
-  .subpage article .titleBox .iconBox span.print i {
-    background-position: -114px 0; /* 고정값 */
+    transform: scale(0.8);
+    margin: 0 0.1rem;
   }
   /* subpage article 공통 의견박스 설정 */
   .subpage article .opinionBox {
