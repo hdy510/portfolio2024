@@ -2874,66 +2874,6 @@ footer .footer-inner .txtBox .info p span {
   visibility: visible;
 }
 
-/* tutorial 가이드창 설정 */
-.tutorial {
-  position: fixed;
-  right: 40px;
-  bottom: 40px;
-  border-radius: 12px;
-  font-size: 1.125rem;
-  font-weight: 500;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 26px;
-  color: #2a2a2a;
-  border: 1px solid #ddd;
-  background-color: rgba(255, 255, 255, 0.3);
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
-  z-index: 50;
-}
-.tutorial h3 {
-  font-size: 1.625rem;
-  margin-bottom: 10px;
-}
-.tutorial p {
-  margin-bottom: 10px;
-}
-.tutorial ul li {
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  margin: 4px 0;
-}
-.tutorial ul li::before {
-  content: "•";
-  margin-right: 5px;
-}
-.tutorial ul li span {
-  color: red;
-  margin-left: 2px;
-  font-size: 0.875rem;
-}
-.tutorial ul li i {
-  font-size: 12px;
-  font-style: normal;
-  border-bottom: 1px solid #0d0d0d;
-  padding: 2px;
-  margin-left: 10px;
-  cursor: pointer;
-}
-.tutorial h4 {
-  font-size: 1.625rem;
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
-.tutorial h5 {
-  font-size: 1.125rem;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
 /* 와이드 데스크탑 미디어쿼리 설정 */
 @media (min-width: 1400px) {
   /* util 설정 */

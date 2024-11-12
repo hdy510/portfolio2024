@@ -1,177 +1,410 @@
 $(document).ready(function () {
-  // [페이지 이동 설정]
-  // #1. gnb 로고 클릭시 메인페이지로 이동
-  $('nav.gnb h1 a').click(function (e) {
-    e.preventDefault();
-    // 1. 메인화면과 서브페이지 전환
+  // << 페이지 이동 함수 선언 >>
+  // 1. 메인페이지에서 서브페이지로 이동하는 함수
+  function goToSubPage () {
+    // 메인화면과 서브페이지 전환
+    $('section.main').hide();
+    $('section.subpage').show();
+    // 스크롤 상단으로 이동
+    $('html, body').animate({scrollTop: 0}, 0);
+  }
+  // 2. 서브페이지에서 메인페이지로 이동하는 함수
+  function goToMainPage () {
+    // 메인화면과 서브페이지 전환
     $('section.subpage').hide();
     $('section.main').show();
-    // 2. 스크롤 상단으로 이동
+    // 스크롤 상단으로 이동
     $('html, body').animate({scrollTop: 0}, 0);
+  }
+  // 3. 게시판 페이지 보여주는 함수
+  function showBoardPage () {
+    $('.subpage .sub-contentsBox .subpage-board').show().siblings().hide();
+  }
+  // 4. 공지사항 게시글 페이지 보여주는 함수
+  function showAnnouncementPage () {
+    $('.subpage .sub-contentsBox .subpage-announcement').show().siblings().hide();
+  }
+  // 5. 갤러리 페이지 보여주는 함수
+  function showGalleryPage () {
+    $('.subpage .sub-contentsBox .subpage-gallery').show().siblings().hide();
+  }
 
-    // 3. side-menu 열린상태에서 로고 클릭했을 경우
-    // 3-1. side-menu 닫기
-    $('.side-menu').removeClass('on');
-    // 3-2. dimmed-bg2 해제 설정
-    $('.dimmed-bg2').removeClass('open');
-    // 3-3. side-menu 메뉴 열림 상태 초기화
-    // 메뉴 체크 표시 변경
+
+  // << 활성화 함수 선언 >>
+  // 1. 좌측 side-nav-bar 갤러리 활성화 함수
+  function leftSideGalleryActivation () {
+    $('.side-nav-bar .d-2-2 strong').addClass('on');
+    $('.side-nav-bar .d-2-2 .depth-3-Box').addClass('open');
+    $('.side-nav-bar .d-2-2 .depth-3-Box .d-3-1').addClass('checked');
+  }
+  // 2. 좌측 side-nav-bar 공지사항 게시판 활성화 함수
+  function leftSideBoardActivation () {
+    $('.side-nav-bar .d-2-1 strong').addClass('on');
+    $('.side-nav-bar .d-2-1 .depth-3-Box').addClass('open');
+    $('.side-nav-bar .d-2-1 .depth-3-Box .d-3-1').addClass('checked');
+  }
+  // 3. 좁은 화면 우측 side-menu 갤러리 활성화 함수
+  function rightSideGalleryActivation () {
+    $('.side-menu .depth-1-Box-inner li').eq(2).find('a').addClass('active');
+    $('.side-menu .depth-2-Box-inner').eq(2).addClass('active');
+    $('.side-menu .d-2-2 strong').addClass('on');
+    $('.side-menu .d-2-2 strong i').addClass('on');
+    $('.side-menu .d-2-2 .depth-3-Box').addClass('open');
+    $('.side-menu .d-2-2 .depth-3-Box .d-3-1').addClass('checked');
+  }
+  // 4. 좁은 화면 우측 side-menu 공지사항 게시판 활성화 함수
+  function rightSideBoardActivation () {
+    $('.side-menu .depth-1-Box-inner li').eq(2).find('a').addClass('active');
+    $('.side-menu .depth-2-Box-inner').eq(2).addClass('active');
+    $('.side-menu .d-2-1 strong').addClass('on');
+    $('.side-menu .d-2-1 strong i').addClass('on');
+    $('.side-menu .d-2-1 .depth-3-Box').addClass('open');
+    $('.side-menu .d-2-1 .depth-3-Box .d-3-1').addClass('checked');
+  }
+
+
+  // << 비활성화 함수 선언 >>
+  // 1. 좁은 화면 우측 side-menu 선택된 메뉴 비활성화 함수 선언
+  function rightSideDeactivation () {
+    // 파란 색상 제거
     $('.side-menu .depth-3-Box li').removeClass('checked');
-    // 열려있던 메뉴 초기화
-    $('.side-menu .depth-2-title strong').removeClass('on');
+    // 열린 메뉴 닫기
     $('.side-menu .depth-3-Box').removeClass('open');
-    $('.side-menu .depth-3-Box li').removeClass('checked');
-    // 열어놨던 2depth 아이콘도 다시 + 로 변경
-    $('.depth-2-title li strong').find('i').removeClass('on')
-  });
-  // #2. 메인에서 국립공원사진전 클릭 시 subpage 로 이동
-  $('.main .group-right .galleryBox .txtBox span').click(function () {
-    // 변수 선언
-    let $snbGallery = $('.subpage .side-nav-bar .d-2-2');
-    // 메인화면과 서브페이지 전환
-    $('section.main').hide();
-    $('section.subpage').show();
-    // 국립공원사진전 페이지로 이동
-    $('.subpage .sub-contentsBox .subpage-gallery').show().siblings().hide();
-    // 스크롤 상단으로 이동
-    $('html, body').animate({scrollTop: 0}, 0);
-    // 메뉴 체크 표시 변경
-    $('.side-menu .depth-3-Box li').removeClass('checked');
-    $('.side-menu .d-2-2 .d-3-1').addClass('checked');
-    
-    // side-nav-bar 메뉴 열림 상태 적용
-    // 1. 열려있던 메뉴 초기화
-    $('.subpage .depth-2-title strong').removeClass('on');
-    $('.subpage .depth-3-Box').removeClass('open');
-    $('.subpage .depth-3-Box li').removeClass('checked');
-    // 2. 해당 메뉴 열기
-    $snbGallery.find('strong').addClass('on');
-    $snbGallery.find('.depth-3-Box').addClass('open');
-    $snbGallery.find('.d-3-1').addClass('checked');
-  });
-  // #3. 메인에서 공지사항 글 클릭 시 subpage 로 이동
-  $('.main .group-left .newsBox .txtBox li a').click(function () {
-    // 변수 선언
-    let $snbAnnouncement = $('.subpage .side-nav-bar .d-2-1');
-    // 메인화면과 서브페이지 전환
-    $('section.main').hide();
-    $('section.subpage').show();
-    // 공지사항 페이지로 이동
-    $('.subpage .sub-contentsBox .subpage-announcement').show().siblings().hide();
-    // 스크롤 상단으로 이동
-    $('html, body').animate({scrollTop: 0}, 0);
-    // 메뉴 체크 표시 변경
-    $('.side-menu .depth-3-Box li').removeClass('checked');
-    $('.side-menu .d-2-1 .d-3-1').addClass('checked');
-    
-    // side-nav-bar 메뉴 열림 상태 적용
-    // 1. 열려있던 메뉴 초기화
-    $('.subpage .depth-2-title strong').removeClass('on');
-    $('.subpage .depth-3-Box').removeClass('open');
-    $('.subpage .depth-3-Box li').removeClass('checked');
-    // 2. 해당 메뉴 열기
-    $snbAnnouncement.find('strong').addClass('on');
-    $snbAnnouncement.find('.depth-3-Box').addClass('open');
-    $snbAnnouncement.find('.d-3-1').addClass('checked');
-  });
-  // #4. 메인에서 공지사항 더보기 (+) 버튼 클릭 시 서브 board 페이지로 이동
-  $('.main .newsBox .tabMenu li').eq(4).click(() => {
-    // 변수 선언
-    let $snbAnnouncement = $('.subpage .side-nav-bar .d-2-1');
-    // 메인화면과 서브페이지 전환
-    $('section.main').hide();
-    $('section.subpage').show();
-    // 서브 board 페이지로 이동
-    $('.subpage .sub-contentsBox .subpage-board').show().siblings().hide();
-    // 스크롤 상단으로 이동
-    $('html, body').animate({scrollTop: 0}, 0);
-    // 메뉴 체크 표시 변경
-    $('.side-menu .depth-3-Box li').removeClass('checked');
-    $('.side-menu .d-2-1 .d-3-1').addClass('checked');
+    // 아이콘 변경
+    $('.side-menu .depth-2-title li strong').find('i').removeClass('on')
+    // 밑줄 효과 제거
+    $('.side-menu .depth-2-title li strong').removeClass('on')
+    // .depth-2-Box-inner 의 하단에 보이지 않는 블럭 추가했던거 제거
+    $('.depth-2-Box-inner .block').remove()
+     // 1뎁스 active 제거
+     $('.side-menu .depth-1-Box-inner li').find('a').removeClass('active');
+     // 2뎁스 active 제거
+    $('.side-menu .depth-2-Box-inner').removeClass('active');
+  }
+  // 2. 좌측 side-nav-bar 선택된 메뉴 초기화 함수 선언
+  function leftSideDeactivation () {
+    $('.side-nav-bar strong').removeClass('on');
+    $('.side-nav-bar .depth-3-Box').removeClass('open');
+    $('.side-nav-bar .depth-3-Box li').removeClass('checked');
+    $('.side-nav-bar .depth-2-title strong i').removeClass('on');
+  }
 
-    // side-nav-bar 메뉴 열림 상태 적용
-    // 1. 열려있던 메뉴 초기화
-    $('.subpage .depth-2-title strong').removeClass('on');
-    $('.subpage .depth-3-Box').removeClass('open');
-    $('.subpage .depth-3-Box li').removeClass('checked');
-    // 2. 해당 메뉴 열기
-    $snbAnnouncement.find('strong').addClass('on');
-    $snbAnnouncement.find('.depth-3-Box').addClass('open');
-    $snbAnnouncement.find('.d-3-1').addClass('checked');
+  
+  // << 초기화 함수 선언 >>
+  // 1. 좁은 화면 우측 side-menu 선택된 메뉴 초기화 함수 선언 
+  function rightSideInitialization () {
+    // 1뎁스 active 제일 첫 번째로 변경
+    $('.side-menu .depth-1-Box-inner li').siblings().find('a').removeClass('active');
+    $('.side-menu .depth-1-Box-inner li').eq(0).find('a').addClass('active');
+    // 2뎁스 active 제일 첫 번째로 변경
+    $('.side-menu .depth-2-Box > div').removeClass('active');
+    $('.side-menu .depth-2-Box > div').eq(0).addClass('active');
+  }
 
-  })
-  // #5. 서브페이지에서 snb 에서 국립공원사진전 클릭 시 국립공원사진전 페이지로 이동
-  $('.subpage .side-nav-bar .d-2-2 .d-3-1').click(function () {
-    // 국립공원사진전 페이지로 이동
-    $('.subpage .sub-contentsBox .subpage-gallery').show().siblings().hide();
-    // 스크롤 상단으로 이동
-    $('html, body').animate({scrollTop: 0}, 0);
-    // 메뉴 체크 표시 변경
-    $('.subpage .side-nav-bar .depth-3-Box li').removeClass('checked');
-    $(this).addClass('checked');
-  });
-  // #6. 서브페이지에서 snb 에서 공지사항 클릭 시 서브 board 페이지로 이동
-  $('.subpage .side-nav-bar .d-2-1 .d-3-1').click(function () {
-    // 공지사항 페이지로 이동
-    $('.subpage .sub-contentsBox .subpage-board').show().siblings().hide();
-    // 스크롤 상단으로 이동
-    $('html, body').animate({scrollTop: 0}, 0);
-    // 메뉴 체크 표시 변경
-    $('.subpage .side-nav-bar .depth-3-Box li').removeClass('checked');
-    $(this).addClass('checked');
-  });
-  // #7. 메인에서 화면 가로폭 좁을 때의 side-menu 의 메뉴 클릭 시 페이지 전환
-  // 7-1. 국립공원사진전 클릭 시 국립공원사진전 페이지로 이동
-  $('.side-menu .d-2-2 .d-3-1').click(function () {
-    // side-menu 닫기
+
+
+
+  // << 메인페이지 >>
+  // 1. 로고 클릭 시 메인페이지 상단으로 이동
+  $('.gnb h1').click(function () {
+    goToMainPage();
+    // 1-1. 좁은 화면의 side-menu 닫히기
     $('.side-menu').removeClass('on');
-    // dimmed-bg2 해제 설정
+      // dimmed-bg2 해제 설정
     $('.dimmed-bg2').removeClass('open');
-    // 메인화면과 서브페이지 전환
-    $('section.main').hide();
-    $('section.subpage').show();
-    // 국립공원사진전 페이지로 이동
-    $('.subpage .sub-contentsBox .subpage-gallery').show().siblings().hide();
-    // 스크롤 상단으로 이동
-    $('html, body').animate({scrollTop: 0}, 0);
-    // 메뉴 체크 표시 변경
-    $('.side-menu .depth-3-Box li').removeClass('checked');
-    $(this).addClass('checked');
+    // 1-2. 좁은 화면의 side-menu 활성화된 메뉴 초기화
+    rightSideInitialization();
   });
-  // 7-2. 공지사항 클릭 시 서브 board 페이지로 이동
-  $('.side-menu .d-2-1 .d-3-1').click(function () {
-    // side-menu 닫기
+  // 2. gnb 메뉴 클릭 시 서브페이지로 이동
+  $('.gnb .list3').click(function () {
+    goToSubPage();
+    let $index = $(this).index();
+    let $depth2 = $(this).parent().parent();
+    if ($depth2.hasClass('d-2-2')) {
+      // 2depth 가 사진자료일 경우에는 홀수 일 떄 갤러리를 보여줌
+      if ($index % 2 === 0) {
+        showGalleryPage();
+
+        leftSideDeactivation();
+        leftSideGalleryActivation();
+      
+        rightSideDeactivation();
+        rightSideGalleryActivation();
+      } else {
+        showBoardPage();
+
+        leftSideDeactivation();
+        leftSideBoardActivation();
+        
+        rightSideDeactivation();
+        rightSideBoardActivation();
+      }
+    } else {
+      // 홀짝 여부에 따라 페이지 전환
+      if ($index % 2 === 0) {
+        showBoardPage();
+
+        leftSideDeactivation();
+        leftSideBoardActivation();
+        
+        rightSideDeactivation();
+        rightSideBoardActivation();
+      } else {
+        showGalleryPage();
+
+        leftSideDeactivation();
+        leftSideGalleryActivation();
+      
+        rightSideDeactivation();
+        rightSideGalleryActivation();
+      }
+    }
+    
+    // gnb 의 items 높이 0으로
+    $('.gnb .items').removeClass('open');
+    // dimmed-bg1 해제
+    $('.dimmed-bg1').removeClass('open');
+  });
+  // 3. 좁은 화면의 우측 side-menu 메뉴에서 클릭 시 서브페이지로 이동
+  $('.side-menu .depth-3-Box li').click(function () {
+    goToSubPage();
+    let $index = $(this).index();
+    let $depth2 = $(this).parent().parent();
+    if ($depth2.hasClass('d-2-2')) {
+      // 2depth 가 사진자료일 경우에는 홀수 일 떄 갤러리를 보여줌
+      if ($index % 2 === 0) {
+        showGalleryPage();
+
+        leftSideDeactivation();
+        leftSideGalleryActivation();
+      
+        rightSideDeactivation();
+        rightSideGalleryActivation();
+      } else {
+        showBoardPage();
+
+        leftSideDeactivation();
+        leftSideBoardActivation();
+        
+        rightSideDeactivation();
+        rightSideBoardActivation();
+      }
+    } else {
+      // 홀짝 여부에 따라 페이지 전환
+      if ($index % 2 === 0) {
+        showBoardPage();
+
+        leftSideDeactivation();
+        leftSideBoardActivation();
+        
+        rightSideDeactivation();
+        rightSideBoardActivation();
+      } else {
+        showGalleryPage();
+
+        leftSideDeactivation();
+        leftSideGalleryActivation();
+      
+        rightSideDeactivation();
+        rightSideGalleryActivation();
+      }
+    }
+
+
+
+
+
+    // 좁은 화면의 side-menu 닫히기
     $('.side-menu').removeClass('on');
-    // dimmed-bg2 해제 설정
+      // dimmed-bg2 해제 설정
     $('.dimmed-bg2').removeClass('open');
-    // 메인화면과 서브페이지 전환
-    $('section.main').hide();
-    $('section.subpage').show();
-    // 서브 board 페이지로 이동
-    $('.subpage .sub-contentsBox .subpage-board').show().siblings().hide();
-    // 스크롤 상단으로 이동
-    $('html, body').animate({scrollTop: 0}, 0);
-    // 메뉴 체크 표시 변경
-    $('.side-menu .depth-3-Box li').removeClass('checked');
-    $(this).addClass('checked');
   });
-  // #8. 서브 board 페이지에서 게시글 클릭하면 공지사항 페이지로 이동
+  // --------------------------------------------------------------------
+  // 4. 자주찾는 서비스 클릭 시 서브페이지로 이동
+  $('.main .serviceBox li').click(function () {
+    goToSubPage();
+    // 홀짝 여부에 따라 페이지 전환
+    let $index = $(this).index();
+    if ($index % 2 === 0) {
+      showBoardPage();
+
+      leftSideDeactivation();
+      leftSideBoardActivation();
+      
+      rightSideDeactivation();
+      rightSideBoardActivation();
+    } else {
+      showGalleryPage();
+
+      leftSideDeactivation();
+      leftSideGalleryActivation();
+    
+      rightSideDeactivation();
+      rightSideGalleryActivation();
+    }
+  });
+  // 5. 새로운 소식 글 클릭 시 공지사항 게시글 페이지로 이동
+  $('.main .newsBox .txtBox li').click(function () {
+    goToSubPage();
+    showAnnouncementPage();
+
+    leftSideDeactivation();
+    leftSideBoardActivation();
+    
+    rightSideDeactivation();
+    rightSideBoardActivation();
+  });
+  // 6. 새로운 소식 (+) 버튼 클릭 시 게시판 페이지로 이동
+  $('.main .newsBox .tabMenu li').eq(4).click(function () {
+    goToSubPage();
+    showBoardPage();
+
+    leftSideDeactivation();
+    leftSideBoardActivation();
+    
+    rightSideDeactivation();
+    rightSideBoardActivation();
+  });
+  // 7. 홍보 클릭 시 갤러리 페이지로 이동
+  $('.main .promoBox img').click(function () {
+    goToSubPage();
+    showGalleryPage();
+
+    leftSideDeactivation();
+    leftSideGalleryActivation();
+    
+    rightSideDeactivation();
+    rightSideGalleryActivation();
+  });
+  // 8. 웹툰 클릭 시 갤러리 페이지로 이동
+  $('.main .webtoonBox').click(function () {
+    goToSubPage();
+    showGalleryPage();
+
+    leftSideDeactivation();
+    leftSideGalleryActivation();
+    
+    rightSideDeactivation();
+    rightSideGalleryActivation();
+  });
+  // 9. 국립공원사진전 수상작 감상하기 클릭 시 갤러리 페이지로 이동
+  $('.main .galleryBox .txtBox').click(function () {
+    goToSubPage();
+    showGalleryPage();
+
+    leftSideDeactivation();
+    leftSideGalleryActivation();
+    
+    rightSideDeactivation();
+    rightSideGalleryActivation();
+  });
+
+
+
+
+  // << 서브페이지 공통 >>
+  // 1. breadcrumb 홈 버튼 클릭 시 메인페이지로 이동 ()
+  $('.subpage .breadcrumb .home').click(function () {
+    goToMainPage();
+    // 1-2. 좁은 화면의 side-menu 활성화된 메뉴 초기화
+    rightSideInitialization();
+  });
+  // 2. 좌측 side-nav-bar 의 depth-3-Box li 클릭 시 서브페이지로 이동
+  $('.side-nav-bar .depth-3-Box li').click(function () {
+    goToSubPage();
+    let $index = $(this).index();
+    let $depth2 = $(this).parent().parent();
+    if ($depth2.hasClass('d-2-2')) {
+      // 2depth 가 사진자료일 경우에는 홀수 일 떄 갤러리를 보여줌
+      if ($index % 2 === 0) {
+        showGalleryPage();
+
+        leftSideDeactivation();
+        leftSideGalleryActivation();
+      
+        rightSideDeactivation();
+        rightSideGalleryActivation();
+      } else {
+        showBoardPage();
+
+        leftSideDeactivation();
+        leftSideBoardActivation();
+        
+        rightSideDeactivation();
+        rightSideBoardActivation();
+      }
+    } else {
+      // 홀짝 여부에 따라 페이지 전환
+      if ($index % 2 === 0) {
+        showBoardPage();
+
+        leftSideDeactivation();
+        leftSideBoardActivation();
+        
+        rightSideDeactivation();
+        rightSideBoardActivation();
+      } else {
+        showGalleryPage();
+
+        leftSideDeactivation();
+        leftSideGalleryActivation();
+      
+        rightSideDeactivation();
+        rightSideGalleryActivation();
+      }
+    }
+  });
+
+ 
+
+  // << 게시판 페이지 >>
+  // 1. 게시판 페이지에서 게시글 클릭 시 게시글 페이지로 이동
   $('.subpage .subpage-board .contents-each').click(function () {
-    // 공지사항 페이지로 이동
-    $('.subpage .sub-contentsBox .subpage-announcement').show().siblings().hide();
-    // 스크롤 상단으로 이동
-    $('html, body').animate({scrollTop: 0}, 0);
-    // // 메뉴 체크 표시 변경
-    // $('.subpage .side-nav-bar .depth-3-Box li').removeClass('checked');
-    // $('.subpage .side-nav-bar .d-2-1 .d-3-1').addClass('checked');
+    goToSubPage();
+    showAnnouncementPage();
   });
-  // #9. 서브 공지사항 페이지에서 목록 클릭하면 서브 board 페이지로 이동
-  $('.subpage .subpage-announcement .mainContents .listBtn').click(() => {
-    // 공지사항 페이지로 이동
-    $('.subpage .sub-contentsBox .subpage-board').show().siblings().hide();
-    // 스크롤 상단으로 이동
-    $('html, body').animate({scrollTop: 0}, 0);
+
+
+  // << 게시글 페이지 >>
+  // 1. 목록 버튼 클릭 시 게시판 페이지로 이동
+  $('.subpage .subpage-announcement .listBtn').click(function () {
+    goToSubPage();
+    showBoardPage();
   });
+
+
+  // << 갤러리 페이지 >>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   // [gnb 메뉴 hover 시, 하위 메뉴 보이기]
