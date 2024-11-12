@@ -89,7 +89,7 @@ $(document).ready(function () {
     $('.side-nav-bar .depth-2-title strong i').removeClass('on');
   }
 
-  
+
   // << 초기화 함수 선언 >>
   // 1. 좁은 화면 우측 side-menu 선택된 메뉴 초기화 함수 선언 
   function rightSideInitialization () {
@@ -101,7 +101,21 @@ $(document).ready(function () {
     $('.side-menu .depth-2-Box > div').eq(0).addClass('active');
   }
 
+  // << !!!!!! 최종!!! 활성화 함수와 비활성화 함수를 통합하는 함수 선언 !!!!!! >>
+  function galleryMenuActivation () {
+    leftSideDeactivation();
+    leftSideGalleryActivation();
 
+    rightSideDeactivation();
+    rightSideGalleryActivation();
+  }
+  function boardMenuActivation () {
+    leftSideDeactivation();
+    leftSideBoardActivation();
+
+    rightSideDeactivation();
+    rightSideBoardActivation();
+  }
 
 
   // << 메인페이지 >>
@@ -125,38 +139,22 @@ $(document).ready(function () {
       if ($index % 2 === 0) {
         showGalleryPage();
 
-        leftSideDeactivation();
-        leftSideGalleryActivation();
-      
-        rightSideDeactivation();
-        rightSideGalleryActivation();
+        galleryMenuActivation();
       } else {
         showBoardPage();
 
-        leftSideDeactivation();
-        leftSideBoardActivation();
-        
-        rightSideDeactivation();
-        rightSideBoardActivation();
+        boardMenuActivation();
       }
     } else {
       // 홀짝 여부에 따라 페이지 전환
       if ($index % 2 === 0) {
         showBoardPage();
 
-        leftSideDeactivation();
-        leftSideBoardActivation();
-        
-        rightSideDeactivation();
-        rightSideBoardActivation();
+        boardMenuActivation();
       } else {
         showGalleryPage();
 
-        leftSideDeactivation();
-        leftSideGalleryActivation();
-      
-        rightSideDeactivation();
-        rightSideGalleryActivation();
+        galleryMenuActivation();
       }
     }
     
@@ -175,38 +173,22 @@ $(document).ready(function () {
       if ($index % 2 === 0) {
         showGalleryPage();
 
-        leftSideDeactivation();
-        leftSideGalleryActivation();
-      
-        rightSideDeactivation();
-        rightSideGalleryActivation();
+        galleryMenuActivation();
       } else {
         showBoardPage();
 
-        leftSideDeactivation();
-        leftSideBoardActivation();
-        
-        rightSideDeactivation();
-        rightSideBoardActivation();
+        boardMenuActivation();
       }
     } else {
       // 홀짝 여부에 따라 페이지 전환
       if ($index % 2 === 0) {
         showBoardPage();
 
-        leftSideDeactivation();
-        leftSideBoardActivation();
-        
-        rightSideDeactivation();
-        rightSideBoardActivation();
+        boardMenuActivation();
       } else {
         showGalleryPage();
 
-        leftSideDeactivation();
-        leftSideGalleryActivation();
-      
-        rightSideDeactivation();
-        rightSideGalleryActivation();
+        galleryMenuActivation();
       }
     }
 
@@ -228,19 +210,11 @@ $(document).ready(function () {
     if ($index % 2 === 0) {
       showBoardPage();
 
-      leftSideDeactivation();
-      leftSideBoardActivation();
-      
-      rightSideDeactivation();
-      rightSideBoardActivation();
+      boardMenuActivation();
     } else {
       showGalleryPage();
 
-      leftSideDeactivation();
-      leftSideGalleryActivation();
-    
-      rightSideDeactivation();
-      rightSideGalleryActivation();
+      galleryMenuActivation();
     }
   });
   // 5. 새로운 소식 글 클릭 시 공지사항 게시글 페이지로 이동
@@ -248,55 +222,35 @@ $(document).ready(function () {
     goToSubPage();
     showAnnouncementPage();
 
-    leftSideDeactivation();
-    leftSideBoardActivation();
-    
-    rightSideDeactivation();
-    rightSideBoardActivation();
+    boardMenuActivation();
   });
   // 6. 새로운 소식 (+) 버튼 클릭 시 게시판 페이지로 이동
   $('.main .newsBox .tabMenu li').eq(4).click(function () {
     goToSubPage();
     showBoardPage();
 
-    leftSideDeactivation();
-    leftSideBoardActivation();
-    
-    rightSideDeactivation();
-    rightSideBoardActivation();
+    boardMenuActivation();
   });
   // 7. 홍보 클릭 시 갤러리 페이지로 이동
   $('.main .promoBox img').click(function () {
     goToSubPage();
     showGalleryPage();
 
-    leftSideDeactivation();
-    leftSideGalleryActivation();
-    
-    rightSideDeactivation();
-    rightSideGalleryActivation();
+    galleryMenuActivation();
   });
   // 8. 웹툰 클릭 시 갤러리 페이지로 이동
   $('.main .webtoonBox').click(function () {
     goToSubPage();
     showGalleryPage();
 
-    leftSideDeactivation();
-    leftSideGalleryActivation();
-    
-    rightSideDeactivation();
-    rightSideGalleryActivation();
+    galleryMenuActivation();
   });
   // 9. 국립공원사진전 수상작 감상하기 클릭 시 갤러리 페이지로 이동
   $('.main .galleryBox .txtBox').click(function () {
     goToSubPage();
     showGalleryPage();
 
-    leftSideDeactivation();
-    leftSideGalleryActivation();
-    
-    rightSideDeactivation();
-    rightSideGalleryActivation();
+    galleryMenuActivation();
   });
 
 
@@ -319,38 +273,22 @@ $(document).ready(function () {
       if ($index % 2 === 0) {
         showGalleryPage();
 
-        leftSideDeactivation();
-        leftSideGalleryActivation();
-      
-        rightSideDeactivation();
-        rightSideGalleryActivation();
+        galleryMenuActivation();
       } else {
         showBoardPage();
 
-        leftSideDeactivation();
-        leftSideBoardActivation();
-        
-        rightSideDeactivation();
-        rightSideBoardActivation();
+        boardMenuActivation();
       }
     } else {
       // 홀짝 여부에 따라 페이지 전환
       if ($index % 2 === 0) {
         showBoardPage();
 
-        leftSideDeactivation();
-        leftSideBoardActivation();
-        
-        rightSideDeactivation();
-        rightSideBoardActivation();
+        boardMenuActivation();
       } else {
         showGalleryPage();
 
-        leftSideDeactivation();
-        leftSideGalleryActivation();
-      
-        rightSideDeactivation();
-        rightSideGalleryActivation();
+        galleryMenuActivation();
       }
     }
   });
