@@ -114,7 +114,7 @@ $(document).ready(function() {
             duration: 0.5,
             ease: 'power2.out'
         });
-        // .eachBox 요소의 .haribo와 .kaps와 .newjeans 차례대로 등장하도록 애니메이션
+        // .eachBox 요소의 .haribo와 .kaps와 .newjeans와 .knps 차례대로 등장하도록 애니메이션
         gsap.fromTo('.section1 .eachBox.haribo', {
             opacity: 0,
             y: -20
@@ -140,6 +140,16 @@ $(document).ready(function() {
             y: -20
         }, {
             delay: 3.1,
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            ease: 'power2.out'
+        });
+        gsap.fromTo('.section1 .eachBox.knps', {
+            opacity: 0,
+            y: -20
+        }, {
+            delay: 3.3,
             opacity: 1,
             y: 0,
             duration: 0.5,
@@ -241,6 +251,16 @@ $(document).ready(function() {
             opacity: 0,
             y: -20,
             delay: 0.2,
+            duration: 0.2,
+            ease: 'power2.out'
+        });
+        gsap.fromTo('.section1 .eachBox.knps', {
+            opacity: 1,
+            y: 0
+        }, {
+            opacity: 0,
+            y: -20,
+            delay: 0.3,
             duration: 0.2,
             ease: 'power2.out'
         });
@@ -398,6 +418,16 @@ $(document).ready(function() {
             duration: 0.2,
             ease: 'power2.out'
         });
+        gsap.fromTo('.section1 .eachBox.knps', {
+            opacity: 1,
+            y: 0
+        }, {
+            opacity: 0,
+            y: -20,
+            delay: 0.3,
+            duration: 0.2,
+            ease: 'power2.out'
+        });
         gsap.to('.section1 .txt.welcome',  {
             opacity: 0,
             y: -20,
@@ -424,7 +454,7 @@ $(document).ready(function() {
         }
         
         // 나타나기##############################################
-        // 하리보, kaps, 뉴진스에 해당하는 컨텐츠 보여주기
+        // 하리보, kaps, 뉴진스, knps 에 해당하는 컨텐츠 보여주기
         let index = $(this).index();
         let index2 = 'index' + index;
         if ($('.section1 article').hasClass(index2)) {
@@ -850,6 +880,7 @@ $(document).ready(function() {
         setTimeout(function () {
             $('.section1 article.index1').css('display', 'none');
             $('.section1 article.index2').css('display', 'none');
+            $('.section1 article.index3').css('display', 'none');
         }, 700);
 
         // 나타나기##############################################
@@ -932,6 +963,7 @@ $(document).ready(function() {
         setTimeout(function () {
             $('.section1 article.index0').css('display', 'none');
             $('.section1 article.index2').css('display', 'none');
+            $('.section1 article.index3').css('display', 'none');
         }, 700);
 
         // 나타나기##############################################
@@ -1014,6 +1046,7 @@ $(document).ready(function() {
         setTimeout(function () {
             $('.section1 article.index0').css('display', 'none');
             $('.section1 article.index1').css('display', 'none');
+            $('.section1 article.index3').css('display', 'none');
         }, 700);
 
         // 나타나기##############################################
@@ -1032,6 +1065,89 @@ $(document).ready(function() {
             ease: 'power2.out'
         });
         tl2.fromTo('.section1 article.index2 .portfolioBtn span', {
+            opacity: 0,
+            y: -20
+        }, {
+            opacity: 1,
+            y: 0,
+            duration: 0.2,
+            stagger: 0.2,
+            ease: 'power2.out'
+        });
+    });
+
+    // nav 의 knps 클릭시
+    $('nav ul li').eq(5).click(function () {
+        // nav 의 home 요소에 on 클래스 붙여서 텍스트 파랗게 변하기
+        $('.section1 nav li').removeClass('on');
+        $('.section1 nav li').eq(5).addClass('on');
+
+        // 없어지기##########################################
+        // 이름 없어지기
+        gsap.to('.section1 .mainTitle p', {
+            duration: 0.5,
+            opacity: 0,
+            translateY: -250,
+            ease: 'power2.inOut'
+        });
+        // profileContent 사라지기
+        tl2.fromTo('.section1 .firstLi', {
+            opacity: 1,
+            y: 0
+        }, {
+            opacity: 0,
+            y: -20,
+            stagger: 0.1,
+            duration: 0.2,
+            ease: 'power2.out'
+        });
+        // 1초 후에 .profileContent 뒤로 보내고 투명도 감소
+        setTimeout(function () {
+            $('.section1 .profileContent').css('z-index', '-1');
+            $('.section1 .profileContent').css('opacity', '0');
+        }, 1000);
+        // article (포트폴리오 컨텐츠) 사라지기
+        tl3.fromTo('.section1 article .imgBox', {
+            opacity: 1,
+            y: 0
+        }, {
+            opacity: 0,
+            y: -20,
+            duration: 0.5,
+            ease: 'power2.out'
+        });
+        gsap.fromTo('.section1 article .portfolioBtn span', {
+            opacity: 1,
+            y: 0
+        }, {
+            opacity: 0,
+            y: -20,
+            duration: 0.2,
+            ease: 'power2.out'
+        });
+        // 해당 포트폴리오 제외 나머지 포트폴리오 사라지기
+        setTimeout(function () {
+            $('.section1 article.index0').css('display', 'none');
+            $('.section1 article.index1').css('display', 'none');
+            $('.section1 article.index2').css('display', 'none');
+        }, 700);
+
+        // 나타나기##############################################
+        setTimeout(function () {
+            $('.section1 article.index3').css('display', 'block');
+        }, 700);
+
+        tl1.fromTo('.section1 article.index3 .imgBox', {
+            opacity: 0,
+            y: -20
+        }, {
+            delay: 0.7,
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            ease: 'power2.out'
+        });
+        tl2.fromTo('.section1 article.index3 .portfolioBtn span', {
             opacity: 0,
             y: -20
         }, {
