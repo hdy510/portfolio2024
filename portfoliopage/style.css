@@ -476,7 +476,9 @@ body.on {
     border-radius: 8px;
     overflow: hidden;
 }
-.section1 article .imgBox img {}
+.section1 article .imgBox img {
+    border-radius: 8px;
+}
 .section1 article .portfolioBtn {
     display: flex;
     justify-content: center;
