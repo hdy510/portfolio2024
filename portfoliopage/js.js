@@ -1286,7 +1286,11 @@ $(document).ready(function() {
             $('.conceptViewNewjeans').addClass('on');
             // 딤드 이미지 높이 조절
             $('.dimmedWrap .dimmed').css('height', '14345.300px');
-        }
+        } else if ($(this).parents('.portfolioBtn').parents('article').hasClass('index3')) {
+            $('.conceptViewKNPS').addClass('on');
+            // 딤드 이미지 높이 조절
+            $('.dimmedWrap .dimmed').css('height', '15229.7px');
+        } 
 
         // 스크롤 가능
         $('body').addClass('on');
