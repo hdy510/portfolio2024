@@ -642,7 +642,7 @@ $(document).ready(function() {
             duration: 0.5,
             ease: 'power2.out'
         });
-        // .btn.profile 와 .btn.toIntro 그리고 .eachBox 요소의 .haribo와 .kaps와 .newjeans 차례대로 나타나기
+        // .btn.profile 와 .btn.toIntro 그리고 .eachBox 요소의 .haribo와 .kaps와 .newjeans와 .knps 차례대로 나타나기
         setTimeout(function () {
             $('.section1 .btn.profile').css('display', 'block');
         }, 1000);
@@ -685,6 +685,16 @@ $(document).ready(function() {
             y: -20
         }, {
             delay: 3.1,
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            ease: 'power2.out'
+        });
+        gsap.fromTo('.section1 .eachBox.knps', {
+            opacity: 0,
+            y: -20
+        }, {
+            delay: 3.3,
             opacity: 1,
             y: 0,
             duration: 0.5,
