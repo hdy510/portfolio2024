@@ -1226,7 +1226,7 @@ $(document).ready(function() {
             translateY: -250,
             ease: 'power2.inOut'
         });
-        // .btn.profile 과 .eachBox 요소의 .haribo와 .kaps와 .newjeans 차례대로 사라지도록 애니메이션
+        // .btn.profile 과 .eachBox 요소의 .haribo와 .kaps와 .newjeans와 .knps 차례대로 사라지도록 애니메이션
         gsap.to('.section1 .btn.profile',  {
             opacity: 0,
             y: -40,
@@ -1262,10 +1262,20 @@ $(document).ready(function() {
             duration: 0.2,
             ease: 'power2.out'
         });
-        gsap.to('.section1 .txt.welcome',  {
+        gsap.fromTo('.section1 .eachBox.knps', {
+            opacity: 1,
+            y: 0
+        }, {
             opacity: 0,
             y: -20,
             delay: 0.3,
+            duration: 0.2,
+            ease: 'power2.out'
+        });
+        gsap.to('.section1 .txt.welcome',  {
+            opacity: 0,
+            y: -20,
+            delay: 0.4,
             duration: 0.2,
             ease: 'power2.out'
         });
