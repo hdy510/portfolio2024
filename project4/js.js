@@ -119,17 +119,7 @@ $(document).ready(function () {
 
 
   // << 메인페이지 >>
-  // 1. 로고 클릭 시 메인페이지 상단으로 이동
-  $('.gnb h1').click(function () {
-    goToMainPage();
-    // 1-1. 좁은 화면의 side-menu 닫히기
-    $('.side-menu').removeClass('on');
-      // dimmed-bg2 해제 설정
-    $('.dimmed-bg2').removeClass('open');
-    // 1-2. 좁은 화면의 side-menu 활성화된 메뉴 초기화
-    rightSideInitialization();
-  });
-  // 2. gnb 메뉴 클릭 시 서브페이지로 이동
+  // 1. gnb 메뉴 클릭 시 서브페이지로 이동
   $('.gnb .list3').click(function () {
     goToSubPage();
     let $index = $(this).index();
@@ -163,7 +153,7 @@ $(document).ready(function () {
     // dimmed-bg1 해제
     $('.dimmed-bg1').removeClass('open');
   });
-  // 3. 좁은 화면의 우측 side-menu 메뉴에서 클릭 시 서브페이지로 이동
+  // 2. 좁은 화면의 우측 side-menu 메뉴에서 클릭 시 서브페이지로 이동
   $('.side-menu .depth-3-Box li').click(function () {
     goToSubPage();
     let $index = $(this).index();
@@ -202,7 +192,7 @@ $(document).ready(function () {
     $('.dimmed-bg2').removeClass('open');
   });
   // --------------------------------------------------------------------
-  // 4. 자주찾는 서비스 클릭 시 서브페이지로 이동
+  // 3. 자주찾는 서비스 클릭 시 서브페이지로 이동
   $('.main .serviceBox li').click(function () {
     goToSubPage();
     // 홀짝 여부에 따라 페이지 전환
@@ -217,35 +207,35 @@ $(document).ready(function () {
       galleryMenuActivation();
     }
   });
-  // 5. 새로운 소식 글 클릭 시 공지사항 게시글 페이지로 이동
+  // 4. 새로운 소식 글 클릭 시 공지사항 게시글 페이지로 이동
   $('.main .newsBox .txtBox li').click(function () {
     goToSubPage();
     showAnnouncementPage();
 
     boardMenuActivation();
   });
-  // 6. 새로운 소식 (+) 버튼 클릭 시 게시판 페이지로 이동
+  // 5. 새로운 소식 (+) 버튼 클릭 시 게시판 페이지로 이동
   $('.main .newsBox .tabMenu li').eq(4).click(function () {
     goToSubPage();
     showBoardPage();
 
     boardMenuActivation();
   });
-  // 7. 홍보 클릭 시 갤러리 페이지로 이동
+  // 6. 홍보 클릭 시 갤러리 페이지로 이동
   $('.main .promoBox img').click(function () {
     goToSubPage();
     showGalleryPage();
 
     galleryMenuActivation();
   });
-  // 8. 웹툰 클릭 시 갤러리 페이지로 이동
+  // 7. 웹툰 클릭 시 갤러리 페이지로 이동
   $('.main .webtoonBox').click(function () {
     goToSubPage();
     showGalleryPage();
 
     galleryMenuActivation();
   });
-  // 9. 국립공원사진전 수상작 감상하기 클릭 시 갤러리 페이지로 이동
+  // 8. 국립공원사진전 수상작 감상하기 클릭 시 갤러리 페이지로 이동
   $('.main .galleryBox .txtBox').click(function () {
     goToSubPage();
     showGalleryPage();
