@@ -39,7 +39,7 @@ ul,ol {
 }
 a {
     text-decoration: none;
-    color: #121212;
+    color: #0d0d0d;
 }
 img {
     vertical-align: bottom;
@@ -121,7 +121,7 @@ header nav .img:hover {
     top: 0;
     left: 0;
     z-index: 1;
-    background-color: #121212;
+    background-color: #0d0d0d;
 }
 .intro.on {
     z-index: 10;
@@ -181,22 +181,22 @@ section article {
     align-items: center;
 }
 section article:nth-child(1) {
-    background-color: #121212
+    background-color: #0d0d0d;
 }
 section article:nth-child(2) {
-    background-color: #121212
+    background-color: #0d0d0d;
 }
 section article:nth-child(3) {
-    background-color: #121212
+    background-color: #0d0d0d;
 }
 section article:nth-child(4) {
-    background-color: #121212
+    background-color: #0d0d0d;
 }
 section article:nth-child(5) {
-    background-color: #121212
+    background-color: #0d0d0d;
 }
 section article.black {
-    background-color: #121212;
+    background-color: #0d0d0d;
     border-bottom: 1px solid rgb(32, 247, 54);
     z-index: 11;
     top: -101%;
@@ -398,14 +398,17 @@ section article.on {
     width: 100%;
     height: 100%;
     z-index: 2;
-    background-color: #121212;
+    background-color: #0d0d0d;
 }
 .profile_main ul {
     display: flex;
     width: 1400px;
     justify-content: space-between;
     margin: 0 auto;
-    margin-top: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .profile_main li {
     position: relative;
@@ -457,8 +460,11 @@ section article.on {
     font-family: "Press Start 2P", system-ui;
     font-size: 30px;
     text-align: center;
-    margin-top: 100px;
     animation: blink 1s linear infinite;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 @keyframes blink {
     0% {
@@ -594,7 +600,7 @@ section article.on {
 .profile_scroll>div .txtBox .txtBox_inner {
     background-color: #fff;
     border-radius: 8px;
-    border: 2px solid #121212;
+    border: 2px solid #0d0d0d;
     margin-top: 20px;
     padding: 26px;
 }
@@ -904,11 +910,13 @@ section article.on {
 /* music_detail_inner 설정 */
 .music_detail_inner {
     width: 1136px;
-    height: 610px;
-    /* background-color: red; */
     display: flex;
     justify-content: space-between;
-    margin: 100px auto;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .music_detail_inner .imgBox {
     width: 48%;
@@ -1039,7 +1047,7 @@ section article.on {
 .music_player {
     width: 812px;
     height: 190px;
-    background-color: #121212;
+    background-color: #0d0d0d;
     border: 1px solid #bababa;
     border-radius: 18px;
     position: absolute;
@@ -1629,13 +1637,13 @@ section article.on {
     font-family: "Press Start 2P", system-ui;
     padding: 26px 30px;
     border: 1px solid #38FF9F;
-    background-color: #121212;
+    background-color: #0d0d0d;
     border-radius: 4px;
     cursor: pointer;
     transition: filter 0.3s;
 }
 .video .txtBox li:hover {
-    color: #121212;
+    color: #0d0d0d;
     background-color: #38FF9F;
     filter: drop-shadow(0px 0px 7px #38ff9f);
 }
