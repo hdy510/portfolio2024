@@ -313,6 +313,8 @@ $(document).ready(function(){
     // GNB의 Music 을 클릭하면 body 값이 커져서 옆에 스크롤이 생긴다.
     $('nav li').eq(2).click(function(){
         $('body').addClass('cd')
+        // 스크롤탑 초기화
+        $(window).scrollTop(0);
     })
         // 나머지 메뉴들은 초기화
     $('nav li').eq(0).click(function(){
