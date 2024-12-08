@@ -1301,7 +1301,7 @@ $(document).ready(function() {
         } else if ($(this).parents('.portfolioBtn').parents('article').hasClass('index1')) {
             $('.conceptViewKAPS').addClass('on');
             // 딤드 이미지 높이 조절
-            $('.dimmedWrap .dimmed').css('height', '15630.500px');
+            $('.dimmedWrap .dimmed').css('height', '10257px');
         } else if ($(this).parents('.portfolioBtn').parents('article').hasClass('index2')) {
             $('.conceptViewNewjeans').addClass('on');
             // 딤드 이미지 높이 조절
