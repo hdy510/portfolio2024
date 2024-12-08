@@ -2519,19 +2519,32 @@ footer .copyright {
     }
     /* section5 */
     .section5 {
-        height: 1800px;
+        height: auto;
     }
     .section5 .section5_inner {
+        width: 90%;
+        height: auto;
         flex-direction: column;
         align-items: center;
-        top: 100px;
+        gap: 30px;
+        position: static;
+        transform: translate(0, 0);
+        padding-top: 100px;
     }
     .section5 .section5_inner .adoptReview {
+        height: 100%;
         margin-right: 0;
-        margin-bottom: 60px;
+        margin-bottom: 0;
     }
     .section5 .section5_inner .volunteerReview {
+        height: 100%;
         margin-left: 0;
+    }
+    .section5 .section5_inner>div>h2 {
+        font-size: 30px;
+    }
+    .section5 .section5_inner>div .listBox ul li a .txt>div h3 {
+        font-size: 17px;
     }
     /* section6 */
     .section6 {
@@ -2660,7 +2673,7 @@ footer .copyright {
     }
     /* section1 */
     .section1 .heroBox {
-        top: 15%;
+        
     }
     .section1 .heroBox .topBox h1 {
         font-size: 60px;
@@ -2675,16 +2688,13 @@ footer .copyright {
         position: absolute;
     }
     .section1 .img .img_inner:nth-child(1) {
-        top: 59%;
-        left: 120px;
+        right: 9%;
     }
     .section1 .img .img_inner:nth-child(2) {
-        top: 63%;
-        left: 330px;
+        right: 5%;
     }
     .section1 .img .img_inner:nth-child(3) {
-        top: 59%;
-        left: 540px;
+        right: 10%;
     }
     .section1 .img .img_inner .imgBox {
         width: 150px;
@@ -2715,19 +2725,32 @@ footer .copyright {
     }
     /* section5 */
     .section5 {
-        height: 1800px;
+        height: auto;
     }
     .section5 .section5_inner {
+        width: 90%;
+        height: auto;
         flex-direction: column;
         align-items: center;
-        top: 100px;
+        gap: 30px;
+        position: static;
+        transform: translate(0, 0);
+        padding-top: 100px;
     }
     .section5 .section5_inner .adoptReview {
+        height: 100%;
         margin-right: 0;
-        margin-bottom: 60px;
+        margin-bottom: 0;
     }
     .section5 .section5_inner .volunteerReview {
+        height: 100%;
         margin-left: 0;
+    }
+    .section5 .section5_inner>div>h2 {
+        font-size: 30px;
+    }
+    .section5 .section5_inner>div .listBox ul li a .txt>div h3 {
+        font-size: 17px;
     }
     /* section6 */
     .section6 {
